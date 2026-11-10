@@ -1,0 +1,218 @@
+<h1 id="第-9-章-多元函数微分法及其应用">第 9 章　多元函数微分法及其应用</h1>
+<p>本章把一元函数的极限、连续、导数、微分逐级推广到二元（多元）函数，但多处出现<strong>质变</strong>：极限要求"任何途径"都一致；<strong>偏导数存在不再保证可微</strong>；求导的核心工具从链式法则升级为"链式法则 + 树形图"。后半章的应用——<strong>方向导数与梯度、无条件极值（\(AC-B^2\) 判别法）、条件极值（拉格朗日乘数法）</strong>——是期末考试大题的固定出题点。</p>
+
+<h2 id="9-1-多元函数的基本概念">9.1 多元函数的基本概念<button class="fav" type="button" data-fav="9-1-多元函数的基本概念" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="9-1-1-二元函数与平面点集">二元函数与平面点集<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="9-1-1-二元函数与平面点集" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>\(z=f(x,y)\)：每个有序数组 \((x,y)\in D\) 依照对应规则有唯一的 \(z\) 值与之对应；\(D\) 为定义域，值域 \(f(D)\subset\R\)。几何意义是空间一张曲面。平面点集常用语言：<strong>邻域</strong> \(U(P_0,\delta)=\{(x,y)\mid (x-x_0)^2+(y-y_0)^2&lt;\delta^2\}\)；<strong>内点、开区域、闭区域、有界区域</strong>。一元的大部分概念（定义域、复合、初等函数）都按此平移。</p>
+
+<h3 id="9-1-2-二重极限与连续">二重极限与连续<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="9-1-2-二重极限与连续" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>\(\lim\limits_{(x,y)\to(x_0,y_0)}f(x,y)=A\)：当 \((x,y)\) 以<strong>任何方式</strong>趋于 \((x_0,y_0)\) 时 \(f(x,y)\) 都无限接近 \(A\)。二元函数的极限存在比一元苛刻得多——不是"左右两个方向"，而是<strong>整个平面上的所有路径</strong>。若 \(f\) 在 \(P_0\) 处的极限值等于函数值，即 \(\lim\limits_{P\to P_0}f(P)=f(P_0)\)，则 \(f\) 在 \(P_0\) <strong>连续</strong>；否则 \(P_0\) 是<strong>间断点</strong>（二元初等函数在其定义区域内连续）。</p>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>① 沿特殊路径极限相等只能"证不存在"，不能"证存在"</strong>：沿 \(y=kx\) 极限与 \(k\) 有关 ⟹ 极限不存在；但沿所有直线极限相同也不能下结论（路径还可以是抛物线）。<strong>② 求二重极限的合法手段</strong>：代入（连续点）、夹逼准则、有理化、极坐标变换（注意 \(\rho\to0\) 须对 \(\theta\) 一致）；不能直接"洛必达"地逐变量求。<strong>③ 沿不同路径取值不同的函数</strong>如 \(\dfrac{xy}{x^2+y^2}\) 是"极限不存在"的标准反例。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 1</span>二重极限：存在与不存在</div>
+  <div class="ex-b">
+    <p>① 求 \(\lim\limits_{(x,y)\to(0,0)}\dfrac{x^2y}{x^2+y^2}\)；② 判断 \(\lim\limits_{(x,y)\to(0,0)}\dfrac{xy}{x^2+y^2}\) 是否存在。</p>
+    <details><summary></summary><div class="sol">
+      <p><strong>①</strong> 因 \(x^2\le x^2+y^2\)，故 \(\left|\dfrac{x^2y}{x^2+y^2}\right|=|x|\cdot\dfrac{|xy|}{x^2+y^2}\le|x|\cdot\dfrac12\)，由夹逼准则：</p>
+      <div class="fml">$$\lim_{(x,y)\to(0,0)}\frac{x^2y}{x^2+y^2}=0$$</div>
+      <p><strong>②</strong> 沿直线 \(y=kx\) 趋于原点：\(\dfrac{xy}{x^2+y^2}=\dfrac{kx^2}{x^2+k^2x^2}=\dfrac{k}{1+k^2}\)，随 \(k\) 变化（\(k=0\) 时为 0，\(k=1\) 时为 \(\dfrac12\)），不同路径极限不同：</p>
+      <div class="fml">$$\lim_{(x,y)\to(0,0)}\frac{xy}{x^2+y^2}\ \text{不存在}$$</div>
+      <p>点评：①② 分子只差一个 \(x\)，极限行为截然不同——夹逼放缩是"证存在"的主力；取两条路径极限不等是"证不存在"的标准写法。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="9-2-偏导数">9.2 偏导数<button class="fav" type="button" data-fav="9-2-偏导数" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="9-2-1-偏导数的定义与计算">偏导数的定义与计算<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="9-2-1-偏导数的定义与计算" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$f_x(x_0,y_0)=\lim_{\Delta x\to0}\frac{f(x_0+\Delta x,\,y_0)-f(x_0,\,y_0)}{\Delta x},\qquad f_y(x_0,y_0)=\lim_{\Delta y\to0}\frac{f(x_0,\,y_0+\Delta y)-f(x_0,\,y_0)}{\Delta y}$$</div>
+<p>求法：对 \(x\) 求偏导时把 \(y\)（及其他变量）<strong>当常数</strong>。几何意义：\(f_x(x_0,y_0)\) 是曲面 \(z=f(x,y)\) 被平面 \(y=y_0\) 所截曲线在该点的切线对 \(x\) 轴的斜率。</p>
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> <strong>分段函数在分界点处必须用定义求偏导</strong>：先把 \(y=y_0\) 代入得一元函数再求极限，往往是 \(\lim_{\Delta x\to0}\dfrac{f(\Delta x,y_0)-f(0,y_0)}{\Delta x}\)；很多函数（如 \(xy/\sqrt{x^2+y^2}\)）在原点偏导存在但后面将看到它不可微。另外注意：偏导存在是"沿坐标轴方向"的性质，与函数在该点是否连续<strong>互不包含</strong>——这和一元"可导必连续"完全不同。</p></blockquote>
+
+<h3 id="9-2-2-高阶偏导数">高阶偏导数<span class="rkchip rk-def">定理</span><button class="fav" type="button" data-fav="9-2-2-高阶偏导数" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$\text{四个二阶偏导：}\ \frac{\partial^2z}{\partial x^2},\ \frac{\partial^2z}{\partial y^2},\ \frac{\partial^2z}{\partial x\partial y},\ \frac{\partial^2z}{\partial y\partial x}\qquad \text{记号：} z_{xx},\ z_{xy}\ \text{等}$$</div>
+<p><strong>定理</strong>：若 \(z_{xy}\) 与 \(z_{yx}\) 都在区域 \(D\) 内<strong>连续</strong>，则二者相等（求导次序可交换）。考试默认在此条件下运算。</p>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 2</span>求偏导数与二阶混合偏导</div>
+  <div class="ex-b">
+    <p>设 \(z=x^y\)（\(x&gt;0\)），求 \(\dfrac{\partial z}{\partial x}\)、\(\dfrac{\partial z}{\partial y}\) 及二阶混合偏导，并验证 \(z_{xy}=z_{yx}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>对 \(x\) 求导时 \(y\) 是常数（幂函数），对 \(y\) 求导时 \(x\) 是常数（指数函数）：</p>
+      <div class="fml">$$z_x=yx^{y-1},\qquad z_y=x^y\ln x$$</div>
+      <div class="fml">$$z_{xy}=\frac{\partial}{\partial y}\bigl(yx^{y-1}\bigr)=x^{y-1}+yx^{y-1}\ln x,\qquad z_{yx}=\frac{\partial}{\partial x}\bigl(x^y\ln x\bigr)=yx^{y-1}\ln x+x^{y-1}$$</div>
+      <p>两者相等 ✓。点评：幂指函数 \(x^y\) 求偏导要"换角色"：对谁是常数决定用幂函数还是指数函数法则；这是检验"把其余变量当常数"掌握程度的经典题。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="9-3-全微分">9.3 全微分<button class="fav" type="button" data-fav="9-3-全微分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="9-3-1-全微分的定义与可微的条件链">全微分的定义与可微的条件链<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="9-3-1-全微分的定义与可微的条件链" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>若全增量 \(\Delta z=f(x+\Delta x,y+\Delta y)-f(x,y)\) 能写成 \(A\Delta x+B\Delta y+o(\rho)\)（\(\rho=\sqrt{\Delta x^2+\Delta y^2}\to0\)，\(A,B\) 与 \(\Delta x,\Delta y\) 无关），则称 \(z=f(x,y)\) 在该点<strong>可微</strong>，全微分 \(dz=A\,dx+B\,dy\)。</p>
+<div class="fml">$$\textbf{可微}\Rightarrow dz=f_x\,dx+f_y\,dy\ \ (\text{必要条件：} A=f_x,\ B=f_y);\qquad \textbf{判定可微：}\ \lim_{\rho\to0}\frac{\Delta z-(f_x\Delta x+f_y\Delta y)}{\rho}=0$$</div>
+<div class="fml">$$\textbf{关系链（只单向下推）：}\quad \substack{\text{偏导数}\\ \text{连 续}}\ \Longrightarrow\ \text{可微}\ \Longrightarrow\ \begin{cases}\text{函数连续}\\[2pt] \text{偏导数存在}\end{cases}\ \Longrightarrow\ \text{极限存在}$$</div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>关系链全部不可逆</strong>，这是本章第一大考点：①偏导存在（甚至两个都存在）<strong>推不出</strong>连续，也推不出可微；②连续推不出偏导存在（如 \(z=\sqrt{x^2+y^2}\) 在原点连续但偏导不存在）；③可微推不出"偏导连续"（存在反例）。判断题"偏导存在则连续"必为<strong>假</strong>。证可微的流程：先求 \(f_x,f_y\) → 算 \(\Delta z-f_x\Delta x-f_y\Delta y\) → 除以 \(\rho\) 取极限看是否为 0。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 3</span>求全微分</div>
+  <div class="ex-b">
+    <p>设 \(z=\arctan\dfrac yx\)，求 \(dz\)。</p>
+    <details><summary></summary><div class="sol">
+      <div class="fml">$$z_x=\frac{1}{1+(y/x)^2}\cdot\Bigl(-\frac{y}{x^2}\Bigr)=\frac{-y}{x^2+y^2},\qquad z_y=\frac{1}{1+(y/x)^2}\cdot\frac1x=\frac{x}{x^2+y^2}$$</div>
+      <p>两个偏导连续，故可微：</p>
+      <div class="fml">$$dz=\frac{-y\,dx+x\,dy}{x^2+y^2}$$</div>
+      <p>点评：复合求偏导（链式 + 商的导数）一步到位后直接写 \(dz=z_xdx+z_ydy\)；这题的结论在方向导数、曲面积分中反复出现，值得记住。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 4</span>偏导存在但不可微（经典反例）</div>
+  <div class="ex-b">
+    <p>设 \(f(x,y)=\begin{cases}\dfrac{xy}{\sqrt{x^2+y^2}},&amp;(x,y)\ne(0,0)\\[4pt] 0,&amp;(x,y)=(0,0)\end{cases}\)。证明 \(f\) 在原点偏导数存在，但在原点不可微。</p>
+    <details><summary></summary><div class="sol">
+      <p><strong>偏导</strong>：\(f(\Delta x,0)=0\)，故 \(f_x(0,0)=\lim\limits_{\Delta x\to0}\dfrac{f(\Delta x,0)-0}{\Delta x}=0\)；同理 \(f_y(0,0)=0\)。</p>
+      <p><strong>可微性</strong>：若可微应有 \(\lim\limits_{\rho\to0}\dfrac{f(\Delta x,\Delta y)-f_x(0,0)\Delta x-f_y(0,0)\Delta y}{\rho}=\lim\limits_{\rho\to0}\dfrac{\Delta x\Delta y/\rho}{\rho}=0\)。取路径 \(\Delta y=\Delta x&gt;0\)，则 \(\rho=\sqrt2\,\Delta x\)：</p>
+      <div class="fml">$$\frac{\Delta x\cdot\Delta x}{(\Delta x^2+\Delta x^2)}=\frac12\ \ne 0$$</div>
+      <p>极限不存在于 0，故 \(f\) 在原点<strong>不可微</strong>。点评：此函数同时是"偏导存在但连续性、可微性都可以落空"的标准反例，考研与期末都爱用；证明套路 = 定义算偏导 + 沿特殊路径验证可微性极限不归零。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="9-4-多元复合函数与隐函数的求导法则">9.4 多元复合函数与隐函数的求导法则<button class="fav" type="button" data-fav="9-4-多元复合函数与隐函数的求导法则" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="9-4-1-链式法则与树形图">链式法则与树形图<span class="rkchip rk-def">定理</span><button class="fav" type="button" data-fav="9-4-1-链式法则与树形图" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>设 \(z=f(u,v)\)，\(u=u(x,y)\)，\(v=v(x,y)\) 都可微，则复合函数 \(z=f(u(x,y),v(x,y))\) 满足：</p>
+<div class="fml">$$\frac{\partial z}{\partial x}=\frac{\partial z}{\partial u}\frac{\partial u}{\partial x}+\frac{\partial z}{\partial v}\frac{\partial v}{\partial x},\qquad \frac{\partial z}{\partial y}=\frac{\partial z}{\partial u}\frac{\partial u}{\partial y}+\frac{\partial z}{\partial v}\frac{\partial v}{\partial y}$$</div>
+<p>口诀：<strong>"沿线相乘、分线相加"</strong>——先画树形图（自变量 → 中间变量 → 因变量），从 \(z\) 到某自变量的每条路径把各段导数相乘，不同路径的结果相加。若 \(z=f(u(x),v(x))\)，结果是<strong>全导数</strong>：</p>
+<div class="fml">$$\frac{dz}{dx}=\frac{\partial f}{\partial u}\frac{du}{dx}+\frac{\partial f}{\partial v}\frac{dv}{dx}$$</div>
+
+<h3 id="9-4-2-隐函数求导公式">隐函数求导公式<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="9-4-2-隐函数求导公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$F(x,y)=0\ \text{确定}\ y=y(x):\quad \frac{dy}{dx}=-\frac{F_x}{F_y}\ \ \Bigl(F_y\ne0\Bigr)$$
+$$F(x,y,z)=0\ \text{确定}\ z=z(x,y):\quad \frac{\partial z}{\partial x}=-\frac{F_x}{F_z},\qquad \frac{\partial z}{\partial y}=-\frac{F_y}{F_z}\ \ \Bigl(F_z\ne0\Bigr)$$</div>
+<p>记忆要点：<strong>分子取"对保留变量"的偏导，分母取"对因变量"的偏导，整体变号</strong>。方程组确定的隐函数（如 \(u=u(x,y),v=v(x,y)\)）对每个方程分别用上述思想并联立求解，本质是解线性方程组。</p>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>① 求 \(F_x\) 时把 \(z\) 视为常数</strong>：\(F(x,y,z)=0\) 中 \(x,y,z\) 在求 \(F\) 的偏导阶段是<strong>互相独立的</strong>，切勿把 \(z\) 当作 \(x\) 的函数代入链式法则（那是另一种正确做法，但公式法要求三者独立）。<strong>② 符号</strong>：公式整体带负号，分母是 \(F_z\) 不是 \(F_x\)。<strong>③ 链式法则漏项</strong>：抽象函数 \(f(u,v)\) 求二阶导时，\(f_1',f_2'\) 仍是 \(u,v\) 的函数，必须再走一遍树形图，漏掉复合项是二阶偏导大题的头号失分点。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 5</span>链式法则：中间变量为二元</div>
+  <div class="ex-b">
+    <p>设 \(z=e^u\sin v\)，\(u=xy\)，\(v=x+y\)，求 \(\dfrac{\partial z}{\partial x}\) 与 \(\dfrac{\partial z}{\partial y}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(\dfrac{\partial z}{\partial u}=e^u\sin v\)，\(\dfrac{\partial z}{\partial v}=e^u\cos v\)；\(\dfrac{\partial u}{\partial x}=y\)，\(\dfrac{\partial v}{\partial x}=1\)；\(\dfrac{\partial u}{\partial y}=x\)，\(\dfrac{\partial v}{\partial y}=1\)。代入：</p>
+      <div class="fml">$$\frac{\partial z}{\partial x}=e^{xy}\bigl(y\sin(x+y)+\cos(x+y)\bigr),\qquad \frac{\partial z}{\partial y}=e^{xy}\bigl(x\sin(x+y)+\cos(x+y)\bigr)$$</div>
+      <p>点评：先算"上游"（\(z\) 对中间变量的偏导）再乘"下游"，分两条路径相加；把中间结果代回 \(u=xy,v=x+y\) 才是最终答案。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 6</span>全导数：所有中间变量都是一元</div>
+  <div class="ex-b">
+    <p>设 \(z=uv+\sin t\)，其中 \(u=e^t\)，\(v=\cos t\)，求 \(\dfrac{dz}{dt}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>树形图上 \(z\) 有三条到 \(t\) 的路径（经 \(u\)、经 \(v\)、直接经 \(t\)）：</p>
+      <div class="fml">$$\frac{dz}{dt}=\frac{\partial z}{\partial u}\frac{du}{dt}+\frac{\partial z}{\partial v}\frac{dv}{dt}+\frac{\partial z}{\partial t}=v\,e^{t}+u\,(-\sin t)+\cos t=e^{t}(\cos t-\sin t)+\cos t$$</div>
+      <p>点评：公式里的 \(\dfrac{\partial z}{\partial t}\) 指 \(z\) 中<strong>显含</strong>的 \(t\)（即 \(\sin t\) 项），与中间变量里的 \(t\) 区分开；这是"同一字母双重身份"的典型题。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 7</span>隐函数求偏导：公式法</div>
+  <div class="ex-b">
+    <p>设 \(z=z(x,y)\) 由方程 \(e^z-xyz=0\) 确定，求 \(\dfrac{\partial z}{\partial x}\) 与 \(\dfrac{\partial z}{\partial y}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>记 \(F=e^z-xyz\)，则 \(F_x=-yz\)，\(F_y=-xz\)，\(F_z=e^z-xy\)。由方程 \(e^z=xyz\)，故 \(F_z=xy(z-1)\)。</p>
+      <div class="fml">$$\frac{\partial z}{\partial x}=-\frac{F_x}{F_z}=\frac{yz}{xy(z-1)}=\frac{z}{x(z-1)},\qquad \frac{\partial z}{\partial y}=-\frac{F_y}{F_z}=\frac{z}{y(z-1)}$$</div>
+      <p>点评：求 \(F_z\) 时 \(x,y,z\) 互相独立，\(F_z=e^z-xy\)；化简时利用原方程替换 \(e^z\) 是常用技巧，答案可以保留 \(z\)（隐函数导数允许含因变量）。</p>
+    </div></details>
+  </div>
+</div>
+
+<details class="ext"><summary>拓展 · 常用技巧<span class="ext-tag">技巧归纳</span></summary><div class="ext-b">
+<p><strong>① 一阶全微分形式不变性</strong>：无论 \(u,v\) 是自变量还是中间变量，\(dz=\dfrac{\partial z}{\partial u}du+\dfrac{\partial z}{\partial v}dv\) 恒成立；用它"两边取微分"常能一次同时求出 \(z_x\) 与 \(z_y\)。</p>
+<p><strong>② 抽象复合函数记号</strong>：\(f_1'=\dfrac{\partial f}{\partial u}\)、\(f_2'=\dfrac{\partial f}{\partial v}\)，二阶时出现 \(f_{11}'',f_{12}'',f_{22}''\)；注意 \(f_{12}''=f_{21}''\)（连续时），且 \(f_1'\) 对 \(x\) 求导仍是复合函数：\(\dfrac{\partial f_1'}{\partial x}=f_{11}''u_x+f_{12}''v_x\)。</p>
+<p><strong>③ 对数求导法在隐函数中的应用</strong>：幂指函数 \(u=v^w\) 型隐函数（如 \(x^y=y^x\)）先取对数再求导，可显著减少出错。</p>
+</div></details>
+
+<h2 id="9-5-方向导数与梯度">9.5 方向导数与梯度<button class="fav" type="button" data-fav="9-5-方向导数与梯度" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="9-5-1-方向导数">方向导数<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="9-5-1-方向导数" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$\frac{\partial f}{\partial l}\bigg|_{(x_0,y_0)}=\lim_{\rho\to0^+}\frac{f(x_0+\Delta x,\,y_0+\Delta y)-f(x_0,y_0)}{\rho}\qquad\Bigl(\rho=\sqrt{\Delta x^2+\Delta y^2},\ \text{沿方向 } \vec l\Bigr)$$</div>
+<p>方向导数描述函数沿<strong>任意指定方向</strong> \(\vec l=(\cos\alpha,\sin\alpha)\) 的变化率；偏导数是它沿坐标轴方向的特例（注意：偏导存在不保证其他方向导数存在，方向导数存在也不保证偏导存在，因为这里 \(\rho\to0^+\) 是单侧的）。</p>
+<div class="fml">$$\textbf{定理（可微时）：}\quad \frac{\partial f}{\partial l}=\frac{\partial f}{\partial x}\cos\alpha+\frac{\partial f}{\partial y}\sin\alpha=\operatorname{grad}f\cdot\vec e_{\vec l}$$</div>
+
+<h3 id="9-5-2-梯度">梯度<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="9-5-2-梯度" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$\operatorname{grad}f=\nabla f=\left(\frac{\partial f}{\partial x},\ \frac{\partial f}{\partial y},\ \frac{\partial f}{\partial z}\right)$$</div>
+<p>三条核心性质：① \(\dfrac{\partial f}{\partial l}=\operatorname{grad}f\cdot\vec e_{\vec l}=|\operatorname{grad}f|\cos\theta\)，故<strong>梯度方向是函数增长最快的方向</strong>，最大方向导数 \(=|\operatorname{grad}f|\)，最小值 \(=-|\operatorname{grad}f|\)（最快下降）；② \(\theta=\dfrac\pi2\) 时方向导数为零，梯度垂直于<strong>等值线（等值面）</strong>；③ 梯度为零向量处各方向导数均为 0。</p>
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> <strong>"求最大方向导数"= 求梯度的模</strong>：题面问"沿什么方向、最大变化率是多少"，答案永远是 \(\operatorname{grad}f\) 方向与 \(|\operatorname{grad}f|\)；若问"变化率为零的方向"，答案是与梯度垂直的方向。反向考法：已知沿 \(\vec l_1,\vec l_2\) 两个方向的方向导数，联立解出 \(f_x,f_y\)。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 8</span>梯度与最大方向导数</div>
+  <div class="ex-b">
+    <p>求函数 \(u=\ln(x^2+y^2+z^2)\) 在点 \(M(1,2,-2)\) 处的梯度，以及该点处函数沿哪个方向增长最快、最大变化率是多少。</p>
+    <details><summary></summary><div class="sol">
+      <p>在 \(M\) 处 \(x^2+y^2+z^2=1+4+4=9\)：</p>
+      <div class="fml">$$\operatorname{grad}u=\left(\frac{2x}{x^2+y^2+z^2},\ \frac{2y}{x^2+y^2+z^2},\ \frac{2z}{x^2+y^2+z^2}\right)_{M}=\left(\frac29,\ \frac49,\ -\frac49\right)$$</div>
+      <p>增长最快方向即梯度方向 \(\left(\dfrac29,\dfrac49,-\dfrac49\right)\propto(1,2,-2)\)；最大变化率：</p>
+      <div class="fml">$$|\operatorname{grad}u|=\sqrt{\frac{4}{81}+\frac{16}{81}+\frac{16}{81}}=\sqrt{\frac{36}{81}}=\frac23$$</div>
+      <p>点评：梯度坐标同乘正数不改变方向，"方向"题答案可取约简向量；最大方向导数 = 模长，一步到位。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="9-6-多元函数的极值与最值">9.6 多元函数的极值与最值<button class="fav" type="button" data-fav="9-6-多元函数的极值与最值" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="9-6-1-无条件极值：必要条件与 AC-B² 判别法">无条件极值：必要条件与 \(AC-B^2\) 判别法<span class="rkchip rk-def">定理</span><button class="fav" type="button" data-fav="9-6-1-无条件极值：必要条件与 AC-B² 判别法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p><strong>必要条件</strong>：\(f\) 在 \((x_0,y_0)\) 有偏导且取极值 \(\Rightarrow f_x(x_0,y_0)=0,\ f_y(x_0,y_0)=0\)（驻点）。驻点不一定是极值点（如 \(z=xy\) 在原点）。<strong>充分条件</strong>：记 \(A=f_{xx}\)，\(B=f_{xy}\)，\(C=f_{yy}\) 在驻点处的值，</p>
+<div class="tscroll"><table>
+<thead><tr><th>\(AC-B^2\)</th><th>\(A\) 的符号</th><th>结论</th></tr></thead>
+<tbody>
+<tr><td>\(AC-B^2&gt;0\)</td><td>\(A&gt;0\)</td><td>极小值</td></tr>
+<tr><td>\(AC-B^2&gt;0\)</td><td>\(A&lt;0\)</td><td>极大值</td></tr>
+<tr><td>\(AC-B^2&lt;0\)</td><td>—</td><td>不是极值（鞍点）</td></tr>
+<tr><td>\(AC-B^2=0\)</td><td>—</td><td>失效，需用定义另行讨论</td></tr>
+</tbody></table></div>
+
+<h3 id="9-6-2-条件极值与拉格朗日乘数法">条件极值与拉格朗日乘数法<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="9-6-2-条件极值与拉格朗日乘数法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>求 \(f(x,y,z)\) 在约束 \(\varphi(x,y,z)=0\) 下的极值：构造拉格朗日函数</p>
+<div class="fml">$$L(x,y,z,\lambda)=f(x,y,z)+\lambda\,\varphi(x,y,z)\ \Longrightarrow\ \begin{cases}L_x=f_x+\lambda\varphi_x=0\\ L_y=f_y+\lambda\varphi_y=0\\ L_z=f_z+\lambda\varphi_z=0\\ L_\lambda=\varphi(x,y,z)=0\end{cases}$$</div>
+<p>四个方程联立解出候选点，再由问题实际意义（或比较各点函数值）确定最大/最小。<strong>实际背景的最值题</strong>（几何、物理应用）若已知最值存在且候选点唯一，可直接下结论，无需验证充分条件。</p>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>① \(AC-B^2&lt;0\) 时不看 \(A\) 的正负直接判"非极值"</strong>；\(AC-B^2=0\) 判别法失效，不能顺手写"极大"或"极小"。<strong>② 驻点 ≠ 极值点</strong>：解出所有驻点后必须逐一用判别法检验。<strong>③ 拉格朗日的约束条件别忘乘 \(\lambda\) 且符号统一</strong>（加或减 \(\lambda\varphi\) 均可，但四条方程要一致）；应用题最后要"回答问题"（写明尺寸、最大值是多少），只给候选点会扣分。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 9</span>\(AC-B^2\) 判别法求极值</div>
+  <div class="ex-b">
+    <p>求 \(f(x,y)=x^3-y^3+3x^2+3y^2-9x\) 的极值。</p>
+    <details><summary></summary><div class="sol">
+      <p>一阶条件：\(f_x=3x^2+6x-9=3(x+3)(x-1)=0\Rightarrow x=1,-3\)；\(f_y=-3y^2+6y=3y(2-y)=0\Rightarrow y=0,2\)。得四个驻点 \((1,0),(1,2),(-3,0),(-3,2)\)。</p>
+      <p>二阶：\(f_{xx}=6x+6\)，\(f_{xy}=0\)，\(f_{yy}=-6y+6\)。逐点列表：</p>
+      <div class="fml">$$\begin{array}{c|c|c|c|c}\text{驻点}&amp;A&amp;B&amp;C&amp;AC-B^2\\\hline(1,0)&amp;12&amp;0&amp;6&amp;72&gt;0,\ A&gt;0\ \text{极小}\\(1,2)&amp;12&amp;0&amp;-6&amp;-72&lt;0\ \text{非极值}\\(-3,0)&amp;-12&amp;0&amp;6&amp;-72&lt;0\ \text{非极值}\\(-3,2)&amp;-12&amp;0&amp;-6&amp;72&gt;0,\ A&lt;0\ \text{极大}\end{array}$$</div>
+      <div class="fml">$$\text{极小值 } f(1,0)=-5,\qquad \text{极大值 } f(-3,2)=31$$</div>
+      <p>点评：二元函数可能有多个极大与极小，且"极大值小于极小值"完全可能（不像一元极大必大于相邻极小）；四个驻点一个都不能漏。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 10</span>拉格朗日乘数法：原点到平面的最短距离</div>
+  <div class="ex-b">
+    <p>用拉格朗日乘数法求原点到平面 \(3x+2y-z-12=0\) 的最短距离。</p>
+    <details><summary></summary><div class="sol">
+      <p>即求 \(d^2=x^2+y^2+z^2\) 在约束 \(3x+2y-z-12=0\) 下的最小值。设 \(L=x^2+y^2+z^2-\lambda(3x+2y-z-12)\)：</p>
+      <div class="fml">$$\begin{cases}2x-3\lambda=0\\ 2y-2\lambda=0\\ 2z+\lambda=0\end{cases}\ \Longrightarrow\ x=\frac{3\lambda}{2},\ y=\lambda,\ z=-\frac{\lambda}{2}$$</div>
+      <p>代入约束：\(3\cdot\dfrac{3\lambda}{2}+2\lambda+\dfrac{\lambda}{2}=12\Rightarrow 7\lambda=12\Rightarrow\lambda=\dfrac{12}7\)，得唯一候选点 \(\left(\dfrac{18}{7},\dfrac{12}{7},-\dfrac67\right)\)。由几何意义最短距离必存在：</p>
+      <div class="fml">$$d=\sqrt{x^2+y^2+z^2}=\sqrt{\frac{324+144+36}{49}}=\sqrt{\frac{504}{49}}=\frac{6\sqrt{14}}{7}$$</div>
+      <p>点评：与点面距离公式 \(\dfrac{|12|}{\sqrt{14}}=\dfrac{6\sqrt{14}}7\) 完全吻合（自我检验）；"目标取 \(d^2\)"避免根式求导，是标准处理手法。</p>
+    </div></details>
+  </div>
+</div>
+
+<details class="ext"><summary>拓展 · 可能考<span class="ext-tag">考前加分</span></summary><div class="ext-b">
+<p><strong>① 闭区域上的最值流程</strong>：①求区域内部驻点并检验极值；②在边界上用代入消元或拉格朗日乘数法求边界最值；③把内部候选值与边界最值比较，最大者为最大值、最小者为最小值。漏查边界是最常见错误。</p>
+<p><strong>② 两个约束条件</strong>：求 \(f\) 在 \(\varphi_1=0,\varphi_2=0\) 下的极值用 \(L=f+\lambda\varphi_1+\mu\varphi_2\)，五个未知数五条方程。</p>
+<p><strong>③ 最小二乘与实际应用</strong>：拟合直线、容积/用料最优化等应用题，先"设变量 → 写目标函数 → 写约束 → 选无条件还是条件极值"四步走，建模分比计算分更值钱。</p>
+</div></details>

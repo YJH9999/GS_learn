@@ -1,0 +1,255 @@
+<h1 id="第-7-章-微分方程">第 7 章　微分方程</h1>
+<p>微分方程是连接"函数"与"变化率"的桥梁：已知变化规律求未知函数。本章核心是<strong>识别方程类型 → 选择对应解法</strong>：一阶方程按可分离变量、齐次、一阶线性、伯努利四类套路走；高阶方程先看能否降阶，再看是否为常系数线性方程。考试重心集中在<strong>一阶线性方程公式、可降阶的两种代换、二阶常系数特征方程与特解设法</strong>。</p>
+<p>知识主线：方程分类（阶数 + 类型）→ 通解/特解 → 各类型解法公式 → 解的结构定理 → 特解设法。</p>
+
+<h2 id="7-1-微分方程的基本概念">7.1 微分方程的基本概念<button class="fav" type="button" data-fav="7-1-微分方程的基本概念" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="7-1-1-微分方程的定义">微分方程的定义<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="7-1-1-微分方程的定义" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>表示未知函数、未知函数的导数与自变量之间关系的方程称为<strong>微分方程</strong>。未知函数是一元函数的叫<strong>常微分方程</strong>（本章对象）；未知函数是多元函数、出现偏导数的叫偏微分方程。方程中出现的<strong>最高阶导数的阶数</strong>称为方程的<strong>阶</strong>。</p>
+<div class="fml">$$n\ \text{阶微分方程的一般形式：}\quad F(x,\,y,\,y',\,\cdots,\,y^{(n)})=0 \quad\text{或}\quad y^{(n)}=f(x,\,y,\,y',\,\cdots,\,y^{(n-1)})$$</div>
+<ul>
+<li><strong>解</strong>：代入方程使两端恒等的函数 \(y=\varphi(x)\)。</li>
+<li><strong>通解</strong>：含有<strong>独立</strong>任意常数、且常数个数与方程阶数相同的解，如 \(y=C_1\cos x+C_2\sin x\) 是二阶方程 \(y''+y=0\) 的通解。</li>
+<li><strong>特解</strong>：不含任意常数的确定解，由<strong>初始条件</strong>（\(y(x_0)=y_0,\ y'(x_0)=y_1,\cdots\)）从通解中定出，求通解 + 定特解的问题叫<strong>初值问题（柯西问题）</strong>。</li>
+<li><strong>积分曲线</strong>：解 \(y=\varphi(x)\) 的图形；通解对应一族曲线，初始条件从中挑出一条。</li>
+</ul>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>① 通解 ≠ 全部解</strong>：如 \(y'=y^2\) 有解 \(y\equiv 0\)，但它不含在通解 \(y=-1/(x+C)\) 中（分离变量时除以 \(y^2\) 丢失了零解）。<strong>② 常数必须独立</strong>：\(y=C_1\sin^2x+C_2\sin x\cos x+C_3\cos^2x\) 形式上有 3 个常数，实际只能自由取 2 个（\(\sin^2x+\cos^2x=1\)），不是二阶方程的通解。<strong>③ 阶数看最高阶导数</strong>，与方程中是否出现 \(y\)、\(x\) 无关：\(y^{(4)}+ (y')^2=0\) 是四阶方程。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 1</span>验证通解并由初始条件求特解</div>
+  <div class="ex-b">
+    <p>验证 \(y=C_1e^{2x}+C_2e^{-2x}\)（\(C_1,C_2\) 为任意常数）是方程 \(y''-4y=0\) 的通解，并求满足 \(y(0)=3,\ y'(0)=2\) 的特解。</p>
+    <details><summary></summary><div class="sol">
+      <p>求导：\(y'=2C_1e^{2x}-2C_2e^{-2x}\)，\(y''=4C_1e^{2x}+4C_2e^{-2x}\)。</p>
+      <div class="fml">$$y''-4y=(4C_1e^{2x}+4C_2e^{-2x})-4(C_1e^{2x}+C_2e^{-2x})\equiv 0$$</div>
+      <p>且 \(e^{2x}/e^{-2x}=e^{4x}\ne\) 常数，两个解线性无关，故含两个独立常数的 \(y\) 是通解。</p>
+      <p>代入初始条件：\(y(0)=C_1+C_2=3\)，\(y'(0)=2C_1-2C_2=2\)，解得 \(C_1=2,\ C_2=1\)。</p>
+      <div class="fml">$$y=2e^{2x}+e^{-2x}$$</div>
+      <p>点评：验证解只需代入方程；"线性无关"用比值不为常数判断，这是 7.5 节解结构定理的伏笔。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="7-2-可分离变量与齐次方程">7.2 可分离变量与齐次方程<button class="fav" type="button" data-fav="7-2-可分离变量与齐次方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="7-2-1-可分离变量方程">可分离变量方程<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="7-2-1-可分离变量方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>形如 \(\dfrac{dy}{dx}=f(x)g(y)\) 的方程称为<strong>可分离变量方程</strong>：把两个变量"各归各边"后分别积分。</p>
+<div class="fml">$$g(y)\,dy=f(x)\,dx\ \Longrightarrow\ \int \frac{dy}{g(y)}=\int f(x)\,dx\quad(\text{左端积分结果为 } G(y)+C_1,\ \text{右端为 } F(x)+C_2)$$</div>
+<p>步骤：① 识别是否可分离；② 分离变量；③ 两边积分得隐式通解；④ 有初始条件时定常数。若 \(g(y_0)=0\)，常数解 \(y=y_0\) 也是解，分离时除以 \(g(y)\) 会丢失它，需要补上。</p>
+
+<h3 id="7-2-2-齐次方程">齐次方程<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-2-2-齐次方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>能写成 \(\dfrac{dy}{dx}=F\!\left(\dfrac{y}{x}\right)\) 的一阶方程称为<strong>齐次方程</strong>（右端是 \(\frac yx\) 的函数）。判断技巧：把方程写成 \(P(x,y)\,dx=Q(x,y)\,dy\) 后，若 \(P,Q\) 各项<strong>关于 \(x,y\) 同次</strong>，即为齐次方程。解法是<strong>变量替换</strong>化为可分离变量：</p>
+<div class="fml">$$\text{令 } u=\frac yx\ (y=ux,\ y'=u+xu')\ \Longrightarrow\ u+x\frac{du}{dx}=F(u)\ \Longrightarrow\ \int\frac{du}{F(u)-u}=\int\frac{dx}{x}+C$$</div>
+<p>积分后代回 \(u=\dfrac yx\) 即得通解。</p>
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> <strong>两类"齐次"辨析</strong>：①这里的<strong>齐次方程</strong>指 \(\frac{dy}{dx}=F(\frac yx)\)，用 \(u=\frac yx\) 代换；②7.5 节的"齐次线性方程"指右端 \(Q(x)\equiv 0\)，两者毫无关系，切勿混淆。考题常混用名词设陷阱。另外，形如 \(\dfrac{dy}{dx}=\dfrac{a_1x+b_1y+c_1}{a_2x+b_2y+c_2}\) 的方程可平移化成齐次方程（两直线相交时令 \(x=X+h,\ y=Y+k\)）。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 2</span>可分离变量方程的初值问题</div>
+  <div class="ex-b">
+    <p>求方程 \(y'=e^{2x-y}\) 满足 \(y(0)=0\) 的特解。</p>
+    <details><summary></summary><div class="sol">
+      <p>写成 \(e^{y}dy=e^{2x}dx\)，两边积分：</p>
+      <div class="fml">$$e^{y}=\frac12 e^{2x}+C$$</div>
+      <p>代入 \(y(0)=0\)：\(1=\dfrac12+C\)，得 \(C=\dfrac12\)。于是 \(e^{y}=\dfrac{1+e^{2x}}{2}\)。</p>
+      <div class="fml">$$y=\ln\frac{1+e^{2x}}{2}$$</div>
+      <p>点评：指数方程先取对数或分离指数再积分；积分常数也可用"定积分法"直接由初值写出，避免解 \(C\) 的步骤。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 3</span>齐次方程：\(u=y/x\) 代换</div>
+  <div class="ex-b">
+    <p>求 \((x^2+y^2)\,dx-xy\,dy=0\) 的通解。</p>
+    <details><summary></summary><div class="sol">
+      <p>各项均为二次，是齐次方程：\(\dfrac{dy}{dx}=\dfrac{x^2+y^2}{xy}\)。令 \(u=\dfrac yx\)，则 \(\dfrac{dy}{dx}=u+x\dfrac{du}{dx}\)：</p>
+      <div class="fml">$$u+x\frac{du}{dx}=\frac{1+u^2}{u}\ \Longrightarrow\ x\frac{du}{dx}=\frac{1}{u}\ \Longrightarrow\ u\,du=\frac{dx}{x}$$</div>
+      <p>积分得 \(\dfrac{u^2}{2}=\ln|x|+C\)，代回 \(u=\dfrac yx\)：</p>
+      <div class="fml">$$y^2=x^2\,(2\ln|x|+C)$$</div>
+      <p>点评：判断"各项同次"是识别齐次方程最快的途径；代换后务必记得 \(y'=u+xu'\)（乘积求导多出的 \(u\) 项是最常见失分点）。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="7-3-一阶线性微分方程">7.3 一阶线性微分方程<button class="fav" type="button" data-fav="7-3-一阶线性微分方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="7-3-1-一阶线性方程与常数变易法">一阶线性方程与常数变易法<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="7-3-1-一阶线性方程与常数变易法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>关于 \(y\) 及 \(y'\) 都是<strong>一次</strong>的方程 \(\dfrac{dy}{dx}+P(x)y=Q(x)\) 称为<strong>一阶线性微分方程</strong>；\(Q(x)\equiv 0\) 时称为齐次线性方程（可分离变量），否则为非齐次。解法核心是<strong>常数变易法</strong>：先解对应齐次方程得 \(y=Ce^{-\int P dx}\)，把常数 \(C\) 换成待定函数 \(C(x)\) 代入原方程确定之，最终得到通解公式：</p>
+<div class="fml">$$\boxed{\ y=e^{-\int P(x)dx}\left(\int Q(x)\,e^{\int P(x)dx}\,dx+C\right)\ }$$
+<p style="margin:8px 0 0">记忆：\(e^{\int P dx}\) 是<strong>积分因子</strong>，乘上去后左端恰为 \(\left(y\,e^{\int P dx}\right)'=Qe^{\int P dx}\)，两边积分即得。</p></div>
+
+<h3 id="7-3-2-伯努利方程">伯努利方程<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-3-2-伯努利方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>形如 \(\dfrac{dy}{dx}+P(x)y=Q(x)y^{n}\)（\(n\ne 0,1\)）的方程称为<strong>伯努利方程</strong>：非齐次项带 \(y^n\)，对 \(y\) 不是线性的。解法：两边除以 \(y^n\)，作代换 \(z=y^{1-n}\) 化为一阶线性方程：</p>
+<div class="fml">$$z=y^{1-n}\ \Longrightarrow\ \frac{dz}{dx}+(1-n)P(x)\,z=(1-n)\,Q(x)$$</div>
+<p>解出 \(z\) 后代回 \(z=y^{1-n}\) 即得通解。</p>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>① 先标准化再套公式</strong>：必须先把方程化成 \(y'+P(x)y=Q(x)\)（\(y'\) 系数为 1），符号看错全盘皆错，如 \(y'-\dfrac yx=x^2\) 中 \(P=-\dfrac1x\)。<strong>② 伯努利代换的系数</strong>：除以 \(y^n\) 后 \(z'= (1-n)y^{-n}y'\)，注意方程整体乘 \((1-n)\)，别只换变量不改系数。<strong>③ \(n=0,1\) 时不是伯努利方程</strong>（\(n=0\) 就是一阶线性，\(n=1\) 是可分离变量），无需代换。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 4</span>一阶线性方程：套公式</div>
+  <div class="ex-b">
+    <p>求方程 \(\dfrac{dy}{dx}+\dfrac1x y=\dfrac{\ln x}{x}\) 的通解。</p>
+    <details><summary></summary><div class="sol">
+      <p>已是标准形，\(P=\dfrac1x\)，\(Q=\dfrac{\ln x}{x}\)。积分因子 \(e^{\int \frac{dx}{x}}=x\)，则 \((xy)'=\ln x\)：</p>
+      <div class="fml">$$xy=\int\ln x\,dx=x\ln x-x+C\ \Longrightarrow\ y=\ln x-1+\frac{C}{x}$$</div>
+      <p>点评：也可直接套通解公式，但"乘积分因子使左端凑成导数"更不易错；\(\int\ln x\,dx=x\ln x-x\) 是必背积分。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 5</span>伯努利方程：\(z=y^{1-n}\) 代换</div>
+  <div class="ex-b">
+    <p>求方程 \(\dfrac{dy}{dx}-\dfrac1x y=y^2\) 的通解。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(n=2\)，是伯努利方程。两边除以 \(y^2\)：\(y^{-2}y'-\dfrac{y^{-1}}{x}=1\)。令 \(z=y^{-1}\)，\(z'=-y^{-2}y'\)：</p>
+      <div class="fml">$$-z'-\frac{z}{x}=1\ \Longrightarrow\ z'+\frac1x z=-1$$</div>
+      <p>积分因子为 \(x\)：\((xz)'=-x\)，积分得 \(xz=-\dfrac{x^2}{2}+C\)，即 \(z=\dfrac{C}{x}-\dfrac x2\)。代回 \(z=\dfrac1y\)：</p>
+      <div class="fml">$$y=\frac{2x}{C-x^{2}}$$</div>
+      <p>点评：伯努利方程的全部难点在"认清 \(n\)、除以 \(y^n\)、整理成线性"三步；最后一定要换回原变量。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="7-4-可降阶的高阶微分方程">7.4 可降阶的高阶微分方程<button class="fav" type="button" data-fav="7-4-可降阶的高阶微分方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="7-4-1-y-n-f-x-型">\(y^{(n)}=f(x)\) 型<span class="rkchip rk-def">方法</span><button class="fav" type="button" data-fav="7-4-1-y-n-f-x-型" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>右端只含 \(x\)：<strong>连续积分 \(n\) 次</strong>即可，每积一次出现一个任意常数，共得 \(n\) 个独立常数。例如 \(y''=e^{2x}\) 积两次：\(y'=\frac12 e^{2x}+C_1\)，\(y=\frac14 e^{2x}+C_1x+C_2\)。</p>
+
+<h3 id="7-4-2-y-f-x-y-型与-y-f-y-y-型">\(y''=f(x,y')\) 型与 \(y''=f(y,y')\) 型<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-4-2-y-f-x-y-型与-y-f-y-y-型" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>两类方程共同特征是<strong>不显含 \(y\) 或不显含 \(x\)</strong>，统一令 \(p=y'\) 降阶，但代换后的关系不同：</p>
+<div class="tscroll"><table>
+<thead><tr><th>类型</th><th>特征</th><th>代换</th><th>降阶后方程</th></tr></thead>
+<tbody>
+<tr><td>\(y''=f(x,y')\)</td><td>不显含 \(y\)</td><td>\(p=y'\)，\(p'=y''\)，\(p\) 是 <strong>\(x\)</strong> 的函数</td><td>\(p'=f(x,p)\)（一阶，解出 \(p=p(x)\) 后积分 \(y=\int p\,dx\)）</td></tr>
+<tr><td>\(y''=f(y,y')\)</td><td>不显含 \(x\)</td><td>\(p=y'\) 但把 \(p\) 视作 <strong>\(y\)</strong> 的函数：\(y''=\dfrac{dp}{dx}=\dfrac{dp}{dy}\cdot\dfrac{dy}{dx}=p\dfrac{dp}{dy}\)</td><td>\(p\dfrac{dp}{dy}=f(y,p)\)（\(p\) 关于 \(y\) 的一阶方程）</td></tr>
+</tbody></table></div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>两种代换的本质区别</strong>：\(y''=f(y,y')\) 中方程只含 \(y,p\)，若误设 \(p'=y''\)，方程 \(p'=f(y,p)\) 里 \(p'\) 是对 \(x\) 求导而右边没有 \(x\)，无法积分。必须用链式法则 \(y''=p\dfrac{dp}{dy}\) 把自变量换成 \(y\)。记忆："<strong>缺谁把 \(p\) 当谁的函数</strong>"——缺 \(x\) 则 \(p=p(y)\)。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 6</span>\(y''=f(x,y')\) 型初值问题</div>
+  <div class="ex-b">
+    <p>求 \(y''=1+y'^2\) 满足 \(y(0)=0,\ y'(0)=1\) 的特解。</p>
+    <details><summary></summary><div class="sol">
+      <p>不显含 \(y\)，令 \(p=y'\)：\(p'=1+p^2\)，分离变量 \(\dfrac{dp}{1+p^2}=dx\)：</p>
+      <div class="fml">$$\arctan p=x+C_1$$</div>
+      <p>由 \(y'(0)=p(0)=1\) 得 \(C_1=0\)，故 \(p=\tan x\)。再积分 \(y=-\ln|\cos x|+C_2\)，由 \(y(0)=0\) 得 \(C_2=0\)：</p>
+      <div class="fml">$$y=-\ln|\cos x|=\ln|\sec x|$$</div>
+      <p>点评：初值问题尽量"边解边代"确定 \(C_1,C_2\)，比求出含双常数的通解再联立求解更省事，也避免三角恒等变形出错。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 7</span>\(y''=f(y,y')\) 型：\(p\) 视作 \(y\) 的函数</div>
+  <div class="ex-b">
+    <p>求方程 \(yy''-(y')^2=0\)（\(y&gt;0\)）的通解。</p>
+    <details><summary></summary><div class="sol">
+      <p>不显含 \(x\)，令 \(p=y'\)，则 \(y''=p\dfrac{dp}{dy}\)。方程化为 \(y\,p\dfrac{dp}{dy}=p^2\)。\(p\ne 0\) 时约去 \(p\)：</p>
+      <div class="fml">$$\frac{dp}{p}=\frac{dy}{y}\ \Longrightarrow\ p=C_1y\ \Longrightarrow\ \frac{dy}{dx}=C_1y$$</div>
+      <p>再分离积分：\(\ln y=C_1x+C_2'\)，即</p>
+      <div class="fml">$$y=C_2e^{C_1x}$$</div>
+      <p>点评：约去 \(p\) 时丢掉的 \(p\equiv 0\)（即 \(y=\) 常数）对应 \(C_1=0\)，恰含在通解中，故无需补解；但并非所有题目都如此，讨论不能省。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="7-5-二阶线性微分方程解的结构">7.5 二阶线性微分方程解的结构<button class="fav" type="button" data-fav="7-5-二阶线性微分方程解的结构" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="7-5-1-齐次方程解的定理">齐次方程解的定理<span class="rkchip rk-def">定理</span><button class="fav" type="button" data-fav="7-5-1-齐次方程解的定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>考虑二阶线性方程 \(y''+p(x)y'+q(x)y=f(x)\)。\(f(x)\equiv 0\) 时称<strong>齐次</strong>方程。<strong>定理 1</strong>：若 \(y_1,y_2\) 是齐次方程的两个解，则 \(y=C_1y_1+C_2y_2\) 仍是解；若 \(\dfrac{y_1}{y_2}\ne\) 常数（线性无关），则 \(C_1y_1+C_2y_2\) 就是齐次方程的<strong>通解</strong>。</p>
+
+<h3 id="7-5-2-非齐次方程解的结构与叠加原理">非齐次方程解的结构与叠加原理<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-5-2-非齐次方程解的结构与叠加原理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$\textbf{定理 2：}\quad y=C_1y_1+C_2y_2+y^{*}\ \ \text{（非齐次通解 = 对应齐次通解 + 非齐次一个特解）}$$
+$$\textbf{定理 3（叠加原理）：}\quad f=f_1+f_2\ \text{时，}\ y^{*}=y_1^{*}+y_2^{*}\ \text{（}y_i^{*}\text{ 是 } f_i\text{ 对应的特解）}$$
+$$\textbf{定理 4：}\quad y_1^{*},y_2^{*}\text{ 是非齐次方程的两个特解}\ \Longrightarrow\ y_1^{*}-y_2^{*}\ \text{是对应齐次方程的解}$$</div>
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> <strong>"已知特解反求通解"套路</strong>：给非齐次方程三个特解 \(y_1,y_2,y_3\)，则 \(y_1-y_2\)、\(y_1-y_3\) 是对应齐次方程的两个解，验证线性无关后，通解为 \(y=C_1(y_1-y_2)+C_2(y_1-y_3)+y_1\)。这一结论在选择题、填空题中出现率极高，本质是定理 4 + 定理 2。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 8</span>验证线性无关并写出通解结构</div>
+  <div class="ex-b">
+    <p>验证 \(y_1=e^{3x}\) 与 \(y_2=e^{-x}\) 是方程 \(y''-2y'-3y=0\) 的两个解，写出通解；并指出方程 \(y''-2y'-3y=3x+1\) 通解的结构。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(y_1''-2y_1'-3y_1=9e^{3x}-6e^{3x}-3e^{3x}=0\)，\(y_2''-2y_2'-3y_2=e^{-x}+2e^{-x}-3e^{-x}=0\)，均为解；\(\dfrac{y_1}{y_2}=e^{4x}\ne\) 常数，线性无关。齐次通解：</p>
+      <div class="fml">$$Y=C_1e^{3x}+C_2e^{-x}$$</div>
+      <p>由定理 2，非齐次方程 \(y''-2y'-3y=3x+1\) 的通解为 \(y=C_1e^{3x}+C_2e^{-x}+y^{*}\)，其中 \(y^{*}\) 是它的任一特解（待定系数法在 7.6 例 9 中求得 \(y^{*}=-x-\dfrac13\)）。</p>
+      <p>点评：解结构题只要求"齐次通解 + 任一特解"，特解具体形式可以延后求；这是大题的标准书写框架。</p>
+    </div></details>
+  </div>
+</div>
+
+<details class="ext"><summary>拓展 · 可能考<span class="ext-tag">考前加分</span></summary><div class="ext-b">
+<p><strong>朗斯基（Wronski）行列式判线性无关</strong>：两个解 \(y_1,y_2\) 线性无关 \(\Leftrightarrow W(y_1,y_2)=\begin{vmatrix}y_1&y_2\\y_1'&y_2'\end{vmatrix}\neq 0\)。例如 \(y_1=e^{3x},y_2=e^{-x}\)：\(W=-4e^{2x}\ne0\)。朗斯基恒不为零是线性方程解的特有性质。</p>
+<p><strong>推广</strong>：\(n\) 阶线性齐次方程的解集构成 \(n\) 维线性空间；非齐次通解 = 齐次通解 + 特解的结构对任意阶都成立。</p>
+</div></details>
+
+<h2 id="7-6-二阶常系数线性微分方程">7.6 二阶常系数线性微分方程<button class="fav" type="button" data-fav="7-6-二阶常系数线性微分方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="7-6-1-特征方程与齐次通解">特征方程与齐次通解<span class="rkchip rk-def">方法</span><button class="fav" type="button" data-fav="7-6-1-特征方程与齐次通解" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>对 \(y''+py'+qy=0\)，用 \(y=e^{rx}\) 试解，得<strong>特征方程</strong> \(r^2+pr+q=0\)。按根的三种情形写通解：</p>
+<div class="tscroll"><table>
+<thead><tr><th>特征根情形</th><th>特征方程判别</th><th>齐次通解 \(Y\)</th></tr></thead>
+<tbody>
+<tr><td>两个不等实根 \(r_1\ne r_2\)</td><td>\(p^2-4q&gt;0\)</td><td>\(Y=C_1e^{r_1x}+C_2e^{r_2x}\)</td></tr>
+<tr><td>二重实根 \(r_1=r_2=r\)</td><td>\(p^2-4q=0\)</td><td>\(Y=(C_1+C_2x)e^{rx}\)</td></tr>
+<tr><td>共轭复根 \(r=\alpha\pm\mathrm{i}\beta\)</td><td>\(p^2-4q&lt;0\)</td><td>\(Y=e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta x)\)</td></tr>
+</tbody></table></div>
+<p>记忆要点：重根补一个 \(x\)；复根实部出指数、虚部出正余弦，频率 = \(\beta\)。</p>
+
+<h3 id="7-6-2-非齐次特解的设法">非齐次特解的设法<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-6-2-非齐次特解的设法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>对 \(y''+py'+qy=f(x)\)，用<strong>待定系数法</strong>设特解 \(y^{*}\)，关键是数 \(k\)（补 \(x^k\)）的确定：</p>
+<div class="tscroll"><table>
+<thead><tr><th>\(f(x)\) 的形式</th><th>\(k\) 的取值</th><th>特解设法 \(y^{*}\)</th></tr></thead>
+<tbody>
+<tr><td>\(f(x)=P_m(x)e^{\lambda x}\)（\(P_m\) 为 \(m\) 次多项式）</td><td>\(\lambda\) 不是特征根 \(k=0\)；\(\lambda\) 是单特征根 \(k=1\)；\(\lambda\) 是重特征根 \(k=2\)</td><td>\(y^{*}=x^{k}Q_m(x)e^{\lambda x}\)（\(Q_m\) 为完整 \(m\) 次多项式）</td></tr>
+<tr><td>\(f(x)=e^{\lambda x}\bigl[A\cos\omega x+B\sin\omega x\bigr]\)</td><td>\(\lambda+\mathrm{i}\omega\) 不是特征根 \(k=0\)；\(\lambda+\mathrm{i}\omega\) 是特征根 \(k=1\)</td><td>\(y^{*}=x^{k}e^{\lambda x}\bigl[a\cos\omega x+b\sin\omega x\bigr]\)（\(a,b\) 待定，不论 \(A,B\) 是否全为零都要两项都设）</td></tr>
+</tbody></table></div>
+<p>当 \(f(x)\) 是两类之和时，按<strong>叠加原理</strong>（7.5 定理 3）分别设特解再相加。</p>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>① 忘补 \(x^k\)</strong>：如 \(y''-5y'+6y=xe^{2x}\) 中 \(\lambda=2\) 是单根，特解必须设 \(y^{*}=x(ax+b)e^{2x}\)，漏乘 \(x\) 会导致系数方程矛盾无解。<strong>② 复根判据写错</strong>：判断 \(k\) 用 \(\lambda\pm\mathrm{i}\omega\) 是否为特征根，而不是 \(\lambda\) 或 \(\omega\) 单独判断；如 \(y''+y=\sin x\) 中 \(\lambda=0,\omega=1\)，\(\mathrm{i}\) 恰是特征根，\(k=1\)。<strong>③ \(Q_m\) 必须设满 \(m\) 次</strong>：即使 \(f\) 缺项（如 \(3x+1\) 不含 \(x^2\) 项），\(Q_m\) 也要写全低次项。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 9</span>\(f(x)\) 为多项式（\(\lambda=0\) 型）</div>
+  <div class="ex-b">
+    <p>求方程 \(y''-2y'-3y=3x+1\) 的通解。</p>
+    <details><summary></summary><div class="sol">
+      <p>特征方程 \(r^2-2r-3=0\)，\(r_1=3,\ r_2=-1\)，齐次通解 \(Y=C_1e^{3x}+C_2e^{-x}\)。\(\lambda=0\) 不是特征根，设 \(y^{*}=ax+b\)。代入方程：\(y^{*\prime}=a,\ y^{*\prime\prime}=0\)，</p>
+      <div class="fml">$$0-2a-3(ax+b)=3x+1\ \Longrightarrow\ -3a=3,\ -2a-3b=1\ \Longrightarrow\ a=-1,\ b=-\frac13$$</div>
+      <p>故 \(y^{*}=-x-\dfrac13\)，通解为</p>
+      <div class="fml">$$y=C_1e^{3x}+C_2e^{-x}-x-\frac13$$</div>
+      <p>点评：\(\lambda=0\) 型即 \(f\) 为多项式，判断"\(0\) 是否为特征根"等价于判断方程右端是否与齐次解"共振"。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 10</span>\(\lambda\) 是单特征根：补乘 \(x\)</div>
+  <div class="ex-b">
+    <p>求方程 \(y''-5y'+6y=xe^{2x}\) 的通解。</p>
+    <details><summary></summary><div class="sol">
+      <p>特征方程 \(r^2-5r+6=0\)，\(r=2,3\)。\(\lambda=2\) 是单根，设 \(y^{*}=x(ax+b)e^{2x}\)。记 \(Q(x)=ax^2+bx\)，代入化简（利用 \(r=2\) 是特征根，含 \(Q''+(2r+p)Q'+\cdots\) 的简化规则逐项比较）：</p>
+      <div class="fml">$$y^{*}-\text{项系数比较：}\ -2ax+(2a-b)=x\ \Longrightarrow\ a=-\frac12,\ b=-1$$</div>
+      <p>于是 \(y^{*}=-\left(\dfrac{x^2}{2}+x\right)e^{2x}\)，通解为</p>
+      <div class="fml">$$y=C_1e^{2x}+C_2e^{3x}-\left(\frac{x^2}{2}+x\right)e^{2x}$$</div>
+      <p>点评：\(\lambda\) 为特征根时左端作用在 \(e^{\lambda x}\cdot Q\) 上会"降次"，所以特解必须先乘 \(x^k\) 抬高多项式次数，否则比较系数时自相矛盾。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 11</span>三角共振型：\(\lambda+\mathrm{i}\omega\) 是特征根</div>
+  <div class="ex-b">
+    <p>求方程 \(y''+y=\sin x\) 的通解。</p>
+    <details><summary></summary><div class="sol">
+      <p>特征方程 \(r^2+1=0\)，\(r=\pm\mathrm{i}\)。\(f=\sin x\) 属 \(e^{\lambda x}[A\cos\omega x+B\sin\omega x]\) 型，\(\lambda=0,\ \omega=1\)，而 \(\lambda+\mathrm{i}\omega=\mathrm{i}\) 是特征根，\(k=1\)。设</p>
+      <div class="fml">$$y^{*}=x(a\cos x+b\sin x)$$</div>
+      <p>求导代入：\(y^{*\prime}=a\cos x+b\sin x+x(-a\sin x+b\cos x)\)，\(y^{*\prime\prime}=2(-a\sin x+b\cos x)-x(a\cos x+b\sin x)\)，故 \(y^{*\prime\prime}+y^{*}=2(-a\sin x+b\cos x)\)。与 \(\sin x\) 比较：\(-2a=1,\ b=0\)。</p>
+      <div class="fml">$$y^{*}=-\frac{x}{2}\cos x\ \Longrightarrow\ y=C_1\cos x+C_2\sin x-\frac{x}{2}\cos x$$</div>
+      <p>点评：这就是"共振"现象——右端频率与齐次解频率相同，解会出现带 \(x\) 的振幅增长项；共振判断是本题型唯一的技术难点。</p>
+    </div></details>
+  </div>
+</div>
+
+<details class="ext"><summary>拓展 · 常用技巧<span class="ext-tag">技巧归纳</span></summary><div class="ext-b">
+<p><strong>① 验根速算法</strong>：\(\lambda\) 为单根时，把 \(y^{*}=xQ(x)e^{\lambda x}\) 代入方程等价于 \(Q''+(2\lambda+p)Q'+(\lambda^2+p\lambda+q)Q=P_m(x)\)，其中 \(Q''\) 项自动消失一部分，可直接逐次比较系数，避免对 \(xQe^{\lambda x}\) 求两次导的繁琐计算。</p>
+<p><strong>② 初值问题流程</strong>：先写通解（含 \(y^{*}\)），再对通解求导，联立两个初始条件解出 \(C_1,C_2\)——注意 \(C_1,C_2\) 要在含特解的通解上确定，不能只用齐次部分。</p>
+<p><strong>③ 高阶推广</strong>：\(n\) 阶常系数齐次方程有 \(n\) 个特征根，单实根出 \(e^{rx}\)、\(k\) 重根出 \(e^{rx},xe^{rx},\cdots,x^{k-1}e^{rx}\)、复根 \(\alpha\pm\mathrm{i}\beta\) 出 \(e^{\alpha x}\cos\beta x,\ e^{\alpha x}\sin\beta x\)，规则与二阶完全平行。</p>
+</div></details>

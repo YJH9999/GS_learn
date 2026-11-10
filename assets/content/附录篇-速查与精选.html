@@ -1,0 +1,229 @@
+<h1 id="附录篇-速查与精选">附录篇　速查与精选</h1>
+
+<p>本附录是全站的"工具箱"：A 节按板块给出公式速查卡（考前 30 分钟过一遍的那种）；B 节把全书易错点收拢成 TOP 30 总清单；C 节精选 6 道跨章节综合例题，每道都代表一类必考套路。</p>
+
+<h2 id="附录-a-公式速查卡">附录 A　公式速查卡<button class="fav" type="button" data-fav="附录-a-公式速查卡" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="a-1-极限与连续">A.1 极限与连续<button class="fav" type="button" data-fav="a-1-极限与连续" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>名称</th><th>公式 / 结论</th></tr></thead>
+<tbody>
+<tr><td>四则运算法则</td><td>极限存在前提下：\(\lim(f\pm g)=\lim f\pm\lim g\)，\(\lim fg=\lim f\cdot\lim g\)，\(\lim\dfrac fg=\dfrac{\lim f}{\lim g}\ (\lim g\ne0)\)</td></tr>
+<tr><td>两个重要极限</td><td>\(\lim\limits_{x\to0}\dfrac{\sin x}{x}=1\)；\(\lim\limits_{x\to\infty}\left(1+\dfrac1x\right)^x=\mathrm e\)，即 \(\lim\limits_{\alpha\to0}(1+\alpha)^{1/\alpha}=\mathrm e\)</td></tr>
+<tr><td>等价无穷小链</td><td>\(x\to0\)：\(\sin x\sim x\sim\tan x\sim\arcsin x\sim\arctan x\sim\ln(1+x)\sim\mathrm e^x-1\)；\(1-\cos x\sim\dfrac{x^2}2\)；\((1+x)^\alpha-1\sim\alpha x\)；\(a^x-1\sim x\ln a\)</td></tr>
+<tr><td>存在准则</td><td>夹逼准则：\(y_n\le x_n\le z_n\) 且 \(\lim y_n=\lim z_n=a\Rightarrow\lim x_n=a\)；单调有界数列必有极限</td></tr>
+<tr><td>无穷小比阶</td><td>\(\beta\) 是 \(\alpha\) 的 \(k\) 阶无穷小 \(\Leftrightarrow \lim\dfrac\beta{\alpha^k}=C\ne0\)</td></tr>
+<tr><td>间断点分类</td><td>第一类（左右极限都存在）：可去（相等）、跳跃（不等）；第二类：无穷间断、振荡间断（如 \(\sin\dfrac1x\) 在 \(x=0\)）</td></tr>
+<tr><td>闭区间连续函数</td><td>有界性、最值定理、介值定理（可取到介于最小值与最大值之间的一切值）</td></tr>
+</tbody></table></div>
+
+<h3 id="a-2-导数与微分">A.2 导数与微分<button class="fav" type="button" data-fav="a-2-导数与微分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>名称</th><th>公式 / 结论</th></tr></thead>
+<tbody>
+<tr><td>导数定义</td><td>\(f'(x_0)=\lim\limits_{h\to0}\dfrac{f(x_0+h)-f(x_0)}{h}\)；左右导数存在且相等 \(\Leftrightarrow\) 可导</td></tr>
+<tr><td>四则求导</td><td>\((uv)'=u'v+uv'\)；\(\left(\dfrac uv\right)'=\dfrac{u'v-uv'}{v^2}\)；\((Cu)'=Cu'\)</td></tr>
+<tr><td>复合与反函数</td><td>链式法则 \(\dfrac{\mathrm dy}{\mathrm dx}=f'(u)\,u'(x)\)；反函数 \(\bigl(f^{-1}\bigr)'(y)=\dfrac1{f'(x)}\ (f'\ne0)\)</td></tr>
+<tr><td>参数方程求导</td><td>\(\dfrac{\mathrm dy}{\mathrm dx}=\dfrac{y'(t)}{x'(t)}\)；\(\dfrac{\mathrm d^2y}{\mathrm dx^2}=\dfrac{\left(\frac{\mathrm dy}{\mathrm dx}\right)'_t}{x'(t)}\)</td></tr>
+<tr><td>常用导数</td><td>\((x^\mu)'=\mu x^{\mu-1}\)；\((\mathrm e^x)'=\mathrm e^x\)；\((a^x)'=a^x\ln a\)；\((\ln x)'=\dfrac1x\)；\((\sin x)'=\cos x\)；\((\tan x)'=\sec^2x\)；\((\sec x)'=\sec x\tan x\)；\((\arcsin x)'=\dfrac1{\sqrt{1-x^2}}\)；\((\arctan x)'=\dfrac1{1+x^2}\)</td></tr>
+<tr><td>微分与近似</td><td>\(\mathrm dy=f'(x)\,\mathrm dx\)；\(f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\Delta x\)</td></tr>
+<tr><td>高阶导数</td><td>莱布尼茨公式 \((uv)^{(n)}=\sum\limits_{k=0}^{n}\binom nk u^{(n-k)}v^{(k)}\)；\((\mathrm e^{\lambda x})^{(n)}=\lambda^n\mathrm e^{\lambda x}\)；\((\sin ax)^{(n)}=a^n\sin\left(ax+\dfrac{n\pi}2\right)\)</td></tr>
+</tbody></table></div>
+
+<h3 id="a-3-积分">A.3 积分<button class="fav" type="button" data-fav="a-3-积分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>名称</th><th>公式 / 结论</th></tr></thead>
+<tbody>
+<tr><td>基本积分表</td><td>\(\displaystyle\int x^\mu\mathrm dx=\frac{x^{\mu+1}}{\mu+1}+C\ (\mu\ne-1)\)；\(\displaystyle\int\frac{\mathrm dx}{x}=\ln|x|+C\)；\(\displaystyle\int\mathrm e^x\mathrm dx=\mathrm e^x+C\)；\(\displaystyle\int\frac{\mathrm dx}{1+x^2}=\arctan x+C\)；\(\displaystyle\int\frac{\mathrm dx}{\sqrt{1-x^2}}=\arcsin x+C\)；\(\displaystyle\int\tan x\,\mathrm dx=-\ln|\cos x|+C\)；\(\displaystyle\int\sec x\,\mathrm dx=\ln|\sec x+\tan x|+C\)</td></tr>
+<tr><td>第一类换元</td><td>\(\displaystyle\int f(\varphi(x))\varphi'(x)\,\mathrm dx=\int f(u)\,\mathrm du\ \ (u=\varphi(x))\)，即"凑微分"</td></tr>
+<tr><td>第二类换元</td><td>\(x=\psi(t)\) 单调可导且 \(\psi'\ne0\)；三角换元：\(\sqrt{a^2-x^2}\to x=a\sin t\)，\(\sqrt{a^2+x^2}\to x=a\tan t\)，\(\sqrt{x^2-a^2}\to x=a\sec t\)，回代画直角三角形</td></tr>
+<tr><td>分部积分</td><td>\(\displaystyle\int u\,\mathrm dv=uv-\int v\,\mathrm du\)；取 \(u\) 的优先级：反、对、指、幂、三</td></tr>
+<tr><td>有理函数</td><td>真分式按 \(\dfrac{A}{x-a}\)、\(\dfrac{B}{(x-a)^k}\)、\(\dfrac{Mx+N}{x^2+px+q}\) 拆项后逐项积分</td></tr>
+<tr><td>N–L 公式</td><td>\(\displaystyle\int_a^b f(x)\,\mathrm dx=F(b)-F(a)\)，其中 \(F'=f\)；条件 \(f\) 在 \([a,b]\) 上连续</td></tr>
+<tr><td>变上限求导</td><td>\(\dfrac{\mathrm d}{\mathrm dx}\displaystyle\int_a^{\varphi(x)}f(t)\,\mathrm dt=f(\varphi(x))\varphi'(x)\)；\(\dfrac{\mathrm d}{\mathrm dx}\displaystyle\int_{\psi(x)}^{\varphi(x)}f(t)\,\mathrm dt=f(\varphi)\varphi'-f(\psi)\psi'\)</td></tr>
+<tr><td>对称区间</td><td>\(\displaystyle\int_{-a}^{a}f(x)\,\mathrm dx=0\)（\(f\) 奇）\(=2\displaystyle\int_0^a f(x)\,\mathrm dx\)（\(f\) 偶）；\(\displaystyle\int_0^{\pi}\sin x\,\mathrm dx=2\)，\(\displaystyle\int_0^{\pi/2}\cos x\,\mathrm dx=1\) 常用</td></tr>
+<tr><td>反常积分</td><td>\(\displaystyle\int_a^{+\infty}\frac{\mathrm dx}{x^p}\) 收敛 \(\Leftrightarrow p>1\)；\(\displaystyle\int_0^{1}\frac{\mathrm dx}{x^p}\) 收敛 \(\Leftrightarrow p<1\)（\(p=1\) 两种都发散）</td></tr>
+</tbody></table></div>
+
+<h3 id="a-4-微分方程">A.4 微分方程<button class="fav" type="button" data-fav="a-4-微分方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>类型</th><th>解法 / 通解</th></tr></thead>
+<tbody>
+<tr><td>可分离变量</td><td>\(\dfrac{\mathrm dy}{\mathrm dx}=f(x)g(y)\ \Rightarrow\ \displaystyle\int\frac{\mathrm dy}{g(y)}=\int f(x)\,\mathrm dx+C\)（\(g(y)=0\) 的常值解别丢）</td></tr>
+<tr><td>齐次方程</td><td>\(\dfrac{\mathrm dy}{\mathrm dx}=\varphi\!\left(\dfrac yx\right)\)，令 \(u=\dfrac yx\) 化为可分离变量</td></tr>
+<tr><td>一阶线性</td><td>\(y'+P(x)y=Q(x)\)：\(y=\mathrm e^{-\int P\,\mathrm dx}\left(C+\displaystyle\int Q\,\mathrm e^{\int P\,\mathrm dx}\,\mathrm dx\right)\)</td></tr>
+<tr><td>可降阶</td><td>\(y''=f(x,y')\)：令 \(p=y'\)；\(y''=f(y,y')\)：令 \(p=y'\) 且 \(y''=p\dfrac{\mathrm dp}{\mathrm dy}\)</td></tr>
+<tr><td>二阶常系数齐次</td><td>\(y''+py'+qy=0\)：相异实根 \(y=C_1\mathrm e^{r_1x}+C_2\mathrm e^{r_2x}\)；二重根 \(y=(C_1+C_2x)\mathrm e^{rx}\)；共轭复根 \(\alpha\pm\beta\mathrm i\)：\(y=\mathrm e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta x)\)</td></tr>
+<tr><td>二阶常系数非齐次</td><td>右端 \(\mathrm e^{\lambda x}P_m(x)\)：特解 \(y^*=x^k\,\mathrm e^{\lambda x}Q_m(x)\)，\(k=\lambda\) 作为特征根的重数；通解 = 齐次通解 + 特解</td></tr>
+</tbody></table></div>
+
+<h3 id="a-5-多元函数微分">A.5 多元函数微分<button class="fav" type="button" data-fav="a-5-多元函数微分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>名称</th><th>公式 / 结论</th></tr></thead>
+<tbody>
+<tr><td>偏导数</td><td>\(f_x(x_0,y_0)=\lim\limits_{\Delta x\to0}\dfrac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}\)</td></tr>
+<tr><td>全微分</td><td>\(\mathrm dz=f_x\,\mathrm dx+f_y\,\mathrm dy\)；连续 + 偏导存在 \(\not\Rightarrow\) 可微；可微 \(\Rightarrow\) 偏导存在、连续</td></tr>
+<tr><td>链式法则</td><td>\(z=f(u,v),\ u=u(t),\ v=v(t)\)：\(\dfrac{\mathrm dz}{\mathrm dt}=f_u u'+f_v v'\)；多元复合同理"沿线相乘、分线相加"</td></tr>
+<tr><td>隐函数求导</td><td>\(F(x,y,z)=0\)：\(\dfrac{\partial z}{\partial x}=-\dfrac{F_x}{F_z}\)，\(\dfrac{\partial z}{\partial y}=-\dfrac{F_y}{F_z}\)（\(F_z\ne0\)）</td></tr>
+<tr><td>无条件极值</td><td>\(f_x=f_y=0\) 处记 \(A=f_{xx},\ B=f_{xy},\ C=f_{yy}\)：\(AC-B^2>0\) 且 \(A<0\) 极大、\(A>0\) 极小；\(AC-B^2<0\) 非极值；\(=0\) 失效需另判</td></tr>
+<tr><td>条件极值</td><td>拉格朗日乘数法：解 \(\nabla f=\lambda\nabla g\) 加约束方程，实际问题中由最值存在性判定</td></tr>
+</tbody></table></div>
+
+<h3 id="a-6-重积分与曲线曲面积分">A.6 重积分与曲线曲面积分<button class="fav" type="button" data-fav="a-6-重积分与曲线曲面积分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>名称</th><th>公式 / 结论</th></tr></thead>
+<tbody>
+<tr><td>二重积分（直角）</td><td>\(\displaystyle\iint_D f\,\mathrm d\sigma=\int_a^b\!\mathrm dx\!\int_{y_1(x)}^{y_2(x)}f(x,y)\,\mathrm dy\)；边界简单时先 \(x\) 后 \(y\) 同理</td></tr>
+<tr><td>二重积分（极坐标）</td><td>\(\displaystyle\iint_D f(x,y)\,\mathrm dx\,\mathrm dy=\int_{\alpha}^{\beta}\!\mathrm d\theta\!\int_{r_1(\theta)}^{r_2(\theta)}f(r\cos\theta,r\sin\theta)\,r\,\mathrm dr\)，<strong>别忘乘 \(r\)</strong></td></tr>
+<tr><td>三重积分</td><td>投影法 \(\displaystyle\iiint_\Omega f\,\mathrm dV=\iint_D\!\mathrm d\sigma\!\int_{z_1}^{z_2}f\,\mathrm dz\)；柱坐标加 \(r\)；球坐标 \(\mathrm dV=r^2\sin\varphi\,\mathrm dr\,\mathrm d\varphi\,\mathrm d\theta\)</td></tr>
+<tr><td>第一类曲线积分</td><td>\(\displaystyle\int_L f(x,y)\,\mathrm ds=\int_\alpha^\beta f(x(t),y(t))\sqrt{x'^2(t)+y'^2(t)}\,\mathrm dt\ (\alpha<\beta)\)</td></tr>
+<tr><td>第二类曲线积分</td><td>\(\displaystyle\int_LP\,\mathrm dx+Q\,\mathrm dy=\int_\alpha^\beta\!\bigl[P\,x'(t)+Q\,y'(t)\bigr]\mathrm dt\)（下限对应起点）</td></tr>
+<tr><td>格林公式</td><td>\(\displaystyle\oint_LP\,\mathrm dx+Q\,\mathrm dy=\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mathrm dx\,\mathrm dy\)（\(L\) 取正向、闭；不闭先补线）</td></tr>
+<tr><td>高斯公式</td><td>\(\displaystyle\oint_{\Sigma}P\,\mathrm dy\mathrm dz+Q\,\mathrm dz\mathrm dx+R\,\mathrm dx\mathrm dy=\iiint_\Omega\left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\right)\mathrm dV\)（\(\Sigma\) 取外侧、闭；不闭先补面）</td></tr>
+</tbody></table></div>
+
+<h3 id="a-7-无穷级数">A.7 无穷级数<button class="fav" type="button" data-fav="a-7-无穷级数" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>名称</th><th>公式 / 结论</th></tr></thead>
+<tbody>
+<tr><td>基准级数</td><td>等比 \(\sum aq^n\) 收敛 \(\Leftrightarrow|q|<1\)；\(p\)-级数 \(\sum\dfrac1{n^p}\) 收敛 \(\Leftrightarrow p>1\)；调和级数 \(\sum\dfrac1n\) 发散</td></tr>
+<tr><td>正项级数判敛</td><td>比较判别法（及极限形式）；比值法 \(\lim\dfrac{u_{n+1}}{u_n}=\rho<1\) 收敛、\(>1\) 发散；根值法同理</td></tr>
+<tr><td>交错级数</td><td>莱布尼茨判别法：\(|u_n|\) 单调递减且趋于 0，则 \(\sum(-1)^{n-1}u_n\) 收敛</td></tr>
+<tr><td>绝对与条件收敛</td><td>\(\sum|u_n|\) 收敛 \(\Rightarrow\sum u_n\) 收敛（绝对收敛）；\(\sum u_n\) 收敛而 \(\sum|u_n|\) 发散为条件收敛</td></tr>
+<tr><td>幂级数</td><td>收敛半径 \(R=\lim\limits_{n\to\infty}\left|\dfrac{a_n}{a_{n+1}}\right|\)；和函数在 \((-R,R)\) 内连续、可逐项求导与逐项积分（端点需重新讨论）</td></tr>
+<tr><td>常用展开</td><td>\(\dfrac1{1-x}=\sum\limits_{n=0}^\infty x^n\ (|x|<1)\)；\(\mathrm e^x=\sum\limits_{n=0}^\infty\dfrac{x^n}{n!}\ (x\in\R)\)；\(\ln(1+x)=\sum\limits_{n=1}^\infty\dfrac{(-1)^{n-1}}n x^n\ (-1<x\le1)\)</td></tr>
+<tr><td>傅里叶级数</td><td>\(f(x)\sim\dfrac{a_0}2+\sum\limits_{n=1}^\infty(a_n\cos nx+b_n\sin nx)\)，\(a_n=\dfrac1\pi\displaystyle\int_{-\pi}^{\pi}f(x)\cos nx\,\mathrm dx\)，\(b_n=\dfrac1\pi\displaystyle\int_{-\pi}^{\pi}f(x)\sin nx\,\mathrm dx\)</td></tr>
+<tr><td>狄利克雷收敛定理</td><td>\(f\) 在 \([-\pi,\pi]\) 上分段单调，则级数收敛于 \(\dfrac{f(x+0)+f(x-0)}2\)，在连续点等于 \(f(x)\)，间断点取左右极限平均值</td></tr>
+</tbody></table></div>
+
+<h2 id="附录-b-易错点总清单">附录 B　易错点总清单 TOP 30<button class="fav" type="button" data-fav="附录-b-易错点总清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<p>每条一句话点破，考前把这份清单从头读一遍，能直接避免一大半丢分。标"高频"的是历年期末试卷里反复出现的坑。</p>
+<ol>
+<li>两个重要极限认形态：\(\dfrac{\sin\Box}{\Box}\to1\) 与 \((1+\Box)^{1/\Box}\to\mathrm e\) 都要求 \(\Box\to0\)，方框位置必须完全一致。</li>
+<li><blockquote class="callout c-hot"><p><span class="badge b-hot">高频</span> 等价无穷小替换只能用在<strong>乘除因子</strong>上，加减项里随意替换（如把 \(\tan x-\sin x\) 的两项都换成 \(x\) 得 0）是第一大失分点。</p></blockquote></li>
+<li><blockquote class="callout c-hot"><p><span class="badge b-hot">高频</span> 洛必达法则每用一次前必须验证是 \(\dfrac00\) 或 \(\dfrac\infty\infty\) 型，否则结论无意义；多次使用前先化简、用等价无穷小降阶。</p></blockquote></li>
+<li>含 \(\mathrm e^{\frac1x}\) 或 \(|x|\) 的极限必须分 \(x\to0^+\) 与 \(x\to0^-\)（或 \(x\to\pm\infty\)）两侧讨论。</li>
+<li>无穷小比阶先"提最高次幂"，别急着套洛必达——很多题提取公因子后一步出答案。</li>
+<li>分段函数在分界点的可导性必须用导数定义（或左右导数）分别验证，不能对每段分别求导后"拼接"。</li>
+<li>\(f(x)=|x|\) 在 \(x=0\) 连续但不可导——"连续不可导"与"可导必连续"这两个方向都要记牢。</li>
+<li>复合函数求导漏乘内层导数是计算丢分之王：\(\bigl[\sin(2x+1)\bigr]'=2\cos(2x+1)\)，不是 \(\cos(2x+1)\)。</li>
+<li>参数方程二阶导数 \(\dfrac{\mathrm d^2y}{\mathrm dx^2}=\dfrac{\left(\frac{\mathrm dy}{\mathrm dx}\right)'_t}{x'(t)}\)，不能直接对 \(\dfrac{y'(t)}{x'(t)}\) 求 \(t\) 的导数就完事。</li>
+<li>中值定理证明题先观察结论倒推辅助函数：\(\xi f'(\xi)+f(\xi)=0\Rightarrow F=xf(x)\)；\(f'(\xi)+\lambda f(\xi)=0\Rightarrow F=\mathrm e^{\lambda x}f(x)\)。</li>
+<li>罗尔定理三条件（闭连续、开可导、端点等值）缺一不可，书写证明时要逐条验证。</li>
+<li>极值点不一定是驻点：导数不存在的点也可能是极值点；驻点也不一定是极值点（如 \(y=x^3\)）。</li>
+<li>拐点是 \(f''\) <strong>变号</strong>的点，\(f''(x_0)=0\) 只必要不充分（\(f''\) 不存在的点也可能是拐点）。</li>
+<li>求渐近线先看垂直（无定义点），再看水平（\(x\to\infty\) 极限存在）与斜（极限 \(\dfrac{f(x)}x=k\) 存在），水平与斜渐近线不能同时有。</li>
+<li>不定积分结果必须带 \(C\)，分部或换元过程中每一项都别漏；答案对不对自己求导验证一遍。</li>
+<li>第二类换元（三角换元）最后必须回代原变量，回代时画直角三角形最不易错。</li>
+<li>分部积分 \(u\) 按"反、对、指、幂、三"选，选反了 \(\int v\,\mathrm du\) 会比原积分更复杂。</li>
+<li>有理函数分解时分母的 \(k\) 重因子 \((x-a)^k\) 要拆成 \(k\) 项 \(\dfrac{A_1}{x-a}+\cdots+\dfrac{A_k}{(x-a)^k}\)。</li>
+<li>N–L 公式要求被积函数连续：区间内有瑕点或无穷间断时先拆分区间，否则套公式直接错。</li>
+<li><blockquote class="callout c-hot"><p><span class="badge b-hot">高频</span> 变上限积分被积函数含 \(x\) 时（如 \(\displaystyle\int_0^x xf(t)\,\mathrm dt\)），必须先把 \(x\) 提到积分号外再求导，直接套 \(f(x)\) 是错的。</p></blockquote></li>
+<li>对称区间用奇偶性化简的前提是<strong>积分区间对称且函数在对称区间上有定义</strong>，区间不是 \([-a,a]\) 时先平移或拆分。</li>
+<li>旋转体绕 \(y\) 轴用柱壳法 \(V=2\pi\displaystyle\int_a^b x\,|f(x)|\,\mathrm dx\)，要求区间不跨越 \(y\) 轴，否则拆分。</li>
+<li>反常积分的 \(p\) 值方向别记反：\(\displaystyle\int_a^{+\infty}\dfrac{\mathrm dx}{x^p}\) 收敛要 \(p>1\)（尾巴收敛），\(\displaystyle\int_0^1\dfrac{\mathrm dx}{x^p}\) 收敛要 \(p<1\)（瑕点处别太陡）。</li>
+<li>可分离变量方程积分后每边都要有 \(C\)（合并为一个），且 \(g(y)=0\) 给出的常值解不要丢。</li>
+<li>一阶线性公式 \(y=\mathrm e^{-\int P}\left(C+\int Q\,\mathrm e^{\int P}\,\mathrm dx\right)\) 里 \(P\) 的正负号要按标准形 \(y'+P(x)y=Q(x)\) 先化简再套。</li>
+<li><blockquote class="callout c-hot"><p><span class="badge b-hot">高频</span> 二阶常系数非齐次特解中 \(\lambda\) 与特征根相同时忘记乘 \(x^k\)（重根要乘 \(x^2\)），设完特解一定回头检验 \(k\) 的取值。</p></blockquote></li>
+<li>二重积分化累次积分时，内层积分限可以是外层变量的函数，但<strong>外层积分限必须是常数</strong>，方向反了说明该换序。</li>
+<li><blockquote class="callout c-hot"><p><span class="badge b-hot">高频</span> 极坐标变换 \(\mathrm dx\,\mathrm dy=r\,\mathrm dr\,\mathrm d\theta\) 漏乘 \(r\) 是重积分第一大计算错误，写完雅可比再动笔。</p></blockquote></li>
+<li>格林 / 高斯公式要求<strong>闭</strong>曲线（曲面）：不闭时先补一条线（一块面）使区域封闭，再减去补上的那部分积分。</li>
+<li>幂级数逐项求导 / 积分后收敛半径不变，但端点 \(x=\pm R\) 的敛散性必须重新讨论，收敛域常因此变化。</li>
+</ol>
+
+<h2 id="附录-c-典型例题精选">附录 C　典型例题精选<button class="fav" type="button" data-fav="附录-c-典型例题精选" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<p>下面 6 道题是"跨章节综合题"的代表，每道覆盖至少两个章节的核心方法。建议先自己做，再展开解答对照。</p>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 1</span>极限综合：等价无穷小 + 泰勒展开</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\lim_{x\to0}\frac{\mathrm e^x-\mathrm e^{\sin x}}{x^3}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>提取公因子（乘除因子里放心用等价无穷小）：</p>
+      <div class="fml">$$\mathrm e^x-\mathrm e^{\sin x}=\mathrm e^{\sin x}\left(\mathrm e^{x-\sin x}-1\right)$$</div>
+      <p>当 \(x\to0\) 时 \(\mathrm e^{\sin x}\to1\)，且 \(x-\sin x\to0\)，故 \(\mathrm e^{x-\sin x}-1\sim x-\sin x\)。由泰勒展开 \(x-\sin x=\dfrac{x^3}{6}+o(x^3)\)，所以</p>
+      <div class="fml">$$\lim_{x\to0}\frac{\mathrm e^x-\mathrm e^{\sin x}}{x^3}=\lim_{x\to0}\frac{x-\sin x}{x^3}=\lim_{x\to0}\frac{\frac{x^3}{6}+o(x^3)}{x^3}=\frac16$$</div>
+      <p>点评：跨章节套路 = "指数差提公因子 + 等价无穷小 + 泰勒展开"。若直接对原式用洛必达，三次求导后运算量大增且容易出错。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 2</span>中值定理证明：构造辅助函数 + 罗尔定理</div>
+  <div class="ex-b">
+    <p>设 \(f(x)\) 在 \([0,1]\) 上连续，在 \((0,1)\) 内可导，且 \(f(1)=0\)。证明：存在 \(\xi\in(0,1)\)，使 \(\xi f'(\xi)+f(\xi)=0\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>待证式即 \((xf(x))'\big|_{x=\xi}=0\)，因为 \((xf(x))'=f(x)+xf'(x)\)。构造辅助函数</p>
+      <div class="fml">$$F(x)=x f(x)$$</div>
+      <p>验证罗尔定理三条件：\(F\) 在 \([0,1]\) 连续、\((0,1)\) 可导（\(f\) 的条件保证）；端点值 \(F(0)=0\cdot f(0)=0\)，\(F(1)=1\cdot f(1)=0\)，即 \(F(0)=F(1)\)。由罗尔定理，存在 \(\xi\in(0,1)\) 使 \(F'(\xi)=0\)，即</p>
+      <div class="fml">$$\xi f'(\xi)+f(\xi)=0.\qquad\blacksquare$$</div>
+      <p>点评：看到 \(f'(\xi)\) 带系数 \(\xi\)，就用求导"逆推"辅助函数——\(\xi f'(\xi)+f(\xi)\) 恰是 \(xf(x)\) 的导数。同型套路：\(f'(\xi)+\lambda f(\xi)=0\Rightarrow F(x)=\mathrm e^{\lambda x}f(x)\)。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 3</span>不定积分技巧：拆项 + 分部积分</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\int\frac{x\,\mathrm e^x}{(1+x)^2}\,\mathrm dx\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>先把有理部分拆开：\(\dfrac{x}{(1+x)^2}=\dfrac{(1+x)-1}{(1+x)^2}=\dfrac1{1+x}-\dfrac1{(1+x)^2}\)，于是</p>
+      <div class="fml">$$\int\frac{x\,\mathrm e^x}{(1+x)^2}\,\mathrm dx=\int\frac{\mathrm e^x}{1+x}\,\mathrm dx-\int\frac{\mathrm e^x}{(1+x)^2}\,\mathrm dx$$</div>
+      <p>对第一个积分分部（取 \(u=\dfrac1{1+x}\)，\(\mathrm dv=\mathrm e^x\mathrm dx\)）：</p>
+      <div class="fml">$$\int\frac{\mathrm e^x}{1+x}\,\mathrm dx=\frac{\mathrm e^x}{1+x}+\int\frac{\mathrm e^x}{(1+x)^2}\,\mathrm dx$$</div>
+      <p>代回后两个积分恰好相消，得</p>
+      <div class="fml">$$\int\frac{x\,\mathrm e^x}{(1+x)^2}\,\mathrm dx=\frac{\mathrm e^x}{1+x}+C$$</div>
+      <p>点评："拆项制造分部积分后互相抵消的一对积分"是 \(\mathrm e^x\) 乘有理分式这类题的标准解法；验证：\(\left(\dfrac{\mathrm e^x}{1+x}\right)'=\dfrac{\mathrm e^x(1+x)-\mathrm e^x}{(1+x)^2}=\dfrac{x\,\mathrm e^x}{(1+x)^2}\)。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 4</span>定积分应用：旋转体体积</div>
+  <div class="ex-b">
+    <p>求由抛物线 \(y=x^2\) 与直线 \(y=x\) 所围平面图形绕 \(x\) 轴旋转一周所得旋转体的体积。</p>
+    <details><summary></summary><div class="sol">
+      <p>两曲线交点：\(x^2=x\Rightarrow x=0,1\)，故图形在 \([0,1]\) 上，且直线 \(y=x\) 在上、抛物线 \(y=x^2\) 在下。绕 \(x\) 轴旋转用"大圆减小圆"（垫圈法）：</p>
+      <div class="fml">$$V=\pi\int_0^1\left[x^2-(x^2)^2\right]\mathrm dx=\pi\int_0^1(x^2-x^4)\,\mathrm dx=\pi\left(\frac13-\frac15\right)=\frac{2\pi}{15}$$</div>
+      <p>点评：旋转体体积的关键是确定<strong>旋转半径 = 竖直方向两条边界之差</strong>；若本题绕 \(y\) 轴，用柱壳法 \(V=2\pi\displaystyle\int_0^1 x(x-x^2)\,\mathrm dx=\dfrac{\pi}{6}\)。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 5</span>二阶常系数非齐次微分方程</div>
+  <div class="ex-b">
+    <p>求方程 \(y''-4y'+4y=\mathrm e^{2x}\) 的通解。</p>
+    <details><summary></summary><div class="sol">
+      <p>① 齐次通解：特征方程 \(r^2-4r+4=0\)，即 \((r-2)^2=0\)，二重根 \(r=2\)，故</p>
+      <div class="fml">$$Y=(C_1+C_2x)\,\mathrm e^{2x}$$</div>
+      <p>② 特解：右端 \(\mathrm e^{2x}\)，\(\lambda=2\) 恰是二重特征根，故 \(k=2\)，设 \(y^*=Ax^2\mathrm e^{2x}\)。代入：</p>
+      <div class="fml">$$y^{*'}=A\mathrm e^{2x}(2x^2+2x),\qquad y^{*''}=A\mathrm e^{2x}(4x^2+8x+2)$$</div>
+      <div class="fml">$$y^{*''}-4y^{*'}+4y^*=A\mathrm e^{2x}\bigl[(4x^2+8x+2)-4(2x^2+2x)+4x^2\bigr]=2A\,\mathrm e^{2x}$$</div>
+      <p>令 \(2A=1\)，得 \(A=\dfrac12\)。③ 通解 = 齐次通解 + 特解：</p>
+      <div class="fml">$$y=(C_1+C_2x)\,\mathrm e^{2x}+\frac{x^2}{2}\,\mathrm e^{2x}$$</div>
+      <p>点评：本题考点 = "二重根写 \((C_1+C_2x)\mathrm e^{rx}\)" + "特解乘 \(x^2\)"两处重根陷阱，正是附录 B 第 26 条的易错点。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 6</span>幂级数求和函数</div>
+  <div class="ex-b">
+    <p>求幂级数 \(\displaystyle\sum_{n=1}^{\infty}\frac{x^{2n}}{2n}\) 的收敛域与和函数。</p>
+    <details><summary></summary><div class="sol">
+      <p>① 收敛域：记 \(a_n=\dfrac1{2n}\)（缺奇数次幂项，直接用比值法对整个通项），</p>
+      <div class="fml">$$\lim_{n\to\infty}\left|\frac{x^{2n+2}}{2n+2}\cdot\frac{2n}{x^{2n}}\right|=x^2$$</div>
+      <p>故 \(x^2<1\) 即 \(|x|<1\) 时收敛；\(x=\pm1\) 时级数为 \(\sum\dfrac1{2n}\) 发散。收敛域为 \((-1,1)\)。</p>
+      <p>② 求和函数：在 \((-1,1)\) 内逐项求导，</p>
+      <div class="fml">$$S'(x)=\sum_{n=1}^{\infty}x^{2n-1}=x+x^3+x^5+\cdots=\frac{x}{1-x^2}$$</div>
+      <p>再从 \(0\) 到 \(x\) 逐项积分（\(S(0)=0\)）：令 \(u=1-x^2\)，\(\mathrm du=-2x\,\mathrm dx\)，</p>
+      <div class="fml">$$S(x)=\int_0^x\frac{t}{1-t^2}\,\mathrm dt=-\frac12\ln\left(1-x^2\right),\qquad x\in(-1,1)$$</div>
+      <p>点评：幂级数求和三板斧 = 求收敛域、逐项求导化成等比级数、逐项积分还原；最后务必写明成立区间。验证：\(S(0)=0\) 且 \(S'(x)=\dfrac{x}{1-x^2}\) 与逐项求导一致。</p>
+    </div></details>
+  </div>
+</div>
+
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> 上述 6 道题的套路完全对应第 0 篇 0.2 节速查清单中的第 2、5、9、10、13—15、17、19、20、24 条结论——"背结论 + 套例题"就是期末综合题的复习闭环。</p></blockquote>

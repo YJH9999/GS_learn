@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>备考中心 · 高等数学知识库</title>
+<link rel="stylesheet" href="assets/fonts.css?v=20261110a">
+<link rel="stylesheet" href="assets/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css?v=20261110a">
+<link rel="stylesheet" href="assets/exam.css?v=20261110a">
+<script defer src="assets/katex/katex.min.js"></script>
+<script defer src="assets/katex/contrib/auto-render.min.js"></script>
+</head>
+<body>
+
+<header class="top">
+  <a class="tb" href="index.html" title="返回知识库">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    知识库</a>
+  <div class="brand">
+    <span class="lg">∫</span>
+    <div><b>备考中心</b><span>期末题型组卷 · 全题库</span></div>
+  </div>
+  <div class="tools">
+    <nav class="tabs">
+      <button class="tab on" data-view="review">考点速览</button>
+      <button class="tab" data-view="quiz">组卷模拟</button>
+      <button class="tab" data-view="bank">题库总览</button>
+    </nav>
+    <div class="seg" role="group" aria-label="外观">
+      <button id="m-light" title="浅色外观">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>
+      </button>
+      <button id="m-dark" title="深色外观">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5a8.6 8.6 0 1 0 10.7 10.7z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="xmain">
+
+<!-- ============ 考点速览 ============ -->
+<section class="view on" id="view-review">
+  <div class="xhead">
+    <span class="kicker">EXAM · REVIEW</span>
+    <h1>十二章核心考点速览</h1>
+    <p class="sub">每章 5 张考点卡片：点击展开要点，考前过一遍</p>
+  </div>
+  <div id="review-list"></div>
+</section>
+
+<!-- ============ 组卷模拟 ============ -->
+<section class="view" id="view-quiz">
+  <!-- 组卷设置 -->
+  <div id="quiz-setup">
+    <div class="xhead">
+      <span class="kicker">EXAM · PAPER</span>
+      <h1>期末组卷模拟</h1>
+      <p class="sub">题型与默认题量参照江南大学《高等数学》期末卷结构：选择 5×4′ / 填空 5×4′ / 计算 5×10′ / 证明 1×10′</p>
+    </div>
+
+    <div class="panel">
+      <h2>快速套卷</h2>
+      <div class="preset-row">
+        <button class="chip" data-preset="std">选择 5 · 填空 5 · 计算 5 · 证明 1<br><small>期末主流结构 · 100 分</small></button>
+        <button class="chip" data-preset="obj">判断 10 · 选择 10 · 填空 10<br><small>客观题专练 · 100 分</small></button>
+        <button class="chip" data-preset="calc">计算 8 · 证明 2<br><small>计算强化 · 100 分</small></button>
+        <button class="chip" data-preset="mini">判断 5 · 选择 3 · 填空 3 · 计算 1 · 证明 1<br><small>小卷速测 · 54 分</small></button>
+      </div>
+
+      <h2>题型与题量</h2>
+      <div class="muted" id="bank-stats" style="font-size:12px;margin:-6px 0 10px"></div>
+      <div class="type-row" id="type-row">
+        <div class="type-cell" data-ty="judge">
+          <div class="t-name">判断题 <small>2 分/题 · 题库 <b class="t-avail">0</b></small></div>
+          <div class="stepper"><button data-d="-1">−</button><b>0</b><button data-d="1">＋</button></div>
+        </div>
+        <div class="type-cell" data-ty="choice">
+          <div class="t-name">选择题 <small>4 分/题 · 题库 <b class="t-avail">0</b></small></div>
+          <div class="stepper"><button data-d="-1">−</button><b>5</b><button data-d="1">＋</button></div>
+        </div>
+        <div class="type-cell" data-ty="blank">
+          <div class="t-name">填空题 <small>4 分/题 · 题库 <b class="t-avail">0</b></small></div>
+          <div class="stepper"><button data-d="-1">−</button><b>5</b><button data-d="1">＋</button></div>
+        </div>
+        <div class="type-cell" data-ty="solve">
+          <div class="t-name">计算题 <small>10 分/题 · 题库 <b class="t-avail">0</b></small></div>
+          <div class="stepper"><button data-d="-1">−</button><b>5</b><button data-d="1">＋</button></div>
+        </div>
+        <div class="type-cell" data-ty="proof">
+          <div class="t-name">证明题 <small>10 分/题 · 题库 <b class="t-avail">0</b></small></div>
+          <div class="stepper"><button data-d="-1">−</button><b>1</b><button data-d="1">＋</button></div>
+        </div>
+      </div>
+
+      <h2>章节范围</h2>
+      <div class="chip-row" id="ch-row">
+        <button class="chip on" data-ch="">全部章节</button>
+        <button class="chip" data-ch="1">① 函数与极限</button>
+        <button class="chip" data-ch="2">② 导数与微分</button>
+        <button class="chip" data-ch="3">③ 中值定理与导数应用</button>
+        <button class="chip" data-ch="4">④ 不定积分</button>
+        <button class="chip" data-ch="5">⑤ 定积分</button>
+        <button class="chip" data-ch="6">⑥ 定积分的应用</button>
+        <button class="chip" data-ch="7">⑦ 微分方程</button>
+        <button class="chip" data-ch="8">⑧ 向量与空间解析几何</button>
+        <button class="chip" data-ch="9">⑨ 多元函数微分</button>
+        <button class="chip" data-ch="10">⑩ 重积分</button>
+        <button class="chip" data-ch="11">⑪ 曲线曲面积分</button>
+        <button class="chip" data-ch="12">⑫ 无穷级数</button>
+      </div>
+
+      <h2>题目来源</h2>
+      <div class="chip-row" id="src-row">
+        <button class="chip on" data-src="">全部来源</button>
+        <button class="chip" data-src="小测">单元小测</button>
+        <button class="chip" data-src="教材">教材经典</button>
+        <button class="chip" data-src="真题">真题改编</button>
+        <button class="chip" data-src="吉米多维奇">吉米多维奇精选</button>
+      </div>
+
+      <div class="frow end">
+        <div class="paper-total" id="paper-total"></div>
+        <button class="btn primary" id="btn-start">开始组卷</button>
+      </div>
+    </div>
+
+    <div class="panel" id="wrongbook-panel">
+      <h2>错题待巩固 <span class="muted" id="wrong-count"></span></h2>
+      <div id="wrong-list" class="wrong-list"></div>
+      <div class="btnrow">
+        <button class="btn" id="btn-practice-wrong">重练错题</button>
+        <button class="btn ghost" id="btn-clear-wrong">清空错题本</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 作答中（整卷展示） -->
+  <div id="quiz-run" hidden>
+    <div class="xhead">
+      <span class="kicker" id="run-progress">共 0 题</span>
+      <h1 id="run-type">模拟试卷</h1>
+      <div class="bar"><i id="bar-fill"></i></div>
+      <p class="sub" id="run-tip">客观题作答后自动判分；计算/证明题写出过程后可对照参考答案自评。全部完成后点「交卷判分」。</p>
+    </div>
+    <div id="q-list"></div>
+    <div class="btnrow center run-actions">
+      <button class="btn ghost" id="btn-quit">放弃本次</button>
+      <button class="btn" id="btn-export">导出试卷 PDF</button>
+      <button class="btn" id="btn-export-ans">导出含答案 PDF</button>
+      <button class="btn primary" id="btn-submit">交卷判分</button>
+    </div>
+  </div>
+
+  <!-- 成绩页 -->
+  <div id="quiz-result" hidden>
+    <div class="xhead">
+      <span class="kicker">RESULT</span>
+      <h1 id="score-line"></h1>
+      <p class="sub" id="score-sub"></p>
+    </div>
+    <div id="result-list"></div>
+    <div class="btnrow center">
+      <button class="btn primary" id="btn-again">再组一卷</button>
+      <button class="btn" id="btn-export-sol">导出答案解析 PDF</button>
+      <button class="btn ghost" id="btn-home">返回设置</button>
+    </div>
+  </div>
+</section>
+
+  <!-- 题库总览 -->
+  <section class="view" id="view-bank">
+    <div class="xhead">
+      <span class="kicker">BANK</span>
+      <h1>题库总览</h1>
+      <p class="sub" id="bank-stat"></p>
+    </div>
+    <div class="panel">
+      <div class="chip-row" id="bty-row">
+        <button class="chip on" data-ty="">全部题型</button>
+        <button class="chip" data-ty="judge">判断</button>
+        <button class="chip" data-ty="choice">选择</button>
+        <button class="chip" data-ty="blank">填空</button>
+        <button class="chip" data-ty="solve">计算</button>
+        <button class="chip" data-ty="proof">证明</button>
+      </div>
+      <div class="chip-row" id="bch-row">
+        <button class="chip on" data-ch="">全部章节</button>
+        <button class="chip" data-ch="1">① 极限</button>
+        <button class="chip" data-ch="2">② 导数微分</button>
+        <button class="chip" data-ch="3">③ 中值定理</button>
+        <button class="chip" data-ch="4">④ 不定积分</button>
+        <button class="chip" data-ch="5">⑤ 定积分</button>
+        <button class="chip" data-ch="6">⑥ 积分应用</button>
+        <button class="chip" data-ch="7">⑦ 微分方程</button>
+        <button class="chip" data-ch="8">⑧ 空间解析几何</button>
+        <button class="chip" data-ch="9">⑨ 多元微分</button>
+        <button class="chip" data-ch="10">⑩ 重积分</button>
+        <button class="chip" data-ch="11">⑪ 曲线曲面积分</button>
+        <button class="chip" data-ch="12">⑫ 无穷级数</button>
+      </div>
+      <div class="chip-row" id="bsrc-row">
+        <button class="chip on" data-src="">全部来源</button>
+        <button class="chip" data-src="小测">单元小测</button>
+        <button class="chip" data-src="教材">教材经典</button>
+        <button class="chip" data-src="真题">真题改编</button>
+        <button class="chip" data-src="吉米多维奇">吉米多维奇精选</button>
+      </div>
+      <input class="bank-kw" id="bank-kw" placeholder="🔍 搜索题干关键词（如：洛必达、旋转体、收敛半径）" autocomplete="off">
+    </div>
+    <div id="bank-list"></div>
+    <div class="pager" id="bank-pager"></div>
+  </section>
+
+</main>
+
+<!-- 打印导出容器（浏览器打印为 PDF） -->
+<div id="print-wrap" aria-hidden="true"><div id="print-sheet"></div></div>
+
+<script src="assets/manifest.js?v=20261110a"></script>
+<script src="assets/exam/review_data.js?v=20261110a"></script>
+<script src="assets/exam/theory_bank.js?v=20261110a"></script>
+<script src="assets/exam/solve_bank.js?v=20261110a"></script>
+<script src="assets/exam_app.js?v=20261110a"></script>
+</body>
+</html>

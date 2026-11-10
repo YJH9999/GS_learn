@@ -1,0 +1,262 @@
+<h1 id="第-3-章-微分中值定理与导数的应用">第 3 章　微分中值定理与导数的应用</h1>
+<p>微分中值定理是"用导数研究函数"的理论桥梁：罗尔、拉格朗日、柯西三大定理把函数值之差与导数联系起来，由此派生出洛必达法则（求未定式极限）、泰勒公式（局部多项式逼近）、单调性与极值、凹凸性与拐点、渐近线与曲率等一整套应用。本章是期末<strong>证明题与综合大题的主战场</strong>：中值定理证明题的"构造辅助函数"、洛必达七种未定式转换、麦克劳林公式表是必须熟练到条件反射的三大件。</p>
+<ul>
+<li>主线脉络：三大中值定理 → 洛必达法则 → 泰勒公式 → 单调性极值 → 凹凸拐点渐近线 → 曲率。</li>
+<li>计算与证明双线：计算题（极限、极值、渐近线）按"公式 + 步骤"；证明题按"构造函数 + 套定理 + 验条件"。</li>
+</ul>
+
+<h2 id="3-1-三个中值定理">3.1 三个中值定理<button class="fav" type="button" data-fav="3-1-三个中值定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="3-1-1-罗尔定理">罗尔定理<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-1-1-罗尔定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>若 \(f\) 满足：① 在 \([a,b]\) 上连续；② 在 \((a,b)\) 内可导；③ \(f(a)=f(b)\)，则至少存在一点 \(\xi\in(a,b)\)，使 \(f'(\xi)=0\)。</p>
+<div class="fml">$$f\in C[a,b],\ f\ \text{在}\ (a,b)\ \text{内可导},\ f(a)=f(b)\ \Longrightarrow\ \exists\,\xi\in(a,b),\ f'(\xi)=0$$</div>
+<p>几何意义：两端等高的连续光滑曲线，内部必有水平切线。三个条件缺一不可：缺连续（反例 \(y=\mathrm{sgn}\) 型）、缺可导（反例 \(y=|x|\) 在 \([-1,1]\)）、缺 \(f(a)=f(b)\)（反例 \(y=x\)）都可能无水平切线。</p>
+
+<h3 id="3-1-2-拉格朗日中值定理">拉格朗日中值定理<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-1-2-拉格朗日中值定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$f(b)-f(a)=f'(\xi)\,(b-a),\qquad \xi\ \text{介于}\ a\ \text{与}\ b\ \text{之间}\quad\text{（也可写作}\ f'(\xi)=\frac{f(b)-f(a)}{b-a}\ \text{）}$$</div>
+<p>几何意义：曲线上必有一点，其切线平行于连接两端点的弦。两个推论常用于证明恒等式：① 若在区间内 \(f'\equiv 0\)，则 \(f\) 为常数；② 若 \(f'\equiv g'\)，则 \(f=g+C\)。</p>
+
+<h3 id="3-1-3-柯西中值定理">柯西中值定理<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-1-3-柯西中值定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$F,\ G\ \text{在}\ [a,b]\ \text{连续、在}\ (a,b)\ \text{内可导且}\ G'(t)\ne 0\ \Longrightarrow\ \exists\,\xi\in(a,b):\ \frac{F(b)-F(a)}{G(b)-G(a)}=\frac{F'(\xi)}{G'(\xi)}$$</div>
+<p>注意：对 \(\dfrac{F(b)-F(a)}{G(b)-G(a)}\) 分别用两次拉格朗日得到的 \(\xi\) <strong>不是同一个点</strong>，所以柯西定理不能由两次拉格朗日推出——这正是证明洛必达法则时必须用柯西定理的原因。</p>
+
+<h3 id="3-1-4-证明题套路-构造辅助函数">证明题套路：构造辅助函数<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-1-4-证明题套路-构造辅助函数" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>中值定理证明题的核心动作是把"要证的结论 \(\varphi(\xi)=0\)"改写为"某个辅助函数 \(F(x)\) 满足 \(F'(\xi)=0\)"。常用对照表：</p>
+<div class="tscroll"><table>
+<thead><tr><th>要证的结论含</th><th>构造的辅助函数</th><th>用的定理</th></tr></thead>
+<tbody>
+<tr><td>\(f'(\xi)=0\)，已知 \(f(a)=f(b)\)</td><td>直接用 \(f(x)\)</td><td>罗尔定理</td></tr>
+<tr><td>\(f(b)-f(a)=f'(\xi)(b-a)\)</td><td>直接用 \(f(x)\)</td><td>拉格朗日</td></tr>
+<tr><td>\(\xi f'(\xi)+f(\xi)=0\)</td><td>\(F(x)=x f(x)\)</td><td>罗尔（乘积求导恰好出现）</td></tr>
+<tr><td>\(\xi f'(\xi)+\lambda f(\xi)=0\)</td><td>\(F(x)=x^{\lambda}f(x)\)</td><td>罗尔（\(\lambda\) 可为正负）</td></tr>
+<tr><td>\(f'(\xi)+f(\xi)=0\)</td><td>\(F(x)=\mathrm e^{x}f(x)\)</td><td>罗尔</td></tr>
+<tr><td>\(\lambda f'(\xi)+f(\xi)=0\)</td><td>\(F(x)=\mathrm e^{\lambda x}f(x)\)</td><td>罗尔</td></tr>
+<tr><td>\(f'(\xi)-f(\xi)=0\)</td><td>\(F(x)=\mathrm e^{-x}f(x)\)</td><td>罗尔</td></tr>
+<tr><td>\(\dfrac{f(b)-f(a)}{g(b)-g(a)}=\dfrac{f'(\xi)}{g'(\xi)}\)</td><td>直接用两函数</td><td>柯西</td></tr>
+</tbody></table></div>
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> <strong>构造辅助函数的"凑导数"心法</strong>：把要证的 \(\xi\) 换成 \(x\)，将式子整理成 "\(F'(x)=0\)" 的样子，再<strong>反推</strong> \(F(x)\)。两大来源：① <strong>乘 \(x^{n}\) / 乘 \(\mathrm e^{\lambda x}\)</strong>——见上表，凭"求导后出现目标组合"倒推；② <strong>端点重置</strong>——构造 \(F(x)=\varphi(x)\) 使 \(F(a)=F(b)\)（如减去弦函数 \(\frac{f(b)-f(a)}{b-a}(x-a)\)），再用罗尔。答题固定四步：设辅助函数 → 验证连续可导与端点值 → 引用定理得 \(\xi\) → 翻译回原命题。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 1</span>罗尔定理：构造 \(x^{\lambda}f(x)\) 型辅助函数</div>
+  <div class="ex-b">
+    <p>设 \(f\) 在 \([0,1]\) 上连续，在 \((0,1)\) 内可导，且 \(f(1)=0\)。证明：存在 \(\xi\in(0,1)\) 使 \(\xi f'(\xi)+f(\xi)=0\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>要证的式子正是 \((x f(x))'\big|_{x=\xi}=0\)，故设辅助函数 \(F(x)=x f(x)\)。</p>
+      <p>\(F\) 在 \([0,1]\) 连续、\((0,1)\) 内可导；\(F(0)=0\)，\(F(1)=f(1)=0\)，端点相等。由罗尔定理，存在 \(\xi\in(0,1)\) 使 \(F'(\xi)=0\)，即</p>
+      <div class="fml">$$f(\xi)+\xi f'(\xi)=0$$</div>
+      <p>点评：识别"\(\xi f'+f\)"这种组合的钥匙是<strong>乘积求导公式</strong>\((xf)'=f+xf'\)；见到"和式里有一项带 \(\xi\)"就先想想它是谁的导数。同型：条件改为 \(f(0)=f(1)=0\)、要证 \(\xi f'(\xi)-f(\xi)=0\)，则用 \(F(x)=\dfrac{f(x)}{x}\)（\((f/x)'=\frac{xf'-f}{x^{2}}\)）。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 2</span>拉格朗日中值定理证明不等式</div>
+  <div class="ex-b">
+    <p>证明：当 \(x\gt 0\) 时，\(\dfrac{x}{1+x}\lt\ln(1+x)\lt x\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>设 \(f(t)=\ln(1+t)\)，在 \([0,x]\)（\(x\gt 0\)）上满足拉格朗日条件，故存在 \(\xi\in(0,x)\) 使</p>
+      <div class="fml">$$\ln(1+x)-\ln 1=f'(\xi)\,(x-0)=\frac{x}{1+\xi}$$</div>
+      <p>由 \(0\lt\xi\lt x\) 得 \(1\lt 1+\xi\lt 1+x\)，于是 \(\dfrac{1}{1+x}\lt\dfrac{1}{1+\xi}\lt 1\)。各项乘 \(x\gt 0\)：</p>
+      <div class="fml">$$\frac{x}{1+x}\lt\ln(1+x)\lt x$$</div>
+      <p>点评：中值定理证不等式的模板——"<strong>选函数、定区间、写中值、放缩 \(\xi\)</strong>"。放缩的方向取决于 \(\xi\) 的范围；对数、三角、\(\mathrm e^x\) 都是常选的 \(f\)。此不等式与 \(\ln(1+x)\sim x\)（等价无穷小）互为呼应：无穷小是"极限版"，中值不等式是"有限版"。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="3-2-洛必达法则">3.2 洛必达法则<button class="fav" type="button" data-fav="3-2-洛必达法则" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="3-2-1-法则的内容与使用条件">法则的内容与使用条件<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-2-1-法则的内容与使用条件" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>对 \(\dfrac00\) 或 \(\dfrac{\infty}{\infty}\) 型极限，若满足：① 分子分母在 \(x_0\) 的去心邻域（或 \(|x|\) 充分大处）可导且分母导数不为零；② \(\lim\dfrac{f'(x)}{g'(x)}\) 存在（或为 \(\infty\)），则</p>
+<div class="fml">$$\lim\frac{f(x)}{g(x)}=\lim\frac{f'(x)}{g'(x)}\qquad\text{（仅当右边存在或为}\ \infty\ \text{时可用）}$$</div>
+<p>证明思路：对分子分母同加"端点重置"项构造柯西型辅助函数 \(F(t)=f(t)-f(x_0)\)、\(G(t)=g(t)-g(x_0)\)（令 \(x=x_0+\Delta t\to x_0\)），用柯西中值定理即得。洛必达可以连续使用，但<strong>每用一次都要先验证当前是未定式</strong>。</p>
+
+<h3 id="3-2-2-七种未定式的转换">七种未定式的转换<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-2-2-七种未定式的转换" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>类型</th><th>转换方法</th><th>示例</th></tr></thead>
+<tbody>
+<tr><td>\(\dfrac00\)</td><td>直接用法则（先约分 / 等价替换更省事）</td><td>\(\lim\limits_{x\to 0}\dfrac{x-\sin x}{x^{3}}\)</td></tr>
+<tr><td>\(\dfrac{\infty}{\infty}\)</td><td>直接用法则（常先除以最高阶项化简）</td><td>\(\lim\limits_{x\to+\infty}\dfrac{\ln x}{x}\)</td></tr>
+<tr><td>\(0\cdot\infty\)</td><td>把一个因子移到分母：\(u\cdot v=\dfrac{u}{1/v}\)（选"好求导"的进分母）</td><td>\(\lim\limits_{x\to 0^+}x\ln x\) 取 \(\dfrac{\ln x}{1/x}\)</td></tr>
+<tr><td>\(\infty-\infty\)</td><td>通分或有理化合并成 \(\dfrac00\)</td><td>\(\lim\limits_{x\to 0}\left(\dfrac1x-\dfrac{1}{\mathrm e^{x}-1}\right)\)</td></tr>
+<tr><td>\(1^{\infty}\)</td><td>\(u^{v}=\mathrm e^{v\ln u}\)，指 数 化为 \(0\cdot\infty\)；或套 \(\mathrm e^{\lim v(u-1)}\)</td><td>\(\lim\limits_{x\to 0}(\cos x)^{1/x^{2}}\)</td></tr>
+<tr><td>\(0^{0}\)</td><td>同上指数化</td><td>\(\lim\limits_{x\to 0^+}x^{x}\)</td></tr>
+<tr><td>\(\infty^{0}\)</td><td>同上指数化</td><td>\(\lim\limits_{x\to+\infty}x^{1/x}\)</td></tr>
+</tbody></table></div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>① 先化简再洛必达</strong>：能用等价替换、提出非零因子先做的先做（如 \(\lim\limits_{x\to 0}\frac{\sin 2x\cdot(\mathrm e^{x}-1)}{x^2}\)，直接等价得 2，洛必达反而绕远）。<strong>② 非未定式严禁用法则</strong>：\(\lim\limits_{x\to\infty}\frac{x+\sin x}{x}\) 用洛必达得 \(\lim(1+\cos x)=1+\cos x\) 不存在，但原极限 = 1——"导数比不存在"不能推出"原式不存在"，此时应改用其他方法。<strong>③ \(0\cdot\infty\) 移因子时选好求导的进分母</strong>：\(\ln x\) 比 \(x\) 难降幂，应保留 \(\ln x\) 在分子（写成 \(\frac{\ln x}{1/x}\)），否则越导越复杂。<strong>④ 循环式与振动因子</strong>：若导数比回到原式（如含 \(\mathrm e^{1/x}\)、\(\frac{\sin x}{x}\) 型），说明法则失效，改用夹逼或换元。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 3</span>\(\dfrac00\) 型连用洛必达</div>
+  <div class="ex-b">
+    <p>求 \(\lim\limits_{x\to 0}\dfrac{x-\sin x}{x^{3}}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>是 \(\dfrac00\) 型，连续用洛必达（每一步都验证仍为 \(\dfrac00\)）：</p>
+      <div class="fml">$$\lim_{x\to 0}\frac{x-\sin x}{x^{3}}=\lim_{x\to 0}\frac{1-\cos x}{3x^{2}}=\lim_{x\to 0}\frac{\sin x}{6x}=\lim_{x\to 0}\frac{\cos x}{6}=\frac16$$</div>
+      <p>点评：中间一步用 \(1-\cos x\sim\frac{x^{2}}{2}\) 也能直接得 \(\lim\frac{x^2/2}{3x^2}=\frac16\)，更快。经验法则：<strong>每用一次洛必达前，先扫一眼能否等价替换消掉一个因子</strong>，两者交替使用效率最高。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 4</span>\(\infty-\infty\) 型：先通分</div>
+  <div class="ex-b">
+    <p>求 \(\lim\limits_{x\to 0}\left(\dfrac{1}{x}-\dfrac{1}{\mathrm e^{x}-1}\right)\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>通分合并成 \(\dfrac00\) 型：</p>
+      <div class="fml">$$\lim_{x\to 0}\frac{\mathrm e^{x}-1-x}{x(\mathrm e^{x}-1)}=\lim_{x\to 0}\frac{\mathrm e^{x}-1-x}{x\cdot x}$$</div>
+      <p>（分母用等价替换 \(\mathrm e^{x}-1\sim x\)；分子 \(\mathrm e^x-1-x\) 是二阶小量，<strong>不能</strong>把 \(\mathrm e^x-1\) 替换成 \(x\)，否则分子变 0。）再用洛必达：</p>
+      <div class="fml">$$=\lim_{x\to 0}\frac{\mathrm e^{x}-1}{2x}=\frac12$$</div>
+      <p>点评：通分是 \(\infty-\infty\) 的第一反应；替换只能在<strong>乘除因子</strong>中进行，减法结构 \(\mathrm e^x-1-x\) 里分子三不能替换——这正是第一章易错点的实战再现。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 5</span>\(1^{\infty}\) 型：指数化</div>
+  <div class="ex-b">
+    <p>求 \(\lim\limits_{x\to 0}\left(\cos x\right)^{\frac{1}{x^{2}}}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>改写成指数形式，指数是 \(0\cdot\infty\) 型：</p>
+      <div class="fml">$$\lim_{x\to 0}\left(\cos x\right)^{\frac{1}{x^{2}}}=\mathrm e^{\lim\limits_{x\to 0}\frac{\ln\cos x}{x^{2}}}$$</div>
+      <p>对指数用洛必达（\(\frac00\) 型）：</p>
+      <div class="fml">$$\lim_{x\to 0}\frac{\ln\cos x}{x^{2}}=\lim_{x\to 0}\frac{-\tan x}{2x}=-\frac12$$</div>
+      <p>故原极限 \(=\mathrm e^{-\frac12}\)。</p>
+      <p>点评：\(1^{\infty}\) 型统一走"\(\mathrm e^{\lim v\ln u}\)"这条路；其中 \(\ln\cos x\sim\cos x-1\sim-\frac{x^{2}}{2}\) 用等价替换一步到位。所有幂指型（\(1^{\infty},0^{0},\infty^{0}\)）都此法通吃。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="3-3-泰勒公式">3.3 泰勒公式<button class="fav" type="button" data-fav="3-3-泰勒公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="3-3-1-泰勒公式与余项">泰勒公式与余项<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-3-1-泰勒公式与余项" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$f(x)=\sum_{k=0}^{n}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^{k}+R_n(x)$$</div>
+<p>两种余项：① <strong>拉格朗日余项</strong> \(R_n(x)=\dfrac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}\)（\(\xi\) 介于 \(x_0\) 与 \(x\) 之间），用于误差估计与证明题，要求 \(f\) 有 \(n+1\) 阶导数；② <strong>佩亚诺余项</strong> \(R_n(x)=o\bigl((x-x_0)^{n}\bigr)\)，用于求极限。\(x_0=0\) 时称<strong>麦克劳林公式</strong>。泰勒公式是"等价无穷小的升级版"：展开到更高阶，能处理等价替换失效的加减结构。</p>
+
+<h3 id="3-3-2-常用麦克劳林公式表">常用麦克劳林公式表<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-3-2-常用麦克劳林公式表" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>函数</th><th>展开式（含佩亚诺余项）</th><th>备注</th></tr></thead>
+<tbody>
+<tr><td>\(\mathrm e^{x}\)</td><td>\(1+x+\dfrac{x^{2}}{2!}+\dfrac{x^{3}}{3!}+\cdots+\dfrac{x^{n}}{n!}+o(x^{n})\)</td><td>系数 \(\frac{1}{k!}\)，全部同号</td></tr>
+<tr><td>\(\sin x\)</td><td>\(x-\dfrac{x^{3}}{3!}+\dfrac{x^{5}}{5!}-\cdots+o(x^{2n})\)</td><td>只含奇数次，符号交错</td></tr>
+<tr><td>\(\cos x\)</td><td>\(1-\dfrac{x^{2}}{2!}+\dfrac{x^{4}}{4!}-\cdots+o(x^{2n+1})\)</td><td>只含偶数次，符号交错</td></tr>
+<tr><td>\(\ln(1+x)\)</td><td>\(x-\dfrac{x^{2}}{2}+\dfrac{x^{3}}{3}-\cdots+(-1)^{n-1}\dfrac{x^{n}}{n}+o(x^{n})\)</td><td>系数 \(\frac{(-1)^{n-1}}{n}\)</td></tr>
+<tr><td>\((1+x)^{\alpha}\)</td><td>\(1+\alpha x+\dfrac{\alpha(\alpha-1)}{2!}x^{2}+\cdots+o(x^{n})\)</td><td>特例 \(\sqrt{1+x}=1+\frac x2-\frac{x^{2}}{8}+o(x^{2})\)</td></tr>
+<tr><td>\(\dfrac{1}{1-x}\)</td><td>\(1+x+x^{2}+\cdots+x^{n}+o(x^{n})\)（\(|x|\lt 1\)）</td><td>等比级数</td></tr>
+<tr><td>\(\tan x\)</td><td>\(x+\dfrac{x^{3}}{3}+\dfrac{2x^{5}}{15}+o(x^{5})\)</td><td>考试只要求记到 \(x^{3}\) 项</td></tr>
+<tr><td>\(\arctan x\)</td><td>\(x-\dfrac{x^{3}}{3}+\dfrac{x^{5}}{5}-\cdots+o(x^{2n})\)</td><td>系数 \(\frac{(-1)^{n}}{2n+1}\)</td></tr>
+</tbody></table></div>
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> <strong>求未定式极限的"泰勒优先"策略</strong>：分子分母含<strong>加减混合结构</strong>（如 \(\mathrm e^{x}+\mathrm e^{-x}-2\)、\(\sin x-x\cos x\)、\(\ln(1+x)-x\)）时，等价替换会失真，泰勒展开才是正解。操作口诀：分子分母各展开到"<strong>足以分出胜负的最低阶</strong>"（通常同阶即可），多余项一律写成 \(o(x^{n})\) 吸收。典型应用：\(\mathrm e^{x}+\mathrm e^{-x}-2=x^{2}+o(x^{2})\)，故 \(\lim\limits_{x\to 0}\frac{\mathrm e^{x}+\mathrm e^{-x}-2}{x^{2}}=1\)。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 6</span>泰勒展开求极限</div>
+  <div class="ex-b">
+    <p>求 \(\lim\limits_{x\to 0}\dfrac{\mathrm e^{x}\sin x-x(1+x)}{x^{3}}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>把 \(\mathrm e^{x}\sin x\) 展开到三阶（两个展开式相乘）：</p>
+      <div class="fml">$$\mathrm e^{x}\sin x=\left(1+x+\frac{x^{2}}{2}+\frac{x^{3}}{6}\right)\left(x-\frac{x^{3}}{6}\right)=x+x^{2}+\frac{x^{3}}{3}+o(x^{3})$$</div>
+      <p>（乘积中 \(x^{4}\) 及以上项并入 \(o(x^{3})\)。）于是</p>
+      <div class="fml">$$\lim_{x\to 0}\frac{\mathrm e^{x}\sin x-x(1+x)}{x^{3}}=\lim_{x\to 0}\frac{\frac{x^{3}}{3}+o(x^{3})}{x^{3}}=\frac13$$</div>
+      <p>点评：展开阶数由"<strong>分母的阶</strong>"决定——分母是 \(x^{3}\) 就展到三阶。乘法展开先写各因子再逐项乘、合并同类项，低于分母阶的项保留、高阶项丢进 \(o(x^{n})\)。此题用洛必达要导三次，泰勒一步到位，还避免了导数越导越繁的问题。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="3-4-函数的单调性与极值">3.4 函数的单调性与极值<button class="fav" type="button" data-fav="3-4-函数的单调性与极值" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="3-4-1-单调性的判定">单调性的判定<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-4-1-单调性的判定" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$f'(x)\gt 0\ \text{（在某区间内）}\ \Longrightarrow\ f\ \text{在该区间单调增};\qquad f'(x)\lt 0\ \Longrightarrow\ \text{单调减}$$</div>
+<p>判定步骤：① 确定 \(f\) 的定义域（连续性）；② 解 \(f'(x)=0\) 得<strong>驻点</strong>，并找出不可导点；③ 以这些点分割定义域，列表观察各小区间上 \(f'\) 的符号，得单调区间。个别点处 \(f'=0\) 或不存在不影响整体单调性（如 \(y=x^{3}\) 在 \(0\) 处 \(f'=0\) 但单调增）。</p>
+
+<h3 id="3-4-2-极值的必要条件与充分条件">极值的必要条件与充分条件<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-4-2-极值的必要条件与充分条件" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<ul>
+<li><strong>必要条件（费马定理）</strong>：可导点取极值 \(\Rightarrow f'(x_0)=0\)（驻点）。但驻点未必是极值点（\(y=x^{3}\) 在 \(0\)），且<strong>极值点也可能是不可导点</strong>（\(y=|x|\) 在 \(0\)）。</li>
+<li><strong>第一充分条件</strong>：\(f'\) 在 \(x_0\) 两侧变号即取极值（左正右负取极大，左负右正取极小）。</li>
+<li><strong>第二充分条件</strong>：\(f'(x_0)=0\) 且 \(f''(x_0)\ne 0\) 时，\(f''(x_0)\lt 0\) 取极大、\(f''(x_0)\gt 0\) 取极小；\(f''(x_0)=0\) 时失效，需回用第一条件。</li>
+</ul>
+<div class="fml">$$\text{求极值流程：定义域}\to\text{解驻点与不可导点}\to\text{逐点验两侧符号（或} f''\ \text{定号）}\to\text{下结论}$$</div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>① 驻点 ≠ 极值点</strong>：\(y=x^{3}\) 的 \(x=0\) 是驻点但不是极值点，判断题高频。<strong>② 别漏掉不可导点</strong>：求"所有极值点"时，\(y=|x|\) 的极小值点 \(x=0\) 处导数不存在，只列驻点会漏解。<strong>③ 极值是"局部"概念</strong>，极大值可以小于极小值；闭区间上最大值 = 各极值与端点值中的最大者，开区间内则只有极值概念。<strong>④ 单调区间书写</strong>要把不可导点、驻点都作为分界点列入。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 7</span>求单调区间与极值</div>
+  <div class="ex-b">
+    <p>求 \(f(x)=x^{3}-3x\) 的单调区间与极值。</p>
+    <details><summary></summary><div class="sol">
+      <p>定义域为 \(\R\)。\(f'(x)=3x^{2}-3=3(x-1)(x+1)\)，驻点 \(x=\pm1\)（无不可导点）。列表：</p>
+      <div class="tscroll"><table>
+      <thead><tr><th>\(x\)</th><th>\((-\infty,-1)\)</th><th>\(-1\)</th><th>\((-1,1)\)</th><th>\(1\)</th><th>\((1,+\infty)\)</th></tr></thead>
+      <tbody>
+      <tr><td>\(f'(x)\)</td><td>\(+\)</td><td>\(0\)</td><td>\(-\)</td><td>\(0\)</td><td>\(+\)</td></tr>
+      <tr><td>\(f(x)\)</td><td>单调增</td><td>极大值 \(2\)</td><td>单调减</td><td>极小值 \(-2\)</td><td>单调增</td></tr>
+      </tbody></table></div>
+      <p>故增区间 \((-\infty,-1)\) 与 \((1,+\infty)\)，减区间 \((-1,1)\)；极大值 \(f(-1)=2\)，极小值 \(f(1)=-2\)。</p>
+      <p>点评：也可以用第二充分条件：\(f''(x)=6x\)，\(f''(-1)=-6\lt0\) 极大、\(f''(1)=6\gt0\) 极小。列表法是"第一充分条件"的规范书写，考试建议列表，直观且不易漏。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="3-5-曲线的凹凸拐点与渐近线">3.5 曲线的凹凸、拐点与渐近线<button class="fav" type="button" data-fav="3-5-曲线的凹凸拐点与渐近线" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="3-5-1-凹凸性与拐点">凹凸性与拐点<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-5-1-凹凸性与拐点" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$f''(x)\gt 0\ \text{的区间上曲线是凹的（下凸，如}\ y=x^{2}\ \text{）；}\quad f''(x)\lt 0\ \text{的区间上曲线是凸的（如}\ y=x^{3}\ \text{前段）}$$</div>
+<ul>
+<li><strong>凹（下凸）</strong>：弦在弧上方 / 切线在曲线下方，\(f'\) 单调增；<strong>凸</strong>：相反，\(f'\) 单调减。同济教材的"凹"即"下凸"（碗形）。</li>
+<li><strong>拐点</strong>：凹凸性发生改变的点 \((x_0,f(x_0))\)。必要条件：\(f''(x_0)=0\) 或 \(f''\) 不存在；充分条件：\(f''\) 在 \(x_0\) 两侧<strong>变号</strong>。注意拐点是曲线上的点 \((x_0,y_0)\)，不是横坐标。</li>
+</ul>
+
+<h3 id="3-5-2-渐近线">渐近线<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-5-2-渐近线" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>类型</th><th>判定</th><th>求法</th></tr></thead>
+<tbody>
+<tr><td>水平</td><td>\(\lim\limits_{x\to+\infty\text{或}-\infty}f(x)=A\)（常数）</td><td>取 \(x\to\pm\infty\) 的极限；\(y=A\)，两条方向可各有一条</td></tr>
+<tr><td>垂直</td><td>\(\lim\limits_{x\to x_0^{\pm}}f(x)=\infty\)</td><td>找无穷间断点（分母零点、\(\ln\) 的定义边界）</td></tr>
+<tr><td>斜</td><td>\(\lim\limits_{x\to\infty}\dfrac{f(x)}{x}=k\ne0\) 且 \(\lim\limits_{x\to\infty}\bigl[f(x)-kx\bigr]=b\) 存在</td><td>\(k=\lim\frac f x\)，\(b=\lim(f-kx)\)；\(y=kx+b\)（水平渐近线与斜渐近线不同方向可共存，同方向则互斥）</td></tr>
+</tbody></table></div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>① \(f''(x_0)=0\) 不是拐点的充分条件</strong>：\(y=x^{4}\) 在 \(x=0\) 处 \(f''=0\) 但凹凸性不变（一直凹），不是拐点——必须验变号。<strong>② 拐点与驻点都可能是不可导点</strong>：\(y=|x|\) 在 \(0\) 是"尖点"，凹凸不变则不算；\(y=\sqrt[3]{x}\) 在 \(0\) 处 \(f''\) 不存在且两侧变号，是拐点。<strong>③ 垂直渐近线要两侧都看</strong>：\(x\to x_0^+\) 与 \(x\to x_0^-\) 任一侧为 \(\infty\) 即可。<strong>④ 同一方向上，水平与斜渐近线不能同时存在</strong>（\(x\to+\infty\) 有水平就不必有斜），但 \(+\infty\) 与 \(-\infty\) 两个方向要分别检查。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 8</span>凹凸区间、拐点与全部渐近线</div>
+  <div class="ex-b">
+    <p>求曲线 \(y=\dfrac{x^{2}}{x-1}\) 的凹凸区间、拐点与渐近线。</p>
+    <details><summary></summary><div class="sol">
+      <p><strong>渐近线</strong>：\(x=1\) 处分母为零，\(\lim\limits_{x\to 1^{\pm}}\dfrac{x^{2}}{x-1}=\pm\infty\)，有垂直渐近线 \(x=1\)。作除法 \(y=x+1+\dfrac{1}{x-1}\)，故</p>
+      <div class="fml">$$\lim_{x\to\infty}\frac{y}{x}=1,\qquad \lim_{x\to\infty}\left(\frac{x^{2}}{x-1}-x\right)=\lim_{x\to\infty}\left(1+\frac{1}{x-1}\right)=1$$</div>
+      <p>得斜渐近线 \(y=x+1\)。</p>
+      <p><strong>凹凸性</strong>：\(y'=\dfrac{x^{2}-2x}{(x-1)^{2}}\)，\(y''=\dfrac{2}{(x-1)^{3}}\)。当 \(x\gt 1\) 时 \(y''\gt 0\) 曲线凹，\(x\lt 1\) 时 \(y''\lt 0\) 曲线凸；但 \(x=1\) 不在定义域内，两侧凹凸不同的"变号点"不是曲线上的点，故<strong>无拐点</strong>。</p>
+      <p>点评：含分式曲线先做"<strong>多项式除法</strong>"拆出斜渐近线，比硬算 \(k,b\) 极限更稳；判断拐点务必确认变号点在<strong>定义域内</strong>且在曲线上，本题是"假拐点"的经典反例。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="3-6-曲率">3.6 曲率<button class="fav" type="button" data-fav="3-6-曲率" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="3-6-1-弧微分">弧微分<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-6-1-弧微分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>曲线弧长函数 \(s(x)\) 的微分为<strong>弧微分</strong>，由"以直代曲"（微小弧段用弦近似，勾股定理）得：</p>
+<div class="fml">$$\mathrm ds=\sqrt{1+(y')^{2}}\,\mathrm dx\qquad\text{参数式：}\ \mathrm ds=\sqrt{\bigl(\varphi'(t)\bigr)^{2}+\bigl(\psi'(t)\bigr)^{2}}\,\mathrm dt$$</div>
+
+<h3 id="3-6-2-曲率及其计算公式">曲率及其计算公式<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-6-2-曲率及其计算公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>曲率 \(K\) 刻画曲线的弯曲程度：单位弧长上切线转过的角度的极限。由 \(\mathrm d\alpha=\dfrac{y''}{1+y'^{2}}\mathrm dx\)（\(\alpha=\arctan y'\) 求微分）与 \(\mathrm ds=\sqrt{1+y'^{2}}\,\mathrm dx\) 相除：</p>
+<div class="fml">$$K=\left|\frac{\mathrm d\alpha}{\mathrm ds}\right|=\frac{|y''|}{\left(1+(y')^{2}\right)^{3/2}}\qquad\text{参数式：}\ K=\frac{\left|\varphi'\psi''-\varphi''\psi'\right|}{\left((\varphi')^{2}+(\psi')^{2}\right)^{3/2}}$$</div>
+<ul>
+<li>直线：\(y''=0\)，\(K=0\)（不弯）；半径 \(R\) 的圆：\(K=\dfrac1R\)（处处等弯）——"曲率的倒数像半径"。</li>
+<li><strong>曲率半径</strong> \(\rho=\dfrac1K\)（\(K\ne 0\)）；<strong>曲率圆</strong>：在点处与曲线同向相切、半径为 \(\rho\) 的圆，曲率中心 \(D(\alpha,\beta)\) 可由法线方向求得。</li>
+</ul>
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> <strong>曲率考题就三件事</strong>：① 套公式求曲率（分母是 \((1+y'^{2})^{3/2}\)，<strong>指数 3/2 不是 1/2</strong>，这是最高频的笔误点）；② 求曲率半径 \(\rho=1/K\)；③ 求指定点的曲率值——先算该点的 \(y'\)、\(y''\) 再代入，不要先代入再求导。参数方程求曲率用第二式（摆线、椭圆是常客）。选择题爱考"直线与圆的曲率"：直线 \(K=0\)，圆 \(K=1/R\)。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 9</span>求抛物线在某点的曲率与曲率半径</div>
+  <div class="ex-b">
+    <p>求抛物线 \(y=x^{2}\) 在点 \((1,1)\) 处的曲率与曲率半径。</p>
+    <details><summary></summary><div class="sol">
+      <p>先算该点的导数值：\(y'=2x\)，\(y''=2\)，在 \(x=1\) 处 \(y'=2\)，\(y''=2\)。代入曲率公式：</p>
+      <div class="fml">$$K=\frac{|y''|}{\left(1+(y')^{2}\right)^{3/2}}=\frac{2}{\left(1+2^{2}\right)^{3/2}}=\frac{2}{5\sqrt5}=\frac{2\sqrt5}{25}$$</div>
+      <p>曲率半径：</p>
+      <div class="fml">$$\rho=\frac1K=\frac{5\sqrt5}{2}$$</div>
+      <p>点评：流程是"定点 → 求 \(y',y''\) → 代公式"。对照顶点 \((0,0)\) 处（\(y'=0\)）曲率 \(K=2\)，抛物线越靠近顶点越弯，与直观一致。若是参数方程（如摆线 \(x=a(t-\sin t)\)，\(y=a(1-\cos t)\)），改用参数公式，其中 \(\varphi'\psi''-\varphi''\psi'=a(1-\cos t)\cdot a\sin t-a\sin t\cdot 0=a^{2}(1-\cos t)\sin t\)。</p>
+    </div></details>
+  </div>
+</div>
+
+<details class="ext"><summary>拓展 · 可能考<span class="ext-tag">考前加分</span></summary><div class="ext-b">
+  <p><strong>① 三个定理的关系</strong>：柯西 \(\xrightarrow{G(t)=t}\) 拉格朗日 \(\xrightarrow{f(a)=f(b)}\) 罗尔，逐个特例化；反过来证明题中出现两个函数就用柯西，一个函数就用拉格朗日/罗尔。</p>
+  <p><strong>② 费马定理</strong>：可导点取极值 \(\Rightarrow f'(x_0)=0\)，它是罗尔定理的证明基础（最值点必为驻点或端点）；"导数零点定理"（达布定理，导函数取遍中间值）是判断题冷门点：导函数可以不连续，但不能有跳跃间断。</p>
+  <p><strong>③ 渐近线条数速查</strong>：\(y=\dfrac{x^{2}}{x-1}\) 有 2 条（垂直 + 斜）；\(y=\mathrm e^{1/x}\) 有 2 条水平（\(x\to\pm\infty\) 各一条：\(y=1\)）加上 \(x=0\) 一条垂直；求渐近线必先列定义域再看各方向极限，缺一方向就少答。</p>
+</div></details>

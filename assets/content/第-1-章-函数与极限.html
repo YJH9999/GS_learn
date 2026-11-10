@@ -1,0 +1,254 @@
+<h1 id="第-1-章-函数与极限">第 1 章　函数与极限</h1>
+<p>极限是整部高等数学的基石：后续的连续、导数、积分全部建立在极限语言之上。本章先复习函数（研究的对象），再依次建立数列极限与函数极限（研究的工具），掌握两个重要极限与等价无穷小替换（计算的利器），最后落脚于连续性与闭区间上连续函数的性质（承上启下的桥梁）。考试中本章以小题与极限计算题为主，等价无穷小替换表必须背到滚瓜烂熟。</p>
+<ul>
+<li>主线脉络：函数 → 极限定义 → 极限性质 → 两个重要极限 → 无穷小比较 → 连续与间断点 → 闭区间连续函数性质。</li>
+<li>计算主线：直接代入 → 化简（因式约分、有理化）→ 等价替换 → 重要极限 → 洛必达（第 3 章）。</li>
+</ul>
+
+<h2 id="1-1-映射与函数">1.1 映射与函数<button class="fav" type="button" data-fav="1-1-映射与函数" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="1-1-1-映射的概念">映射的概念<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="1-1-1-映射的概念" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>设 \(X\)、\(Y\) 是两个非空集合，若对每个 \(x\in X\)，按某法则 \(f\) 有<strong>唯一</strong>确定的 \(y\in Y\) 与之对应，则称 \(f\) 为从 \(X\) 到 \(Y\) 的<strong>映射</strong>，记作 \(f:X\to Y\)，\(y=f(x)\)。三要素：定义域 \(D_f=X\)、对应法则、值域 \(R_f=f(X)\subseteq Y\)。</p>
+<ul>
+<li><strong>单射</strong>：\(x_1\ne x_2 \Rightarrow f(x_1)\ne f(x_2)\)；<strong>满射</strong>：\(R_f=Y\)；既是单射又是满射称<strong>双射</strong>（一一映射）。</li>
+<li>只有双射才存在逆映射 \(f^{-1}:R_f\to X\)。函数是数集到数集的映射；分段函数、含绝对值的函数都是函数。</li>
+</ul>
+
+<h3 id="1-1-2-函数的四大性质">函数的四大性质<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="1-1-2-函数的四大性质" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>性质</th><th>定义（用不等式刻画）</th><th>要点</th></tr></thead>
+<tbody>
+<tr><td>有界性</td><td>\(\exists M\gt 0\)，使 \(|f(x)|\le M\) 对一切 \(x\in I\)</td><td>必须指明区间 \(I\)；\(\tan x\) 在 \((0,\frac{\pi}{2})\) 无界，在 \([0,\frac{\pi}{4}]\) 有界</td></tr>
+<tr><td>单调性</td><td>\(x_1\lt x_2\Rightarrow f(x_1)\lt f(x_2)\)（增）或反号（减）</td><td>单调 + 连续 ⇒ 反函数存在且单调</td></tr>
+<tr><td>奇偶性</td><td>定义域对称且 \(f(-x)=f(x)\)（偶）或 \(f(-x)=-f(x)\)（奇）</td><td>偶函数图象关于 \(y\) 轴对称，奇函数关于原点对称；奇函数若在 \(0\) 有定义则 \(f(0)=0\)</td></tr>
+<tr><td>周期性</td><td>\(\exists T\gt 0\) 使 \(f(x+T)=f(x)\)</td><td>通常指最小正周期；\(\sin x\)、\(\tan x\) 周期分别为 \(2\pi\)、\(\pi\)</td></tr>
+</tbody></table></div>
+<div class="fml">$$f\text{ 奇}:\ f(x)+f(-x)=0;\qquad f\text{ 偶}:\ f(x)-f(-x)=0;\qquad \text{复合奇偶：奇}\times\text{奇}=\text{偶，偶}\times\text{任何}=\text{偶}$$</div>
+
+<h3 id="1-1-3-复合函数与反函数">复合函数与反函数<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="1-1-3-复合函数与反函数" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<ul>
+<li><strong>复合函数</strong>：\(y=f(u)\)，\(u=g(x)\) 能复合的<strong>前提</strong>是 \(g\) 的值域落在 \(f\) 的定义域内，结果 \(y=f[g(x)]\)。</li>
+<li><strong>反函数</strong>：单调函数必有反函数；\(y=f(x)\) 的反函数记 \(x=f^{-1}(y)\)（习惯写作 \(y=f^{-1}(x)\)），二者图象关于直线 \(y=x\) 对称，且反函数与直接函数具有相同的单调性。</li>
+<li><strong>初等函数</strong>：幂函数、指数函数、对数函数、三角函数、反三角函数称基本初等函数；由它们经有限次四则运算与有限次复合且用一个式子表示的函数称初等函数。</li>
+</ul>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>① 复合的前提</strong>：不是任意两个函数都能复合，如 \(y=\ln u\)，\(u=-1-x^2\) 不存在复合（\(u\lt 0\) 不在 \(\ln\) 的定义域内）。<strong>② 反函数的"穿脱"</strong>：\(f^{-1}(f(x))=x\)，但 \(f\cdot f^{-1}\) 是乘法记号时不要与复合记号混淆。<strong>③ 求定义域不能"化简后再算"</strong>：\(y=\frac{x^2-1}{x-1}\) 与 \(y=x+1\) 不是同一个函数，前者在 \(x=1\) 处无定义。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 1</span>求复合函数的定义域</div>
+  <div class="ex-b">
+    <p>求 \(y=\ln(3-x)+\dfrac{1}{\sqrt{x-1}}\) 的定义域。</p>
+    <details><summary></summary><div class="sol">
+      <p>需同时满足 \(3-x\gt 0\) 且 \(x-1\gt 0\)（分母中根号内须严格大于零），即 \(x\lt 3\) 且 \(x\gt 1\)：</p>
+      <div class="fml">$$D=(1,\ 3)$$</div>
+      <p>点评：定义域是使<strong>原始表达式</strong>每一步都有意义的 \(x\) 的集合，取各条件的交集；分母中 \(\sqrt{\;}\) 必须严格大于 0，漏掉这一点是最常见的错误。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 2</span>证明函数有界</div>
+  <div class="ex-b">
+    <p>证明 \(f(x)=\dfrac{x}{1+x^2}\) 在 \(\R\) 上有界。</p>
+    <details><summary></summary><div class="sol">
+      <p>当 \(x=0\) 时 \(f(0)=0\)；当 \(x\ne 0\) 时，由 \(1+x^2\ge 2|x|\)（均值不等式）得</p>
+      <div class="fml">$$\left|\frac{x}{1+x^2}\right|\le\frac{|x|}{2|x|}=\frac12$$</div>
+      <p>故对一切 \(x\in\R\) 有 \(|f(x)|\le \frac12\)，即有界。点评：证有界性就是找常数 \(M\)，常用的工具是 \(1+x^2\ge 2|x|\)、\(e^x\gt 0\)、三角有界 \(|\sin t|\le 1\) 等；注意"有界"是对<strong>给定区间整体</strong>而言。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="1-2-数列的极限">1.2 数列的极限<button class="fav" type="button" data-fav="1-2-数列的极限" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="1-2-1-数列极限的定义">数列极限的定义<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="1-2-1-数列极限的定义" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>设 \(\{x_n\}\) 为数列，\(a\) 为常数。若对任意给定的 \(\varepsilon\gt 0\)，总存在正整数 \(N\)，使得当 \(n\gt N\) 时恒有 \(|x_n-a|\lt \varepsilon\)，则称数列 \(\{x_n\}\) 收敛于 \(a\)，记作 \(\lim\limits_{n\to\infty}x_n=a\)。</p>
+<div class="fml">$$\lim_{n\to\infty}x_n=a\iff \forall\varepsilon\gt 0,\ \exists N\in\mathbb{N}^+,\ \text{当 } n\gt N \text{ 时 } |x_n-a|\lt\varepsilon$$</div>
+<ul>
+<li>\(\varepsilon\) 刻画"要多近有多近"，\(N\) 刻画"足够靠后"，\(N\) 依赖 \(\varepsilon\) 但不唯一。</li>
+<li>数列收敛与前面有限项无关：增加、删除或改变有限项不影响敛散性与极限值。</li>
+</ul>
+
+<h3 id="1-2-2-收敛数列的性质">收敛数列的性质<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="1-2-2-收敛数列的性质" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>性质</th><th>内容</th><th>备注</th></tr></thead>
+<tbody>
+<tr><td>唯一性</td><td>收敛数列的极限唯一</td><td>两个子列极限不同 ⇒ 原数列发散</td></tr>
+<tr><td>有界性</td><td>收敛数列必有界</td><td><strong>逆命题不成立</strong>：\(x_n=(-1)^n\) 有界但不收敛</td></tr>
+<tr><td>保号性</td><td>\(\lim x_n=a\gt 0\Rightarrow\) 当 \(n\gt N\) 时 \(x_n\gt \frac a2\gt 0\)</td><td>极限号与不等号之间只能保留严格不等号：\(x_n\gt 0\ \not\Rightarrow\ a\gt 0\)，只能得 \(a\ge 0\)</td></tr>
+<tr><td>子数列</td><td>收敛数列的任何子列都收敛于同一极限</td><td>常用于证"发散"：奇偶子列极限不同即可</td></tr>
+</tbody></table></div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>"有界"与"收敛"的关系</strong>是判断题常客：收敛 ⇒ 有界，但<strong>有界 ⇏ 收敛</strong>（如 \(\{(-1)^n\}\)）。同理"无界 ⇒ 发散"成立，"发散 ⇒ 无界"不成立（振荡型发散是有界的）。另外夹逼准则与单调有界准则（单调递增且有上界 ⇒ 收敛）是求数列极限的两大法宝，递推数列 \(x_{n+1}=f(x_n)\) 优先考虑单调有界。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 3</span>用 \(\varepsilon\)-\(N\) 定义证明极限</div>
+  <div class="ex-b">
+    <p>用定义证明 \(\lim\limits_{n\to\infty}\dfrac{3n+1}{2n+1}=\dfrac32\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>任给 \(\varepsilon\gt 0\)，考察差式并适当放大：</p>
+      <div class="fml">$$\left|\frac{3n+1}{2n+1}-\frac32\right|=\left|\frac{6n+2-6n-3}{2(2n+1)}\right|=\frac{1}{2(2n+1)}\lt\frac{1}{4n}$$</div>
+      <p>令 \(\dfrac{1}{4n}\lt\varepsilon\)，取 \(N=\left[\dfrac{1}{4\varepsilon}\right]+1\)，则当 \(n\gt N\) 时恒有 \(\left|\dfrac{3n+1}{2n+1}-\dfrac32\right|\lt\varepsilon\)，证毕。</p>
+      <p>点评：定义法证明的固定套路是"<strong>逆推找 N</strong>"——先化简 \(|x_n-a|\)，再放大成一个只含 \(n\) 的简单式子令其小于 \(\varepsilon\)，解出 \(N\)；放大要"放得有意义"，方向必须是变大。</p>
+    </div></details>
+  </div>
+</div>
+
+<details class="ext"><summary>拓展 · 求数列极限的两大准则<span class="ext-tag">考前加分</span></summary><div class="ext-b">
+  <p><strong>① 夹逼准则</strong>：若 \(y_n\le x_n\le z_n\)（\(n\gt N\)）且 \(\lim y_n=\lim z_n=a\)，则 \(\lim x_n=a\)。典型应用：\(\lim\limits_{n\to\infty}\left(\dfrac{1}{n^{2}+1}+\dfrac{2}{n^{2}+2}+\cdots+\dfrac{n}{n^{2}+n}\right)\)——把每项放缩为 \(\dfrac{k}{n^{2}+n}\le\dfrac{k}{n^{2}+k}\le\dfrac{k}{n^{2}+1}\)，两端和都是 \(\dfrac{n(n+1)/2}{n^{2}+o(n^{2})}\to\dfrac12\)。"分式和式"放缩是夹逼的招牌题型。</p>
+  <p><strong>② 单调有界准则</strong>：单调递增有上界（或递减有下界）的数列必收敛。递推数列 \(x_{n+1}=f(x_n)\)（如 \(x_{n+1}=\sqrt{2+x_n}\)）的标准流程：先验证 \(x_n\gt 0\)（归纳），再证单调（作差 / 作商比较 \(x_{n+1}\) 与 \(x_n\)），后证有界，最后两边取极限解方程 \(A=f(A)\) 求出极限值。</p>
+  <p><strong>③ 提醒</strong>：夹逼要求两端极限<strong>相等</strong>；若只有 \(\lim z_n\) 存在，夹不住。\(n\) 项和的极限优先考虑夹逼或定积分定义（第 5 章），不要盲目拆项。</p>
+</div></details>
+
+<h2 id="1-3-函数的极限与无穷小">1.3 函数的极限与无穷小<button class="fav" type="button" data-fav="1-3-函数的极限与无穷小" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="1-3-1-函数极限的定义与单侧极限">函数极限的定义与单侧极限<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="1-3-1-函数极限的定义与单侧极限" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>自变量的六种变化过程：\(x\to x_0\)、\(x\to x_0^{\pm}\)、\(x\to\infty\)、\(x\to\pm\infty\)。<strong>\(x\to x_0\) 的 \(\varepsilon\)-\(\delta\) 定义</strong>：任给 \(\varepsilon\gt 0\)，存在 \(\delta\gt 0\)，当 \(0\lt|x-x_0|\lt\delta\) 时恒有 \(|f(x)-A|\lt\varepsilon\)。注意 \(0\lt|x-x_0|\) 表示<strong>不考虑 \(x=x_0\) 处</strong>的函数值，所以求 \(x\to x_0\) 的极限与 \(f(x_0)\) 是否有定义、取什么值都无关。</p>
+<div class="fml">$$\lim_{x\to x_0}f(x)=A\iff \lim_{x\to x_0^-}f(x)=\lim_{x\to x_0^+}f(x)=A\quad(\text{左极限 = 右极限})$$</div>
+<ul>
+<li>分段函数在分界点处求极限，<strong>必须分别求左右极限</strong>再比较。</li>
+<li>\(\lim\limits_{x\to\infty}f(x)=A\iff \lim\limits_{x\to+\infty}f(x)=\lim\limits_{x\to-\infty}f(x)=A\)，含 \(e^{x}\)、\(\arctan x\) 的题常考这一点。</li>
+</ul>
+
+<h3 id="1-3-2-无穷小与无穷大">无穷小与无穷大<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="1-3-2-无穷小与无穷大" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>若 \(\lim f(x)=0\)，称 \(f(x)\) 是该过程中的<strong>无穷小</strong>；若 \(\lim f(x)=\infty\)，称为<strong>无穷大</strong>。无穷小是"以零为极限的变量"，<strong>不是很小很小的数</strong>（常数中只有 \(0\) 可看作无穷小）。</p>
+<div class="tscroll"><table>
+<thead><tr><th>关系</th><th>结论</th><th>用途</th></tr></thead>
+<tbody>
+<tr><td>极限与无穷小</td><td>\(\lim f(x)=A\iff f(x)=A+\alpha\)，\(\alpha\) 为同过程无穷小</td><td>"极限 = 常数 + 无穷小"，证明题的桥梁</td></tr>
+<tr><td>无穷小与无穷大</td><td>同一过程中，\(f\ne 0\) 时：\(f\) 为无穷大 \(\iff \dfrac1f\) 为无穷小</td><td>倒数互换</td></tr>
+<tr><td>运算性质</td><td>有限个无穷小之和仍为无穷小；无穷小 × 有界变量 = 无穷小</td><td>"无穷小 × 有界"是求极限的高频技巧</td></tr>
+</tbody></table></div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>① 无穷大 ≠ 无界</strong>：无穷大要求 \(|f(x)|\) "充分大之后一律大于 \(M\)"，而 \(f(x)=x\sin x\) 当 \(x\to\infty\) 无界但不是无穷大（存在振荡的零点）。<strong>② 方向性</strong>：\(e^{1/x}\) 当 \(x\to 0^+\) 是无穷大、\(x\to 0^-\) 是无穷小，\(x\to 0\) 时极限不存在，不能笼统地说它是无穷大。<strong>③ 无穷小相除、无穷大相加</strong>不一定还是无穷小/无穷大，属于未定式，必须具体分析。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 4</span>利用"无穷小 × 有界变量"求极限</div>
+  <div class="ex-b">
+    <p>求 \(\lim\limits_{x\to\infty}\dfrac{\sin x}{x}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>把函数拆成乘积 \(\dfrac1x\cdot\sin x\)：当 \(x\to\infty\) 时 \(\dfrac1x\) 是无穷小，而 \(|\sin x|\le 1\) 有界，故</p>
+      <div class="fml">$$\lim_{x\to\infty}\frac{\sin x}{x}=\lim_{x\to\infty}\frac1x\cdot\sin x=0$$</div>
+      <p>点评：见到"<strong>无穷小 × 有界</strong>"直接得 0，这是"有界函数乘无穷小仍为无穷小"的直接应用。注意与 \(x\to 0\) 时的 \(\dfrac{\sin x}{x}\to 1\)（重要极限）区分——变化过程不同，结果完全不同。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="1-4-两个重要极限与无穷小的比较">1.4 两个重要极限与无穷小的比较<button class="fav" type="button" data-fav="1-4-两个重要极限与无穷小的比较" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="1-4-1-两个重要极限">两个重要极限<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="1-4-1-两个重要极限" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$\lim_{x\to 0}\frac{\sin x}{x}=1\qquad\qquad \lim_{x\to\infty}\left(1+\frac1x\right)^{x}=\mathrm e\qquad\qquad \lim_{x\to 0}\left(1+x\right)^{\frac1x}=\mathrm e$$</div>
+<ul>
+<li>第一个是 \(\frac00\) 型，靠夹逼（\(\cos x\lt\frac{\sin x}{x}\lt 1\)）证得，几何特征是"<strong>弦比弧</strong>"；第二个是 \(1^{\infty}\) 型，源于 \(e\) 的定义，\(\lim\limits_{n\to\infty}\left(1+\frac1n\right)^n=\mathrm e\) 是其特例。</li>
+<li>通用推广形式（换元 \(u\to 0\)）：\(\lim\dfrac{\sin u}{u}=1\)；\(\lim(1+u)^{1/u}=\mathrm e\)。其中 \(1^{\infty}\) 型的速算公式：\(\lim f^{g}=\mathrm e^{\lim g(f-1)}\)（当 \(f\to 1\)、\(g\to\infty\)）。</li>
+</ul>
+<details class="prf"><summary><span class="prf-tag">推导</span>夹逼证明 \(\lim\limits_{x\to 0}\dfrac{\sin x}{x}=1\)</summary><div class="prf-b">
+  <p>单位圆中取弧 \(AB\) 所对圆心角 \(x\)（\(0\lt x\lt\frac{\pi}{2}\)），比较三段大小：\(\sin x\lt x\lt\tan x\)，于是 \(\cos x\lt\dfrac{\sin x}{x}\lt 1\)。由 \(\lim\limits_{x\to 0^+}\cos x=1\) 且 \(\dfrac{\sin x}{x}\) 为偶函数，夹逼得左右极限均为 \(1\)。</p>
+</div></details>
+
+<h3 id="1-4-2-等价无穷小替换表">等价无穷小替换表<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="1-4-2-等价无穷小替换表" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>设 \(\alpha\sim\alpha'\)，\(\beta\sim\beta'\)（同一过程，且均为无穷小），则 \(\lim\dfrac{\beta}{\alpha}=\lim\dfrac{\beta'}{\alpha'}\)——<strong>乘除因子可以整体替换</strong>。\(x\to 0\) 时的常用等价无穷小如下表：</p>
+<div class="tscroll"><table>
+<thead><tr><th>组合</th><th>等价关系（\(x\to 0\)）</th><th>来源</th></tr></thead>
+<tbody>
+<tr><td>三角类</td><td>\(\sin x\sim x\)，\(\tan x\sim x\)，\(\arcsin x\sim x\)，\(\arctan x\sim x\)，\(1-\cos x\sim\dfrac{x^2}{2}\)</td><td>\(\frac{\sin x}{x}\to 1\) 及求导</td></tr>
+<tr><td>指数对数类</td><td>\(\mathrm e^x-1\sim x\)，\(a^x-1\sim x\ln a\)，\(\ln(1+x)\sim x\)，\(\log_a(1+x)\sim\dfrac{x}{\ln a}\)</td><td>导数定义 / 泰勒展开</td></tr>
+<tr><td>幂类</td><td>\((1+x)^{\alpha}-1\sim\alpha x\)；特例 \(\sqrt{1+x}-1\sim\dfrac{x}{2}\)</td><td>二项式展开</td></tr>
+<tr><td>组合题源</td><td>\(\sin x-\tan x\sim-\dfrac{x^3}{2}\)，\(\tan x-\sin x\sim\dfrac{x^3}{2}\)，\(x-\sin x\sim\dfrac{x^3}{6}\)</td><td>泰勒展开（第 3 章）</td></tr>
+</tbody></table></div>
+<div class="fml">$$\text{设 } \alpha\sim\alpha',\ \beta\sim\beta':\qquad \lim\frac{\beta}{\alpha}=\lim\frac{\beta'}{\alpha'}=\lim\frac{\beta'}{\alpha}=\lim\frac{\beta}{\alpha'}$$</div>
+<h3 id="1-4-3-无穷小的阶">无穷小的阶<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="1-4-3-无穷小的阶" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>设 \(\lim\dfrac{\beta}{\alpha}=c\)（\(\alpha,\beta\) 为同一过程的无穷小）：\(c=0\) 称 \(\beta\) 是 \(\alpha\) 的<strong>高阶</strong>无穷小，记 \(\beta=o(\alpha)\)；\(c=\infty\) 称低阶；\(c\ne 0\) 称同阶；\(c=1\) 称<strong>等价</strong>；若 \(\lim\dfrac{\beta}{\alpha^k}=c\ne 0\)，称 \(\beta\) 为 \(\alpha\) 的 \(k\) 阶无穷小。</p>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>替换只准用在乘除因子上，加减中严禁直接替换！</strong>如 \(\lim\limits_{x\to 0}\dfrac{\tan x-\sin x}{x^3}\)：若把 \(\tan x\)、\(\sin x\) 都换成 \(x\)，分子变 \(0\)，得到错误答案 \(0\)；正确做法是 \(\dfrac{\tan x-\sin x}{x^3}=\dfrac{\tan x(1-\cos x)}{x^3}\to 1\cdot\dfrac12=\dfrac12\)。等价替换的<strong>正确姿势</strong>：只替换分子、分母或乘积中的因子；加减结构要么先恒等变形化成乘除，要么用泰勒展开（更稳）。另外替换时自变量范围要对：\(\sin x\sim x\) 只在 \(x\to 0\) 成立，\(x\to\infty\) 时 \(\sin x\) 根本不是无穷小。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 5</span>等价替换求 \(\frac00\) 型极限</div>
+  <div class="ex-b">
+    <p>求 \(\lim\limits_{x\to 0}\dfrac{\mathrm e^{3x}-1}{\ln(1+2x)}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>分子分母都是 \(x\to 0\) 的无穷小，整体替换：\(\mathrm e^{3x}-1\sim 3x\)，\(\ln(1+2x)\sim 2x\)。</p>
+      <div class="fml">$$\lim_{x\to 0}\frac{\mathrm e^{3x}-1}{\ln(1+2x)}=\lim_{x\to 0}\frac{3x}{2x}=\frac32$$</div>
+      <p>点评：替换时把"复合量"整体看成一个字母——\(\mathrm e^{u}-1\sim u\) 中的 \(u=3x\)。这是等价替换最标准的使用场景：分子、分母各自是无穷小，直接换成主部。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 6</span>\(1^{\infty}\) 型：第二个重要极限的推广</div>
+  <div class="ex-b">
+    <p>求 \(\lim\limits_{x\to 0}\left(1+2x\right)^{\frac{3}{x}}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>凑标准形 \((1+u)^{1/u}\)：</p>
+      <div class="fml">$$\left(1+2x\right)^{\frac{3}{x}}=\left[\left(1+2x\right)^{\frac{1}{2x}}\right]^{6x\cdot\frac{3}{x}}=\left[\left(1+2x\right)^{\frac{1}{2x}}\right]^{6}\longrightarrow \mathrm e^{6}$$</div>
+      <p>也可用指数改写：\(\left(1+2x\right)^{3/x}=\mathrm e^{\frac{3}{x}\ln(1+2x)}\)，而 \(\frac{3}{x}\ln(1+2x)\to 3\cdot 2=6\)，故极限为 \(\mathrm e^{6}\)。</p>
+      <p>点评：\(1^{\infty}\) 型三板斧——写成 \(\mathrm e^{\text{指数}}\)、把指数化成 \(\frac00\)、用等价替换。速记口诀：底数凑 \(1\)，指数除以"底数减 1"的倒数，最终 \(\mathrm e^{\lim g\,(f-1)}\)。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="1-5-函数的连续性与间断点">1.5 函数的连续性与间断点<button class="fav" type="button" data-fav="1-5-函数的连续性与间断点" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="1-5-1-连续的定义">连续的定义<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="1-5-1-连续的定义" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>设 \(f\) 在 \(x_0\) 的某邻域内有定义，若 \(\lim\limits_{x\to x_0}f(x)=f(x_0)\)，称 \(f\) 在 \(x_0\) <strong>连续</strong>。它等价于三个条件同时成立：\(f(x_0)\) 有定义、极限 \(\lim\limits_{x\to x_0}f(x)\) 存在、两者相等。</p>
+<div class="fml">$$\lim_{x\to x_0}f(x)=f(x_0)\iff \lim_{\Delta x\to 0}\Delta y=\lim_{\Delta x\to 0}\bigl[f(x_0+\Delta x)-f(x_0)\bigr]=0$$</div>
+<ul>
+<li><strong>左连续 / 右连续</strong>：\(\lim\limits_{x\to x_0^-}f(x)=f(x_0)\) 称左连续；\(f\) 在 \(x_0\) 连续 \(\iff\) 左连续且右连续。分段函数分界点、区间端点只谈单侧连续。</li>
+<li><strong>运算性质</strong>：连续函数的四则（分母非零）、复合仍连续；一切初等函数在其<strong>定义区间内</strong>都连续——这是"直接代入法"求极限的依据。</li>
+</ul>
+
+<h3 id="1-5-2-间断点的分类">间断点的分类<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="1-5-2-间断点的分类" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>类别</th><th>名称</th><th>判定条件</th><th>典型例子（\(x=0\) 处）</th></tr></thead>
+<tbody>
+<tr><td rowspan="2">第一类（左右极限都存在）</td><td>可去间断点</td><td>左右极限<strong>相等</strong>，但不等于 \(f(x_0)\) 或 \(f(x_0)\) 无定义</td><td>\(\dfrac{\sin x}{x}\)、\(x\sin\dfrac1x\)</td></tr>
+<tr><td>跳跃间断点</td><td>左右极限存在但<strong>不相等</strong></td><td>\(\dfrac{|x|}{x}\)、\(\mathrm e^{1/x}\cdot\text{符号函数型}\)</td></tr>
+<tr><td rowspan="2">第二类（至少一侧极限不存在）</td><td>无穷间断点</td><td>至少一侧极限为 \(\infty\)</td><td>\(\dfrac1x\)、\(\tan x\)（\(x=\frac{\pi}{2}+k\pi\)）</td></tr>
+<tr><td>振荡间断点</td><td>极限不存在且因振荡所致</td><td>\(\sin\dfrac1x\)、\(\cos\dfrac1x\)</td></tr>
+</tbody></table></div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>判断间断点的标准流程</strong>：① 找出无定义点与分段点；② 逐一求<strong>左右极限</strong>；③ 按上表归类。跳过"左右极限"这步直接看形式是最常见的丢分点。典型陷阱：\(f(x)=\mathrm e^{1/x}\) 在 \(x=0\) 处，左极限 \(=0\)、右极限 \(=+\infty\)——右侧不存在，故是<strong>第二类（无穷）间断点</strong>，不要因为左极限存在而误判成第一类。另外，可去间断点只需补充定义 \(f(x_0)=\lim f(x)\) 即可"修复"成连续，跳跃与第二类不可修复。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 7</span>求间断点并分类</div>
+  <div class="ex-b">
+    <p>讨论 \(f(x)=\dfrac{x\sin x}{1-\mathrm e^{x}}\) 在 \(x=0\) 处的间断点类型。</p>
+    <details><summary></summary><div class="sol">
+      <p>考察 \(x\to 0\) 时的左右极限。分子 \(x\sin x\sim x^2\)，分母 \(1-\mathrm e^{x}\sim -x\)，且两侧同号地趋于 0，故</p>
+      <div class="fml">$$\lim_{x\to 0}\frac{x\sin x}{1-\mathrm e^{x}}=\lim_{x\to 0}\frac{x^2}{-x}=0$$</div>
+      <p>极限存在但 \(f(0)\) 无定义，故 \(x=0\) 是<strong>可去间断点</strong>（第一类）。补充定义 \(f(0)=0\) 后函数在该点连续。</p>
+      <p>点评：判断类型的依据是<strong>左右极限的行为</strong>而不是函数长相；求极限时等价替换（\(1-\mathrm e^x\sim -x\)）极大简化运算。若把分母换成 \(1-\mathrm e^{1/x}\)，两侧行为不同，就要分别算左右极限再下结论。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="1-6-闭区间上连续函数的性质">1.6 闭区间上连续函数的性质<button class="fav" type="button" data-fav="1-6-闭区间上连续函数的性质" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="1-6-1-最值定理与有界性定理">最值定理与有界性定理<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="1-6-1-最值定理与有界性定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>若 \(f\) 在<strong>闭区间</strong> \([a,b]\) 上连续，则：① \(f\) 在 \([a,b]\) 上必取得最大值 \(M\) 与最小值 \(m\)（<strong>最值定理</strong>）；② \(f\) 在 \([a,b]\) 上有界（<strong>有界性定理</strong>）。</p>
+<ul>
+<li>"闭区间"与"连续"两个条件缺一不可：开区间上的连续函数如 \(y=x\) 在 \((0,1)\) 无最值；\(y=\tan x\) 在闭区间上含间断点时结论失效。</li>
+<li>推论：\(f\) 连续时，\(f\) 必能取得介于最大值与最小值之间的任何值——这正是介值定理。</li>
+</ul>
+
+<h3 id="1-6-2-零点定理与介值定理">零点定理与介值定理<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="1-6-2-零点定理与介值定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$\textbf{零点定理：}\ f\in C[a,b],\ f(a)\cdot f(b)\lt 0\ \Longrightarrow\ \exists\,\xi\in(a,b),\ f(\xi)=0$$</div>
+<div class="fml">$$\textbf{介值定理：}\ f\in C[a,b],\ \mu\ \text{介于 } f(a)\ \text{与}\ f(b)\ \text{之间}\ \Longrightarrow\ \exists\,\xi\in[a,b],\ f(\xi)=\mu$$</div>
+<ul>
+<li>两定理只保证根<strong>存在</strong>，不给出根的个数与位置；要说明"唯一"还需配合单调性（见第 3 章）。</li>
+<li>证明题的标准动作：把"方程有根 / 两函数相等"翻译成 \(F(x)=0\)，再验证 \(F\) 连续且端点异号（或用介值 + 夹逼）。</li>
+</ul>
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> <strong>零点定理证明题答题模板</strong>：① <strong>构造</strong> \(F(x)\)（使结论等价于 \(F(\xi)=0\)，如证 \(f(x)=g(x)\) 有根就设 \(F=f-g\)）；② 声明 \(F\) 在 \([a,b]\) 上<strong>连续</strong>（多为初等函数，一句话带过）；③ 验证<strong>端点异号</strong> \(F(a)F(b)\lt 0\)（代入计算要落实）；④ 引用零点定理得 \(\xi\in(a,b)\)。若题目要求"唯一实根"，再加一步：由单调性（导数定号）说明根至多一个。这套流程在期末证明题中几乎原样出现。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 8</span>零点定理证明方程有根</div>
+  <div class="ex-b">
+    <p>证明方程 \(x^3-4x^2+1=0\) 在区间 \((0,1)\) 内至少有一个实根。</p>
+    <details><summary></summary><div class="sol">
+      <p>设 \(f(x)=x^3-4x^2+1\)，它是多项式，故在 \([0,1]\) 上连续。计算端点值：</p>
+      <div class="fml">$$f(0)=1\gt 0,\qquad f(1)=1-4+1=-2\lt 0$$</div>
+      <p>由 \(f(0)\cdot f(1)\lt 0\) 及零点定理，存在 \(\xi\in(0,1)\) 使 \(f(\xi)=0\)，即方程在 \((0,1)\) 内至少有一个实根。</p>
+      <p>点评：多项式连续无需证明，直接算端点；若是含 \(e^x\)、\(\ln x\) 的方程，注意定义域（如 \(\ln x\) 只对 \(x\gt 0\)）。追问"有几个根"时，用 \(f'(x)=3x^2-8x=x(3x-8)\) 分析单调性：\([0,\frac83]\) 上递减，故 \((0,1)\) 内恰有一个根。</p>
+    </div></details>
+  </div>
+</div>
+
+<details class="ext"><summary>拓展 · 可能考<span class="ext-tag">考前加分</span></summary><div class="ext-b">
+  <p><strong>① 一致连续</strong>（了解）：若对任给 \(\varepsilon\gt 0\)，存在统一的 \(\delta\gt 0\) 对区间内一切点都适用，称 \(f\) 在 \(I\) 上一致连续。闭区间上连续 ⇒ 一致连续；\(\tan x\) 在 \((0,\frac{\pi}{2})\) 连续但不一致连续。</p>
+  <p><strong>② 复合函数的连续性</strong>：\(u=g(x)\) 在 \(x_0\) 连续、\(y=f(u)\) 在 \(u_0=g(x_0)\) 连续 ⇒ 复合函数在 \(x_0\) 连续。更常用的弱化版：\(\lim g(x)=u_0\) 且 \(f\) 在 \(u_0\) 连续 ⇒ \(\lim f[g(x)]=f(\lim g(x))\)——极限符号可以"钻进"连续函数里，这也是 \(\lim u^v=\mathrm e^{\lim v\ln u}\) 换底法的合法性来源。</p>
+  <p><strong>③ 指数型极限通法</strong>：幂指函数一律 \(\lim u^{v}=\mathrm e^{\lim v\ln u}\)，\(\ln u\to 0\) 时等价替换 \(\ln u\sim u-1\)，即 \(\mathrm e^{\lim v(u-1)}\)，与例 6 的速算公式一致。</p>
+</div></details>

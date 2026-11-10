@@ -1,0 +1,223 @@
+<h1 id="第-6-章-定积分的应用">第 6 章　定积分的应用</h1>
+
+<p>定积分的强大在于把"无限分割求和"的思想变成通用算法：任何可以"切薄片、求微元、再累加"的量——面积、体积、弧长、功、静水压力——都能写成定积分。本章先掌握这套通用流程（<strong>元素法</strong>），再逐类套用现成公式。复习重点：面积要会直角坐标（对 \(x\) 与对 \(y\)）与极坐标几套公式；体积要分清绕 \(x\) 轴与绕 \(y\) 轴（圆片法与柱壳法）；物理应用记牢"微元 = 局部量，积分 = 累加"。</p>
+<p>本章知识结构：元素法（建模思想）→ 平面图形的面积（直角坐标 / 极坐标）→ 旋转体体积与已知平行截面面积的体积 → 弧长（三种坐标）与物理应用（变力做功、抽水问题）。</p>
+
+<h2 id="6-1-元素法">6.1 元素法<button class="fav" type="button" data-fav="6-1-元素法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="6-1-1-元素法三步曲">元素法三步曲<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="6-1-1-元素法三步曲" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>求分布在区间 \([a,b]\) 上、对区间具有可加性的量 \(U\)，按三步建立积分式：</p>
+<div class="tscroll"><table>
+<thead><tr><th>步骤</th><th>操作</th><th>要点</th></tr></thead>
+<tbody>
+<tr><td>① 选变量定区间</td><td>选取积分变量（如 \(x\)），确定其变化范围 \([a,b]\)</td><td>变量选得好，后面公式就简单</td></tr>
+<tr><td>② 写微元</td><td>在典型小区间 \([x,x+\mathrm{d}x]\) 上把局部的 \(U\) 写成 \(\mathrm{d}U=f(x)\,\mathrm{d}x\)</td><td>核心一步："以直代曲、以常代变"，误差须是 \(\mathrm{d}x\) 的高阶无穷小</td></tr>
+<tr><td>③ 积分</td><td>\(\displaystyle U=\int_a^b f(x)\,\mathrm{d}x\)</td><td>微元相加 = 定积分</td></tr>
+</tbody></table></div>
+<div class="fml">$$\text{微元}\ \mathrm{d}U=f(x)\,\mathrm{d}x\ \xrightarrow{\ \text{累加}\ }\ U=\int_a^b f(x)\,\mathrm{d}x$$</div>
+<p>本章所有公式（面积、体积、弧长、功）都是用元素法推出来的；遇到"公式没覆盖"的新情境，回到三步曲现场推微元即可。</p>
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> 元素法最常被考在<strong>物理应用</strong>里（变力做功、抽水、水压力）——这些没有固定公式，必须现场写微元。写微元的口诀：<strong>"先画图定坐标，再对典型薄片写表达式"</strong>：薄片上每个点的状态（深度、位移、力）视为相同，薄片厚度 \(\mathrm{d}x\)（或 \(\mathrm{d}y\)）就是微元中的"微分因子"。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 1</span>用元素法演示：细棒的质量</div>
+  <div class="ex-b">
+    <p>一根长为 \(l\) 的细棒放在 \(x\in[0,l]\) 上，线密度 \(\rho(x)=kx\)（\(k\) 为常数），求细棒的质量 \(m\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>① 积分变量 \(x\in[0,l]\)；② 典型小段 \([x,x+\mathrm{d}x]\) 上密度近似为常量 \(\rho(x)\)，质量微元 \(\mathrm{d}m=\rho(x)\,\mathrm{d}x=kx\,\mathrm{d}x\)；③ 积分：</p>
+      <div class="fml">$$m=\int_0^l kx\,\mathrm{d}x=\dfrac{kl^2}{2}$$</div>
+      <p>点评：这就是元素法的标准流程演示——任何"分布量"（密度、压强、力密度）乘以"几何微元"（长度、面积、体积）即得局部量微元。后面每类问题都沿用这三步。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="6-2-平面图形的面积">6.2 平面图形的面积<button class="fav" type="button" data-fav="6-2-平面图形的面积" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="6-2-1-直角坐标情形">直角坐标情形<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="6-2-1-直角坐标情形" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$A=\int_a^b\bigl[\underbrace{f(x)}_{\text{上}}-\underbrace{g(x)}_{\text{下}}\bigr]\mathrm{d}x;\qquad A=\int_c^d\bigl[\underbrace{\psi(y)}_{\text{右}}-\underbrace{\varphi(y)}_{\text{左}}\bigr]\mathrm{d}y$$</div>
+<ul>
+<li>两条曲线上下交错时，分段取"上减下"，或统一写成 \(\int|f-g|\,\mathrm{d}x\) 后按交点分段。</li>
+<li>曲线 \(y^2=2px\) 这类"横躺抛物线"用 \(x=\dfrac{y^2}{2p}\) 视为 \(y\) 的函数，<strong>对 \(y\) 积分</strong>往往只需一个积分式，比拆成两段对 \(x\) 积分省力。</li>
+<li><strong>画图是第一步</strong>：先求交点定积分区间，再判断谁上谁下（或谁左谁右）。</li>
+</ul>
+
+<h3 id="6-2-2-极坐标情形">极坐标情形<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="6-2-2-极坐标情形" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>曲边扇形由 \(r=r(\theta)\) 与射线 \(\theta=\alpha\)、\(\theta=\beta\) 围成，小扇形微元取"以 \(r\,\mathrm{d}\theta\) 为弧长、\(r\) 为半径的小三角形"：</p>
+<div class="fml">$$\mathrm{d}A=\dfrac12 r^2\,\mathrm{d}\theta\quad\Longrightarrow\quad A=\dfrac12\int_{\alpha}^{\beta}r^2(\theta)\,\mathrm{d}\theta$$</div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① 极坐标面积公式是 \(\dfrac12\int r^2\,\mathrm{d}\theta\)，别错写成 \(\int r\,\mathrm{d}\theta\) 或漏掉 \(\dfrac12\)；② \(\theta\) 的范围要<strong>恰好绕边界一圈</strong>：心形线 \(r=a(1+\cos\theta)\) 是 \(\theta\in[0,2\pi]\)，而圆 \(r=2a\cos\theta\) 只需 \(\theta\in[-\tfrac{\pi}{2},\tfrac{\pi}{2}]\)（积分范围超出会让面积重复计算）；③ 直角坐标中"上减下"对 \(y\) 积分时是"右减左"，两套顺序别混。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 2</span>直线与抛物线围成的面积（对 \(x\) 积分）</div>
+  <div class="ex-b">
+    <p>求抛物线 \(y=x^2\) 与直线 \(y=2x\) 围成图形的面积。</p>
+    <details><summary></summary><div class="sol">
+      <p>联立 \(x^2=2x\) 得交点 \(x=0\) 与 \(x=2\)；在 \((0,2)\) 内直线在上、抛物线在下：</p>
+      <div class="fml">$$A=\int_0^2(2x-x^2)\,\mathrm{d}x=\left[x^2-\dfrac{x^3}{3}\right]_0^2=4-\dfrac83=\dfrac43$$</div>
+      <p>点评：求交点 → 判上下 → 套公式，是面积题的固定流程；交点超过两个时分段积分。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 3</span>对 \(y\) 积分：抛物线与直线围成</div>
+  <div class="ex-b">
+    <p>求抛物线 \(y^2=2x\) 与直线 \(y=x-4\) 围成图形的面积。</p>
+    <details><summary></summary><div class="sol">
+      <p>联立 \(x=\dfrac{y^2}{2}\) 与 \(x=y+4\)：\(\dfrac{y^2}{2}=y+4\)，即 \(y^2-2y-8=0\)，得 \(y=-2\) 与 \(y=4\)。在 \(-2&lt;y&lt;4\) 内直线在抛物线右侧：</p>
+      <div class="fml">$$A=\int_{-2}^{4}\left[(y+4)-\dfrac{y^2}{2}\right]\mathrm{d}y=\left[\dfrac{y^2}{2}+4y-\dfrac{y^3}{6}\right]_{-2}^{4}=\left(8+16-\dfrac{32}{3}\right)-\left(2-8+\dfrac43\right)=18$$</div>
+      <p>点评：本题若硬对 \(x\) 积分，需把区域拆成 \([0,2]\)、\([2,8]\) 两段且下边界不同，计算繁琐；<strong>换积分变量</strong>（对 \(y\)）一条式子搞定——"选对变量"本身就是得分点。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 4</span>极坐标：心形线的面积</div>
+  <div class="ex-b">
+    <p>求心形线 \(r=a(1+\cos\theta)\ (a&gt;0)\) 所围图形的面积。</p>
+    <details><summary></summary><div class="sol">
+      <p>曲线在 \(\theta\in[0,2\pi]\) 恰绕一圈。代入极坐标面积公式：</p>
+      <div class="fml">$$A=\dfrac12\int_0^{2\pi}a^2(1+\cos\theta)^2\,\mathrm{d}\theta=\dfrac{a^2}{2}\int_0^{2\pi}\left(1+2\cos\theta+\cos^2\theta\right)\mathrm{d}\theta$$</div>
+      <p>利用 \(\displaystyle\int_0^{2\pi}\cos\theta\,\mathrm{d}\theta=0\) 与 \(\displaystyle\int_0^{2\pi}\cos^2\theta\,\mathrm{d}\theta=\pi\)：</p>
+      <div class="fml">$$A=\dfrac{a^2}{2}\,(2\pi+\pi)=\dfrac{3\pi a^2}{2}$$</div>
+      <p>点评：心形线面积 \(\dfrac{3\pi a^2}{2}\) 是经典结论，可当参考值记忆。类似地玫瑰线 \(r=a\sin3\theta\) 只积分一瓣（\([0,\tfrac{\pi}{3}]\)）再乘瓣数 \(3\)。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="6-3-旋转体与已知截面面积的体积">6.3 旋转体与已知截面面积的体积<button class="fav" type="button" data-fav="6-3-旋转体与已知截面面积的体积" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="6-3-1-旋转体的体积">旋转体的体积<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="6-3-1-旋转体的体积" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>由 \(y=f(x)\geq0\)、\(x=a\)、\(x=b\) 与 \(x\) 轴围成的曲边梯形绕<strong>\(x\) 轴</strong>旋转一周，薄片是半径 \(f(x)\) 的圆盘：</p>
+<div class="fml">$$V=\pi\int_a^b f^2(x)\,\mathrm{d}x$$</div>
+<p>同一图形绕<strong>\(y\) 轴</strong>旋转，有两种等价做法：</p>
+<div class="tscroll"><table>
+<thead><tr><th>方法</th><th>微元</th><th>公式（区域 \(0\leq y\leq f(x),\ a\leq x\leq b\)，绕 \(y\) 轴）</th></tr></thead>
+<tbody>
+<tr><td>柱壳法（薄圆柱筒）</td><td>\(\mathrm{d}V=2\pi x\cdot f(x)\,\mathrm{d}x\)（半径 \(x\)、高 \(f(x)\) 的薄筒展开成薄片）</td><td>\(V=2\pi\displaystyle\int_a^b x\,f(x)\,\mathrm{d}x\)</td></tr>
+<tr><td>圆片法（对 \(y\) 积分）</td><td>外半径 \(b\)、内半径 \(g(y)\) 的圆环：\(\mathrm{d}V=\pi\bigl[b^2-g^2(y)\bigr]\mathrm{d}y\)</td><td>\(V=\pi\displaystyle\int_0^{f(b)}\bigl[b^2-g^2(y)\bigr]\mathrm{d}y\)（\(x=g(y)\) 为曲线的反函数）</td></tr>
+</tbody></table></div>
+<details class="prf"><summary><span class="prf-tag">推导</span>柱壳法微元的来历</summary><div class="prf-b">
+  <p>把区域沿 \(x\) 方向切成竖窄条，每条绕 \(y\) 轴旋转成一个薄圆柱壳：底面半径 \(x\)、周长 \(2\pi x\)、高 \(f(x)\)、壁厚 \(\mathrm{d}x\)。把壳沿母线剪开展平，得一片"薄板"，体积 \(\mathrm{d}V=\underbrace{2\pi x}_{\text{周长}}\cdot\underbrace{f(x)}_{\text{高}}\cdot\underbrace{\mathrm{d}x}_{\text{厚}}\)。累加即 \(V=2\pi\int_a^b xf(x)\,\mathrm{d}x\)。绕 \(y\) 轴旋转时它免去了求反函数，故通常优先选用。</p>
+</div></details>
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> 绕 \(y\) 轴体积优先用<strong>柱壳法</strong> \(2\pi\int x f(x)\,\mathrm{d}x\)（不必求反函数），圆片法只在反函数好求时使用。两大易混点：绕 \(x\) 轴用 \(\pi\int f^2\,\mathrm{d}x\)，绕 \(y\) 轴柱壳是 \(2\pi\int x f\,\mathrm{d}x\)——系数 \(2\pi\) 与被积函数里的 \(x\) 是"成对"出现的，背公式时一起记。</p></blockquote>
+
+<h3 id="6-3-2-已知平行截面面积的立体体积">已知平行截面面积的立体体积<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="6-3-2-已知平行截面面积的立体体积" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>立体在 \(x\) 处被垂直于 \(x\) 轴的平面截得面积 \(A(x)\)，则体积就是"面积乘厚度"的累加：</p>
+<div class="fml">$$V=\int_a^b A(x)\,\mathrm{d}x$$</div>
+<p>旋转体体积是它的特例（\(A(x)=\pi f^2(x)\)）。非旋转体的经典例子：楔形、锥体、两圆柱相贯体，都靠"先算截面 \(A(x)\) 再积分"。</p>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 5</span>同一图形绕两轴的体积（圆片与柱壳对照）</div>
+  <div class="ex-b">
+    <p>求由 \(y=x^2\)、\(x=1\) 与 \(y=0\) 围成的图形分别绕 \(x\) 轴、绕 \(y\) 轴旋转所得旋转体的体积。</p>
+    <details><summary></summary><div class="sol">
+      <p><strong>绕 \(x\) 轴</strong>（圆片法）：</p>
+      <div class="fml">$$V_x=\pi\int_0^1\left(x^2\right)^2\mathrm{d}x=\pi\int_0^1x^4\,\mathrm{d}x=\dfrac{\pi}{5}$$</div>
+      <p><strong>绕 \(y\) 轴</strong>（柱壳法）：薄筒半径 \(x\)、高 \(x^2\)：</p>
+      <div class="fml">$$V_y=2\pi\int_0^1x\cdot x^2\,\mathrm{d}x=2\pi\int_0^1x^3\,\mathrm{d}x=\dfrac{\pi}{2}$$</div>
+      <p>用圆片法核对：反函数 \(x=\sqrt y\)，\(V_y=\pi\displaystyle\int_0^1\left(1^2-(\sqrt y)^2\right)\mathrm{d}y=\pi\int_0^1(1-y)\,\mathrm{d}y=\dfrac{\pi}{2}\)，两种方法一致。点评：绕 \(y\) 轴时柱壳法免求反函数，明显更快；考试写出一种即可，用另一种验算是好习惯。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 6</span>已知截面面积求体积：楔形体</div>
+  <div class="ex-b">
+    <p>底半径为 \(a\) 的圆柱，被过底面直径的平面、与底面成 \(45^{\circ}\) 角斜截，求截下楔形体的体积。</p>
+    <details><summary></summary><div class="sol">
+      <p>取底面直径所在直线为 \(x\) 轴（\(-a\leq x\leq a\)），过点 \(x\) 垂直于 \(x\) 轴的截面是直角三角形：一条直角边为圆内的弦长 \(2\sqrt{a^2-x^2}\)，另一条直角边因平面倾角 \(45^{\circ}\) 而等于 \(\sqrt{a^2-x^2}\)，故截面面积：</p>
+      <div class="fml">$$A(x)=\dfrac12\cdot2\sqrt{a^2-x^2}\cdot\sqrt{a^2-x^2}=a^2-x^2$$</div>
+      <p>套"已知截面面积"公式：</p>
+      <div class="fml">$$V=\int_{-a}^{a}\left(a^2-x^2\right)\mathrm{d}x=\left[a^2x-\dfrac{x^3}{3}\right]_{-a}^{a}=\dfrac{4a^3}{3}$$</div>
+      <p>点评：非旋转体问题先"看清截面形状再写 \(A(x)\)"——本题截面是等腰直角三角形是关键信息；倾角改为 \(\alpha\) 时高变为 \(\sqrt{a^2-x^2}\tan\alpha\)，体积为 \(\dfrac{4a^3}{3}\tan\alpha\)。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="6-4-弧长与物理应用">6.4 弧长与物理应用<button class="fav" type="button" data-fav="6-4-弧长与物理应用" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="6-4-1-弧长公式">弧长公式<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="6-4-1-弧长公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>曲线形式</th><th>弧微元</th><th>弧长公式</th></tr></thead>
+<tbody>
+<tr><td>\(y=f(x)\)，\(x\in[a,b]\)</td><td>\(\mathrm{d}s=\sqrt{1+y'^2}\,\mathrm{d}x\)</td><td>\(s=\displaystyle\int_a^b\sqrt{1+\bigl(f'(x)\bigr)^2}\,\mathrm{d}x\)</td></tr>
+<tr><td>\(x=x(t),\ y=y(t)\)，\(t\in[\alpha,\beta]\)</td><td>\(\mathrm{d}s=\sqrt{x'^2(t)+y'^2(t)}\,\mathrm{d}t\)</td><td>\(s=\displaystyle\int_{\alpha}^{\beta}\sqrt{x'^2+y'^2}\,\mathrm{d}t\)</td></tr>
+<tr><td>\(r=r(\theta)\)，\(\theta\in[\alpha,\beta]\)</td><td>\(\mathrm{d}s=\sqrt{r^2+r'^2}\,\mathrm{d}\theta\)</td><td>\(s=\displaystyle\int_{\alpha}^{\beta}\sqrt{r^2(\theta)+r'^2(\theta)}\,\mathrm{d}\theta\)</td></tr>
+</tbody></table></div>
+
+<h3 id="6-4-2-变力做功与抽水问题">变力做功与抽水问题<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="6-4-2-变力做功与抽水问题" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>力随位置变化时，总功是"局部功"的累加；抽水问题是把每层水举起所需的功累加：</p>
+<div class="fml">$$\mathrm{d}W=F(x)\,\mathrm{d}x\ \Longrightarrow\ W=\int_a^b F(x)\,\mathrm{d}x;\qquad \mathrm{d}W=\rho g\,y\,A(y)\,\mathrm{d}y\ \Longrightarrow\ W=\int \rho g\,y\,A(y)\,\mathrm{d}y$$</div>
+<p>其中 \(A(y)\) 是水深 \(y\) 处的水平截面面积，\(\rho\) 为水密度（\(\rho g\) 常取 \(9.8\times10^3\ \mathrm{N/m^3}\)），\(y\) 是该层水<strong>需提升的距离</strong>。</p>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① 抽水问题中 \(y\) 是<strong>"这层水要提升的高度"</strong>，不是水深本身——坐标系定在池口、池底还是水面，直接决定被积函数，必须画图标清；② 弧长公式里 \(\mathrm{d}s=\sqrt{1+y'^2}\,\mathrm{d}x\) 的根号<strong>不能拆开</strong>，也别丢 \(1\)（与"旋转体侧面积"公式 \(\int 2\pi y\,\mathrm{d}s\) 区分：侧面积还要乘 \(2\pi y\)）；③ 极坐标弧长用 \(r^2+r'^2\)，不是 \(1+r'^2\)。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 7</span>直角坐标弧长</div>
+  <div class="ex-b">
+    <p>求曲线 \(y=\dfrac{2}{3}x^{3/2}\) 在 \(x\in[0,3]\) 一段的弧长。</p>
+    <details><summary></summary><div class="sol">
+      <p>求导 \(y'=\sqrt{x}\)，代入弧长公式：</p>
+      <div class="fml">$$s=\int_0^3\sqrt{1+x}\,\mathrm{d}x=\left[\dfrac{2}{3}(1+x)^{3/2}\right]_0^3=\dfrac{2}{3}\left(8-1\right)=\dfrac{14}{3}$$</div>
+      <p>点评：能出数值的弧长题都经过"精心设计"——导数平方后恰好多 \(1\) 变成简单根式（本题 \(\sqrt{1+(\sqrt x)^2}=\sqrt{1+x}\)）。遇到 \(\sqrt{1+y'^2}\) 复杂时先尝试配方。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 8</span>参数方程弧长：摆线一拱</div>
+  <div class="ex-b">
+    <p>求摆线 \(x=a(t-\sin t)\)，\(y=a(1-\cos t)\)（\(a&gt;0\)）一拱（\(0\leq t\leq2\pi\)）的长度。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(x'=a(1-\cos t)\)，\(y'=a\sin t\)，故</p>
+      <div class="fml">$$x'^2+y'^2=a^2\bigl[(1-\cos t)^2+\sin^2t\bigr]=2a^2(1-\cos t)=4a^2\sin^2\dfrac{t}{2}$$</div>
+      <p>在 \(t\in[0,2\pi]\) 上 \(\sin\dfrac{t}{2}\geq0\)，开方不加绝对值：</p>
+      <div class="fml">$$s=\int_0^{2\pi}2a\sin\dfrac{t}{2}\,\mathrm{d}t=\left[-4a\cos\dfrac{t}{2}\right]_0^{2\pi}=8a$$</div>
+      <p>点评：摆线一拱长 \(8a\) 是经典结论（一拱下面积 \(3\pi a^2\) 也常一起考）。半角公式把 \(1-\cos t\) 化为 \(2\sin^2\dfrac{t}{2}\) 是本题关键技巧。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 9</span>极坐标弧长：心形线全长</div>
+  <div class="ex-b">
+    <p>求心形线 \(r=a(1+\cos\theta)\ (a&gt;0)\) 的全长。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(r'=-a\sin\theta\)，代入极坐标弧微元：</p>
+      <div class="fml">$$r^2+r'^2=a^2\bigl[(1+\cos\theta)^2+\sin^2\theta\bigr]=2a^2(1+\cos\theta)=4a^2\cos^2\dfrac{\theta}{2}$$</div>
+      <p>在 \(\theta\in[0,\pi]\) 上 \(\cos\dfrac{\theta}{2}\geq0\)，故 \(\sqrt{r^2+r'^2}=2a\cos\dfrac{\theta}{2}\)。由对称性（上下两半相等），全长为一半的两倍：</p>
+      <div class="fml">$$s=2\int_0^{\pi}2a\cos\dfrac{\theta}{2}\,\mathrm{d}\theta=4a\left[2\sin\dfrac{\theta}{2}\right]_0^{\pi}=8a$$</div>
+      <p>点评：心形线全长 \(8a\) 与摆线一拱长 \(8a\) 恰好相同，是巧合也是经典考点；极坐标弧长务必用 \(\sqrt{r^2+r'^2}\)，套成 \(\sqrt{1+r'^2}\) 是高频错误。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 10</span>变力做功：弹簧拉伸</div>
+  <div class="ex-b">
+    <p>弹簧在拉伸过程中服从胡克定律 \(F=kx\)（\(k\) 为劲度系数），把弹簧从原长拉伸 \(s\)，求克服弹力所做的功。</p>
+    <details><summary></summary><div class="sol">
+      <p>拉伸到 \(x\) 处时弹力为 \(kx\)，再拉 \(\mathrm{d}x\) 需做功 \(\mathrm{d}W=kx\,\mathrm{d}x\)：</p>
+      <div class="fml">$$W=\int_0^s kx\,\mathrm{d}x=\dfrac{ks^2}{2}$$</div>
+      <p>点评：变力做功的公式模板就是 \(W=\int F(x)\,\mathrm{d}x\)；结果 \(\dfrac{ks^2}{2}\) 与"恒力 \(ks\) 做 \(ks\cdot s\)"不同——力是渐增的，功只有恒力情形的一半，物理意义自洽。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 11</span>抽水问题：半球形水池</div>
+  <div class="ex-b">
+    <p>半径为 \(R\) 的半球形水池盛满水，要把水全部抽到池口上方，需做功多少？（设水的密度为 \(\rho\)，重力加速度为 \(g\)）</p>
+    <details><summary></summary><div class="sol">
+      <p>以池口为原点、竖直向下为 \(y\) 轴（\(y\in[0,R]\)，\(y\) 为水深）。深度 \(y\) 处的水平截面是圆，半径 \(\sqrt{R^2-y^2}\)，面积 \(A(y)=\pi(R^2-y^2)\)。该层水到池口的提升距离恰为 \(y\)，故微元：</p>
+      <div class="fml">$$\mathrm{d}W=\rho g\,y\cdot\pi\left(R^2-y^2\right)\mathrm{d}y$$</div>
+      <p>积分（越深处截面越大但提升距离越短，两个因素"错开"）：</p>
+      <div class="fml">$$W=\pi\rho g\int_0^R y\left(R^2-y^2\right)\mathrm{d}y=\pi\rho g\left[\dfrac{R^2y^2}{2}-\dfrac{y^4}{4}\right]_0^R=\pi\rho g\left(\dfrac{R^4}{2}-\dfrac{R^4}{4}\right)=\dfrac{\pi\rho g R^4}{4}$$</div>
+      <p>点评：抽水问题三要素——<strong>截面面积 \(A(y)\)、提升距离、厚度 \(\mathrm{d}y\)</strong>。坐标系不同（原点取在球心或池底）会让被积函数看起来完全不同，画图标清"深度 \(y\)"与"提升距离"的关系就不会错；若改为圆柱形池（底半径 \(R\)、深 \(H\)），\(A(y)=\pi R^2\) 为常数，积出 \(W=\dfrac{\rho g\pi R^2H^2}{2}\)。</p>
+    </div></details>
+  </div>
+</div>
+
+<details class="ext"><summary>拓展 · 可能考<span class="ext-tag">考前加分</span></summary><div class="ext-b">
+  <p><strong>① 静水压力</strong>：闸门上水深 \(y\) 处水平窄条的压强为 \(\rho g y\)，压力微元 \(\mathrm{d}F=\rho g y\,b(y)\,\mathrm{d}y\)（\(b(y)\) 为窄条宽度），与抽水问题同一套路，只是"距离"换成"深度"。</p>
+  <p><strong>② 旋转体的侧面积</strong>：绕 \(x\) 轴旋转的表面积 \(S=2\pi\displaystyle\int_a^b f(x)\sqrt{1+f'^2}\,\mathrm{d}x\)——注意是"弧微元"扫出的圆台侧面，被积函数里同时有 \(y\) 与 \(\mathrm{d}s\)，与体积公式结构不同，常作为辨析题出现。</p>
+  <p><strong>③ 引力微元</strong>：细棒对质点的引力须<strong>按分量</strong>积分（\(\mathrm{d}F\) 的方向随位置变化，先投影再累加），直接对大小积分是常见错误——这类题考的就是"微元是有方向的量"。</p>
+</div></details>

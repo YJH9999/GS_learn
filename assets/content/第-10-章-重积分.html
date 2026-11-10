@@ -1,0 +1,174 @@
+<h1 id="第-10-章-重积分">第 10 章　重积分</h1>
+<p>重积分是一元定积分在高维区域上的推广：二重积分对应平面区域 \(D\) 上的"分割、取点、求和、取极限"，三重积分对应空间区域 \(\Omega\)。本章的核心任务是<strong>算得快、定限准</strong>——直角坐标、极坐标（柱面、球面坐标）各有适用场景，对称性与奇偶性则是最重要的"省力工具"。</p>
+<p>复习主线：概念与性质 → 二重积分计算（直角 / 极坐标、交换次序、对称性）→ 三重积分（投影 / 截面、柱面 / 球面坐标）→ 几何与物理应用（体积、曲面面积、质心、转动惯量）。</p>
+<h3 id="第-10-章-知识结构概览">本章知识结构概览<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="第-10-章-知识结构概览" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<ul>
+<li><strong>10.1</strong> 二重积分的定义、几何意义、六条性质（线性、可加、保序、估值、中值）。</li>
+<li><strong>10.2</strong> 直角坐标累次积分、画域定限与交换次序、极坐标法、对称性简化。</li>
+<li><strong>10.3</strong> 三重积分：投影法（先一后二）、截面法（先二后一）、柱面坐标、球面坐标。</li>
+<li><strong>10.4</strong> 体积、曲面面积、质心（形心）、转动惯量公式。</li>
+</ul>
+
+<h2 id="10-1-二重积分的概念与性质">10.1 二重积分的概念与性质<button class="fav" type="button" data-fav="10-1-二重积分的概念与性质" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="10-1-1-二重积分的定义">二重积分的定义<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="10-1-1-二重积分的定义" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>设 \(f(x,y)\) 是有界闭区域 \(D\) 上的有界函数。将 \(D\) 任意分成 \(n\) 个小闭区域 \(\Delta\sigma_i\)（其面积也记作 \(\Delta\sigma_i\)），在每个 \(\Delta\sigma_i\) 上任取一点 \((\xi_i,\eta_i)\)，作乘积 \(f(\xi_i,\eta_i)\Delta\sigma_i\) 并求和。若当各小区域直径的最大值 \(\lambda\to 0\) 时该和式的极限存在，且极限值与分法、取点方式无关，则称 \(f\) 在 \(D\) 上<strong>可积</strong>，极限值称为<strong>二重积分</strong>：</p>
+<div class="fml">$$\iint_D f(x,y)\,\mathrm{d}\sigma=\lim_{\lambda\to 0}\sum_{i=1}^{n}f(\xi_i,\eta_i)\,\Delta\sigma_i$$</div>
+<p>其中 \(\mathrm{d}\sigma\) 称为面积元素。在直角坐标系中 \(\mathrm{d}\sigma=\mathrm{d}x\,\mathrm{d}y\)，故 \(\iint_D f\,\mathrm{d}x\,\mathrm{d}y\) 与 \(\iint_D f\,\mathrm{d}\sigma\) 是同一积分的两种记法。<strong>可积性充分条件</strong>：\(f\) 在有界闭区域 \(D\) 上连续，则必可积。</p>
+
+<h3 id="10-1-2-几何意义与基本性质">几何意义与基本性质<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-1-2-几何意义与基本性质" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<ul>
+<li><strong>几何意义</strong>：当 \(f\ge 0\) 时，\(\iint_D f\,\mathrm{d}\sigma\) 等于以 \(D\) 为底、以曲面 \(z=f(x,y)\) 为顶的<strong>曲顶柱体体积</strong>；当 \(f\lt 0\) 时体积带负号；\(f\equiv 1\) 时积分值就是 \(D\) 的面积 \(\sigma(D)\)。</li>
+<li><strong>基本性质</strong>（与定积分性质平行）：线性性；对区域的可加性（\(D=D_1\cup D_2\)，内部不重叠）；若在 \(D\) 上 \(f\le g\)，则 \(\iint_D f\,\mathrm{d}\sigma\le\iint_D g\,\mathrm{d}\sigma\)（保序性）；\(\left|\iint_D f\,\mathrm{d}\sigma\right|\le\iint_D|f|\,\mathrm{d}\sigma\)。</li>
+</ul>
+<div class="fml">$$\text{估值定理：}\quad m\,\sigma(D)\ \le\ \iint_D f(x,y)\,\mathrm{d}\sigma\ \le\ M\,\sigma(D),\qquad m\le f\le M \ \text{于}\ D$$</div>
+<div class="fml">$$\text{二重积分中值定理：}\quad \iint_D f(x,y)\,\mathrm{d}\sigma=f(\xi,\eta)\,\sigma(D),\quad (\xi,\eta)\in D\ \ (f\ \text{连续})$$</div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① "\(\iint_D \mathrm{d}\sigma\)" 才是面积，必须被积函数恒为 \(1\)；把 \(f\) 当成 \(1\) 直接乘面积是概念题最常见的陷阱。② 中值定理中的 \((\xi,\eta)\) 属于<strong>闭</strong>区域 \(D\)，且要求 \(f\) 在 \(D\) 上<strong>连续</strong>——判断题常在这两处设错。③ 估值时 \(m,M\) 应取 \(f\) 在 \(D\) 上的最小、最大值，先求 \(D\) 上 \(f\) 的最值再乘面积。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 1</span>利用几何意义求二重积分</div>
+  <div class="ex-b">
+    <p>计算 \(\displaystyle\iint_D\sqrt{R^2-x^2-y^2}\,\mathrm{d}\sigma\)，其中 \(D:\ x^2+y^2\le R^2\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>被积函数 \(z=\sqrt{R^2-x^2-y^2}\ge 0\) 是上半球面，\(D\) 是它在 \(xOy\) 面上的投影，故该积分等于<strong>半径为 \(R\) 的上半球体体积</strong>：</p>
+      <div class="fml">$$\iint_D\sqrt{R^2-x^2-y^2}\,\mathrm{d}\sigma=\frac12\cdot\frac43\pi R^3=\frac{2}{3}\pi R^3$$</div>
+      <p>点评：见 \(\sqrt{R^2-x^2-y^2}\) 与圆域搭配，优先想几何意义（半球、球壳），不必动笔计算；类似地 \(\iint_D\mathrm{d}\sigma=\pi R^2\)。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="10-2-二重积分的计算法">10.2 二重积分的计算法<button class="fav" type="button" data-fav="10-2-二重积分的计算法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="10-2-1-直角坐标法与交换积分次序">直角坐标法与交换积分次序<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-2-1-直角坐标法与交换积分次序" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p><strong>X 型区域</strong> \(D:\ a\le x\le b,\ \varphi_1(x)\le y\le\varphi_2(x)\)（穿线法：平行于 \(y\) 轴的直线穿 \(D\)，下边界为下限、上边界为上限）：</p>
+<div class="fml">$$\iint_D f(x,y)\,\mathrm{d}x\mathrm{d}y=\int_a^b\mathrm{d}x\int_{\varphi_1(x)}^{\varphi_2(x)}f(x,y)\,\mathrm{d}y$$</div>
+<p><strong>Y 型区域</strong> \(D:\ c\le y\le \mathrm{d},\ \psi_1(y)\le x\le\psi_2(y)\) 同理，先对 \(x\) 积分。定限口诀：<strong>"后积先定限，限内画条线；先交写下限，后交写上限"</strong>——即先对哪后一个变量定常区间，再对先积的变量用边界函数定限。</p>
+<div class="ex">
+  <div class="ex-h"><span class="no">例 2</span>交换积分次序求 \(\displaystyle\int_0^1\mathrm{d}x\int_x^1 \mathrm{e}^{-y^2}\,\mathrm{d}y\)</div>
+  <div class="ex-b">
+    <p>\(\mathrm{e}^{-y^2}\) 的原函数不是初等函数，必须交换积分次序后先对 \(x\) 积分。</p>
+    <details><summary></summary><div class="sol">
+      <p>积分区域由不等式 \(0\le x\le 1,\ x\le y\le 1\) 确定，即三角形区域 \(0\le x\le y\le 1\)。画图后改写为 Y 型：</p>
+      <div class="fml">$$I=\int_0^1\mathrm{d}y\int_0^{y}\mathrm{e}^{-y^2}\,\mathrm{d}x=\int_0^1 y\,\mathrm{e}^{-y^2}\,\mathrm{d}y=\Bigl[-\tfrac12\mathrm{e}^{-y^2}\Bigr]_0^1=\frac{1-\mathrm{e}^{-1}}{2}$$</div>
+      <p>点评：凡是出现 \(\mathrm{e}^{\pm y^2}\)、\(\dfrac{\sin y}{y}\)、\(\dfrac{1}{\ln y}\)、\(\sin(y^2)\) 等"积不出"的因子，都要考虑交换次序让它们先落在"不必积"的位置。</p>
+    </div></details>
+  </div>
+</div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>交换次序 ≠ 交换上下限</strong>。必须先由原累次积分写出不等式组、画出区域 \(D\)，再按另一方向重新定限；直接把 \(\int_0^1\mathrm{d}x\int_x^1 f\,\mathrm{d}y\) 改成 \(\int_0^1\mathrm{d}y\int_1^x f\,\mathrm{d}x\) 是完全错误的。另外若某方向边界是分段曲线（如 \(x^2\le y\le 1\) 与 \(1\le y\le 2\)），需要<strong>分块</strong>分别积分再相加。</p></blockquote>
+
+<h3 id="10-2-2-极坐标法">极坐标法<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-2-2-极坐标法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>令 \(x=r\cos\theta,\ y=r\sin\theta\)，边界曲线换成 \(r=r(\theta)\)，且面积元素要<strong>多乘一个 \(r\)</strong>：</p>
+<div class="fml">$$\iint_D f(x,y)\,\mathrm{d}\sigma=\int_{\alpha}^{\beta}\mathrm{d}\theta\int_{r_1(\theta)}^{r_2(\theta)}f(r\cos\theta,\ r\sin\theta)\,r\,\mathrm{d}r$$</div>
+<p><strong>何时用极坐标</strong>：① 区域是圆、环、扇形或由圆弧、射线围成；② 被积函数含 \(x^2+y^2\)、\(\dfrac{y}{x}\) 等。典型如 \(\displaystyle\iint_D f(x^2+y^2)\,\mathrm{d}\sigma=\int_{\alpha}^{\beta}\mathrm{d}\theta\int_{r_1}^{r_2} f(r^2)\,r\,\mathrm{d}r\)。</p>
+<details class="prf"><summary><span class="prf-tag">推导</span>为什么极坐标面积元素多一个 \(r\)？</summary><div class="prf-b">
+  <p>小区域由极角 \(\theta\to\theta+\Delta\theta\)、极径 \(r\to r+\Delta r\) 围成，它近似一个"扇形环带"：内弧长 \(r\Delta\theta\)，外弧长 \((r+\Delta r)\Delta\theta\)，宽 \(\Delta r\)。面积 \(\Delta\sigma\approx\text{平均弧长}\times\Delta r\approx r\,\Delta\theta\,\Delta r\)，精确地 \(\mathrm{d}\sigma=r\,\mathrm{d}r\,\mathrm{d}\theta\)。也可以由二重积分换元公式：雅可比行列式 \(J=\dfrac{\partial(x,y)}{\partial(r,\theta)}=\begin{vmatrix}\cos\theta&-r\sin\theta\\ \sin\theta&r\cos\theta\end{vmatrix}=r\)。</p>
+</div></details>
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> <strong>三查</strong>：一查被积函数是否要换 \(x=r\cos\theta,\ y=r\sin\theta\)；二查 \(\mathrm{d}\sigma\) 是否已写成 \(r\,\mathrm{d}r\,\mathrm{d}\theta\)（漏 \(r\) 是最高频失分点）；三查角度范围——圆心不在原点的圆（如 \((x-a)^2+y^2\le a^2\)）对应 \(r=2a\cos\theta,\ -\frac{\pi}{2}\le\theta\le\frac{\pi}{2}\)，别想当然写成 \(0\le\theta\le 2\pi\)。</p></blockquote>
+<div class="ex">
+  <div class="ex-h"><span class="no">例 3</span>极坐标计算高斯积分的"圆盘版"</div>
+  <div class="ex-b">
+    <p>计算 \(\displaystyle\iint_D\mathrm{e}^{-x^2-y^2}\,\mathrm{d}\sigma\)，其中 \(D:\ x^2+y^2\le R^2\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(\mathrm{e}^{-x^2}\) 无初等原函数，直角坐标走不通；被积函数与区域都关于圆对称，用极坐标：</p>
+      <div class="fml">$$I=\int_0^{2\pi}\mathrm{d}\theta\int_0^{R}\mathrm{e}^{-r^2}\,r\,\mathrm{d}r=2\pi\cdot\Bigl[-\tfrac12\mathrm{e}^{-r^2}\Bigr]_0^R=\pi\left(1-\mathrm{e}^{-R^2}\right)$$</div>
+      <p>点评：令 \(R\to\infty\) 结合 \(I^2=(\iint\mathrm{e}^{-x^2-y^2})^2=\int_{-\infty}^{+\infty}\mathrm{e}^{-x^2}\mathrm{d}x\int\mathrm{e}^{-y^2}\mathrm{d}y\)，可证概率论中的重要积分 \(\int_{-\infty}^{+\infty}\mathrm{e}^{-x^2}\mathrm{d}x=\sqrt{\pi}\)。这一"夹逼 + 极坐标"思想是经典考点。</p>
+    </div></details>
+  </div>
+</div>
+
+<h3 id="10-2-3-利用对称性与奇偶性简化">利用对称性与奇偶性简化<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="10-2-3-利用对称性与奇偶性简化" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>区域的对称性</th><th>被积函数的特点</th><th>结论</th></tr></thead>
+<tbody>
+<tr><td>\(D\) 关于 \(y\) 轴对称（\(x\to -x\) 不变）</td><td>\(f\) 关于 \(x\) 为奇函数</td><td>\(\iint_D f\,\mathrm{d}\sigma=0\)</td></tr>
+<tr><td>\(D\) 关于 \(y\) 轴对称</td><td>\(f\) 关于 \(x\) 为偶函数</td><td>\(\iint_D f\,\mathrm{d}\sigma=2\displaystyle\iint_{D_{右}} f\,\mathrm{d}\sigma\)</td></tr>
+<tr><td>\(D\) 关于 \(x\) 轴对称</td><td>\(f\) 关于 \(y\) 为奇 / 偶函数</td><td>同上，去掉一半或取 \(2\) 倍</td></tr>
+<tr><td>\(D\) 关于原点对称</td><td>\(f(-x,-y)=-f(x,y)\)</td><td>\(\iint_D f\,\mathrm{d}\sigma=0\)</td></tr>
+<tr><td>\(D\) 关于直线 \(y=x\) 对称</td><td>任意 \(f\)（轮换对称）</td><td>\(\displaystyle\iint_D f(x,y)\,\mathrm{d}\sigma=\iint_D f(y,x)\,\mathrm{d}\sigma\)</td></tr>
+</tbody></table></div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> 使用对称性必须<strong>两个条件同时满足</strong>：区域对称 + 函数（关于相应变量）有奇偶性。只检查其一就"对称消掉"是经典错误。例如 \(D\) 关于 \(y\) 轴对称时 \(\iint_D xy\,\mathrm{d}\sigma=0\)（\(xy\) 关于 \(x\) 是奇函数），但 \(\iint_D x^2y\,\mathrm{d}\sigma\) 不为零、也不等于 \(0\) 或简单倍数前要先看清 \(x^2y\) 关于 \(x\) 是偶函数。</p></blockquote>
+<div class="ex">
+  <div class="ex-h"><span class="no">例 4</span>奇偶性 + 轮换对称综合</div>
+  <div class="ex-b">
+    <p>计算 \(\displaystyle\iint_D\left(x^3+y^2+3\right)\mathrm{d}\sigma\)，其中 \(D:\ x^2+y^2\le 1\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(D\) 关于 \(y\) 轴对称且 \(x^3\) 关于 \(x\) 为奇函数，故 \(\iint_D x^3\,\mathrm{d}\sigma=0\)。由轮换对称性 \(\iint_D y^2\,\mathrm{d}\sigma=\iint_D x^2\,\mathrm{d}\sigma\)，于是</p>
+      <div class="fml">$$\iint_D y^2\,\mathrm{d}\sigma=\frac12\iint_D(x^2+y^2)\,\mathrm{d}\sigma=\frac12\int_0^{2\pi}\mathrm{d}\theta\int_0^{1}r^2\cdot r\,\mathrm{d}r=\frac12\cdot 2\pi\cdot\frac14=\frac{\pi}{4}$$</div>
+      <p>而 \(\iint_D 3\,\mathrm{d}\sigma=3\pi\)。三项合并：</p>
+      <div class="fml">$$I=0+\frac{\pi}{4}+3\pi=\frac{13\pi}{4}$$</div>
+      <p>点评："奇函数项直接消零 + 轮换对称化为 \((x^2+y^2)\) + 极坐标"三连招，是圆域上含二次项积分的标准流程。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="10-3-三重积分">10.3 三重积分<button class="fav" type="button" data-fav="10-3-三重积分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="10-3-1-投影法与截面法">投影法与截面法<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-3-1-投影法与截面法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p><strong>投影法（先一后二）</strong>：将 \(\Omega\) 投影到 \(xOy\) 面得 \(D_{xy}\)，过 \(D_{xy}\) 内一点作平行 \(z\) 轴的线，下、上穿出点 \(z_1(x,y),\ z_2(x,y)\)：</p>
+<div class="fml">$$\iiint_\Omega f(x,y,z)\,\mathrm{d}v=\iint_{D_{xy}}\mathrm{d}x\mathrm{d}y\int_{z_1(x,y)}^{z_2(x,y)}f(x,y,z)\,\mathrm{d}z$$</div>
+<p><strong>截面法（先二后一）</strong>：垂直于 \(z\) 轴的平面截 \(\Omega\) 得 \(D_z\)，被积函数只含 \(z\) 且 \(D_z\) 面积易求时优先：</p>
+<div class="fml">$$\iiint_\Omega f(z)\,\mathrm{d}v=\int_{c_1}^{c_2}\mathrm{d}z\iint_{D_z} f(z)\,\mathrm{d}x\mathrm{d}y$$</div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① 截面法要求<strong>被积函数只含 \(z\)</strong>（或易化为只含 \(z\)），否则内层 \(\iint_{D_z} f\,\mathrm{d}x\mathrm{d}y\) 仍依赖 \((x,y)\)，无法直接算。② 投影法定 \(z\) 的上下限时，下曲面取"穿入点"、上曲面取"穿出点"，圆锥面 \(z=x^2+y^2\) 是下边界、平面 \(z=1\) 是上边界这类判断要画图确认，不能凭感觉。③ \(\iiint 1\,\mathrm{d}v\) = 区域体积，可用于快速验算。</p></blockquote>
+<div class="ex">
+  <div class="ex-h"><span class="no">例 5</span>截面法计算三重积分</div>
+  <div class="ex-b">
+    <p>计算 \(\displaystyle\iiint_\Omega (x^2+y^2)\,\mathrm{d}v\)，其中 \(\Omega\) 由旋转抛物面 \(z=x^2+y^2\) 与平面 \(z=1\) 围成。</p>
+    <details><summary></summary><div class="sol">
+      <p>被积函数与 \(z\) 无关但截面是圆盘 \(D_z:\ x^2+y^2\le z\)，用截面法。\(z\) 的范围是 \(0\le z\le 1\)，且 \(\iint_{D_z}(x^2+y^2)\,\mathrm{d}\sigma\) 在极坐标下：</p>
+      <div class="fml">$$\iint_{D_z}(x^2+y^2)\,\mathrm{d}\sigma=\int_0^{2\pi}\mathrm{d}\theta\int_0^{\sqrt{z}}r^2\cdot r\,\mathrm{d}r=2\pi\cdot\frac{z^2}{4}=\frac{\pi z^2}{2}$$</div>
+      <div class="fml">$$\iiint_\Omega(x^2+y^2)\,\mathrm{d}v=\int_0^1\frac{\pi z^2}{2}\,\mathrm{d}z=\frac{\pi}{6}$$</div>
+      <p>点评：也可用柱面坐标 \(z\) 从 \(r^2\) 到 \(1\)（投影法）验证，结果相同。当截面是圆、环且内层好算时，截面法往往比投影法少一层积分。</p>
+    </div></details>
+  </div>
+</div>
+
+<h3 id="10-3-2-柱面坐标与球面坐标">柱面坐标与球面坐标<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-3-2-柱面坐标与球面坐标" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>坐标系</th><th>变换与范围</th><th>体积元</th><th>适用场景</th></tr></thead>
+<tbody>
+<tr><td>柱面坐标</td><td>\(x=r\cos\theta,\ y=r\sin\theta,\ z=z\)；\(0\le\theta\le 2\pi,\ r\ge 0\)</td><td>\(\mathrm{d}v=r\,\mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}z\)</td><td>\(\Omega\) 为圆柱、旋转抛物面型；被积函数含 \(x^2+y^2\)</td></tr>
+<tr><td>球面坐标</td><td>\(x=r\sin\varphi\cos\theta,\ y=r\sin\varphi\sin\theta,\ z=r\cos\varphi\)；\(0\le\varphi\le\pi,\ 0\le\theta\le 2\pi,\ r\ge 0\)</td><td>\(\mathrm{d}v=r^2\sin\varphi\,\mathrm{d}r\,\mathrm{d}\varphi\,\mathrm{d}\theta\)</td><td>\(\Omega\) 为球、锥、球锥体；被积函数含 \(x^2+y^2+z^2\)</td></tr>
+</tbody></table></div>
+<p>几何含义：球面坐标中 \(\varphi\) 是从 \(z\) 轴正向量起的<strong>天顶角</strong>，\(r\) 是到原点的距离；上半球对应 \(0\le\varphi\le\frac{\pi}{2}\)，圆锥面 \(z=\sqrt{x^2+y^2}\) 对应 \(\varphi=\frac{\pi}{4}\)，\(z\) 轴负半轴对应 \(\varphi=\pi\)。</p>
+<div class="ex">
+  <div class="ex-h"><span class="no">例 6</span>球面坐标计算</div>
+  <div class="ex-b">
+    <p>计算 \(\displaystyle\iiint_\Omega (x^2+y^2+z^2)\,\mathrm{d}v\)，其中 \(\Omega:\ x^2+y^2+z^2\le R^2\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>区域是整个球、被积函数为 \(r^2\)，用球面坐标：</p>
+      <div class="fml">$$I=\int_0^{2\pi}\mathrm{d}\theta\int_0^{\pi}\sin\varphi\,\mathrm{d}\varphi\int_0^{R}r^2\cdot r^2\,\mathrm{d}r=2\pi\cdot 2\cdot\frac{R^5}{5}=\frac{4\pi R^5}{5}$$</div>
+      <p>点评：三层积分各变量独立时可拆成乘积（本例 \(\theta\)、\(\varphi\)、\(r\) 的限都是常数）。注意别把体积元写成 \(r^2\)——必须带 \(\sin\varphi\)。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="10-4-重积分的应用">10.4 重积分的应用<button class="fav" type="button" data-fav="10-4-重积分的应用" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="10-4-1-几何量公式">几何量公式<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="10-4-1-几何量公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$V=\iint_D\bigl[f_2(x,y)-f_1(x,y)\bigr]\,\mathrm{d}\sigma=\iiint_\Omega\mathrm{d}v \qquad\text{（立体体积，上下曲面之差或直接三重积分）}$$</div>
+<div class="fml">$$S=\iint_D\sqrt{1+z_x^2+z_y^2}\,\mathrm{d}x\mathrm{d}y\qquad\text{（曲面 }z=z(x,y)\text{ 的面积，d}S=\sqrt{1+z_x^2+z_y^2}\,\mathrm{d}x\mathrm{d}y\text{）}$$</div>
+<p>记忆：曲面面积元素是"切平面斜率修正"——平面时退化为 \(\mathrm{d}x\mathrm{d}y\)。球面 \(x^2+y^2+z^2=R^2\) 上半球有 \(\sqrt{1+z_x^2+z_y^2}=\dfrac{R}{\sqrt{R^2-x^2-y^2}}\)，代入即得球面积 \(4\pi R^2\)。</p>
+
+<h3 id="10-4-2-质心与转动惯量">质心与转动惯量<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-4-2-质心与转动惯量" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$\bar{x}=\frac{\displaystyle\iint_D x\rho(x,y)\,\mathrm{d}\sigma}{\displaystyle\iint_D\rho(x,y)\,\mathrm{d}\sigma},\qquad M=\iint_D\rho\,\mathrm{d}\sigma\ \text{（薄片）；立体 } \bar{x}=\frac{\iiint_\Omega x\rho\,\mathrm{d}v}{M},\ M=\iiint_\Omega\rho\,\mathrm{d}v$$</div>
+<div class="fml">$$I_x=\iint_D y^2\rho(x,y)\,\mathrm{d}\sigma,\qquad I_y=\iint_D x^2\rho\,\mathrm{d}\sigma,\qquad I_O=I_x+I_y\ \text{（薄片对原点/坐标轴的转动惯量）}$$</div>
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> ① 均匀物体（\(\rho\) 为常数）的质心又称<strong>形心</strong>，此时 \(\rho\) 在分子分母中约去，只依赖几何形状。② 先用<strong>对称性</strong>判断质心坐标：均匀半球体、均匀球体关于对称面对称的坐标分量为 \(0\)，往往只需算一个坐标。③ 半径 \(R\) 的均匀半球的质心在 \(z=\dfrac{3R}{8}\) 处，可直接记住用于验证。</p></blockquote>
+<div class="ex">
+  <div class="ex-h"><span class="no">例 7</span>均匀半球体的质心</div>
+  <div class="ex-b">
+    <p>求密度均匀的半球体 \(\Omega:\ x^2+y^2+z^2\le R^2,\ z\ge 0\) 的质心。</p>
+    <details><summary></summary><div class="sol">
+      <p>由对称性 \(\bar{x}=\bar{y}=0\)，只需算 \(\bar{z}=\dfrac{\iiint_\Omega z\,\mathrm{d}v}{V}\)。用球面坐标，\(z=r\cos\varphi\)：</p>
+      <div class="fml">$$\iiint_\Omega z\,\mathrm{d}v=\int_0^{2\pi}\mathrm{d}\theta\int_0^{\pi/2}\mathrm{d}\varphi\int_0^{R}r\cos\varphi\cdot r^2\sin\varphi\,\mathrm{d}r=2\pi\cdot\frac{R^4}{4}\cdot\int_0^{\pi/2}\sin\varphi\cos\varphi\,\mathrm{d}\varphi=\frac{\pi R^4}{4}$$</div>
+      <p>其中 \(\displaystyle\int_0^{\pi/2}\sin\varphi\cos\varphi\,\mathrm{d}\varphi=\frac12\)，体积 \(V=\dfrac{2\pi R^3}{3}\)，故</p>
+      <div class="fml">$$\bar{z}=\frac{\pi R^4/4}{2\pi R^3/3}=\frac{3R}{8}$$</div>
+      <p>点评：分子 \(\iiint z\,\mathrm{d}v\) 是"一次矩"，也可用截面法：\(\int_0^R z\cdot\pi(R^2-z^2)\,\mathrm{d}z=\pi\left[\frac{R^2z^2}{2}-\frac{z^4}{4}\right]_0^R=\frac{\pi R^4}{4}\)，两条路结果一致。</p>
+    </div></details>
+  </div>
+</div>
+
+<details class="ext"><summary>拓展 · 可能考<span class="ext-tag">考前加分</span></summary><div class="ext-b">
+  <p><strong>① 换元公式与广义极坐标</strong>：二重积分一般换元 \(\mathrm{d}\sigma=|J|\,\mathrm{d}u\,\mathrm{d}v\)，其中 \(J=\dfrac{\partial(x,y)}{\partial(u,v)}\)；对椭圆域 \(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}\le 1\) 令 \(x=ar\cos\theta,\ y=br\sin\theta\)，则 \(\mathrm{d}\sigma=ab\,r\,\mathrm{d}r\,\mathrm{d}\theta\)。三重积分球面坐标的雅可比 \(J=r^2\sin\varphi\) 可由行列式算出。</p>
+  <p><strong>② 转动惯量的空间版</strong>：立体对 \(z\) 轴的转动惯量 \(I_z=\iiint_\Omega(x^2+y^2)\rho\,\mathrm{d}v\)（注意是到轴的距离平方，不是 \(z^2\)）；对原点 \(I_O=\iiint_\Omega(x^2+y^2+z^2)\rho\,\mathrm{d}v\)。</p>
+  <p><strong>③ 引力公式框架</strong>：物体对质点 \(P\) 的引力 \(\boldsymbol{F}=(F_x,F_y,F_z)\)，\(F_x=\iiint_\Omega\dfrac{G\rho(x_0-x)}{r^3}\,\mathrm{d}v\) 型（\(r\) 为微元到 \(P\) 的距离），考试通常只考对称性简化后的单分量计算。</p>
+</div></details>

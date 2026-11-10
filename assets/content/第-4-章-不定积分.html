@@ -1,0 +1,252 @@
+<h1 id="第-4-章-不定积分">第 4 章　不定积分</h1>
+
+<p>积分是微分学的逆运算：已知函数的导数 \(F'(x)=f(x)\)，反过来求 \(F(x)\)，就是求<strong>原函数</strong>。本章的核心任务是建立一套系统的积分方法——基本积分表是"词汇"，换元法与分部积分法是"语法"，有理函数积分是"标准题型"。与求导不同，求积分没有统一的机械程序，更多依靠"识别题型 + 联想公式"，因此多做题、多归纳套路尤为重要。</p>
+<p>本章知识结构：不定积分的概念与性质（基本积分表）→ 第一类换元法（凑微分）→ 第二类换元法（三角换元、根式换元）→ 分部积分法 → 有理函数与三角有理式的积分。所有方法最终都化归为基本积分表中的条目。</p>
+
+<h2 id="4-1-不定积分的概念与性质">4.1 不定积分的概念与性质<button class="fav" type="button" data-fav="4-1-不定积分的概念与性质" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="4-1-1-原函数与不定积分的定义">原函数与不定积分的定义<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="4-1-1-原函数与不定积分的定义" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>在区间 \(I\) 上，若 \(F'(x)=f(x)\)（或 \(\mathrm{d}F(x)=f(x)\mathrm{d}x\)），则称 \(F(x)\) 为 \(f(x)\) 在 \(I\) 上的一个<strong>原函数</strong>。原函数的全体 \(F(x)+C\) 称为 \(f(x)\) 的<strong>不定积分</strong>，记作 \(\displaystyle\int f(x)\,\mathrm{d}x=F(x)+C\)。</p>
+<ul>
+<li><strong>原函数存在定理</strong>：连续函数必有原函数（本章默认被积函数连续）。</li>
+<li><strong>原函数不唯一</strong>：若 \(F(x)\) 是原函数，则 \(F(x)+C\) 都是；且任意两个原函数只差一个常数。</li>
+<li>不定积分 = "某一个原函数 + 任意常数 \(C\)"，是<strong>一族函数</strong>，其图像是一簇彼此平移的曲线。</li>
+</ul>
+<div class="fml">$$\left[\int f(x)\,\mathrm{d}x\right]'=f(x),\qquad \int F'(x)\,\mathrm{d}x=F(x)+C\qquad\text{（先积后导，形式不变；先导后积，差个常数）}$$</div>
+
+<h3 id="4-1-2-基本积分表">基本积分表<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="4-1-2-基本积分表" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>积分公式</th><th>积分公式</th></tr></thead>
+<tbody>
+<tr><td>\(\displaystyle\int x^{\mu}\,\mathrm{d}x=\dfrac{x^{\mu+1}}{\mu+1}+C\ (\mu\neq-1)\)</td><td>\(\displaystyle\int\dfrac{1}{x}\,\mathrm{d}x=\ln|x|+C\)</td></tr>
+<tr><td>\(\displaystyle\int a^x\,\mathrm{d}x=\dfrac{a^x}{\ln a}+C\qquad\displaystyle\int \mathrm{e}^x\,\mathrm{d}x=\mathrm{e}^x+C\)</td><td>\(\displaystyle\int\sin x\,\mathrm{d}x=-\cos x+C\qquad\displaystyle\int\cos x\,\mathrm{d}x=\sin x+C\)</td></tr>
+<tr><td>\(\displaystyle\int\sec^2x\,\mathrm{d}x=\tan x+C\qquad\displaystyle\int\csc^2x\,\mathrm{d}x=-\cot x+C\)</td><td>\(\displaystyle\int\sec x\tan x\,\mathrm{d}x=\sec x+C\qquad\displaystyle\int\csc x\cot x\,\mathrm{d}x=-\csc x+C\)</td></tr>
+<tr><td>\(\displaystyle\int\dfrac{\mathrm{d}x}{1+x^2}=\arctan x+C\)</td><td>\(\displaystyle\int\dfrac{\mathrm{d}x}{\sqrt{1-x^2}}=\arcsin x+C\)</td></tr>
+<tr><td>\(\displaystyle\int\dfrac{\mathrm{d}x}{a^2+x^2}=\dfrac1a\arctan\dfrac{x}{a}+C\)</td><td>\(\displaystyle\int\dfrac{\mathrm{d}x}{x^2-a^2}=\dfrac1{2a}\ln\left|\dfrac{x-a}{x+a}\right|+C\)</td></tr>
+<tr><td>\(\displaystyle\int\dfrac{\mathrm{d}x}{\sqrt{a^2-x^2}}=\arcsin\dfrac{x}{a}+C\)</td><td>\(\displaystyle\int\dfrac{\mathrm{d}x}{\sqrt{x^2\pm a^2}}=\ln\left|x+\sqrt{x^2\pm a^2}\right|+C\)</td></tr>
+<tr><td>\(\displaystyle\int\tan x\,\mathrm{d}x=-\ln|\cos x|+C\)</td><td>\(\displaystyle\int\cot x\,\mathrm{d}x=\ln|\sin x|+C\)</td></tr>
+<tr><td>\(\displaystyle\int\sec x\,\mathrm{d}x=\ln|\sec x+\tan x|+C\)</td><td>\(\displaystyle\int\csc x\,\mathrm{d}x=\ln|\csc x-\cot x|+C\)</td></tr>
+</tbody></table></div>
+<p>基本积分表必须<strong>逐条背熟</strong>，它是后面所有方法的落点。核对方法：对右端求导，看是否等于左端被积函数。</p>
+<details class="prf"><summary><span class="prf-tag">推导</span>\(\displaystyle\int\dfrac{\mathrm{d}x}{\sqrt{x^2+a^2}}=\ln\left(x+\sqrt{x^2+a^2}\right)+C\) 为什么成立？</summary><div class="prf-b">
+  <p>对右端求导回验：\(\left(x+\sqrt{x^2+a^2}\right)'=1+\dfrac{x}{\sqrt{x^2+a^2}}=\dfrac{\sqrt{x^2+a^2}+x}{\sqrt{x^2+a^2}}\)，除以 \(x+\sqrt{x^2+a^2}\) 恰好得到 \(\dfrac{1}{\sqrt{x^2+a^2}}\)。"结果带对数"的几个公式（\(\tan x\)、\(\sec x\)、\(\dfrac{1}{x^2-a^2}\)、\(\dfrac{1}{\sqrt{x^2\pm a^2}}\)）都可用这一招快速自查，也都要加绝对值或留意定义域。</p>
+</div></details>
+
+<h3 id="4-1-3-不定积分的性质">不定积分的性质<button class="fav" type="button" data-fav="4-1-3-不定积分的性质" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$\int\bigl[f(x)\pm g(x)\bigr]\mathrm{d}x=\int f(x)\,\mathrm{d}x\pm\int g(x)\,\mathrm{d}x;\qquad \int k f(x)\,\mathrm{d}x=k\int f(x)\,\mathrm{d}x\ (k\neq0)$$</div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>常数 \(C\) 千万不能丢</strong>：只写 \(\displaystyle\int\dfrac{\mathrm{d}x}{x}=\ln x\) 要扣分，正确是 \(\ln|x|+C\)（不加绝对值时 \(x&lt;0\) 无定义）。另外 \(\displaystyle\int x^{\mu}\mathrm{d}x\) 中 \(\mu=-1\) 是<strong>例外情形</strong>（落到 \(\ln|x|\)），填空题爱考；分项积分后若分部积分出现"循环"消项，常数 \(C\) 也不能漏。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 1</span>拆项后套基本积分表</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\int\left(2^x\mathrm{e}^x+\tan^2x\right)\mathrm{d}x\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>把 \(2^x\mathrm{e}^x=(2\mathrm{e})^x\) 看成底为 \(2\mathrm{e}\) 的指数函数；把 \(\tan^2x=\sec^2x-1\) 拆开：</p>
+      <div class="fml">$$\int(2\mathrm{e})^x\,\mathrm{d}x=\dfrac{(2\mathrm{e})^x}{\ln(2\mathrm{e})}+C_1=\dfrac{2^x\mathrm{e}^x}{1+\ln2}+C_1,\qquad \int\tan^2x\,\mathrm{d}x=\int(\sec^2x-1)\,\mathrm{d}x=\tan x-x+C_2$$</div>
+      <p>合并：原式 \(=\dfrac{2^x\mathrm{e}^x}{1+\ln 2}+\tan x-x+C\)。点评：见到 \(2^x\mathrm{e}^x\) 这类"非标准底"先合并底数；见到 \(\tan^2x\)、\(\sin^2x\) 先用 \(1=\sec^2x-\tan^2x\) 或降幂公式改写成可直接积分的形状。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 2</span>由 \(F'(x)=f(x)\) 反求 \(F\)</div>
+  <div class="ex-b">
+    <p>已知曲线 \(y=F(x)\) 在任意点 \(x\) 处的切线斜率为 \(3x^2\)，且曲线经过点 \((1,2)\)，求 \(F(x)\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>由题意 \(F'(x)=3x^2\)，故 \(F(x)=\displaystyle\int 3x^2\,\mathrm{d}x=x^3+C\)。由 \(F(1)=2\) 得 \(C=1\)，所以 \(F(x)=x^3+1\)。</p>
+      <p>点评：不定积分含待定常数 \(C\)，一个初始条件恰能确定 \(C\)——这就是"原函数族差一个常数"的实际含义。若题目再附加条件（如过第二点），须先检验相容性。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="4-2-第一类换元法">4.2 第一类换元法<button class="fav" type="button" data-fav="4-2-第一类换元法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="4-2-1-凑微分定理">凑微分定理<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="4-2-1-凑微分定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>设 \(F'(u)=f(u)\)，\(u=\varphi(x)\) 可导，则 \(\displaystyle\int f\bigl(\varphi(x)\bigr)\varphi'(x)\,\mathrm{d}x=\int f(u)\,\mathrm{d}u=F\bigl(\varphi(x)\bigr)+C\)。关键一步是把 \(\varphi'(x)\,\mathrm{d}x\) "凑"成 \(\mathrm{d}\varphi(x)\)：</p>
+<div class="fml">$$\int f\bigl(\varphi(x)\bigr)\underbrace{\varphi'(x)\,\mathrm{d}x}_{=\,\mathrm{d}\varphi(x)}\;\xrightarrow{\ u=\varphi(x)\ }\;\int f(u)\,\mathrm{d}u$$</div>
+<p>熟练后可省略换元记号，直接"眼凑心记"，因此第一类换元法俗称<strong>凑微分法</strong>。</p>
+
+<h3 id="4-2-2-常见凑微分类型清单">常见凑微分类型清单<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="4-2-2-常见凑微分类型清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>被积表达式中的"原料"</th><th>凑成的微分</th><th>典型用法</th></tr></thead>
+<tbody>
+<tr><td>\(x\,\mathrm{d}x\)</td><td>\(\dfrac12\,\mathrm{d}(x^2)=\dfrac12\,\mathrm{d}(x^2+a)\)</td><td>\(\displaystyle\int x\mathrm{e}^{x^2}\mathrm{d}x=\dfrac12\int\mathrm{e}^{x^2}\mathrm{d}(x^2)=\dfrac12\mathrm{e}^{x^2}+C\)</td></tr>
+<tr><td>\(\dfrac{\mathrm{d}x}{\sqrt{x}}\)</td><td>\(2\,\mathrm{d}(\sqrt{x})\)</td><td>\(\displaystyle\int\dfrac{\mathrm{d}x}{\sqrt{x}(1+x)}=2\arctan\sqrt{x}+C\)</td></tr>
+<tr><td>\(\dfrac{\mathrm{d}x}{x^2}\)</td><td>\(-\mathrm{d}\!\left(\dfrac1x\right)\)</td><td>\(\displaystyle\int\dfrac{\mathrm{d}x}{x^2}\mathrm{e}^{1/x}=-\mathrm{e}^{1/x}+C\)</td></tr>
+<tr><td>\(\dfrac{\mathrm{d}x}{x}\)</td><td>\(\mathrm{d}(\ln|x|)\)</td><td>\(\displaystyle\int\dfrac{\mathrm{d}x}{x(1+\ln^2x)}=\arctan(\ln x)+C\)</td></tr>
+<tr><td>\(\mathrm{e}^x\mathrm{d}x\)</td><td>\(\mathrm{d}(\mathrm{e}^x)\)</td><td>\(\displaystyle\int\dfrac{\mathrm{e}^x}{1+\mathrm{e}^{2x}}\mathrm{d}x=\arctan\mathrm{e}^x+C\)</td></tr>
+<tr><td>\(\sin x\,\mathrm{d}x\) / \(\cos x\,\mathrm{d}x\)</td><td>\(-\mathrm{d}(\cos x)\) / \(\mathrm{d}(\sin x)\)</td><td>\(\displaystyle\int\cos x\,\mathrm{e}^{\sin x}\mathrm{d}x=\mathrm{e}^{\sin x}+C\)</td></tr>
+<tr><td>\(\sec^2x\,\mathrm{d}x\)</td><td>\(\mathrm{d}(\tan x)\)</td><td>\(\displaystyle\int\dfrac{1+\tan x}{\cos^2x}\,\mathrm{d}x=\tan x+\tfrac12\tan^2x+C\)（拆两项分别凑 \(\mathrm{d}(\tan x)\)）</td></tr>
+<tr><td>\(\dfrac{\mathrm{d}x}{1+x^2}\) / \(\dfrac{\mathrm{d}x}{\sqrt{1-x^2}}\)</td><td>\(\mathrm{d}(\arctan x)\) / \(\mathrm{d}(\arcsin x)\)</td><td>\(\displaystyle\int\dfrac{\arctan x}{1+x^2}\mathrm{d}x=\dfrac12\arctan^2x+C\)</td></tr>
+<tr><td>\(\varphi'(x)\,\mathrm{d}x\)（一般形式）</td><td>\(\mathrm{d}\varphi(x)\)</td><td>先求内层函数的导数，再整体配系数</td></tr>
+</tbody></table></div>
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> 凑微分的第一反应是<strong>"看内层"</strong>：找到被积函数里最复杂的复合内核 \(\varphi(x)\)，检查其余部分是否恰为（或乘常数后为）\(\varphi'(x)\)。常见三角变形别忘了"配一半"：\(\sin x\cos x\,\mathrm{d}x=\tfrac12\mathrm{d}(\sin^2x)=-\tfrac14\mathrm{d}(\cos 2x)\)，两种凑法会得到形式不同的结果，只差常数，都对。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 3</span>两种凑法殊途同归</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\int\dfrac{x}{1+x^4}\,\mathrm{d}x\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>内层取 \(\varphi(x)=x^2\)，则 \(x\,\mathrm{d}x=\tfrac12\,\mathrm{d}(x^2)\)，且 \(1+x^4=1+(x^2)^2\)：</p>
+      <div class="fml">$$\int\dfrac{x}{1+x^4}\,\mathrm{d}x=\dfrac12\int\dfrac{\mathrm{d}(x^2)}{1+(x^2)^2}=\dfrac12\arctan(x^2)+C$$</div>
+      <p>点评：本题型是 \(\displaystyle\int\dfrac{\mathrm{d}u}{1+u^2}=\arctan u+C\) 的复合版本。类似的还有 \(\displaystyle\int\dfrac{x\,\mathrm{d}x}{\sqrt{1-x^4}}=\dfrac12\arcsin(x^2)+C\)，只要识别出"分子恰是分母内核的导数"即可套公式。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 4</span>先拆项再凑微分</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\int\dfrac{\mathrm{d}x}{x\left(1+\ln^2 x\right)}\) 与 \(\displaystyle\int\sec x\,\mathrm{d}x\)。</p>
+    <details><summary></summary><div class="sol">
+      <p><strong>第一式</strong>：\(\dfrac{\mathrm{d}x}{x}=\mathrm{d}(\ln x)\)（\(x&gt;0\) 时），故</p>
+      <div class="fml">$$\int\dfrac{\mathrm{d}x}{x(1+\ln^2x)}=\int\dfrac{\mathrm{d}(\ln x)}{1+\ln^2x}=\arctan(\ln x)+C$$</div>
+      <p><strong>第二式</strong>：分子分母同乘 \(\sec x+\tan x\)，凑出 \(\mathrm{d}(\sec x+\tan x)\)：</p>
+      <div class="fml">$$\int\sec x\,\mathrm{d}x=\int\dfrac{\sec x(\sec x+\tan x)}{\sec x+\tan x}\,\mathrm{d}x=\int\dfrac{\mathrm{d}(\sec x+\tan x)}{\sec x+\tan x}=\ln|\sec x+\tan x|+C$$</div>
+      <p>点评：\(\int\sec x\,\mathrm{d}x\)、\(\int\csc x\,\mathrm{d}x\) 属于必背的"半推导公式"——考场上忘了可现场乘共轭凑出，两句推导各只需一行。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="4-3-第二类换元法">4.3 第二类换元法<button class="fav" type="button" data-fav="4-3-第二类换元法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="4-3-1-第二类换元法原理">第二类换元法原理<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="4-3-1-第二类换元法原理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>第一类换元是"从被积函数里<strong>认出</strong>\(\varphi'(x)\)"；当认不出时，就<strong>主动设</strong> \(x=\psi(t)\)（\(\psi\) 单调、可导且 \(\psi'\neq0\)），把难积的 \(f(x)\,\mathrm{d}x\) 化为好积的 \(f\bigl(\psi(t)\bigr)\psi'(t)\,\mathrm{d}t\)，最后把 \(t=\psi^{-1}(x)\) <strong>回代</strong>：</p>
+<div class="fml">$$\int f(x)\,\mathrm{d}x=\int f\bigl(\psi(t)\bigr)\psi'(t)\,\mathrm{d}t=F(t)+C=F\bigl(\psi^{-1}(x)\bigr)+C$$</div>
+<p>两大方向：<strong>三角换元</strong>（对付 \(\sqrt{a^2-x^2}\)、\(\sqrt{a^2+x^2}\)、\(\sqrt{x^2-a^2}\)）与<strong>根式换元</strong>（对付 \(\sqrt[n]{ax+b}\) 等整体根式）。</p>
+
+<h3 id="4-3-2-三角换元与根式换元对照表">三角换元与根式换元对照表<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="4-3-2-三角换元与根式换元对照表" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>被积函数含</th><th>换元设置</th><th>根式化为</th><th>辅助三角形回代</th></tr></thead>
+<tbody>
+<tr><td>\(\sqrt{a^2-x^2}\)</td><td>\(x=a\sin t,\ t\in(-\tfrac{\pi}{2},\tfrac{\pi}{2})\)</td><td>\(a\cos t\)</td><td>斜 \(a\)、对 \(x\)、邻 \(\sqrt{a^2-x^2}\)</td></tr>
+<tr><td>\(\sqrt{a^2+x^2}\)</td><td>\(x=a\tan t,\ t\in(-\tfrac{\pi}{2},\tfrac{\pi}{2})\)</td><td>\(a\sec t\)</td><td>邻 \(a\)、对 \(x\)、斜 \(\sqrt{a^2+x^2}\)</td></tr>
+<tr><td>\(\sqrt{x^2-a^2}\)</td><td>\(x=a\sec t,\ t\in(0,\tfrac{\pi}{2})\)</td><td>\(a\tan t\)</td><td>邻 \(a\)、对 \(\sqrt{x^2-a^2}\)、斜 \(x\)</td></tr>
+<tr><td>\(\sqrt[n]{ax+b}\)</td><td>\(t=\sqrt[n]{ax+b}\)，即 \(x=\dfrac{t^n-b}{a}\)</td><td>\(t\)（根号消失）</td><td>直接用 \(t\) 表示 \(x\) 回代</td></tr>
+<tr><td>\(\sqrt[n]{\dfrac{ax+b}{cx+d}}\)</td><td>\(t=\sqrt[n]{\dfrac{ax+b}{cx+d}}\)</td><td>\(t\)，解出 \(x(t)\)</td><td>回代用 \(t\) 的表达式</td></tr>
+</tbody></table></div>
+<p>三角换元后常出现 \(\sin^2t\)、\(\cos^2t\) 的积分，用降幂公式 \(\sin^2t=\dfrac{1-\cos2t}{2}\)、\(\cos^2t=\dfrac{1+\cos2t}{2}\) 处理；出现 \(\sec^3t\) 用分部积分。</p>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① <strong>换元必须回代</strong>：第二类换元的结果要写成 \(x\) 的函数（借助辅助三角形），忘记回代或回代错边是常见失分点；② \(\sqrt{a^2-x^2}\) 换元后 \(\sqrt{a^2\sin^2t}=a\cos t\) 时须保证 \(t\in(-\tfrac{\pi}{2},\tfrac{\pi}{2})\) 使 \(\cos t&gt;0\)，否则开方要加绝对值；③ \(\sqrt{x^2-a^2}\) 的两个换元方向 \(x=a\sec t\) 与 \(x=\pm\sqrt{u^2+a^2}\)（倒代换 \(t=\tfrac1x\)）都要求<strong>单调区间</strong>，选择时留意 \(x&gt;a\) 还是 \(x&lt;-a\)。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 5</span>三角换元经典：\(\sqrt{a^2-x^2}\) 型</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\int\sqrt{4-x^2}\,\mathrm{d}x\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>令 \(x=2\sin t\ (t\in(-\tfrac{\pi}{2},\tfrac{\pi}{2}))\)，则 \(\mathrm{d}x=2\cos t\,\mathrm{d}t\)，\(\sqrt{4-x^2}=2\cos t\)：</p>
+      <div class="fml">$$\int\sqrt{4-x^2}\,\mathrm{d}x=4\int\cos^2t\,\mathrm{d}t=4\int\dfrac{1+\cos 2t}{2}\,\mathrm{d}t=2t+\sin 2t+C=2t+2\sin t\cos t+C$$</div>
+      <p>回代：由 \(\sin t=\dfrac{x}{2}\) 作辅助三角形，得 \(\cos t=\dfrac{\sqrt{4-x^2}}{2}\)，\(t=\arcsin\dfrac{x}{2}\)，故</p>
+      <div class="fml">$$\int\sqrt{4-x^2}\,\mathrm{d}x=2\arcsin\dfrac{x}{2}+\dfrac{x}{2}\sqrt{4-x^2}+C$$</div>
+      <p>点评：一般公式 \(\displaystyle\int\sqrt{a^2-x^2}\,\mathrm{d}x=\dfrac{a^2}{2}\arcsin\dfrac{x}{a}+\dfrac{x}{2}\sqrt{a^2-x^2}+C\) 值得整体记牢（结果 = "扇形 + 三角形"面积）。此型亦可用定积分几何意义秒杀（见第 5 章）。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 6</span>根式换元去根号</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\int\dfrac{\mathrm{d}x}{1+\sqrt{x}}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>令 \(t=\sqrt{x}\)，即 \(x=t^2\ (t&gt;0)\)，\(\mathrm{d}x=2t\,\mathrm{d}t\)：</p>
+      <div class="fml">$$\int\dfrac{\mathrm{d}x}{1+\sqrt{x}}=\int\dfrac{2t}{1+t}\,\mathrm{d}t=2\int\dfrac{(t+1)-1}{t+1}\,\mathrm{d}t=2t-2\ln(1+t)+C=2\sqrt{x}-2\ln(1+\sqrt{x})+C$$</div>
+      <p>点评：根式换元后分子往往比分母"低一次"，用 \(t=(t+1)-1\) 这类<strong>加减拆项</strong>化成可积形式；分母含 \(\mathrm{e}^x+1\)、\(1+\ln x\) 等也常用同样的拆法。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="4-4-分部积分法">4.4 分部积分法<button class="fav" type="button" data-fav="4-4-分部积分法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="4-4-1-分部积分公式">分部积分公式<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="4-4-1-分部积分公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>由乘积求导法则 \((uv)'=u'v+uv'\) 两边积分、移项即得：</p>
+<div class="fml">$$\int u\,\mathrm{d}v=uv-\int v\,\mathrm{d}u\qquad\text{即}\qquad \int u\,v'\,\mathrm{d}x=uv-\int u'\,v\,\mathrm{d}x$$</div>
+<p>适用对象：被积函数是<strong>两类不同函数的乘积</strong>（幂 × 指数、幂 × 三角、对数 × 幂、反三角 × 幂等）。作用是把"难积的 \(u\)"转化为"好积的 \(u'\)"——求导会降次、化简的类型才值得分部。</p>
+
+<h3 id="4-4-2-u-与-dv-的选取与循环积分">u 与 dv 的选取与循环积分<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="4-4-2-u-与-dv-的选取与循环积分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>选取口诀：<strong>"反、对、幂、指、三"</strong>（反三角 → 对数 → 幂 → 指数 → 三角），排在<strong>前面的优先选 \(u\)</strong>，排后面的凑进 \(\mathrm{d}v\)。理由：反三角、对数"求导变简单"，应选 \(u\)；指数、三角"原样积分仍在"，适合充当 \(\mathrm{d}v\)。</p>
+<div class="tscroll"><table>
+<thead><tr><th>积分类型</th><th>u 的选取</th><th>dv 的选取</th><th>效果</th></tr></thead>
+<tbody>
+<tr><td>\(\int x^n\mathrm{e}^x\mathrm{d}x\)、\(\int x^n\sin x\,\mathrm{d}x\)</td><td>\(u=x^n\)</td><td>\(\mathrm{d}v=\mathrm{e}^x\mathrm{d}x\) 等</td><td>幂次逐次降低，分部若干次化到基本表</td></tr>
+<tr><td>\(\int x^n\ln x\,\mathrm{d}x\)、\(\int x^n\arctan x\,\mathrm{d}x\)</td><td>\(u=\ln x\) 或 \(\arctan x\)</td><td>\(\mathrm{d}v=x^n\mathrm{d}x\)</td><td>对数/反三角被"求导消掉"，一次到位</td></tr>
+<tr><td>\(\int\mathrm{e}^{ax}\sin bx\,\mathrm{d}x\) 型</td><td>谁选 \(u\) 均可（需一致）</td><td>另一函数</td><td><strong>循环积分</strong>：分部两次后原积分重现，移项解出</td></tr>
+</tbody></table></div>
+<div class="fml">$$\int\mathrm{e}^{ax}\sin bx\,\mathrm{d}x=\dfrac{\mathrm{e}^{ax}(a\sin bx-b\cos bx)}{a^2+b^2}+C$$</div>
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> <strong>循环积分</strong>：\(\int\mathrm{e}^x\sin x\,\mathrm{d}x\) 分部两次后等式右侧再次出现原积分 \(I\)，移项 \(2I=\cdots\) 解出即可——必须<strong>两次都选同一类函数当 \(u\)</strong>（都选三角或都选指数），选法交叉会"绕回原地"。这类"解方程"手法是期末卷的常客。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 7</span>按口诀选 \(u\)：对数与幂</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\int x\ln x\,\mathrm{d}x\) 与 \(\displaystyle\int\ln x\,\mathrm{d}x\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>对数排在幂之前，取 \(u=\ln x\)、\(\mathrm{d}v=x\,\mathrm{d}x\)（即 \(v=\tfrac{x^2}{2}\)）：</p>
+      <div class="fml">$$\int x\ln x\,\mathrm{d}x=\dfrac{x^2}{2}\ln x-\int\dfrac{x^2}{2}\cdot\dfrac1x\,\mathrm{d}x=\dfrac{x^2}{2}\ln x-\dfrac{x^2}{4}+C$$</div>
+      <p>取 \(u=\ln x\)、\(\mathrm{d}v=\mathrm{d}x\)：</p>
+      <div class="fml">$$\int\ln x\,\mathrm{d}x=x\ln x-\int x\cdot\dfrac1x\,\mathrm{d}x=x\ln x-x+C$$</div>
+      <p>点评：\(\int\ln x\,\mathrm{d}x=x\ln x-x+C\) 是"隐形分部"（\(\mathrm{d}v=\mathrm{d}x\)），建议直接背；\(\int\arctan x\,\mathrm{d}x=x\arctan x-\tfrac12\ln(1+x^2)+C\) 同理。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 8</span>循环积分解方程</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\int\mathrm{e}^x\sin x\,\mathrm{d}x\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>记 \(I=\displaystyle\int\mathrm{e}^x\sin x\,\mathrm{d}x\)。两次都取指数函数进 \(\mathrm{d}v\)（\(u=\sin x\)，再 \(u=\cos x\)）：</p>
+      <div class="fml">$$I=\mathrm{e}^x\sin x-\int\mathrm{e}^x\cos x\,\mathrm{d}x=\mathrm{e}^x\sin x-\mathrm{e}^x\cos x-\int\mathrm{e}^x\sin x\,\mathrm{d}x=\mathrm{e}^x(\sin x-\cos x)-I$$</div>
+      <p>移项得 \(2I=\mathrm{e}^x(\sin x-\cos x)\)，故</p>
+      <div class="fml">$$\int\mathrm{e}^x\sin x\,\mathrm{d}x=\dfrac{\mathrm{e}^x(\sin x-\cos x)}{2}+C$$</div>
+      <p>点评：移项后系数 \(2\) 直接除，同时<strong>补上 \(C\)</strong>——不定积分是函数族，消项时 \(C\) 不能省。若被积函数是 \(\mathrm{e}^{2x}\sin3x\)，套公式 \(\dfrac{\mathrm{e}^{2x}(2\sin3x-3\cos3x)}{4+9}+C\)。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="4-5-有理函数与三角有理式的积分">4.5 有理函数与三角有理式的积分<button class="fav" type="button" data-fav="4-5-有理函数与三角有理式的积分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="4-5-1-有理函数的部分分式分解">有理函数的部分分式分解<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="4-5-1-有理函数的部分分式分解" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p><strong>有理函数</strong> \(R(x)=\dfrac{P(x)}{Q(x)}\)（两多项式之比）。先用多项式除法化为"多项式 + 真分式"；再将真分式分母因式分解，按<strong>部分分式定理</strong>拆成基本片段，逐片积分：</p>
+<div class="tscroll"><table>
+<thead><tr><th>分母中的因子</th><th>对应的部分分式</th><th>积分落点</th></tr></thead>
+<tbody>
+<tr><td>一次因子 \((x-a)\)</td><td>\(\dfrac{A}{x-a}\)</td><td>\(A\ln|x-a|\)</td></tr>
+<tr><td>\((x-a)^k\ (k\geq2)\)</td><td>\(\dfrac{A_1}{x-a}+\cdots+\dfrac{A_k}{(x-a)^k}\)</td><td>对数 + 幂函数项</td></tr>
+<tr><td>二次质因子 \(x^2+px+q\)（\(p^2-4q&lt;0\)）</td><td>\(\dfrac{Mx+N}{x^2+px+q}\)</td><td>拆成 \(\ln\left(x^2+px+q\right)\) 与 \(\arctan\) 项</td></tr>
+<tr><td>\(\left(x^2+px+q\right)^k\)</td><td>\(\dfrac{M_1x+N_1}{\cdots}+\cdots+\dfrac{M_kx+N_k}{\left(x^2+px+q\right)^k}\)</td><td>配方法 + 逐次积分</td></tr>
+</tbody></table></div>
+<p>待定系数可用<strong>赋值法</strong>（代入特殊 \(x\) 值）或<strong>比较系数法</strong>求出，赋值法通常更快。</p>
+
+<h3 id="4-5-2-三角有理式与万能替换">三角有理式与万能替换<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="4-5-2-三角有理式与万能替换" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>由 \(\sin x\)、\(\cos x\) 经四则运算得到的式子称<strong>三角有理式</strong>。令 \(t=\tan\dfrac{x}{2}\)（<strong>万能替换</strong>）总可化为 \(t\) 的有理函数：</p>
+<div class="fml">$$\sin x=\dfrac{2t}{1+t^2},\qquad\cos x=\dfrac{1-t^2}{1+t^2},\qquad \mathrm{d}x=\dfrac{2\,\mathrm{d}t}{1+t^2}$$</div>
+<p>但万能替换计算量大，能化简就先化简：\(R(\sin x)\,\mathrm{d}x\) 用 \(t=\cos x\)；\(R(\cos x)\,\mathrm{d}x\) 用 \(t=\sin x\)；\(R(\tan x)\,\mathrm{d}x\) 用 \(t=\tan x\)；关于 \(\sin x\)、\(\cos x\) 都是奇次幂时先用 \(\sin^2+\cos^2=1\) 降次。</p>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> 部分分式分解后<strong>逐项积分别忘了逐项带常数</strong>，最后合并为一个 \(C\)；对 \(\dfrac{Mx+N}{x^2+px+q}\) 积分时，先把分子凑成 \(\mathrm{d}(x^2+px+q)= (2x+p)\,\mathrm{d}x\) 的倍数，剩余部分配方法化成 \(\displaystyle\int\dfrac{\mathrm{d}u}{u^2+a^2}\)——直接对整块套公式容易丢 \(\arctan\) 项的系数。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 9</span>部分分式分解（赋值法）</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\int\dfrac{x+1}{x^2-5x+6}\,\mathrm{d}x\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>因式分解 \(x^2-5x+6=(x-2)(x-3)\)，设 \(\dfrac{x+1}{(x-2)(x-3)}=\dfrac{A}{x-2}+\dfrac{B}{x-3}\)，去分母得 \(x+1=A(x-3)+B(x-2)\)。令 \(x=3\) 得 \(A=4\)；令 \(x=2\) 得 \(B=-3\)：</p>
+      <div class="fml">$$\int\dfrac{x+1}{x^2-5x+6}\,\mathrm{d}x=\int\left(\dfrac{4}{x-3}-\dfrac{3}{x-2}\right)\mathrm{d}x=4\ln|x-3|-3\ln|x-2|+C$$</div>
+      <p>点评：赋值法取"分母零点"的 \(x\) 值最省力；若分母含二次质因子，代入一两个具体值联立方程组即可。分解结果正确性可用 \(x=0\) 代回抽查。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 10</span>三角有理式先化简再积分</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\int\dfrac{\mathrm{d}x}{1+\sin x}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>不必上万能替换：分子分母同乘 \((1-\sin x)\)，分母化为 \(\cos^2x\)：</p>
+      <div class="fml">$$\int\dfrac{1-\sin x}{\cos^2x}\,\mathrm{d}x=\int\sec^2x\,\mathrm{d}x-\int\dfrac{\sin x}{\cos^2x}\,\mathrm{d}x=\tan x-\dfrac{1}{\cos x}+C=\tan x-\sec x+C$$</div>
+      <p>点评：三角有理式的处理优先级是"恒等变形 &gt; 特殊换元（\(\sin/\cos/\tan\)）&gt; 万能替换"。本题也可用 \(t=\tan\dfrac{x}{2}\) 化为 \(\int\dfrac{2\,\mathrm{d}t}{(1+t)^2}\)，结果一致但计算更长——先化简的意识就是分数。</p>
+    </div></details>
+  </div>
+</div>
+
+<details class="ext"><summary>拓展 · 可能考<span class="ext-tag">考前加分</span></summary><div class="ext-b">
+  <p><strong>① 同一积分的"不同答案"都对</strong>：不同方法得到 \(\sin^2\!\frac{x}{2}+C\)、\(-\cos^2\!\frac{x}{2}+C'\)、\(-\frac12\cos x+C''\) 彼此只差常数。判断两答案是否一致：求差看是否为常数，或都求导比对。</p>
+  <p><strong>② 倒代换</strong>：分母幂次远高于分子时，令 \(t=\dfrac1x\) 常能化简 \(\displaystyle\int\dfrac{\mathrm{d}x}{x\sqrt{x^2+a^2}}\) 型积分。</p>
+  <p><strong>③ 分段函数的原函数</strong>：含绝对值（如 \(\int|x|\,\mathrm{d}x=\tfrac{x|x|}{2}+C\)）需分段积分，并在分段点处保证原函数连续来确定常数关系。</p>
+</div></details>

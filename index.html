@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>高等数学知识大全 · 基础 / 易错 / 重难点 · 高等数学知识库</title>
+<meta name="description" content="高等数学（同济第八版）基础知识点、易错知识点与重难点完整整理：极限、导数、积分、微分方程、空间解析几何、多元微积分、级数，配套典型例题与备考中心。">
+<link rel="stylesheet" href="assets/fonts.css?v=20261110a">
+<link rel="stylesheet" href="assets/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css?v=20261110a">
+<script defer src="assets/katex/katex.min.js"></script>
+<script defer src="assets/katex/contrib/auto-render.min.js"></script>
+</head>
+<body>
+
+<header class="top">
+  <div class="lights" aria-hidden="true"><i></i><i></i><i></i></div>
+  <button class="tb ico mob" id="mob" aria-label="目录">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <div class="brand">
+    <span class="lg">∫</span>
+    <div><b>高等数学知识库</b><span>极限 · 微积分 · 级数 · 同济第八版</span></div>
+  </div>
+
+  <div class="srch">
+    <div class="box">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" type="search" autocomplete="off" placeholder="搜索知识点、定理、例题…">
+      <kbd>Ctrl K</kbd>
+      <button class="clr" aria-label="清空">×</button>
+    </div>
+    <div class="sres" id="sres"></div>
+  </div>
+
+  <div class="tools">
+    <div class="fbar" id="fbar">
+      <button class="fb-sum tb" id="fb-open" title="冲刺模式">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11L9.5 22 19 10h-6.5z"/></svg>
+        <span class="fb-t">冲刺</span>
+        <span class="fb-badge" id="fb-badge"></span>
+      </button>
+      <div class="fb-pop" id="fb-pop" hidden>
+        <div class="fb-head"><b>冲刺模式</b><span>点选类型，只看对应小知识块</span></div>
+        <div class="fb-grid">
+          <button class="fk fk-def" data-k="def"><i></i><span>只看定义</span></button>
+          <button class="fk fk-err" data-k="err"><i></i><span>只看易错点</span></button>
+          <button class="fk fk-hot" data-k="hot"><i></i><span>只看高频考点</span></button>
+          <button class="fk fk-ex" data-k="ex"><i></i><span>只看例题</span></button>
+        </div>
+        <div class="fb-foot">
+          <button class="fk-clear" id="fb-exit">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            退出冲刺模式</button>
+          <span class="fb-tip">Esc 也可退出</span>
+        </div>
+      </div>
+    </div>
+    <details class="exam-dd">
+      <summary class="tb" title="备考中心">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4a2 2 0 0 0-2-2H6.5A2.5 2.5 0 0 0 4 4.5z"/>
+          <path d="M20 17v5H6.5a2.5 2.5 0 0 1 0-5"/></svg>
+        <span>备考中心</span>
+      </summary>
+      <div class="dd">
+        <a href="exam.html#review"><i>01</i><div><b>考点速览</b><span>十二章核心考点卡片 · 考前过一遍</span></div></a>
+        <a href="exam.html#quiz"><i>02</i><div><b>组卷模拟</b><span>全题库 · 判断 / 选择 / 填空 / 计算 / 证明<br>期末结构组卷 · 智能判分 · 错题本</span></div></a>
+        <a href="exam.html#bank"><i>03</i><div><b>题库总览</b><span>浏览全部题目 · 题型/章节/来源筛选<br>关键词搜索 · 展开即看答案解析</span></div></a>
+      </div>
+    </details>
+    <div class="seg" role="group" aria-label="外观">
+      <button id="m-light" title="浅色外观">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>
+      </button>
+      <button id="m-dark" title="深色外观">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5a8.6 8.6 0 1 0 10.7 10.7z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mask"></div>
+
+<div class="focusbar" id="focusbar" hidden>
+  <span class="fbz">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4.5 13.5H11L9.5 22 19 10h-6.5z"/></svg>
+    冲刺中</span>
+  <span class="fb-tags" id="focus-tags"></span>
+</div>
+
+<div class="wrap">
+  <aside class="side">
+    <div class="side-h">
+      <span class="st">目录导航</span>
+      <button class="sa" id="expall2">展开全部</button>
+    </div>
+    <div class="tfrow">
+      <div class="tfbox">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="tq" type="search" autocomplete="off" placeholder="筛选目录标题…">
+        <button class="tclr" id="tclr" aria-label="清空目录筛选">×</button>
+      </div>
+      <button class="favbtn" id="favbtn" title="我的收藏">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+          <path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg>
+        <span id="favcount">0</span>
+      </button>
+    </div>
+    <nav class="toc">
+      <div class="node" data-id="第-0-篇-总览与速查">
+        <div class="row"><span class="tw"></span><a class="tx" href="#第-0-篇-总览与速查">第 0 篇 总览与速查</a></div>
+        <div class="kids">
+          <div class="node" data-id="0-1-高等数学知识地图"><div class="row"><span class="tw sp"></span><a class="tx" href="#0-1-高等数学知识地图">0.1 高等数学知识地图</a></div></div>
+          <div class="node" data-id="0-2-考前核心结论速查"><div class="row"><span class="tw sp"></span><a class="tx" href="#0-2-考前核心结论速查">0.2 考前核心结论速查</a></div></div>
+          <div class="node" data-id="0-3-学习方法与复习路线"><div class="row"><span class="tw sp"></span><a class="tx" href="#0-3-学习方法与复习路线">0.3 学习方法与复习路线</a></div></div>
+        </div>
+      </div>
+      <div class="node" data-id="第-1-章-函数与极限">
+        <div class="row"><span class="tw"></span><a class="tx" href="#第-1-章-函数与极限">第 1 章 函数与极限</a></div>
+        <div class="kids">
+          <div class="node" data-id="1-1-映射与函数"><div class="row"><span class="tw sp"></span><a class="tx" href="#1-1-映射与函数">1.1 映射与函数</a></div></div>
+          <div class="node" data-id="1-2-数列的极限"><div class="row"><span class="tw sp"></span><a class="tx" href="#1-2-数列的极限">1.2 数列的极限</a></div></div>
+          <div class="node" data-id="1-3-函数的极限与无穷小"><div class="row"><span class="tw sp"></span><a class="tx" href="#1-3-函数的极限与无穷小">1.3 函数的极限与无穷小</a></div></div>
+          <div class="node" data-id="1-4-两个重要极限与无穷小的比较"><div class="row"><span class="tw sp"></span><a class="tx" href="#1-4-两个重要极限与无穷小的比较">1.4 两个重要极限与无穷小的比较</a></div></div>
+          <div class="node" data-id="1-5-函数的连续性与间断点"><div class="row"><span class="tw sp"></span><a class="tx" href="#1-5-函数的连续性与间断点">1.5 函数的连续性与间断点</a></div></div>
+          <div class="node" data-id="1-6-闭区间上连续函数的性质"><div class="row"><span class="tw sp"></span><a class="tx" href="#1-6-闭区间上连续函数的性质">1.6 闭区间上连续函数的性质</a></div></div>
+        </div>
+      </div>
+      <div class="node" data-id="第-2-章-导数与微分">
+        <div class="row"><span class="tw"></span><a class="tx" href="#第-2-章-导数与微分">第 2 章 导数与微分</a></div>
+        <div class="kids">
+          <div class="node" data-id="2-1-导数的概念"><div class="row"><span class="tw sp"></span><a class="tx" href="#2-1-导数的概念">2.1 导数的概念</a></div></div>
+          <div class="node" data-id="2-2-求导法则"><div class="row"><span class="tw sp"></span><a class="tx" href="#2-2-求导法则">2.2 求导法则</a></div></div>
+          <div class="node" data-id="2-3-高阶导数"><div class="row"><span class="tw sp"></span><a class="tx" href="#2-3-高阶导数">2.3 高阶导数</a></div></div>
+          <div class="node" data-id="2-4-隐函数参数方程与对数求导"><div class="row"><span class="tw sp"></span><a class="tx" href="#2-4-隐函数参数方程与对数求导">2.4 隐函数、参数方程与对数求导</a></div></div>
+          <div class="node" data-id="2-5-函数的微分"><div class="row"><span class="tw sp"></span><a class="tx" href="#2-5-函数的微分">2.5 函数的微分</a></div></div>
+        </div>
+      </div>
+      <div class="node" data-id="第-3-章-微分中值定理与导数的应用">
+        <div class="row"><span class="tw"></span><a class="tx" href="#第-3-章-微分中值定理与导数的应用">第 3 章 微分中值定理与导数的应用</a></div>
+        <div class="kids">
+          <div class="node" data-id="3-1-三个中值定理"><div class="row"><span class="tw sp"></span><a class="tx" href="#3-1-三个中值定理">3.1 三个中值定理</a></div></div>
+          <div class="node" data-id="3-2-洛必达法则"><div class="row"><span class="tw sp"></span><a class="tx" href="#3-2-洛必达法则">3.2 洛必达法则</a></div></div>
+          <div class="node" data-id="3-3-泰勒公式"><div class="row"><span class="tw sp"></span><a class="tx" href="#3-3-泰勒公式">3.3 泰勒公式</a></div></div>
+          <div class="node" data-id="3-4-函数的单调性与极值"><div class="row"><span class="tw sp"></span><a class="tx" href="#3-4-函数的单调性与极值">3.4 函数的单调性与极值</a></div></div>
+          <div class="node" data-id="3-5-曲线的凹凸拐点与渐近线"><div class="row"><span class="tw sp"></span><a class="tx" href="#3-5-曲线的凹凸拐点与渐近线">3.5 曲线的凹凸、拐点与渐近线</a></div></div>
+          <div class="node" data-id="3-6-曲率"><div class="row"><span class="tw sp"></span><a class="tx" href="#3-6-曲率">3.6 曲率</a></div></div>
+        </div>
+      </div>
+      <div class="node" data-id="第-4-章-不定积分">
+        <div class="row"><span class="tw"></span><a class="tx" href="#第-4-章-不定积分">第 4 章 不定积分</a></div>
+        <div class="kids">
+          <div class="node" data-id="4-1-不定积分的概念与性质"><div class="row"><span class="tw sp"></span><a class="tx" href="#4-1-不定积分的概念与性质">4.1 不定积分的概念与性质</a></div></div>
+          <div class="node" data-id="4-2-第一类换元法"><div class="row"><span class="tw sp"></span><a class="tx" href="#4-2-第一类换元法">4.2 第一类换元法</a></div></div>
+          <div class="node" data-id="4-3-第二类换元法"><div class="row"><span class="tw sp"></span><a class="tx" href="#4-3-第二类换元法">4.3 第二类换元法</a></div></div>
+          <div class="node" data-id="4-4-分部积分法"><div class="row"><span class="tw sp"></span><a class="tx" href="#4-4-分部积分法">4.4 分部积分法</a></div></div>
+          <div class="node" data-id="4-5-有理函数与三角有理式的积分"><div class="row"><span class="tw sp"></span><a class="tx" href="#4-5-有理函数与三角有理式的积分">4.5 有理函数与三角有理式的积分</a></div></div>
+        </div>
+      </div>
+      <div class="node" data-id="第-5-章-定积分">
+        <div class="row"><span class="tw"></span><a class="tx" href="#第-5-章-定积分">第 5 章 定积分</a></div>
+        <div class="kids">
+          <div class="node" data-id="5-1-定积分的概念与性质"><div class="row"><span class="tw sp"></span><a class="tx" href="#5-1-定积分的概念与性质">5.1 定积分的概念与性质</a></div></div>
+          <div class="node" data-id="5-2-微积分基本公式"><div class="row"><span class="tw sp"></span><a class="tx" href="#5-2-微积分基本公式">5.2 微积分基本公式</a></div></div>
+          <div class="node" data-id="5-3-定积分的换元法与分部积分法"><div class="row"><span class="tw sp"></span><a class="tx" href="#5-3-定积分的换元法与分部积分法">5.3 定积分的换元法与分部积分法</a></div></div>
+          <div class="node" data-id="5-4-反常积分"><div class="row"><span class="tw sp"></span><a class="tx" href="#5-4-反常积分">5.4 反常积分</a></div></div>
+        </div>
+      </div>
+      <div class="node" data-id="第-6-章-定积分的应用">
+        <div class="row"><span class="tw"></span><a class="tx" href="#第-6-章-定积分的应用">第 6 章 定积分的应用</a></div>
+        <div class="kids">
+          <div class="node" data-id="6-1-元素法"><div class="row"><span class="tw sp"></span><a class="tx" href="#6-1-元素法">6.1 元素法</a></div></div>
+          <div class="node" data-id="6-2-平面图形的面积"><div class="row"><span class="tw sp"></span><a class="tx" href="#6-2-平面图形的面积">6.2 平面图形的面积</a></div></div>
+          <div class="node" data-id="6-3-旋转体与已知截面面积的体积"><div class="row"><span class="tw sp"></span><a class="tx" href="#6-3-旋转体与已知截面面积的体积">6.3 旋转体与已知截面面积的体积</a></div></div>
+          <div class="node" data-id="6-4-弧长与物理应用"><div class="row"><span class="tw sp"></span><a class="tx" href="#6-4-弧长与物理应用">6.4 弧长与物理应用</a></div></div>
+        </div>
+      </div>
+      <div class="node" data-id="第-7-章-微分方程">
+        <div class="row"><span class="tw"></span><a class="tx" href="#第-7-章-微分方程">第 7 章 微分方程</a></div>
+        <div class="kids">
+          <div class="node" data-id="7-1-微分方程的基本概念"><div class="row"><span class="tw sp"></span><a class="tx" href="#7-1-微分方程的基本概念">7.1 微分方程的基本概念</a></div></div>
+          <div class="node" data-id="7-2-可分离变量与齐次方程"><div class="row"><span class="tw sp"></span><a class="tx" href="#7-2-可分离变量与齐次方程">7.2 可分离变量与齐次方程</a></div></div>
+          <div class="node" data-id="7-3-一阶线性微分方程"><div class="row"><span class="tw sp"></span><a class="tx" href="#7-3-一阶线性微分方程">7.3 一阶线性微分方程</a></div></div>
+          <div class="node" data-id="7-4-可降阶的高阶微分方程"><div class="row"><span class="tw sp"></span><a class="tx" href="#7-4-可降阶的高阶微分方程">7.4 可降阶的高阶微分方程</a></div></div>
+          <div class="node" data-id="7-5-二阶线性微分方程解的结构"><div class="row"><span class="tw sp"></span><a class="tx" href="#7-5-二阶线性微分方程解的结构">7.5 二阶线性微分方程解的结构</a></div></div>
+          <div class="node" data-id="7-6-二阶常系数线性微分方程"><div class="row"><span class="tw sp"></span><a class="tx" href="#7-6-二阶常系数线性微分方程">7.6 二阶常系数线性微分方程</a></div></div>
+        </div>
+      </div>
+      <div class="node" data-id="第-8-章-向量代数与空间解析几何">
+        <div class="row"><span class="tw"></span><a class="tx" href="#第-8-章-向量代数与空间解析几何">第 8 章 向量代数与空间解析几何</a></div>
+        <div class="kids">
+          <div class="node" data-id="8-1-向量及其线性运算"><div class="row"><span class="tw sp"></span><a class="tx" href="#8-1-向量及其线性运算">8.1 向量及其线性运算</a></div></div>
+          <div class="node" data-id="8-2-数量积向量积与混合积"><div class="row"><span class="tw sp"></span><a class="tx" href="#8-2-数量积向量积与混合积">8.2 数量积、向量积与混合积</a></div></div>
+          <div class="node" data-id="8-3-平面及其方程"><div class="row"><span class="tw sp"></span><a class="tx" href="#8-3-平面及其方程">8.3 平面及其方程</a></div></div>
+          <div class="node" data-id="8-4-空间直线及其方程"><div class="row"><span class="tw sp"></span><a class="tx" href="#8-4-空间直线及其方程">8.4 空间直线及其方程</a></div></div>
+          <div class="node" data-id="8-5-曲面与空间曲线"><div class="row"><span class="tw sp"></span><a class="tx" href="#8-5-曲面与空间曲线">8.5 曲面与空间曲线</a></div></div>
+        </div>
+      </div>
+      <div class="node" data-id="第-9-章-多元函数微分法及其应用">
+        <div class="row"><span class="tw"></span><a class="tx" href="#第-9-章-多元函数微分法及其应用">第 9 章 多元函数微分法及其应用</a></div>
+        <div class="kids">
+          <div class="node" data-id="9-1-多元函数的基本概念"><div class="row"><span class="tw sp"></span><a class="tx" href="#9-1-多元函数的基本概念">9.1 多元函数的基本概念</a></div></div>
+          <div class="node" data-id="9-2-偏导数"><div class="row"><span class="tw sp"></span><a class="tx" href="#9-2-偏导数">9.2 偏导数</a></div></div>
+          <div class="node" data-id="9-3-全微分"><div class="row"><span class="tw sp"></span><a class="tx" href="#9-3-全微分">9.3 全微分</a></div></div>
+          <div class="node" data-id="9-4-多元复合函数与隐函数的求导法则"><div class="row"><span class="tw sp"></span><a class="tx" href="#9-4-多元复合函数与隐函数的求导法则">9.4 多元复合函数与隐函数的求导法则</a></div></div>
+          <div class="node" data-id="9-5-方向导数与梯度"><div class="row"><span class="tw sp"></span><a class="tx" href="#9-5-方向导数与梯度">9.5 方向导数与梯度</a></div></div>
+          <div class="node" data-id="9-6-多元函数的极值与最值"><div class="row"><span class="tw sp"></span><a class="tx" href="#9-6-多元函数的极值与最值">9.6 多元函数的极值与最值</a></div></div>
+        </div>
+      </div>
+      <div class="node" data-id="第-10-章-重积分">
+        <div class="row"><span class="tw"></span><a class="tx" href="#第-10-章-重积分">第 10 章 重积分</a></div>
+        <div class="kids">
+          <div class="node" data-id="10-1-二重积分的概念与性质"><div class="row"><span class="tw sp"></span><a class="tx" href="#10-1-二重积分的概念与性质">10.1 二重积分的概念与性质</a></div></div>
+          <div class="node" data-id="10-2-二重积分的计算法"><div class="row"><span class="tw sp"></span><a class="tx" href="#10-2-二重积分的计算法">10.2 二重积分的计算法</a></div></div>
+          <div class="node" data-id="10-3-三重积分"><div class="row"><span class="tw sp"></span><a class="tx" href="#10-3-三重积分">10.3 三重积分</a></div></div>
+          <div class="node" data-id="10-4-重积分的应用"><div class="row"><span class="tw sp"></span><a class="tx" href="#10-4-重积分的应用">10.4 重积分的应用</a></div></div>
+        </div>
+      </div>
+      <div class="node" data-id="第-11-章-曲线积分与曲面积分">
+        <div class="row"><span class="tw"></span><a class="tx" href="#第-11-章-曲线积分与曲面积分">第 11 章 曲线积分与曲面积分</a></div>
+        <div class="kids">
+          <div class="node" data-id="11-1-对弧长的曲线积分"><div class="row"><span class="tw sp"></span><a class="tx" href="#11-1-对弧长的曲线积分">11.1 对弧长的曲线积分</a></div></div>
+          <div class="node" data-id="11-2-对坐标的曲线积分与格林公式"><div class="row"><span class="tw sp"></span><a class="tx" href="#11-2-对坐标的曲线积分与格林公式">11.2 对坐标的曲线积分与格林公式</a></div></div>
+          <div class="node" data-id="11-3-对面积的曲面积分"><div class="row"><span class="tw sp"></span><a class="tx" href="#11-3-对面积的曲面积分">11.3 对面积的曲面积分</a></div></div>
+          <div class="node" data-id="11-4-对坐标的曲面积分与高斯公式"><div class="row"><span class="tw sp"></span><a class="tx" href="#11-4-对坐标的曲面积分与高斯公式">11.4 对坐标的曲面积分与高斯公式</a></div></div>
+          <div class="node" data-id="11-5-斯托克斯公式"><div class="row"><span class="tw sp"></span><a class="tx" href="#11-5-斯托克斯公式">11.5 斯托克斯公式</a></div></div>
+        </div>
+      </div>
+      <div class="node" data-id="第-12-章-无穷级数">
+        <div class="row"><span class="tw"></span><a class="tx" href="#第-12-章-无穷级数">第 12 章 无穷级数</a></div>
+        <div class="kids">
+          <div class="node" data-id="12-1-常数项级数的概念与性质"><div class="row"><span class="tw sp"></span><a class="tx" href="#12-1-常数项级数的概念与性质">12.1 常数项级数的概念与性质</a></div></div>
+          <div class="node" data-id="12-2-正项级数的审敛法"><div class="row"><span class="tw sp"></span><a class="tx" href="#12-2-正项级数的审敛法">12.2 正项级数的审敛法</a></div></div>
+          <div class="node" data-id="12-3-交错级数与绝对收敛"><div class="row"><span class="tw sp"></span><a class="tx" href="#12-3-交错级数与绝对收敛">12.3 交错级数与绝对收敛</a></div></div>
+          <div class="node" data-id="12-4-幂级数"><div class="row"><span class="tw sp"></span><a class="tx" href="#12-4-幂级数">12.4 幂级数</a></div></div>
+          <div class="node" data-id="12-5-函数展开成幂级数"><div class="row"><span class="tw sp"></span><a class="tx" href="#12-5-函数展开成幂级数">12.5 函数展开成幂级数</a></div></div>
+          <div class="node" data-id="12-6-傅里叶级数"><div class="row"><span class="tw sp"></span><a class="tx" href="#12-6-傅里叶级数">12.6 傅里叶级数</a></div></div>
+        </div>
+      </div>
+      <div class="node" data-id="附录篇-速查与精选">
+        <div class="row"><span class="tw"></span><a class="tx" href="#附录篇-速查与精选">附录篇 速查与精选</a></div>
+        <div class="kids">
+          <div class="node" data-id="附录-a-公式速查卡"><div class="row"><span class="tw sp"></span><a class="tx" href="#附录-a-公式速查卡">附录 A 公式速查卡</a></div></div>
+          <div class="node" data-id="附录-b-易错点总清单"><div class="row"><span class="tw sp"></span><a class="tx" href="#附录-b-易错点总清单">附录 B 易错点总清单 TOP 30</a></div></div>
+          <div class="node" data-id="附录-c-典型例题精选"><div class="row"><span class="tw sp"></span><a class="tx" href="#附录-c-典型例题精选">附录 C 典型例题精选</a></div></div>
+        </div>
+      </div>
+      <div class="node" data-id="结语">
+        <div class="row"><span class="tw"></span><a class="tx" href="#结语">结语</a></div>
+        <div class="kids">
+        </div>
+      </div>
+
+    </nav>
+    <div class="favpanel" id="favpanel">
+      <div id="favlist"></div>
+      <button class="sa" id="favclear">清空收藏</button>
+    </div>
+  </aside>
+
+  <main class="main" id="main">
+    <article id="content"></article>
+  </main>
+
+  <aside id="ollist" aria-label="本页大纲"></aside>
+</div>
+
+<button class="topbtn" id="topbtn" title="回到顶部">
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<nav class="mbar">
+  <button id="mb-toc">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>目录</button>
+  <button id="mb-q">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>搜索</button>
+  <button id="mb-sprint">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4.5 13.5H11L9.5 22 19 10h-6.5z"/></svg>冲刺</button>
+  <button id="mb-top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>顶部</button>
+</nav>
+
+<script src="assets/manifest.js?v=20261110a"></script>
+<script src="assets/app.js?v=20261110a"></script>
+</body>
+</html>

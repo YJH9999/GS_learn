@@ -1,0 +1,236 @@
+<h1 id="第-5-章-定积分">第 5 章　定积分</h1>
+
+<p>定积分是"分割—近似—求和—取极限"思想的结晶：把曲边梯形切成无数窄条，每条用矩形近似，极限即面积。它与不定积分本是两回事，但<strong>牛顿-莱布尼茨公式</strong>把二者打通——"用原函数计算定积分"，使微积分成为一门完整学科。本章另一个利器是<strong>变上限积分求导</strong>，它是处理含积分号的极限与方程的钥匙。</p>
+<p>本章知识结构：定积分的定义与性质（含积分中值定理）→ 微积分基本定理（变上限积分、牛顿-莱布尼茨公式）→ 定积分的换元法与分部积分法（注意换限、华里士公式）→ 反常积分（无穷区间与瑕积分，\(p\) 积分收敛判别）。</p>
+
+<h2 id="5-1-定积分的概念与性质">5.1 定积分的概念与性质<button class="fav" type="button" data-fav="5-1-定积分的概念与性质" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="5-1-1-定积分的定义与几何意义">定积分的定义与几何意义<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="5-1-1-定积分的定义与几何意义" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>在 \([a,b]\) 上任取分点与点 \(\xi_i\)，作黎曼和 \(\displaystyle\sum_{i=1}^n f(\xi_i)\,\Delta x_i\)，记 \(\lambda=\max\limits_{i}\Delta x_i\)，若极限存在且与分法、取法无关，则</p>
+<div class="fml">$$\int_a^b f(x)\,\mathrm{d}x=\lim_{\lambda\to0}\sum_{i=1}^n f(\xi_i)\,\Delta x_i$$</div>
+<ul>
+<li><strong>几何意义</strong>：\(f\geq0\) 时是曲边梯形面积；\(f\) 变号时等于 \(x\) 轴上方面积减下方面积（<strong>代数和</strong>）。</li>
+<li><strong>可积的充分条件</strong>：\(f\) 在 \([a,b]\) 上连续，或只有有限个第一类间断点，则必可积。</li>
+<li><strong>规定</strong>：\(\displaystyle\int_a^b=-\int_b^a\)，\(\displaystyle\int_a^a=0\)（交换上下限要变号）。</li>
+<li>定积分是一个<strong>数</strong>，只与被积函数和积分区间有关，与积分变量用什么字母无关：\(\displaystyle\int_a^b f(x)\,\mathrm{d}x=\int_a^b f(t)\,\mathrm{d}t\)。</li>
+</ul>
+
+<h3 id="5-1-2-定积分的性质与积分中值定理">定积分的性质与积分中值定理<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="5-1-2-定积分的性质与积分中值定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>性质</th><th>表达式</th><th>用途</th></tr></thead>
+<tbody>
+<tr><td>线性性</td><td>\(\displaystyle\int_a^b(\alpha f+\beta g)\,\mathrm{d}x=\alpha\int_a^b f\,\mathrm{d}x+\beta\int_a^b g\,\mathrm{d}x\)</td><td>拆项计算</td></tr>
+<tr><td>区间可加性</td><td>\(\displaystyle\int_a^b=\int_a^c+\int_c^b\)（\(c\) 可在 \([a,b]\) 外）</td><td>分段函数、绝对值积分</td></tr>
+<tr><td>保序性</td><td>在 \([a,b]\) 上 \(f\leq g\ \Rightarrow\ \displaystyle\int_a^b f\,\mathrm{d}x\leq\int_a^b g\,\mathrm{d}x\)</td><td>积分不等式比较</td></tr>
+<tr><td>估值定理</td><td>\(m\leq f\leq M\ \Rightarrow\ m(b-a)\leq\displaystyle\int_a^b f\,\mathrm{d}x\leq M(b-a)\)</td><td>估计积分范围（选择填空）</td></tr>
+<tr><td>积分中值定理</td><td>\(\displaystyle\int_a^b f(x)\,\mathrm{d}x=f(\xi)(b-a),\ \xi\in[a,b]\)（\(f\) 连续）</td><td>证明题：把积分换成中值去比较</td></tr>
+</tbody></table></div>
+<div class="fml">$$\bar y=\dfrac{1}{b-a}\int_a^b f(x)\,\mathrm{d}x\qquad\text{（}f\text{ 在 }[a,b]\text{ 上的平均值，即中值定理右端除以区间长）}$$</div>
+<details class="prf"><summary><span class="prf-tag">推导</span>积分中值定理的证明思路</summary><div class="prf-b">
+  <p>\(f\) 在闭区间 \([a,b]\) 连续，故有最大值 \(M\)、最小值 \(m\)。由保序性得 \(m(b-a)\leq\displaystyle\int_a^b f\,\mathrm{d}x\leq M(b-a)\)，即定积分值 \(\mu=\dfrac{1}{b-a}\displaystyle\int_a^b f\,\mathrm{d}x\) 介于 \(m\) 与 \(M\) 之间。由介值定理，存在 \(\xi\in[a,b]\) 使 \(f(\xi)=\mu\)，即 \(\displaystyle\int_a^b f\,\mathrm{d}x=f(\xi)(b-a)\)。几何直观：以 \(f(\xi)\) 为高的矩形面积恰好等于曲边梯形面积。</p>
+</div></details>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① 积分中值定理的 \(\xi\) 属于<strong>闭区间</strong> \([a,b]\)（教材版本），有些资料写成开区间，证明题里注意引用条件；② \(f\) 变号时定积分不是面积，\(\displaystyle\int_{-1}^{1}x^3\,\mathrm{d}x=0\) 但"两块面积"并不为零；③ 比较积分大小前先确认<strong>在同一区间</strong>上比较被积函数，别把上下限不同的两个积分直接比。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 1</span>用几何意义秒算定积分</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\int_0^1\sqrt{2x-x^2}\,\mathrm{d}x\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>配方：\(2x-x^2=1-(x-1)^2\)，被积函数是圆 \((x-1)^2+y^2=1\) 的上半圆。积分区间 \([0,1]\) 对应<strong>四分之一圆</strong>（半径 \(1\)）：</p>
+      <div class="fml">$$\int_0^1\sqrt{2x-x^2}\,\mathrm{d}x=\dfrac14\cdot\pi\cdot1^2=\dfrac{\pi}{4}$$</div>
+      <p>点评：形如 \(\displaystyle\int_a^b\sqrt{a^2-x^2}\,\mathrm{d}x\) 的定积分优先想几何意义（圆面积），比三角换元快得多。对应的不定积分结果见 4.3 节例 5。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 2</span>利用保序性比较积分大小并估值</div>
+  <div class="ex-b">
+    <p>不计算，比较 \(\displaystyle\int_0^1\mathrm{e}^x\,\mathrm{d}x\) 与 \(\displaystyle\int_0^1\mathrm{e}^{x^2}\,\mathrm{d}x\) 的大小，并估计较大者的范围。</p>
+    <details><summary></summary><div class="sol">
+      <p>在 \([0,1]\) 上 \(x\geq x^2\)，而 \(\mathrm{e}^t\) 单调递增，故 \(\mathrm{e}^x\geq\mathrm{e}^{x^2}\)，由保序性：</p>
+      <div class="fml">$$\int_0^1\mathrm{e}^x\,\mathrm{d}x\ \geq\ \int_0^1\mathrm{e}^{x^2}\,\mathrm{d}x$$</div>
+      <p>估计：在 \([0,1]\) 上 \(1\leq\mathrm{e}^x\leq\mathrm{e}\)，由估值定理 \(1\leq\displaystyle\int_0^1\mathrm{e}^x\,\mathrm{d}x\leq\mathrm{e}\)（实际上它等于 \(\mathrm{e}-1\approx1.718\)）。</p>
+      <p>点评：被积函数"求不出原函数"（如 \(\mathrm{e}^{x^2}\)、\(\dfrac{\sin x}{x}\)）时，比较大小、估值、判号就是标准考法，全部依赖本节性质表。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 3</span>奇偶对称性速算</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\int_{-2}^{2}\left(x^3+x^2+1\right)\mathrm{d}x\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(x^3\) 是奇函数，在对称区间上积分为 \(0\)；\(x^2+1\) 是偶函数，取二倍半区间积分：</p>
+      <div class="fml">$$\int_{-2}^{2}\left(x^3+x^2+1\right)\mathrm{d}x=2\int_0^2\left(x^2+1\right)\mathrm{d}x=2\left[\dfrac{x^3}{3}+x\right]_0^2=2\left(\dfrac83+2\right)=\dfrac{28}{3}$$</div>
+      <p>点评：对称区间 \([-a,a]\) 上的积分<strong>先拆奇偶再动手</strong>，能省一半计算量；被积函数含 \(\sin x\)、\(x^3\)、\(x\) 的奇次幂时尤其要先检查。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="5-2-微积分基本公式">5.2 微积分基本公式<button class="fav" type="button" data-fav="5-2-微积分基本公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="5-2-1-变上限积分及其求导">变上限积分及其求导<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="5-2-1-变上限积分及其求导" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>称 \(\Phi(x)=\displaystyle\int_a^x f(t)\,\mathrm{d}t\) 为<strong>变上限积分（积分上限函数）</strong>。若 \(f\) 连续，则 \(\Phi(x)\) 可导，且它是 \(f(x)\) 的一个原函数——这同时证明了"连续函数必有原函数"：</p>
+<div class="fml">$$\Phi'(x)=\dfrac{\mathrm{d}}{\mathrm{d}x}\int_a^x f(t)\,\mathrm{d}t=f(x)$$</div>
+<p>推广到上下限都是函数的情形（复合 + 区间可加，记 \(\displaystyle\int_{\varphi(x)}^{\psi(x)}=\int_c^{\psi(x)}-\int_c^{\varphi(x)}\)）：</p>
+<div class="fml">$$\dfrac{\mathrm{d}}{\mathrm{d}x}\int_{\varphi(x)}^{\psi(x)}f(t)\,\mathrm{d}t=f\bigl(\psi(x)\bigr)\,\psi'(x)-f\bigl(\varphi(x)\bigr)\,\varphi'(x)$$</div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① <strong>被积函数中含 \(x\)</strong> 时不能直接套 \(\Phi'(x)=f(x)\)：先把 \(x\) 的因子提到积分号外（如 \(\displaystyle\int_0^x x f(t)\,\mathrm{d}t=x\int_0^x f(t)\,\mathrm{d}t\)）或换元，再求导；② 变限积分是<strong>函数</strong>，遇 \(\dfrac00\) 型极限一律优先用洛必达（对变限求导）；③ \(\sin t^2\)、\(\mathrm{e}^{-t^2}\) 这类原函数非初等的函数，<strong>只能先导后限</strong>，不能先积后限。</p></blockquote>
+
+<h3 id="5-2-2-牛顿-莱布尼茨公式">牛顿-莱布尼茨公式<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="5-2-2-牛顿-莱布尼茨公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>设 \(F\) 是 \(f\) 在 \([a,b]\) 上的任一原函数，则</p>
+<div class="fml">$$\int_a^b f(x)\,\mathrm{d}x=F(b)-F(a)\ \triangleq\ \Bigl[F(x)\Bigr]_a^b$$</div>
+<p>这是计算定积分的主干道：<strong>先求任一原函数（第 4 章全部方法照用），再代上下限相减</strong>。由于不必写 \(+C\)，且上下限替代了任意常数，定积分计算比不定积分"收敛"。</p>
+<details class="prf"><summary><span class="prf-tag">推导</span>牛顿-莱布尼茨公式的证明骨架</summary><div class="prf-b">
+  <p>由 5.2.1，\(\Phi(x)=\displaystyle\int_a^x f\,\mathrm{d}t\) 与 \(F(x)\) 都是 \(f\) 的原函数，故 \(F(x)-\Phi(x)=C\)（同一区间上两个原函数只差常数）。令 \(x=a\)：\(F(a)-0=C\)，故 \(\Phi(x)=F(x)-F(a)\)。再令 \(x=b\)，得 \(\displaystyle\int_a^b f\,\mathrm{d}t=F(b)-F(a)\)。整个证明只用两件事：变限求导 + "原函数差常数"。</p>
+</div></details>
+<div class="tscroll"><table>
+<thead><tr><th>定积分速算技巧</th><th>公式</th><th>典型例子</th></tr></thead>
+<tbody>
+<tr><td>奇偶对称</td><td>\(\displaystyle\int_{-a}^{a}f\,\mathrm{d}x=0\)（\(f\) 奇）；\(=\displaystyle2\int_0^{a}f\,\mathrm{d}x\)（\(f\) 偶）</td><td>见例 3</td></tr>
+<tr><td>周期函数</td><td>\(f\) 以 \(T\) 为周期：\(\displaystyle\int_a^{a+T}f\,\mathrm{d}x=\displaystyle\int_0^{T}f\,\mathrm{d}x\)（与起点无关）</td><td>\(\displaystyle\int_0^{2\pi}\sin x\,\mathrm{d}x=0\)</td></tr>
+<tr><td>\(\sin\) 与 \(\cos\) 互化</td><td>\(\displaystyle\int_0^{\pi/2}f(\sin x)\,\mathrm{d}x=\int_0^{\pi/2}f(\cos x)\,\mathrm{d}x\)</td><td>华里士公式的理论根据</td></tr>
+</tbody></table></div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 4</span>变限积分求导 + 洛必达求极限</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\lim_{x\to0}\dfrac{\displaystyle\int_0^x\sin t^2\,\mathrm{d}t}{x^3}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>这是 \(\dfrac00\) 型，且分子是变上限积分。对分子求导：\(\left(\displaystyle\int_0^x\sin t^2\,\mathrm{d}t\right)'=\sin x^2\)。用洛必达：</p>
+      <div class="fml">$$\lim_{x\to0}\dfrac{\sin x^2}{3x^2}=\dfrac13\lim_{x\to0}\dfrac{\sin x^2}{x^2}=\dfrac13$$</div>
+      <p>点评：变限积分 + 极限 = "洛必达 + 变限求导"的组合拳，是期末必考题型。注意 \(\sin t^2\) 的原函数不是初等函数，不能先积后限。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 5</span>上下限为函数的变限求导</div>
+  <div class="ex-b">
+    <p>设 \(F(x)=\displaystyle\int_0^{x^2}\mathrm{e}^{-t^2}\,\mathrm{d}t\)，求 \(F'(x)\) 与 \(F''(0)\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>上限是 \(x^2\)，按复合求导（外层 \(f(\psi)=\mathrm{e}^{-\psi^2}\)… 注意被积函数本身含平方，代入 \(\psi=x^2\) 后还要再平方）：</p>
+      <div class="fml">$$F'(x)=\mathrm{e}^{-(x^2)^2}\cdot\left(x^2\right)'=2x\,\mathrm{e}^{-x^4}$$</div>
+      <p>再求导（乘积法则）得 \(F''(x)=2\mathrm{e}^{-x^4}-8x^4\mathrm{e}^{-x^4}\)，代入 \(x=0\)：</p>
+      <div class="fml">$$F''(0)=2$$</div>
+      <p>点评：套推广公式时"两层平方"最容易漏：被积函数在 \(t=\psi(x)\) 处取值后，还要乘 \(\psi'(x)\)。求 \(F''(0)\) 也可用定义 \(F'(x)\approx2x\) 附近为线性来快速判断。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 6</span>牛顿-莱布尼茨公式与绝对值分段</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\int_0^2\left|x-1\right|\,\mathrm{d}x\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>绝对值零点 \(x=1\) 把区间分两段，分别去绝对值后用区间可加性：</p>
+      <div class="fml">$$\int_0^2|x-1|\,\mathrm{d}x=\int_0^1(1-x)\,\mathrm{d}x+\int_1^2(x-1)\,\mathrm{d}x=\left[x-\dfrac{x^2}{2}\right]_0^1+\left[\dfrac{x^2}{2}-x\right]_1^2=\dfrac12+\dfrac12=1$$</div>
+      <p>点评：含绝对值、分段、取整的被积函数，先找零点分段再积分；两段结果通常对称相等，可只算一段乘 \(2\)。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="5-3-定积分的换元法与分部积分法">5.3 定积分的换元法与分部积分法<button class="fav" type="button" data-fav="5-3-定积分的换元法与分部积分法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="5-3-1-定积分的换元法">定积分的换元法<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="5-3-1-定积分的换元法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>设 \(f\) 在 \([a,b]\) 连续，\(x=\psi(t)\) 在 \([\alpha,\beta]\) 上有连续导数且单调，\(\psi(\alpha)=a\)、\(\psi(\beta)=b\)，则</p>
+<div class="fml">$$\int_a^b f(x)\,\mathrm{d}x=\int_{\alpha}^{\beta}f\bigl(\psi(t)\bigr)\psi'(t)\,\mathrm{d}t$$</div>
+<p>与不定积分换元最大的区别：<strong>换元必换限</strong>——新变量算新上下限，算出数值即可，<strong>无需回代</strong>（也不必换回原变量记号）。</p>
+
+<h3 id="5-3-2-定积分的分部积分法与华里士公式">定积分的分部积分法与华里士公式<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="5-3-2-定积分的分部积分法与华里士公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>定积分分部积分："边分部边代限"：</p>
+<div class="fml">$$\int_a^b u\,\mathrm{d}v=\Bigl[uv\Bigr]_a^b-\int_a^b v\,\mathrm{d}u$$</div>
+<p>\(u\)、\(\mathrm{d}v\) 的选取与第 4 章口诀"反、对、幂、指、三"完全一致。三角函数正整数次幂的定积分用<strong>华里士（Wallis）公式</strong>直接写出结果（\(n!!\) 为双阶乘：\(4!!=4\cdot2\)，\(5!!=5\cdot3\cdot1\)）：</p>
+<div class="fml">$$\int_0^{\pi/2}\sin^nx\,\mathrm{d}x=\int_0^{\pi/2}\cos^nx\,\mathrm{d}x=\begin{cases}\dfrac{(n-1)!!}{n!!}\cdot\dfrac{\pi}{2}, & n\ \text{为偶数}\\[2mm] \dfrac{(n-1)!!}{n!!}, & n\ \text{为奇数}\end{cases}$$</div>
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> <strong>换限三查</strong>：① 换元后新上下限按 \(x\) 的原值代入换元式计算（下限对下限、上限对上限，顺序不乱）；② 上下限互换记得<strong>变号</strong>；③ 三角换元时留意 \(\sqrt{a^2-x^2}\) 开方后 \(\cos t\) 的符号（取 \(t\in[0,\tfrac{\pi}{2}]\) 最省心）。华里士公式建议背熟：偶数次幂含 \(\dfrac{\pi}{2}\)，奇数次幂不含；分子永远是 \((n-1)!!\)，分母是 \(n!!\)。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 7</span>根式换元：换元必换限</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\int_0^4\dfrac{\mathrm{d}x}{1+\sqrt{x}}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>令 \(t=\sqrt{x}\)，即 \(x=t^2\)，\(\mathrm{d}x=2t\,\mathrm{d}t\)。换限：\(x=0\Rightarrow t=0\)；\(x=4\Rightarrow t=2\)：</p>
+      <div class="fml">$$\int_0^4\dfrac{\mathrm{d}x}{1+\sqrt{x}}=\int_0^2\dfrac{2t}{1+t}\,\mathrm{d}t=2\int_0^2\left(1-\dfrac{1}{1+t}\right)\mathrm{d}t=\Bigl[2t-2\ln(1+t)\Bigr]_0^2=4-2\ln3$$</div>
+      <p>点评：定积分换元后<strong>直接在新变量下算数值</strong>，比不定积分少一步回代。若忘换限仍代 \(x\in[0,4]\) 就会错到底——这是本章第一大失分点。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 8</span>定积分分部积分</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\int_0^1 x\,\mathrm{e}^x\,\mathrm{d}x\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>取 \(u=x\)、\(\mathrm{d}v=\mathrm{e}^x\mathrm{d}x\)（口诀"指"进 \(\mathrm{d}v\)）：</p>
+      <div class="fml">$$\int_0^1x\,\mathrm{e}^x\,\mathrm{d}x=\Bigl[x\,\mathrm{e}^x\Bigr]_0^1-\int_0^1\mathrm{e}^x\,\mathrm{d}x=\mathrm{e}-\bigl(\mathrm{e}-1\bigr)=1$$</div>
+      <p>点评：定积分分部时 \([uv]_a^b\) 这一项立刻代上下限变成数，剩余积分常已落在基本表内；幂次高时逐次降幂（如 \(\int_0^1 x^3\mathrm{e}^x\mathrm{d}x\) 分部三次）。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 9</span>华里士公式直算三角幂积分</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\int_0^{\pi/2}\sin^4x\,\mathrm{d}x\) 与 \(\displaystyle\int_0^{\pi/2}\cos^5x\,\mathrm{d}x\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>套华里士公式（\(n=4\) 偶、\(n=5\) 奇）：</p>
+      <div class="fml">$$\int_0^{\pi/2}\sin^4x\,\mathrm{d}x=\dfrac{3!!}{4!!}\cdot\dfrac{\pi}{2}=\dfrac{3\cdot1}{4\cdot2}\cdot\dfrac{\pi}{2}=\dfrac{3\pi}{16};\qquad \int_0^{\pi/2}\cos^5x\,\mathrm{d}x=\dfrac{4!!}{5!!}=\dfrac{4\cdot2}{5\cdot3\cdot1}=\dfrac{8}{15}$$</div>
+      <p>点评：区间恰为 \([0,\tfrac{\pi}{2}]\) 才能直接套公式；\(\sin^{2k}\) 与 \(\cos^{2k}\) 结果带 \(\dfrac{\pi}{2}\)，奇次幂是纯分数。若区间是 \([0,\pi]\)，用对称性拆成两倍 \([0,\tfrac{\pi}{2}]\) 再套。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="5-4-反常积分">5.4 反常积分<button class="fav" type="button" data-fav="5-4-反常积分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="5-4-1-无穷区间反常积分">无穷区间反常积分<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="5-4-1-无穷区间反常积分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>把上限推到无穷取极限：</p>
+<div class="fml">$$\int_a^{+\infty}f(x)\,\mathrm{d}x=\lim_{b\to+\infty}\int_a^b f(x)\,\mathrm{d}x;\qquad \int_{-\infty}^{+\infty}f(x)\,\mathrm{d}x=\int_{-\infty}^{c}+\int_c^{+\infty}\ (\text{两半都收敛才收敛})$$</div>
+<p>极限存在称<strong>收敛</strong>，否则称<strong>发散</strong>。计算流程：先按普通定积分积出带 \(b\) 的式子，再令 \(b\to+\infty\) 求极限。</p>
+
+<h3 id="5-4-2-瑕积分与-p-积分收敛判别">瑕积分与 p 积分收敛判别<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="5-4-2-瑕积分与-p-积分收敛判别" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>\(f\) 在 \((a,b]\) 连续但 \(a\) 处无界（\(a\) 为<strong>瑕点</strong>）：</p>
+<div class="fml">$$\int_a^b f(x)\,\mathrm{d}x=\lim_{\varepsilon\to0^+}\int_{a+\varepsilon}^b f(x)\,\mathrm{d}x$$</div>
+<p>两类最重要的判别基准——<strong>\(p\) 积分</strong>（结论必须背）：</p>
+<div class="tscroll"><table>
+<thead><tr><th>类型</th><th>积分</th><th>收敛条件</th><th>发散条件</th></tr></thead>
+<tbody>
+<tr><td>无穷区间</td><td>\(\displaystyle\int_1^{+\infty}\dfrac{\mathrm{d}x}{x^p}\)</td><td>\(p&gt;1\)（如 \(p=2\)）</td><td>\(p\leq1\)（\(p=1\) 时极限不存在）</td></tr>
+<tr><td>瑕点在左端</td><td>\(\displaystyle\int_0^{1}\dfrac{\mathrm{d}x}{x^p}\)</td><td>\(p&lt;1\)</td><td>\(p\geq1\)</td></tr>
+</tbody></table></div>
+<div class="fml">$$\int_0^{+\infty}\mathrm{e}^{-x}\,\mathrm{d}x=1;\qquad \int_0^{+\infty}\dfrac{\mathrm{d}x}{1+x^2}=\dfrac{\pi}{2};\qquad \int_0^1\dfrac{\mathrm{d}x}{\sqrt{1-x^2}}=\dfrac{\pi}{2}\qquad\text{（常用参考值）}$$</div>
+<details class="prf"><summary><span class="prf-tag">推导</span>\(p\) 积分两条结论的验证</summary><div class="prf-b">
+  <p><strong>无穷区间</strong>：\(p\neq1\) 时 \(\displaystyle\int_1^b x^{-p}\,\mathrm{d}x=\dfrac{b^{1-p}-1}{1-p}\)。\(p&gt;1\) 时 \(1-p&lt;0\)，\(b^{1-p}\to0\)，极限为 \(\dfrac{1}{p-1}\)，收敛；\(p&lt;1\) 时 \(b^{1-p}\to+\infty\)，发散；\(p=1\) 时得 \(\ln b\to+\infty\)，发散。</p>
+  <p><strong>瑕积分</strong>：\(\displaystyle\int_\varepsilon^1 x^{-p}\,\mathrm{d}x=\dfrac{1-\varepsilon^{1-p}}{1-p}\)。\(p&lt;1\) 时 \(\varepsilon^{1-p}\to0\)，极限为 \(\dfrac{1}{1-p}\)，收敛；\(p\geq1\) 时发散（\(p=1\) 时得 \(-\ln\varepsilon\to+\infty\)）。对照可见：两条结论正好"反过来"，本质都是看"衰减/发散速度是否够快"。</p>
+</div></details>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① \(\displaystyle\int_{-\infty}^{+\infty}\dfrac{x\,\mathrm{d}x}{1+x^2}\) 不能因"奇函数"答 \(0\)——必须<strong>拆成两半分别判收敛</strong>，两半都发散故整个发散；② 瑕点可能藏在区间端点或内部（如 \(\displaystyle\int_0^1\dfrac{\mathrm{d}x}{x\ln x}\) 的瑕点 \(x=1\) 在右端），先查无界点再动手；③ \(p\) 积分两条结论<strong>方向相反</strong>（无穷区间 \(p&gt;1\) 收，瑕积分 \(p&lt;1\) 收），填空题最爱混淆。</p></blockquote>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 10</span>无穷区间反常积分计算与判敛</div>
+  <div class="ex-b">
+    <p>判断并计算 \(\displaystyle\int_0^{+\infty}\dfrac{\mathrm{d}x}{1+x^2}\) 与 \(\displaystyle\int_1^{+\infty}\dfrac{\mathrm{d}x}{\sqrt{x}}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p><strong>第一式</strong>：原函数为 \(\arctan x\)：</p>
+      <div class="fml">$$\lim_{b\to+\infty}\Bigl[\arctan x\Bigr]_0^b=\lim_{b\to+\infty}\arctan b=\dfrac{\pi}{2}\qquad\text{（收敛）}$$</div>
+      <p><strong>第二式</strong>：被积函数为 \(x^{-1/2}\)，属无穷区间 \(p\) 积分且 \(p=\tfrac12&lt;1\)，由判别基准直接知<strong>发散</strong>。验证：\(\displaystyle\int_1^b x^{-1/2}\mathrm{d}x=2\sqrt{b}-2\to+\infty\)。</p>
+      <p>点评：见到无穷区间积分先对照 \(\displaystyle\int_1^{+\infty}\dfrac{\mathrm{d}x}{x^p}\)（\(p&gt;1\) 收敛）：\(\dfrac{1}{1+x^2}\) 相当于 \(p=2\) 级衰减故收敛，\(\dfrac{1}{\sqrt x}\) 衰减太慢故发散。</p>
+    </div></details>
+  </div>
+</div>
+
+<div class="ex">
+  <div class="ex-h"><span class="no">例 11</span>瑕积分计算</div>
+  <div class="ex-b">
+    <p>求 \(\displaystyle\int_0^1\dfrac{\mathrm{d}x}{\sqrt{1-x^2}}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>瑕点为 \(x=1\)（被积函数在端点无界）。按定义取极限：</p>
+      <div class="fml">$$\lim_{\varepsilon\to0^+}\int_0^{1-\varepsilon}\dfrac{\mathrm{d}x}{\sqrt{1-x^2}}=\lim_{\varepsilon\to0^+}\Bigl[\arcsin x\Bigr]_0^{1-\varepsilon}=\arcsin1=\dfrac{\pi}{2}\qquad\text{（收敛）}$$</div>
+      <p>点评：几何上是单位圆右上四分之一扇形面积，与几何意义吻合。对照瑕积分 \(p\) 基准：被积函数在 \(x\to1^-\) 时约为 \((1-x)^{-1/2}\)，相当于 \(p=\tfrac12&lt;1\)，故收敛——两种判断方式互相印证。</p>
+    </div></details>
+  </div>
+</div>
+
+<details class="ext"><summary>拓展 · 可能考<span class="ext-tag">考前加分</span></summary><div class="ext-b">
+  <p><strong>① \(\Gamma\) 函数速算</strong>：\(\displaystyle\int_0^{+\infty}x^{n}\mathrm{e}^{-x}\mathrm{d}x=n!\)（\(n\) 为非负整数），分部一次降一次幂即可归纳证得，选择题可直接用。</p>
+  <p><strong>② 比较判别法</strong>：无穷区间上 \(0\leq f\leq g\) 且 \(\int g\) 收敛 \(\Rightarrow\int f\) 收敛；瑕积分同理反向。用于 \(\dfrac{1}{\sqrt{x^3+1}}\) 这类"介于两个 \(p\) 积分之间"的题。</p>
+  <p><strong>③ 常见"积不出但可积"函数</strong>：\(\dfrac{\sin x}{x}\)、\(\mathrm{e}^{-x^2}\) 在 \([0,+\infty)\) 都收敛（结果分别是 \(\dfrac{\pi}{2}\)、\(\dfrac{\sqrt\pi}{2}\)），但原函数非初等——判断题常考"原函数存在"与"反常积分收敛"是两码事。</p>
+</div></details>

@@ -1,0 +1,173 @@
+<h1 id="第-11-章-曲线积分与曲面积分">第 11 章　曲线积分与曲面积分</h1>
+<p>本章把积分的"范围"从平面区域推广到曲线与曲面。两类曲线积分、两类曲面积分各自的<strong>定义、算法与联系</strong>，再加上三大公式——格林公式、高斯公式、斯托克斯公式，构成了一条完整主线：把高维积分降维、把非闭路径补成闭、把闭曲面/闭曲线化成内部的二重 / 三重 / 曲面积分。</p>
+<p>复习主线：第一类（对弧长 / 对面积，无方向）→ 第二类（对坐标，有方向）→ 两类联系 → 格林公式与路径无关 → 高斯公式与补面 → 斯托克斯公式。</p>
+<h3 id="第-11-章-知识结构概览">本章知识结构概览<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="第-11-章-知识结构概览" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<ul>
+<li><strong>11.1</strong> 对弧长的曲线积分：定义、参数化计算、对称性。</li>
+<li><strong>11.2</strong> 对坐标的曲线积分：计算、两类联系、格林公式、补线技巧、路径无关四条件。</li>
+<li><strong>11.3</strong> 对面积的曲面积分：定义、投影计算。</li>
+<li><strong>11.4</strong> 对坐标的曲面积分：投影与符号、两类联系、高斯公式（补面 / 挖洞）。</li>
+<li><strong>11.5</strong> 斯托克斯公式：空间闭曲线积分化为曲面积分。</li>
+</ul>
+
+<h2 id="11-1-对弧长的曲线积分">11.1 对弧长的曲线积分<button class="fav" type="button" data-fav="11-1-对弧长的曲线积分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="11-1-1-定义与性质">定义与性质<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="11-1-1-定义与性质" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>将曲线 \(L\) 分成 \(n\) 小段，第 \(i\) 段弧长为 \(\Delta s_i\)，任取点 \((\xi_i,\eta_i)\)，若 \(\sum\limits_{i=1}^n f(\xi_i,\eta_i)\Delta s_i\) 当最长小弧段长度 \(\lambda\to 0\) 时的极限存在，则称其为<strong>对弧长的曲线积分（第一类曲线积分）</strong>：</p>
+<div class="fml">$$\int_L f(x,y)\,\mathrm{d}s=\lim_{\lambda\to 0}\sum_{i=1}^{n}f(\xi_i,\eta_i)\,\Delta s_i$$</div>
+<p>物理意义：线密度为 \(f\) 的曲线构件的质量。<strong>关键性质：与曲线方向无关</strong>，\(\int_{\widehat{AB}}f\,\mathrm{d}s=\int_{\widehat{BA}}f\,\mathrm{d}s\)。另有线性性、可加性（\(L=L_1+L_2\)）、以及与二重积分平行的对称性：\(L\) 关于 \(y\) 轴对称时，\(f\) 关于 \(x\) 为奇函数则积分为 \(0\)，为偶函数则等于右半段积分的 \(2\) 倍。</p>
+
+<h3 id="11-1-2-计算法">计算法<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="11-1-2-计算法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$L:\ x=\varphi(t),\ y=\psi(t)\ (\alpha\le t\le\beta),\ \varphi'^2+\psi'^2\neq 0:\quad \int_L f(x,y)\,\mathrm{d}s=\int_{\alpha}^{\beta}f\bigl(\varphi(t),\psi(t)\bigr)\sqrt{\varphi'^2(t)+\psi'^2(t)}\,\mathrm{d}t$$</div>
+<p>要点：① \(\mathrm{d}s=\sqrt{\varphi'^2+\psi'^2}\,\mathrm{d}t\) 是"弧长微分"，绝不能丢；② 参数<strong>下限必须小于上限</strong>（因为 \(\mathrm{d}s\gt 0\)）；③ 空间曲线 \(\Gamma\)：\(\mathrm{d}s=\sqrt{x'^2+y'^2+z'^2}\,\mathrm{d}t\)，公式完全平行。常用参数化：圆 \(x^2+y^2=a^2\) 用 \(x=a\cos t,\ y=a\sin t\)，此时 \(\mathrm{d}s=a\,\mathrm{d}t\)。</p>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① 把曲线方程 \(x^2+y^2=a^2\) 先"代入消元"成 \(y=\sqrt{a^2-x^2}\) 再用 \(x\) 作参数积分，容易漏 \(\mathrm{d}s\) 中的根式或定错范围——圆上优先用圆的参数方程，把 \(\sqrt{x^2+y^2}\) 直接换成 \(a\)。② 直线段、抛物线段要按"参数从起点到终点"写清楚，且 \(\mathrm{d}s\) 用 \(\sqrt{1+y'^2}\,\mathrm{d}x\) 形式时别写成 \(\mathrm{d}x\)。③ 第一类积分上限必须大：若按方向参数化后 \(\alpha\gt\beta\)，交换积分限。</p></blockquote>
+<div class="ex">
+  <div class="ex-h"><span class="no">例 1</span>圆上的第一类曲线积分</div>
+  <div class="ex-b">
+    <p>计算 \(\displaystyle\oint_L\sqrt{x^2+y^2}\,\mathrm{d}s\)，其中 \(L:\ x^2+y^2=a^2\ (a\gt 0)\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>在 \(L\) 上恒有 \(\sqrt{x^2+y^2}=a\)，可先化简再参数化：\(x=a\cos t,\ y=a\sin t,\ 0\le t\le 2\pi\)，\(\mathrm{d}s=a\,\mathrm{d}t\)。</p>
+      <div class="fml">$$\oint_L\sqrt{x^2+y^2}\,\mathrm{d}s=\oint_L a\,\mathrm{d}s=a\cdot 2\pi a=2\pi a^2$$</div>
+      <p>点评：先"沿曲线化简被积函数"再积分，比硬代入参数式省很多计算；\(\oint_L\mathrm{d}s\) 就是曲线周长 \(2\pi a\)。</p>
+    </div></details>
+  </div>
+</div>
+<div class="ex">
+  <div class="ex-h"><span class="no">例 2</span>直线段上的第一类曲线积分</div>
+  <div class="ex-b">
+    <p>计算 \(\displaystyle\int_L(x+y)\,\mathrm{d}s\)，其中 \(L\) 为连接 \((1,0)\) 与 \((0,1)\) 两点的直线段。</p>
+    <details><summary></summary><div class="sol">
+      <p>直线段 \(L:\ x+y=1\)（第一象限部分）。参数化 \(x=1-t,\ y=t,\ 0\le t\le 1\)，则 \(x'+y'=(-1,1)\)，\(\mathrm{d}s=\sqrt{2}\,\mathrm{d}t\)，且 \(x+y=1\)：</p>
+      <div class="fml">$$\int_L(x+y)\,\mathrm{d}s=\int_0^1 1\cdot\sqrt{2}\,\mathrm{d}t=\sqrt{2}$$</div>
+      <p>点评：直线段也可以用 \(\mathrm{d}s=\sqrt{1+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2}\,\mathrm{d}x=\sqrt{1+(-1)^2}\,\mathrm{d}x=\sqrt{2}\,\mathrm{d}x\)，结论一致；"沿曲线化简"再次生效（\(x+y\equiv 1\)）。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="11-2-对坐标的曲线积分与格林公式">11.2 对坐标的曲线积分与格林公式<button class="fav" type="button" data-fav="11-2-对坐标的曲线积分与格林公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="11-2-1-定义与计算法">定义与计算法<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="11-2-1-定义与计算法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>变力沿曲线做功引出<strong>对坐标的曲线积分（第二类曲线积分）</strong>：\(\displaystyle\int_L P\,\mathrm{d}x+Q\,\mathrm{d}y=\lim_{\lambda\to 0}\sum_{i=1}^n\bigl[P(\xi_i,\eta_i)\Delta x_i+Q(\xi_i,\eta_i)\Delta y_i\bigr]\)。<strong>与方向有关</strong>：\(\int_{\widehat{BA}}P\,\mathrm{d}x+Q\,\mathrm{d}y=-\int_{\widehat{AB}}P\,\mathrm{d}x+Q\,\mathrm{d}y\)。参数化计算：</p>
+<div class="fml">$$\int_L P\,\mathrm{d}x+Q\,\mathrm{d}y=\int_{\alpha}^{\beta}\Bigl[P\bigl(\varphi(t),\psi(t)\bigr)\varphi'(t)+Q\bigl(\varphi(t),\psi(t)\bigr)\psi'(t)\Bigr]\mathrm{d}t$$</div>
+<p>起点对应 \(t=\alpha\)、终点对应 \(t=\beta\)（下限对起点！与第一类不同）。两类曲线积分的联系：</p>
+<div class="fml">$$\int_L P\,\mathrm{d}x+Q\,\mathrm{d}y=\int_L\bigl(P\cos\alpha+Q\cos\beta\bigr)\,\mathrm{d}s\qquad(\cos\alpha,\cos\beta\ \text{为切向量方向余弦})$$</div>
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> 两类积分对比：第一类"对弧长 \(\mathrm{d}s\)"无方向、下限小；第二类"对坐标 \(\mathrm{d}x,\mathrm{d}y\)"有方向、下限对起点。特殊段快速处理：水平段 \(y=c\) 上 \(\mathrm{d}y=0\)，只剩 \(P\,\mathrm{d}x\)；竖直段 \(x=c\) 上只剩 \(Q\,\mathrm{d}y\)——补线法全靠这两条。</p></blockquote>
+
+<h3 id="11-2-2-格林公式与补线技巧">格林公式与补线技巧<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="11-2-2-格林公式与补线技巧" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>设闭区域 \(D\) 由分段光滑闭曲线 \(L\) 围成，\(P,Q\) 在 \(D\) 上有一阶连续偏导数，则（\(L^+\) 为正向边界：沿它走 \(D\) 始终在左侧）：</p>
+<div class="fml">$$\oint_{L^+}P\,\mathrm{d}x+Q\,\mathrm{d}y=\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mathrm{d}x\mathrm{d}y,\qquad A=\frac12\oint_{L^+}x\,\mathrm{d}y-y\,\mathrm{d}x\ \text{（面积公式）}$$</div>
+<p><strong>路径无关（四个等价条件）</strong>：设 \(D\) 为单连通域，\(P,Q\) 在 \(D\) 内有一阶连续偏导，下列命题等价：① \(\int_L P\,\mathrm{d}x+Q\,\mathrm{d}y\) 在 \(D\) 内与路径无关；② 对 \(D\) 内任一闭曲线 \(\oint=0\)；③ \(\dfrac{\partial P}{\partial y}=\dfrac{\partial Q}{\partial x}\) 在 \(D\) 内恒成立；④ 存在 \(u(x,y)\) 使 \(\mathrm{d}u=P\,\mathrm{d}x+Q\,\mathrm{d}y\)（此时 \(u\) 称为原函数，积分值 \(=u(B)-u(A)\)）。</p>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① 格林公式三前提：<strong>闭曲线、正向、\(P_y=Q_x\) 所需的连续性</strong>在 \(D\) 内处处成立——非闭要<strong>补线</strong>（补的那段简单路径上的积分要减回去），方向反了要添负号。② 复平面挖洞型（如含 \(\dfrac{y}{x^2+y^2}\) 而原点是奇点）：即使 \(P_y=Q_x\) 也不能说路径无关，因为区域不单连通。③ 顺时针方向的圆，格林公式右端要变号。</p></blockquote>
+<div class="ex">
+  <div class="ex-h"><span class="no">例 3</span>格林公式 + 补线技巧</div>
+  <div class="ex-b">
+    <p>计算 \(\displaystyle I=\int_L(\mathrm{e}^{x}\sin y-y)\,\mathrm{d}x+(\mathrm{e}^{x}\cos y-1)\,\mathrm{d}y\)，其中 \(L\) 为上半圆 \(x^2+y^2=R^2\ (y\ge 0)\)，方向从 \(A(R,0)\) 到 \(B(-R,0)\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(L\) 不封闭，补有向线段 \(\overline{BA}\)（沿 \(x\) 轴从 \(-R\) 到 \(R\)），与 \(L\) 构成上半圆域 \(D\) 的<strong>正向</strong>边界。记 \(P=\mathrm{e}^x\sin y-y,\ Q=\mathrm{e}^x\cos y-1\)，则</p>
+      <div class="fml">$$\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}=\mathrm{e}^{x}\cos y-\bigl(\mathrm{e}^{x}\cos y-1\bigr)=1$$</div>
+      <p>由格林公式：\(\displaystyle\oint=\iint_D 1\,\mathrm{d}x\mathrm{d}y=\frac{\pi R^2}{2}\)。补线段 \(\overline{BA}\) 上 \(y=0,\ \mathrm{d}y=0\)，且 \(\mathrm{e}^x\sin 0-0=0\)，故其积分为 \(0\)。于是</p>
+      <div class="fml">$$I=\oint-\int_{\overline{BA}}=\frac{\pi R^2}{2}-0=\frac{\pi R^2}{2}$$</div>
+      <p>点评："偏导相减后剩常数 → 曲线积分 = 区域面积"是补线法的标志性结果；补线要选<strong>坐标轴上的线段</strong>，让大部分项自动为零。</p>
+    </div></details>
+  </div>
+</div>
+<div class="ex">
+  <div class="ex-h"><span class="no">例 4</span>路径无关与原函数</div>
+  <div class="ex-b">
+    <p>验证 \(\displaystyle\int_L 2xy\,\mathrm{d}x+x^2\,\mathrm{d}y\) 在全平面与路径无关，并求从 \((0,0)\) 到 \((1,1)\) 的积分值及原函数 \(u(x,y)\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(\dfrac{\partial P}{\partial y}=2x=\dfrac{\partial Q}{\partial x}\) 且全平面单连通、偏导连续，故路径无关。取折线 \((0,0)\to(1,0)\to(1,1)\)：第一段 \(y=0\) 积分为 \(0\)；第二段 \(x=1,\ \mathrm{d}x=0\)：</p>
+      <div class="fml">$$I=\int_0^1 1\,\mathrm{d}y=1$$</div>
+      <p>原函数：对 \(u_x=2xy\) 积分得 \(u=x^2y+\varphi(y)\)，代入 \(u_y=x^2+\varphi'(y)=x^2\) 得 \(\varphi'(y)=0\)，故 \(u=x^2y\)。验证 \(u(1,1)-u(0,0)=1\)，与折线法一致。</p>
+      <p>点评：路径无关题的最快解法是<strong>凑原函数</strong>（常见结构：\(x^2y\)、\(\frac{y}{x^2}\) 型要避开奇点）；折线法（沿坐标轴走）是通用的兜底方法。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="11-3-对面积的曲面积分">11.3 对面积的曲面积分<button class="fav" type="button" data-fav="11-3-对面积的曲面积分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="11-3-1-定义与计算法">定义与计算法<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="11-3-1-定义与计算法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>面密度为 \(f(x,y,z)\) 的曲面 \(\Sigma\) 的质量引出<strong>对面积的曲面积分（第一类曲面积分）</strong> \(\displaystyle\iint_\Sigma f\,\mathrm{d}S=\lim_{\lambda\to 0}\sum_{i=1}^n f(\xi_i,\eta_i,\zeta_i)\,\Delta S_i\)。<strong>与曲面的侧（方向）无关</strong>。计算时把曲面化成 \(z=z(x,y)\)、投影到 \(xOy\) 面：</p>
+<div class="fml">$$\iint_\Sigma f(x,y,z)\,\mathrm{d}S=\iint_{D_{xy}}f\bigl(x,y,z(x,y)\bigr)\sqrt{1+z_x^2+z_y^2}\,\mathrm{d}x\mathrm{d}y$$</div>
+<p>要点：① \(\mathrm{d}S=\sqrt{1+z_x^2+z_y^2}\,\mathrm{d}x\mathrm{d}y\) 不丢；② \(\Sigma\) 必须能写成关于投影变量的<strong>单值</strong>函数（球面要拆上下两半）；③ 对称性与第一类曲线积分相同：\(\Sigma\) 关于 \(xOy\) 面对称时，\(f\) 关于 \(z\) 为奇函数则积分为 \(0\)。</p>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① 忘乘 \(\sqrt{1+z_x^2+z_y^2}\)（只在曲面为平行投影面的平面块时可省）。② 球面、柱面积分时优先用<strong>球面参数</strong>：上半球面 \(z=\sqrt{a^2-x^2-y^2}\) 有 \(\sqrt{1+z_x^2+z_y^2}=\dfrac{a}{\sqrt{a^2-x^2-y^2}}\)，配合 \(\iint_{D_{xy}}\dfrac{\mathrm{d}x\mathrm{d}y}{\sqrt{a^2-x^2-y^2}}\) 的极坐标计算。③ 第一类曲面积分没有"侧"的概念，题干里的"上侧 / 外侧"对它无影响。</p></blockquote>
+<div class="ex">
+  <div class="ex-h"><span class="no">例 5</span>半球面上的第一类曲面积分</div>
+  <div class="ex-b">
+    <p>计算 \(\displaystyle\iint_\Sigma (x+y+z)\,\mathrm{d}S\)，其中 \(\Sigma\) 为上半球面 \(z=\sqrt{a^2-x^2-y^2}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(\Sigma\) 关于 \(x=0\)、\(y=0\) 都对称，\(x\)、\(y\) 分别是关于 \(x\)、\(y\) 的奇函数，故 \(\iint_\Sigma x\,\mathrm{d}S=\iint_\Sigma y\,\mathrm{d}S=0\)，只需算 \(\iint_\Sigma z\,\mathrm{d}S\)。投影 \(D_{xy}:\ x^2+y^2\le a^2\)，且 \(\sqrt{1+z_x^2+z_y^2}=\dfrac{a}{\sqrt{a^2-x^2-y^2}}\)，于是</p>
+      <div class="fml">$$\iint_\Sigma z\,\mathrm{d}S=\iint_{D_{xy}}\sqrt{a^2-x^2-y^2}\cdot\frac{a}{\sqrt{a^2-x^2-y^2}}\,\mathrm{d}x\mathrm{d}y=a\cdot\sigma(D_{xy})=\pi a^3$$</div>
+      <p>故原积分 \(=\pi a^3\)。点评：根式约分后变成 \(a\times\) 圆面积——"被积函数含 \(z\)、曲面为球面"时这个约分几乎必出现，务必熟练。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="11-4-对坐标的曲面积分与高斯公式">11.4 对坐标的曲面积分与高斯公式<button class="fav" type="button" data-fav="11-4-对坐标的曲面积分与高斯公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="11-4-1-定义、投影法与两类联系">定义、投影法与两类联系<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="11-4-1-定义、投影法与两类联系" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>流量问题引出<strong>对坐标的曲面积分（第二类曲面积分）</strong> \(\displaystyle\iint_\Sigma P\,\mathrm{d}y\mathrm{d}z+Q\,\mathrm{d}z\mathrm{d}x+R\,\mathrm{d}x\mathrm{d}y\)，积分与<strong>曲面的侧</strong>有关，取另一侧时变号。直接计算用投影法，如对 \(\mathrm{d}x\mathrm{d}y\) 项：</p>
+<div class="fml">$$\iint_\Sigma R(x,y,z)\,\mathrm{d}x\mathrm{d}y=\pm\iint_{D_{xy}}R\bigl(x,y,z(x,y)\bigr)\,\mathrm{d}x\mathrm{d}y\quad \text{（上侧取 }+\text{，下侧取 }-\text{）}$$</div>
+<p>同理 \(\mathrm{d}y\mathrm{d}z\) 项向前侧（法向量与 \(x\) 轴正向夹角锐角）取 \(+\)；每项分别向对应坐标面投影。<strong>两类曲面积分的联系</strong>：</p>
+<div class="fml">$$\iint_\Sigma P\,\mathrm{d}y\mathrm{d}z+Q\,\mathrm{d}z\mathrm{d}x+R\,\mathrm{d}x\mathrm{d}y=\iint_\Sigma\bigl(P\cos\alpha+Q\cos\beta+R\cos\gamma\bigr)\,\mathrm{d}S$$</div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① 符号判错是最大失分点：\(\mathrm{d}x\mathrm{d}y\) 项按<strong>法向量与 \(z\) 轴正向夹角</strong>定号（锐角 \(+\)、钝角 \(-\)），与"曲面在上半空间还是下半空间"无关。② \(\mathrm{d}y\mathrm{d}z\) 项要向 \(yOz\) 面投影，被积函数中的 \(x\) 要换成 \(x(y,z)\)——"错面投影"是常见事故。③ 曲面垂直于某坐标面时（如母线平行 \(z\) 轴的圆柱侧面），该面上 \(\mathrm{d}x\mathrm{d}y=0\)，对应项直接为零。</p></blockquote>
+
+<h3 id="11-4-2-高斯公式与补面、挖洞">高斯公式与补面、挖洞<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="11-4-2-高斯公式与补面、挖洞" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>设空间闭区域 \(\Omega\) 由分片光滑闭曲面 \(\Sigma\) 围成，\(P,Q,R\) 在 \(\Omega\) 上有一阶连续偏导数，\(\Sigma\) 取<strong>外侧</strong>，则（散度定理）：</p>
+<div class="fml">$$\oiint_\Sigma P\,\mathrm{d}y\mathrm{d}z+Q\,\mathrm{d}z\mathrm{d}x+R\,\mathrm{d}x\mathrm{d}y=\iiint_\Omega\left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\right)\mathrm{d}v$$</div>
+<p><strong>补面</strong>：\(\Sigma\) 非闭时，补一块简单曲面（通常是平面圆盘）使成闭曲面，用高斯公式后<strong>减去</strong>补块上的积分。<strong>挖洞</strong>：\(\Omega\) 内有奇点（偏导不连续处）时，作一个小的内含闭曲面把奇点挖掉，在"挖掉后的区域"上用高斯公式。</p>
+<blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> ① \(\displaystyle\oiint_\Sigma x\,\mathrm{d}y\mathrm{d}z+y\,\mathrm{d}z\mathrm{d}x+z\,\mathrm{d}x\mathrm{d}y=3V\)（散度 \(=3\)，\(V\) 为所围体积），是快写结论。② 补面后"闭曲面外侧"与补块方向要配平：所求 \(=\) 高斯结果 \(-\) 补块积分，补块方向由"构成外侧"反推。③ 例题：圆柱面 \(x^2+y^2=1\) 介于 \(z=0\) 与 \(z=3\) 的部分取外侧，补顶、底两面后可求侧面通量（见例 7）。</p></blockquote>
+<div class="ex">
+  <div class="ex-h"><span class="no">例 6</span>闭曲面直接用高斯公式</div>
+  <div class="ex-b">
+    <p>计算 \(\displaystyle\oiint_\Sigma x\,\mathrm{d}y\mathrm{d}z+y\,\mathrm{d}z\mathrm{d}x+z\,\mathrm{d}x\mathrm{d}y\)，其中 \(\Sigma\) 为球面 \(x^2+y^2+z^2=a^2\) 的外侧。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(P=x,\ Q=y,\ R=z\)，散度 \(=1+1+1=3\)，由高斯公式：</p>
+      <div class="fml">$$\oiint_\Sigma=\iiint_\Omega 3\,\mathrm{d}v=3\cdot\frac{4}{3}\pi a^3=4\pi a^3$$</div>
+      <p>点评：闭曲面 + 外侧 + 偏导连续三项全满足时，高斯公式是首选；对照 \(3V\) 结论立即可写 \(4\pi a^3\)。</p>
+    </div></details>
+  </div>
+</div>
+<div class="ex">
+  <div class="ex-h"><span class="no">例 7</span>补面法求圆柱侧面通量</div>
+  <div class="ex-b">
+    <p>计算 \(\displaystyle I=\iint_\Sigma x\,\mathrm{d}y\mathrm{d}z+y\,\mathrm{d}z\mathrm{d}x+z\,\mathrm{d}x\mathrm{d}y\)，其中 \(\Sigma\) 为圆柱面 \(x^2+y^2=1\) 介于 \(z=0\) 与 \(z=3\) 之间部分的<strong>外侧</strong>。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(\Sigma\) 不封闭。补 \(\Sigma_1\)：底 \(z=0\)（\(x^2+y^2\le 1\)，取下侧）与 \(\Sigma_2\)：顶 \(z=3\)（取上侧），与 \(\Sigma\) 构成闭曲面的外侧。散度为 \(3\)，所围柱体体积 \(V=3\pi\)，故</p>
+      <div class="fml">$$\oiint_{\Sigma+\Sigma_1+\Sigma_2}=\iiint_\Omega 3\,\mathrm{d}v=9\pi$$</div>
+      <p>分别算补面：\(\Sigma_1\) 上 \(z=0\)，\(\mathrm{d}y\mathrm{d}z=\mathrm{d}z\mathrm{d}x=0\) 且 \(z\,\mathrm{d}x\mathrm{d}y=0\)，积分为 \(0\)；\(\Sigma_2\) 上 \(z=3\) 取上侧，仅剩 \(z\,\mathrm{d}x\mathrm{d}y=\iint_{D}3\,\mathrm{d}x\mathrm{d}y=3\pi\)。于是</p>
+      <div class="fml">$$I=9\pi-0-3\pi=6\pi$$</div>
+      <p>点评：圆柱侧面上的 \(x\,\mathrm{d}y\mathrm{d}z+y\,\mathrm{d}z\mathrm{d}x\) 两项直接投影很繁琐，补面法把它们"打包"成体积分；补块选平面圆盘使被积函数退化、积分近乎为零是解题关键。</p>
+    </div></details>
+  </div>
+</div>
+
+<h2 id="11-5-斯托克斯公式">11.5 斯托克斯公式<button class="fav" type="button" data-fav="11-5-斯托克斯公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="11-5-1-公式内容与使用要点">公式内容与使用要点<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="11-5-1-公式内容与使用要点" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>设 \(\Gamma\) 为分段光滑空间有向闭曲线，\(\Sigma\) 是以 \(\Gamma\) 为边界的任一分片光滑有向曲面，\(\Gamma\) 的方向与 \(\Sigma\) 的法向量符合<strong>右手规则</strong>，\(P,Q,R\) 具有一阶连续偏导数，则：</p>
+<div class="fml">$$\oint_\Gamma P\,\mathrm{d}x+Q\,\mathrm{d}y+R\,\mathrm{d}z=\iint_\Sigma\begin{vmatrix}\mathrm{d}y\,\mathrm{d}z&\mathrm{d}z\,\mathrm{d}x&\mathrm{d}x\,\mathrm{d}y\\[2pt] \dfrac{\partial}{\partial x}&\dfrac{\partial}{\partial y}&\dfrac{\partial}{\partial z}\\[2pt] P&Q&R\end{vmatrix}=\iint_\Sigma(\operatorname{rot}\boldsymbol{A})\cdot\boldsymbol{n}\,\mathrm{d}S$$</div>
+<p>其中 \(\operatorname{rot}\boldsymbol{A}=\left(\dfrac{\partial R}{\partial y}-\dfrac{\partial Q}{\partial z},\ \dfrac{\partial P}{\partial z}-\dfrac{\partial R}{\partial x},\ \dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}\right)\) 为旋度。格林公式是 \(\Sigma\) 取平面区域、\(\Gamma\) 取平面闭曲线时的特例。实用技巧：当 \(\Sigma\) 为平面块时，右端常化为"常数 \(\times\) \(\Sigma\) 的面积"。</p>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① 方向配套：右手四指沿 \(\Gamma\) 方向弯曲、拇指指向 \(\Sigma\) 的法向量一侧，两者不配套结果差一个负号。② 行列式展开时符号："第二行偏导与第三行函数错位相减"，\(\mathrm{d}x\) 位置对应 \(\partial_y R-\partial_z Q\) 所在列，抄错列序直接全错。③ \(\Sigma\) 可以是任何以 \(\Gamma\) 为边界的曲面——选<strong>平面块</strong>（如三角形、圆盘）计算最简单。</p></blockquote>
+<div class="ex">
+  <div class="ex-h"><span class="no">例 8</span>斯托克斯公式经典题</div>
+  <div class="ex-b">
+    <p>计算 \(\displaystyle I=\oint_\Gamma (y^2-z^2)\,\mathrm{d}x+(z^2-x^2)\,\mathrm{d}y+(x^2-y^2)\,\mathrm{d}z\)，其中 \(\Gamma\) 是平面 \(x+y+z=\dfrac32\) 截立方体 \(0\le x,y,z\le 1\) 的截痕，从 \(z\) 轴正向看去为逆时针方向。</p>
+    <details><summary></summary><div class="sol">
+      <p>取 \(\Sigma\) 为该截痕围成的六边形平面块上侧（与 \(\Gamma\) 成右手规则）。记 \(P=y^2-z^2,\ Q=z^2-x^2,\ R=x^2-y^2\)，则</p>
+      <div class="fml">$$\operatorname{rot}\boldsymbol{A}=(-2y-2z,\ -2z-2x,\ -2x-2y)$$</div>
+      <p>\(\Sigma\) 的单位法向量 \(\boldsymbol{n}=\dfrac{1}{\sqrt3}(1,1,1)\)，故在 \(\Sigma\) 上恒有</p>
+      <div class="fml">$$\operatorname{rot}\boldsymbol{A}\cdot\boldsymbol{n}=\frac{1}{\sqrt3}\bigl[-2(y+z)-2(z+x)-2(x+y)\bigr]=-\frac{4(x+y+z)}{\sqrt3}=-\frac{4\cdot\frac32}{\sqrt3}=-2\sqrt3$$</div>
+      <div class="fml">$$I=\iint_\Sigma(-2\sqrt3)\,\mathrm{d}S=-2\sqrt3\cdot S_\Sigma$$</div>
+      <p>截痕是边长 \(s=\dfrac{\sqrt2}{2}\) 的正六边形（顶点如 \((1,\tfrac12,0),(0,1,\tfrac12)\) 等），\(S_\Sigma=\dfrac{3\sqrt3}{2}s^2=\dfrac{3\sqrt3}{4}\)，故</p>
+      <div class="fml">$$I=-2\sqrt3\cdot\frac{3\sqrt3}{4}=-\frac{9}{2}$$</div>
+      <p>点评：斯托克斯题的"黄金流程"——算旋度、取平面块、点积得常数、面积收官；旋度各分量相加恰含 \(x+y+z\)，在平面上直接代入方程化为常数。</p>
+    </div></details>
+  </div>
+</div>
+
+<details class="ext"><summary>拓展 · 可能考<span class="ext-tag">考前加分</span></summary><div class="ext-b">
+  <p><strong>① 挖洞法经典例</strong>：\(\displaystyle\oint_L\dfrac{y\,\mathrm{d}x-x\,\mathrm{d}y}{2(x^2+y^2)}\)（\(L\) 为含原点的闭曲线），被积函数在原点无定义；作小圆 \(l:\ x^2+y^2=\varepsilon^2\)（取负向的小圆边界），在环形区域上用格林公式后发现 \(P_y=Q_x\)，积分沿内圆计算得 \(-\pi\)，与外路径形状无关。</p>
+  <p><strong>② 环流量与旋度</strong>：\(\oint_\Gamma\boldsymbol{A}\cdot\mathrm{d}\boldsymbol{r}\) 称为环流量；斯托克斯公式的向量形式 \(\oint_\Gamma\boldsymbol{A}\cdot\mathrm{d}\boldsymbol{r}=\iint_\Sigma(\operatorname{rot}\boldsymbol{A})\cdot\boldsymbol{n}\,\mathrm{d}S\) 与高斯公式的向量形式 \(\oiint_\Sigma\boldsymbol{A}\cdot\boldsymbol{n}\,\mathrm{d}S=\iiint_\Omega\operatorname{div}\boldsymbol{A}\,\mathrm{d}v\) 成对记忆。</p>
+  <p><strong>③ 两类曲面积分互化</strong>：拿到 \(\mathrm{d}S\) 型题可用 \(\boldsymbol{n}\,\mathrm{d}S=(\mathrm{d}y\mathrm{d}z,\mathrm{d}z\mathrm{d}x,\mathrm{d}x\mathrm{d}y)\) 把第二类转成第一类后再用曲面方程化简，常用于球面、锥面上的题。</p>
+</div></details>
