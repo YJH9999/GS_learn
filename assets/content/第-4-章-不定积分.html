@@ -250,3 +250,46 @@
   <p><strong>② 倒代换</strong>：分母幂次远高于分子时，令 \(t=\dfrac1x\) 常能化简 \(\displaystyle\int\dfrac{\mathrm{d}x}{x\sqrt{x^2+a^2}}\) 型积分。</p>
   <p><strong>③ 分段函数的原函数</strong>：含绝对值（如 \(\int|x|\,\mathrm{d}x=\tfrac{x|x|}{2}+C\)）需分段积分，并在分段点处保证原函数连续来确定常数关系。</p>
 </div></details>
+
+<!-- KB-STATS:BEGIN -->
+<h2 id="4-6-题库视角-高频考点与易错清单">4.6 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="4-6-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<p>本章 165 题，其中<strong>「积分表/直接积分」25 道、有理函数 12 道、部分分式 8 道</strong>，说明本章考的是<strong>基本积分表的熟练度</strong>与<strong>有理函数拆项</strong>。题目不难但极易在系数与常数 C 上丢分。</p>
+<p class="kb-src">题量统计：站内题库共 2730 题（单元小测、教材习题、吉米多维奇精解、真题改编），按知识点打标计数；一道题可能命中多个考点，故各行之和可大于本章题数。</p>
+
+<h3 id="4-6-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="4-6-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>考点</th><th>题量</th><th>常见题型</th><th>拿分关键</th></tr></thead>
+<tbody>
+<tr><td>基本积分表与直接积分</td><td class="num">29</td><td>直接套公式、稍作恒等变形</td><td>公式要背到 arctan、arcsin、ln|sec x+tan x| 这一层；先化成标准形再套</td></tr>
+<tr><td>有理函数积分</td><td class="num">21</td><td>真分式拆项、假分式先除</td><td>先做多项式除法；分母因式分解后按重数设部分分式</td></tr>
+<tr><td>第二类换元与根式代换</td><td class="num">20</td><td>含 √(a²−x²)、√(x²±a²)、√(ax+b)</td><td>三角代换/倒代换/根式整体代换；最后回代要画三角形还原</td></tr>
+<tr><td>分部积分</td><td class="num">19</td><td>xⁿe^x、xⁿln x、反三角、∫e^x sin x</td><td>按「反对幂指三」选 u；循环型移项解出 I</td></tr>
+<tr><td>原函数的概念与性质</td><td class="num">16</td><td>已知原函数求 f、判断原函数存在性</td><td>F'=f；连续函数必有原函数；含第一类间断点则无原函数</td></tr>
+<tr><td>第一类换元（凑微分）</td><td class="num">14</td><td>∫f(φ(x))φ'(x)dx</td><td>把 φ'(x)dx 凑成 dφ(x)，换元后积分再回代</td></tr>
+<tr><td>三角有理式积分</td><td class="num">11</td><td>R(sin x,cos x) 型</td><td>万能代换 t=tan(x/2)；奇偶次用凑微分更省力</td></tr>
+<tr><td>分段函数与绝对值积分</td><td class="num">2</td><td>求分段函数的原函数</td><td>分段积分后要用连续性确定各段常数，保证原函数连续</td></tr>
+</tbody></table></div>
+
+<h3 id="4-6-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="4-6-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<ul>
+<li><strong>先看能不能直接套表</strong> → 恒等变形（拆项、配方、倍角）化成标准形再套公式</li>
+<li><strong>被积函数含根号</strong> → √(a²−x²)→x=a sin t；√(x²+a²)→x=a tan t；√(x²−a²)→x=a sec t</li>
+<li><strong>多项式 × 指数/对数/反三角</strong> → 分部积分，u 取对数或反三角，dv 取指数/多项式</li>
+<li><strong>有理分式</strong> → 假分式先除 → 分母因式分解 → 部分分式 → 逐项积分（含 ln、arctan）</li>
+<li><strong>含 sin²、cos² 的偶次幂</strong> → 降幂公式 sin²=(1−cos2x)/2 后再积分</li>
+<li><strong>被积函数是 f'(x)/f(x) 型</strong> → 直接得 ln|f(x)|+C</li>
+</ul>
+
+<h3 id="4-6-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="4-6-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>易错点</th><th>典型错误做法</th><th>正确做法</th></tr></thead>
+<tbody>
+<tr><td>漏写常数 C</td><td>∫f(x)dx=F(x)</td><td>不定积分必须写 +C，考试按步给分时这一分很稳</td></tr>
+<tr><td>换元后忘记回代</td><td>算出 ∫…dt 后直接写答案</td><td>换元 t=φ(x) 的结果必须把 t 还原成 x</td></tr>
+<tr><td>回代时符号/系数错</td><td>x=a sin t 回代 cos t 时漏写 √(a²−x²)/a</td><td>画直角三角形回代，或先算出 t 的三角值再代数</td></tr>
+<tr><td>部分分式设错</td><td>分母 (x−1)²(x+2) 只设 A/(x−1)+B/(x+2)</td><td>重根要设 A/(x−1)+B/(x−1)²+C/(x+2)</td></tr>
+<tr><td>假分式直接拆</td><td>分子次数≥分母仍按真分式设部分分式</td><td>先做多项式长除法分出整式部分</td></tr>
+<tr><td>分部积分 u、dv 选反</td><td>对 ∫x ln x dx 取 u=x</td><td>u 取 ln x（对数优先求导），dv=x dx</td></tr>
+<tr><td>原函数存在性判断错</td><td>认为有第一类间断点的函数也有原函数</td><td>含跳跃/可去间断点的函数在含该点的区间上无原函数（达布定理）</td></tr>
+</tbody></table></div>
+<!-- KB-STATS:END -->

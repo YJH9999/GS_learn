@@ -252,3 +252,45 @@
   <p><strong>② 复合函数的连续性</strong>：\(u=g(x)\) 在 \(x_0\) 连续、\(y=f(u)\) 在 \(u_0=g(x_0)\) 连续 ⇒ 复合函数在 \(x_0\) 连续。更常用的弱化版：\(\lim g(x)=u_0\) 且 \(f\) 在 \(u_0\) 连续 ⇒ \(\lim f[g(x)]=f(\lim g(x))\)——极限符号可以"钻进"连续函数里，这也是 \(\lim u^v=\mathrm e^{\lim v\ln u}\) 换底法的合法性来源。</p>
   <p><strong>③ 指数型极限通法</strong>：幂指函数一律 \(\lim u^{v}=\mathrm e^{\lim v\ln u}\)，\(\ln u\to 0\) 时等价替换 \(\ln u\sim u-1\)，即 \(\mathrm e^{\lim v(u-1)}\)，与例 6 的速算公式一致。</p>
 </div></details>
+
+<!-- KB-STATS:BEGIN -->
+<h2 id="1-7-题库视角-高频考点与易错清单">1.7 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="1-7-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<p>题库里本章 272 题，且以「求极限」为核心：<strong>极限计算</strong>类占一半以上，<strong>证明题</strong>（夹逼、单调有界、连续性论证）67 道。下面三张清单按题量排序，可直接用来分配复习时间。</p>
+<p class="kb-src">题量统计：站内题库共 2730 题（单元小测、教材习题、吉米多维奇精解、真题改编），按知识点打标计数；一道题可能命中多个考点，故各行之和可大于本章题数。</p>
+
+<h3 id="1-7-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="1-7-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>考点</th><th>题量</th><th>常见题型</th><th>拿分关键</th></tr></thead>
+<tbody>
+<tr><td>连续性与间断点</td><td class="num">47</td><td>判断间断点类型、求参数使之连续</td><td>先找无定义点与分段点，再算左右极限定类型</td></tr>
+<tr><td>定义域与函数表达式</td><td class="num">22</td><td>求定义域、由 f(g(x)) 反求 f(x)</td><td>换元 t=g(x) 反解；定义域要取各部分交集</td></tr>
+<tr><td>等价无穷小代换</td><td class="num">16</td><td>0/0 型极限、无穷小阶的比较</td><td>只对<strong>乘除因子</strong>替换；加减项先提公因式或通分</td></tr>
+<tr><td>左右极限与分段点</td><td class="num">15</td><td>分段函数在分界点的极限/连续性</td><td>分界点必须两侧分别求，含 e^{1/x}、arctan(1/x) 的点尤其要分侧</td></tr>
+<tr><td>两个重要极限与幂指函数</td><td class="num">13</td><td>1<sup>∞</sup> 型、sin x/x 型</td><td>幂指函数一律先取对数或写成 e^{v ln u}</td></tr>
+<tr><td>单调有界准则</td><td class="num">9</td><td>递推数列 a_{n+1}=f(a_n) 证明收敛</td><td>先证有界（归纳）再证单调（作差/作商），最后对递推式取极限</td></tr>
+<tr><td>极限中的参数反求</td><td class="num">9</td><td>已知极限值求 a、b</td><td>用等价无穷小/泰勒比对同阶系数，或令分子最低阶项抵消</td></tr>
+<tr><td>夹逼准则</td><td class="num">7</td><td>n 项和、含取整/绝对值、递推数列</td><td>放缩到同一极限；分母统一取最大/最小项</td></tr>
+</tbody></table></div>
+
+<h3 id="1-7-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="1-7-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<ul>
+<li><strong>代入后是 0/0 或 ∞/∞</strong> → 先化简（因式分解、有理化、通分）→ 再用等价无穷小 → 仍不行换洛必达（第 3 章）或泰勒</li>
+<li><strong>出现根号差</strong> → 分子（分母）有理化，制造出可约的零因子</li>
+<li><strong>出现 1<sup>∞</sup>、u^v</strong> → 写成 e^{v ln u}，或直接用 lim(1+α)^{1/α}=e 凑形</li>
+<li><strong>n 项和求极限</strong> → 先看能否写成 ∑f(i/n)/n 的定积分定义（第 5 章），否则夹逼</li>
+<li><strong>递推数列 a_{n+1}=f(a_n)</strong> → 先设极限 A 解 A=f(A) 猜出值，再证有界 + 单调</li>
+<li><strong>分段/含 |x|、e^{1/x}</strong> → 分界点两侧分别求极限，先判断是否需要分侧</li>
+</ul>
+
+<h3 id="1-7-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="1-7-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>易错点</th><th>典型错误做法</th><th>正确做法</th></tr></thead>
+<tbody>
+<tr><td>加减式中直接用等价无穷小</td><td>把 sin x − x 里的 sin x 换成 x 得 0</td><td>先通分/提公因式化成乘除结构，或用泰勒展开到足够阶（sin x − x ~ −x³/6）</td></tr>
+<tr><td>等价替换「跨项」</td><td>lim (tan x − sin x)/x³ 中分别把 tan x、sin x 换成 x</td><td>换成 x 后分子为 0，需展开到 x³：tan x − sin x ~ x³/2</td></tr>
+<tr><td>忽略左右极限</td><td>对 arctan(1/x)、e^{1/x} 在 x→0 直接写极限</td><td>x→0⁺ 与 x→0⁻ 结果不同，极限不存在（或需分侧讨论）</td></tr>
+<tr><td>间断点只看「有没有定义」</td><td>把 f(x)=sin x/x 的 x=0 判为无穷间断</td><td>先算左右极限：极限存在但无定义为可去间断点</td></tr>
+<tr><td>单调有界只证一半</td><td>只证单调不证有界就断言收敛</td><td>两者缺一不可；递推数列通常先用归纳法证 0<a_n<2 之类</td></tr>
+<tr><td>幂指函数直接取极限</td><td>lim u^v 先把 u、v 的极限分别代入</td><td>u^v=e^{v ln u}，需对 v ln u 求极限（1<sup>∞</sup> 型是 e^{lim v(u−1)}）</td></tr>
+</tbody></table></div>
+<!-- KB-STATS:END -->

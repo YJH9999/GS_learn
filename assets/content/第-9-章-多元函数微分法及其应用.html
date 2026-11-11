@@ -216,3 +216,46 @@ $$F(x,y,z)=0\ \text{确定}\ z=z(x,y):\quad \frac{\partial z}{\partial x}=-\frac
 <p><strong>② 两个约束条件</strong>：求 \(f\) 在 \(\varphi_1=0,\varphi_2=0\) 下的极值用 \(L=f+\lambda\varphi_1+\mu\varphi_2\)，五个未知数五条方程。</p>
 <p><strong>③ 最小二乘与实际应用</strong>：拟合直线、容积/用料最优化等应用题，先"设变量 → 写目标函数 → 写约束 → 选无条件还是条件极值"四步走，建模分比计算分更值钱。</p>
 </div></details>
+
+<!-- KB-STATS:BEGIN -->
+<h2 id="9-7-题库视角-高频考点与易错清单">9.7 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="9-7-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<p>本章 286 题，<strong>条件极值 10 道、方向导数 9 道、空间曲线切线 6 道</strong>领跑，偏导/全微分/隐函数三块合计 40+ 道。多元的难点不在公式，而在<strong>「谁是自变量、谁是谁的函数」</strong>——链式法则画错树，后面全错。</p>
+<p class="kb-src">题量统计：站内题库共 2730 题（单元小测、教材习题、吉米多维奇精解、真题改编），按知识点打标计数；一道题可能命中多个考点，故各行之和可大于本章题数。</p>
+
+<h3 id="9-7-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="9-7-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>考点</th><th>题量</th><th>常见题型</th><th>拿分关键</th></tr></thead>
+<tbody>
+<tr><td>极值与条件极值</td><td class="num">35</td><td>无条件极值、拉格朗日乘数法、闭区域最值</td><td>先求驻点再用 AC−B² 判别；条件极值构造 L=f+λg；闭区域还要比边界</td></tr>
+<tr><td>空间曲线切线、曲面切平面</td><td class="num">27</td><td>求切线/法平面/切平面</td><td>曲线用参数式求导得切向量；曲面 F=0 的法向量为梯度</td></tr>
+<tr><td>隐函数求导（含二阶）</td><td class="num">26</td><td>F(x,y,z)=0 求 z_x、z_y、z_xy</td><td>z_x=−F_x/F_z；二阶要把已求出的 z_x 再代入</td></tr>
+<tr><td>偏导数与全微分计算</td><td class="num">25</td><td>求 z_x、z_y、dz</td><td>偏导时把另一个变量当常数；dz=z_x dx+z_y dy</td></tr>
+<tr><td>可微性、连续性与极限</td><td class="num">24</td><td>判断可微、极限是否存在</td><td>二重极限用 y=kx 找反例；可微需验证 Δz−dz=o(ρ)</td></tr>
+<tr><td>方向导数与梯度</td><td class="num">24</td><td>求沿某方向的方向导数、最陡方向</td><td>∂f/∂l=grad f·(cosα,cosβ,cosγ)；梯度方向是增长最快的方向</td></tr>
+<tr><td>复合函数链式法则与全导数</td><td class="num">18</td><td>z=f(u,v)、u=u(x,y)</td><td>画变量关系树，每条路径相加；抽象函数写 f'₁、f'₂</td></tr>
+<tr><td>几何应用与近似计算</td><td class="num">5</td><td>用全微分近似、误差估计</td><td>f(x₀+Δx,y₀+Δy)≈f+fxΔx+fyΔy</td></tr>
+</tbody></table></div>
+
+<h3 id="9-7-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="9-7-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<ul>
+<li><strong>给出复合结构 z=f(u,v)</strong> → 先画变量树（z→u,v→x,y），再沿路径写链式求和</li>
+<li><strong>抽象函数 f(xy, x/y)</strong> → 用 f'₁、f'₂ 表示，注意对 x 求导时两个中间变量都要求导</li>
+<li><strong>求切平面/法线</strong> → 曲面写成 F(x,y,z)=0，法向量 = (F_x,F_y,F_z) 在该点的值</li>
+<li><strong>求最值且带约束 g=0</strong> → 拉格朗日乘数法：解 ∇f=λ∇g 与 g=0 的方程组，再比较各候选点</li>
+<li><strong>闭区域上的最值</strong> → 内部驻点 + 边界（化为条件极值或代入消元）+ 角点，三类都要算</li>
+<li><strong>判断二重极限不存在</strong> → 取 y=kx、y=kx² 得到与 k 有关的结果即不存在</li>
+</ul>
+
+<h3 id="9-7-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="9-7-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>易错点</th><th>典型错误做法</th><th>正确做法</th></tr></thead>
+<tbody>
+<tr><td>链式法则漏路径</td><td>z=f(u,v), u=u(x), v=v(x) 时只写 f'₁u'</td><td>全导数 dz/dx=f'₁u'+f'₂v'，两条路径都要加</td></tr>
+<tr><td>隐函数公式记反</td><td>z_x=F_z/F_x</td><td>z_x=−F_x/F_z，负号与分母都不能丢</td></tr>
+<tr><td>用 AC−B² 判别时忘记 A=f_xx 的条件</td><td>只算 AC−B²<0 就说不是极值</td><td>需 A=f_xx、B=f_xy、C=f_yy；AC−B²>0 且 A>0 为极小、A<0 为极大</td></tr>
+<tr><td>条件极值只解方程不比较</td><td>解出唯一驻点就断言是最值</td><td>拉格朗日法给出的是可能点，需比较所有候选点或由实际意义判断</td></tr>
+<tr><td>切平面与法线混淆</td><td>把法向量当作切线方向</td><td>法向量 (F_x,F_y,F_z) 是切平面的法向、法线的方向</td></tr>
+<tr><td>方向导数公式漏单位化</td><td>∂f/∂l=f_x cosα+f_y cosβ 但 (cosα,cosβ) 未单位化</td><td>方向必须取单位向量，否则结果随长度缩放</td></tr>
+<tr><td>可微与偏导存在混淆</td><td>偏导存在即认为可微</td><td>偏导存在不一定可微；可微必连续、必存在偏导</td></tr>
+</tbody></table></div>
+<!-- KB-STATS:END -->

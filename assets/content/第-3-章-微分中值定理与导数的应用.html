@@ -260,3 +260,47 @@
   <p><strong>② 费马定理</strong>：可导点取极值 \(\Rightarrow f'(x_0)=0\)，它是罗尔定理的证明基础（最值点必为驻点或端点）；"导数零点定理"（达布定理，导函数取遍中间值）是判断题冷门点：导函数可以不连续，但不能有跳跃间断。</p>
   <p><strong>③ 渐近线条数速查</strong>：\(y=\dfrac{x^{2}}{x-1}\) 有 2 条（垂直 + 斜）；\(y=\mathrm e^{1/x}\) 有 2 条水平（\(x\to\pm\infty\) 各一条：\(y=1\)）加上 \(x=0\) 一条垂直；求渐近线必先列定义域再看各方向极限，缺一方向就少答。</p>
 </div></details>
+
+<!-- KB-STATS:BEGIN -->
+<h2 id="3-7-题库视角-高频考点与易错清单">3.7 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="3-7-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<p>本章 290 题，是<strong>全书题量最多</strong>的章节，其中证明题 86 道。洛必达（各型合计 20+）、泰勒、单调性证不等式、拐点与图形描绘构成四大主力；考研式「构造辅助函数」题几乎都在这里。</p>
+<p class="kb-src">题量统计：站内题库共 2730 题（单元小测、教材习题、吉米多维奇精解、真题改编），按知识点打标计数；一道题可能命中多个考点，故各行之和可大于本章题数。</p>
+
+<h3 id="3-7-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-7-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>考点</th><th>题量</th><th>常见题型</th><th>拿分关键</th></tr></thead>
+<tbody>
+<tr><td>极值与最值</td><td class="num">42</td><td>求极值/最值、含参讨论</td><td>极值看驻点+不可导点；闭区间最值再比端点</td></tr>
+<tr><td>洛必达法则（各型）</td><td class="num">36</td><td>0/0、∞/∞、0·∞、∞−∞、1<sup>∞</sup> 型极限</td><td>先化成分式再用；每次用前验证仍是未定式，用完化简再判断是否继续</td></tr>
+<tr><td>单调性与不等式证明</td><td class="num">32</td><td>证明 f(x)>g(x)、比较大小</td><td>移项作差 h=f−g，证 h'≥0 且 h(x₀)=0；必要时二次求导</td></tr>
+<tr><td>凹凸性与拐点</td><td class="num">27</td><td>判断凹凸区间、求拐点</td><td>看 f'' 变号；f''=0 但不变号不是拐点</td></tr>
+<tr><td>泰勒公式与麦克劳林</td><td class="num">26</td><td>求极限、证明不等式、估阶</td><td>在展开点展开到「分子最低阶不为零」的阶数；带拉格朗日余项做证明</td></tr>
+<tr><td>罗尔定理与辅助函数</td><td class="num">18</td><td>存在 ξ 使某式成立</td><td>把 ξ 换成 x 整理成 F'(x)=0，反推 F（乘 e^{λx}、乘 xⁿ 是两大套路）</td></tr>
+<tr><td>曲率与曲率半径</td><td class="num">17</td><td>求曲率、曲率半径、最大曲率</td><td>K=|y''|/(1+y'²)^{3/2}；参数方程用 (φ'ψ''−φ''ψ')/(φ'²+ψ'²)^{3/2}</td></tr>
+<tr><td>拉格朗日与柯西中值定理</td><td class="num">16</td><td>双中值、比值型结论</td><td>出现两个函数或两个 ξ 用柯西；结论含 (b−a) 用拉格朗日</td></tr>
+</tbody></table></div>
+
+<h3 id="3-7-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="3-7-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<ul>
+<li><strong>要证存在 ξ 使含 f、f' 的等式成立</strong> → 把 ξ 换成 x，移项成「某函数导数为 0」，反推辅助函数后用罗尔</li>
+<li><strong>要证不等式且两边都是函数</strong> → 移项作差 → 求导判单调 → 用端点值定号；一阶不够就二阶</li>
+<li><strong>极限里有 sin、e^x、ln(1+x) 混合</strong> → 泰勒展开到同阶；比洛必达快且不易循环</li>
+<li><strong>给出 f'' 的符号或 f''(x)>0</strong> → 想凹凸性/琴生不等式/泰勒余项符号</li>
+<li><strong>含参数的方程讨论根</strong> → 分离参数 a=φ(x)，转化为水平线与 φ 的交点个数，画单调表</li>
+<li><strong>求最值的应用题</strong> → 写出目标函数 → 定义域 → 求驻点 → 比较端点/不可导点 → 回答实际问题</li>
+</ul>
+
+<h3 id="3-7-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="3-7-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>易错点</th><th>典型错误做法</th><th>正确做法</th></tr></thead>
+<tbody>
+<tr><td>洛必达用在非未定式上</td><td>lim sin x/x 在 x→0 之外也直接用洛必达</td><td>先验证是 0/0 或 ∞/∞；非未定式直接代入</td></tr>
+<tr><td>洛必达循环或越用越繁</td><td>对含 e^x、ln x 的式子反复洛必达</td><td>改用泰勒展开或等价无穷小；每次洛必达后先化简</td></tr>
+<tr><td>罗尔定理条件不验证</td><td>直接说「由罗尔定理」</td><td>必须写明 f 在 [a,b] 连续、(a,b) 可导、f(a)=f(b) 三条</td></tr>
+<tr><td>辅助函数构造错</td><td>要证 ξf'(ξ)+f(ξ)=0 时设 F=f</td><td>应为 F(x)=xf(x)；判据是 F'=f+xf'</td></tr>
+<tr><td>拐点与极值点混淆</td><td>把 f'(x₀)=0 的点都叫拐点</td><td>拐点看 f'' 变号；极值看 f' 变号</td></tr>
+<tr><td>渐近线漏方向</td><td>只算 x→+∞ 得一条水平渐近线</td><td>x→±∞ 分别算；垂直渐近线找无定义点的单侧极限</td></tr>
+<tr><td>最值只求驻点</td><td>闭区间上只比较驻点</td><td>还要比较端点值与不可导点；实际问题注意定义域端点是否可取</td></tr>
+<tr><td>曲率公式记错</td><td>K=y''/(1+y'²)^{3/2}（漏绝对值或指数）</td><td>K=|y''|/(1+y'²)^{3/2}，曲率半径 R=1/K</td></tr>
+</tbody></table></div>
+<!-- KB-STATS:END -->

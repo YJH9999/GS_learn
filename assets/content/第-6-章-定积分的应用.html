@@ -221,3 +221,44 @@
   <p><strong>② 旋转体的侧面积</strong>：绕 \(x\) 轴旋转的表面积 \(S=2\pi\displaystyle\int_a^b f(x)\sqrt{1+f'^2}\,\mathrm{d}x\)——注意是"弧微元"扫出的圆台侧面，被积函数里同时有 \(y\) 与 \(\mathrm{d}s\)，与体积公式结构不同，常作为辨析题出现。</p>
   <p><strong>③ 引力微元</strong>：细棒对质点的引力须<strong>按分量</strong>积分（\(\mathrm{d}F\) 的方向随位置变化，先投影再累加），直接对大小积分是常见错误——这类题考的就是"微元是有方向的量"。</p>
 </div></details>
+
+<!-- KB-STATS:BEGIN -->
+<h2 id="6-5-题库视角-高频考点与易错清单">6.5 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="6-5-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<p>本章 141 题，是「公式 + 画图」型章节：<strong>旋转体体积 8 道、平面图形面积 6 道、切线围成面积 4 道</strong>、弧长 4 道。题目本身不难，失分几乎都源于<strong>积分变量选错</strong>与<strong>上下限找错</strong>。</p>
+<p class="kb-src">题量统计：站内题库共 2730 题（单元小测、教材习题、吉米多维奇精解、真题改编），按知识点打标计数；一道题可能命中多个考点，故各行之和可大于本章题数。</p>
+
+<h3 id="6-5-题库视角-高频考点与易错清单-1">高频考点 TOP 7（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="6-5-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>考点</th><th>题量</th><th>常见题型</th><th>拿分关键</th></tr></thead>
+<tbody>
+<tr><td>平面图形面积</td><td class="num">53</td><td>曲线围成、切线围成、公共部分</td><td>先求交点定限；对 x 或对 y 积分取「上减下」或「右减左」</td></tr>
+<tr><td>旋转体体积</td><td class="num">29</td><td>绕 x 轴/y 轴、绕平行轴旋转</td><td>绕 x 轴 V=π∫y²dx；绕 y 轴用柱壳 V=2π∫x|y|dx；先画图定上下限</td></tr>
+<tr><td>物理应用</td><td class="num">24</td><td>变力做功、水压力、质心、转动惯量</td><td>微元法：取微元写 dW=F(x)dx，再积分；水压力 dP=ρg·h·宽·dh</td></tr>
+<tr><td>弧长</td><td class="num">17</td><td>直角坐标、参数方程、极坐标弧长</td><td>s=∫√(1+y'²)dx；参数式 ∫√(φ'²+ψ'²)dt；极坐标 ∫√(r²+r'²)dθ</td></tr>
+<tr><td>切线、法线与面积综合</td><td class="num">14</td><td>切线与坐标轴/曲线围成面积</td><td>先求切点与斜率写切线方程，再与曲线求交定限</td></tr>
+<tr><td>最值与综合</td><td class="num">13</td><td>旋转体体积最大、面积最大</td><td>先写出目标函数（含参数），再用第 3 章方法求最值</td></tr>
+<tr><td>极坐标下的几何量</td><td class="num">9</td><td>极坐标面积、公共面积</td><td>扇形面积 S=½∫r²dθ；公共部分先求交点角</td></tr>
+</tbody></table></div>
+
+<h3 id="6-5-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="6-5-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<ul>
+<li><strong>题目说「围成的图形」</strong> → 第一步永远是求交点、画草图，确定积分变量与上下限</li>
+<li><strong>绕 y 轴或 x=a 旋转</strong> → 柱壳法 2π∫(半径)(高)dx，通常比求反函数更省事</li>
+<li><strong>图形上下边界会交换</strong> → 分段积分；或改选另一变量使边界单一</li>
+<li><strong>含参数 a 的最值问题</strong> → 先把面积/体积写成 a 的函数，再求导找驻点</li>
+<li><strong>物理应用</strong> → 写出微元（dW、dP、dM）→ 定积分 → 注意单位与坐标原点选取</li>
+</ul>
+
+<h3 id="6-5-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="6-5-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>易错点</th><th>典型错误做法</th><th>正确做法</th></tr></thead>
+<tbody>
+<tr><td>上下限取反</td><td>∫_b^a 与 ∫_a^b 混用导致面积为负</td><td>面积一律「上减下」且上限大于下限；结果为负说明边界写反</td></tr>
+<tr><td>绕 y 轴仍用 π∫y²dx</td><td>把绕 x 轴的公式套到绕 y 轴</td><td>绕 y 轴可用 V=π∫x²dy（需反解 x）或柱壳 2π∫x y dx</td></tr>
+<tr><td>柱壳法半径写错</td><td>绕 x=2 旋转时半径仍写 x</td><td>半径为 |x−2|，被积函数中 2π·(x−2)·高</td></tr>
+<tr><td>弧长公式漏平方</td><td>s=∫√(1+y')dx</td><td>s=∫√(1+y'²)dx；参数式是 √(φ'²+ψ'²)</td></tr>
+<tr><td>极坐标面积漏 ½</td><td>S=∫r²dθ</td><td>S=½∫r²dθ</td></tr>
+<tr><td>切线问题不求切点</td><td>直接用原点作积分限</td><td>先求切点坐标，切线与曲线的另一个交点决定积分限</td></tr>
+<tr><td>水压力用面积公式</td><td>P=ρg·面积</td><td>压力随深度变化，须积分 dP=ρg·h·w(h)dh</td></tr>
+</tbody></table></div>
+<!-- KB-STATS:END -->

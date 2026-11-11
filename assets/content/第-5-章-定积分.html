@@ -234,3 +234,46 @@
   <p><strong>② 比较判别法</strong>：无穷区间上 \(0\leq f\leq g\) 且 \(\int g\) 收敛 \(\Rightarrow\int f\) 收敛；瑕积分同理反向。用于 \(\dfrac{1}{\sqrt{x^3+1}}\) 这类"介于两个 \(p\) 积分之间"的题。</p>
   <p><strong>③ 常见"积不出但可积"函数</strong>：\(\dfrac{\sin x}{x}\)、\(\mathrm{e}^{-x^2}\) 在 \([0,+\infty)\) 都收敛（结果分别是 \(\dfrac{\pi}{2}\)、\(\dfrac{\sqrt\pi}{2}\)），但原函数非初等——判断题常考"原函数存在"与"反常积分收敛"是两码事。</p>
 </div></details>
+
+<!-- KB-STATS:BEGIN -->
+<h2 id="5-5-题库视角-高频考点与易错清单">5.5 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="5-5-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<p>本章 245 题，证明题 69 道（占比全书第二），考点高度集中在<strong>对称性/奇偶性</strong>、<strong>变限积分</strong>与<strong>积分不等式</strong>。会算只是及格线，会用对称性化简才是拿时间的关键。</p>
+<p class="kb-src">题量统计：站内题库共 2730 题（单元小测、教材习题、吉米多维奇精解、真题改编），按知识点打标计数；一道题可能命中多个考点，故各行之和可大于本章题数。</p>
+
+<h3 id="5-5-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="5-5-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>考点</th><th>题量</th><th>常见题型</th><th>拿分关键</th></tr></thead>
+<tbody>
+<tr><td>换元法与分部积分</td><td class="num">42</td><td>定积分计算、证明积分等式</td><td>换元要同时换上下限；分部积分的 uv 项要带上下限</td></tr>
+<tr><td>变限积分求导</td><td class="num">30</td><td>求导、求极限、证恒等式</td><td>(∫_a^{φ(x)}f)′=f(φ(x))φ'(x)；上下限都含 x 时两项相减</td></tr>
+<tr><td>反常积分</td><td class="num">29</td><td>计算、判断敛散性</td><td>先找奇点（无穷限或瑕点），再按定义取极限；比较判别法与 p 积分对照</td></tr>
+<tr><td>对称性、奇偶性与周期性</td><td class="num">28</td><td>对称区间积分、周期函数整周期积分</td><td>奇函数在对称区间积分为 0；偶函数折半；周期函数整周期可平移</td></tr>
+<tr><td>积分不等式与估值</td><td class="num">21</td><td>证明积分不等式、估计积分值</td><td>保号性 + 最值估计（m(b−a)≤∫≤M(b−a)）；柯西—施瓦茨不等式</td></tr>
+<tr><td>定积分的定义与和式极限</td><td class="num">11</td><td>把 n 项和写成积分、求极限</td><td>凑成 (1/n)∑f(i/n) 形式；区间可取 [0,1] 也可取 [a,b]</td></tr>
+<tr><td>积分中值定理</td><td class="num">10</td><td>证明存在 ξ、估计积分</td><td>∫_a^b f=f(ξ)(b−a)；乘积形式用第一/第二中值定理</td></tr>
+<tr><td>分段函数与绝对值积分</td><td class="num">8</td><td>含 |x−a|、max/min 的积分</td><td>按零点分段，逐段积分后相加</td></tr>
+</tbody></table></div>
+
+<h3 id="5-5-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="5-5-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<ul>
+<li><strong>对称区间 [−a,a]</strong> → 先看奇偶性：奇函数直接 0，偶函数算一半翻倍</li>
+<li><strong>被积函数含 ∫_a^x f(t)dt</strong> → 把它当函数求导（变限积分求导），或分部积分把它消掉</li>
+<li><strong>要证积分不等式</strong> → 作差构造 F(x)=∫_a^x …，求导判单调；或用最值/柯西不等式</li>
+<li><strong>积分上下限含参数</strong> → 先换元把参数移出被积函数，再对参数求导（莱布尼茨公式）</li>
+<li><strong>出现 √(a²−x²) 且区间对称</strong> → 三角换元 x=a sin t，或直接用圆的面积公式</li>
+<li><strong>反常积分判敛</strong> → 与 1/x^p 比较：p>1 收敛、p≤1 发散；瑕点处看 (x−a)^p 阶</li>
+</ul>
+
+<h3 id="5-5-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="5-5-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>易错点</th><th>典型错误做法</th><th>正确做法</th></tr></thead>
+<tbody>
+<tr><td>换元不换上下限</td><td>换元后仍用原上下限代回</td><td>换元的同时把上下限换成新变量的值，或最后回代原变量再代</td></tr>
+<tr><td>变限积分求导漏内层导数</td><td>d/dx ∫_0^{x²} f(t)dt = f(x²)</td><td>应为 2x·f(x²)；上下限都含 x 时还要减去下限项</td></tr>
+<tr><td>奇偶性用错区间</td><td>在 [0,a] 上也用「奇函数积分为 0」</td><td>奇函数为 0 只在对称区间 [−a,a] 成立</td></tr>
+<tr><td>分段积分漏分界点</td><td>对 |x−1| 在 [0,2] 上直接积分</td><td>以 x=1 分段：∫₀¹(1−x)+∫₁²(x−1)</td></tr>
+<tr><td>反常积分不找瑕点</td><td>对 ∫₀¹ dx/x² 直接算 1/x 的代值</td><td>x=0 是瑕点，须写成 lim_{ε→0⁺}∫_ε¹，结果为发散</td></tr>
+<tr><td>中值定理写成 f(ξ)</td><td>∫_a^b f(x)g(x)dx=f(ξ)(b−a)</td><td>含权函数 g 时结论是 f(ξ)∫g，或需 g 不变号</td></tr>
+<tr><td>Γ 函数与阶乘错位</td><td>Γ(n)=n!</td><td>Γ(n)=(n−1)!，Γ(n+1)=n!</td></tr>
+</tbody></table></div>
+<!-- KB-STATS:END -->

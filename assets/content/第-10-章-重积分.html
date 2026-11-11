@@ -172,3 +172,46 @@
   <p><strong>② 转动惯量的空间版</strong>：立体对 \(z\) 轴的转动惯量 \(I_z=\iiint_\Omega(x^2+y^2)\rho\,\mathrm{d}v\)（注意是到轴的距离平方，不是 \(z^2\)）；对原点 \(I_O=\iiint_\Omega(x^2+y^2+z^2)\rho\,\mathrm{d}v\)。</p>
   <p><strong>③ 引力公式框架</strong>：物体对质点 \(P\) 的引力 \(\boldsymbol{F}=(F_x,F_y,F_z)\)，\(F_x=\iiint_\Omega\dfrac{G\rho(x_0-x)}{r^3}\,\mathrm{d}v\) 型（\(r\) 为微元到 \(P\) 的距离），考试通常只考对称性简化后的单分量计算。</p>
 </div></details>
+
+<!-- KB-STATS:BEGIN -->
+<h2 id="10-5-题库视角-高频考点与易错清单">10.5 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="10-5-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<p>本章 210 题，<strong>交换积分次序 18 道（含同义标注）、极坐标 16 道、对称性 20+ 道</strong>，三重积分三种坐标系合计 20 道。这是「技巧决定速度」的一章：对称性与换序用得好，计算量能砍掉一半。</p>
+<p class="kb-src">题量统计：站内题库共 2730 题（单元小测、教材习题、吉米多维奇精解、真题改编），按知识点打标计数；一道题可能命中多个考点，故各行之和可大于本章题数。</p>
+
+<h3 id="10-5-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-5-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>考点</th><th>题量</th><th>常见题型</th><th>拿分关键</th></tr></thead>
+<tbody>
+<tr><td>几何与物理应用</td><td class="num">38</td><td>体积、质量、质心、转动惯量、引力</td><td>微元 + 对称性；均匀薄片质心即形心</td></tr>
+<tr><td>极坐标计算二重积分</td><td class="num">26</td><td>圆、扇形、圆环区域</td><td>dxdy=r dr dθ；先定 θ 范围再定 r 的上下限（射线穿入穿出）</td></tr>
+<tr><td>对称性与奇偶性</td><td class="num">25</td><td>关于坐标轴/原点/y=x 对称</td><td>对称 + 奇函数为 0；轮换对称性 ∫∫f(x,y)=∫∫f(y,x)</td></tr>
+<tr><td>交换积分次序</td><td class="num">20</td><td>给定二次积分换序、换序后计算</td><td>由原上下限画出区域，再按新顺序重新定限</td></tr>
+<tr><td>柱坐标与球坐标</td><td class="num">20</td><td>旋转体、球体、锥体</td><td>柱：dV=ρ dρ dθ dz；球：dV=r² sinφ dr dφ dθ</td></tr>
+<tr><td>直角坐标下的二重积分</td><td class="num">11</td><td>化二次积分、定限</td><td>先画区域图；X 型先 y 后 x，Y 型先 x 后 y</td></tr>
+<tr><td>三重积分（直角坐标）</td><td class="num">8</td><td>投影法（先一后二）、截面法（先二后一）</td><td>投影法：先 z 后 xy；截面法适合 f 只含 z</td></tr>
+<tr><td>积分中值与其他</td><td class="num">7</td><td>中值定理、含重积分的方程与极限</td><td>二重积分中值：∬f=f(ξ,η)·面积</td></tr>
+</tbody></table></div>
+
+<h3 id="10-5-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="10-5-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<ul>
+<li><strong>区域是圆/扇形/圆环</strong> → 立刻换极坐标；先画射线定 r 的上下限</li>
+<li><strong>被积函数含 x²+y²</strong> → 极坐标或柱坐标，往往一步化简</li>
+<li><strong>给了二次积分要你算</strong> → 先看能否交换次序：原顺序不可积（如 e^{y²}）时换序是唯一出路</li>
+<li><strong>区域关于某轴对称且被积函数是奇函数</strong> → 直接写 0，别硬算</li>
+<li><strong>三重积分 f 只含 z</strong> → 用截面法（先二后一），内层二重积分就是截面面积</li>
+<li><strong>求质心/转动惯量</strong> → 先写密度与微元，能用对称性直接判断某坐标为 0</li>
+</ul>
+
+<h3 id="10-5-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="10-5-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>易错点</th><th>典型错误做法</th><th>正确做法</th></tr></thead>
+<tbody>
+<tr><td>极坐标漏 r</td><td>dxdy 直接写成 dr dθ</td><td>dxdy=r dr dθ，漏 r 是最常见的失分点</td></tr>
+<tr><td>极坐标 r 的上下限写常数</td><td>对圆 x²+y²≤2x 仍写 0≤r≤a</td><td>应为 r≤2cosθ，上限随 θ 变化</td></tr>
+<tr><td>交换次序后区域画错</td><td>直接把上下限对调</td><td>必须由原积分限确定区域 D，再按新顺序重新定限</td></tr>
+<tr><td>对称性误用</td><td>区域不对称也用「奇函数积分为 0」</td><td>必须先说明对称性，再看被积函数关于该变量的奇偶性</td></tr>
+<tr><td>柱/球坐标体积元素写错</td><td>球坐标 dV=r²dr dφ dθ（漏 sinφ）</td><td>球坐标 dV=r² sinφ dr dφ dθ；柱坐标 dV=ρ dρ dθ dz</td></tr>
+<tr><td>截面法内层当定积分</td><td>先二后一时内层只算一次</td><td>内层是对 x、y 的二重积分（即截面面积），外层才对 z 积分</td></tr>
+<tr><td>曲面面积用平面面积</td><td>对 z=z(x,y) 直接算投影面积</td><td>要乘 √(1+z_x²+z_y²)，否则只是投影面积</td></tr>
+</tbody></table></div>
+<!-- KB-STATS:END -->

@@ -251,3 +251,46 @@
   <p><strong>② 绝对误差与相对误差</strong>：\(|\Delta y|\approx|\mathrm dy|=|f'(x)|\cdot|\Delta x|\)，相对误差 \(\dfrac{|\mathrm dy|}{|y|}\)。量具误差传播题就套这个公式。</p>
   <p><strong>③ 高阶微分</strong>：二阶微分 \(\mathrm d^2 y=f''(x)(\mathrm dx)^2\)，但对自变量取增量时 \(\mathrm d(\mathrm dx)\ne 0\) 的约定差异使二阶以上微分<strong>不再具有形式不变性</strong>，这是概念选择题的冷门考点。</p>
 </div></details>
+
+<!-- KB-STATS:BEGIN -->
+<h2 id="2-6-题库视角-高频考点与易错清单">2.6 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="2-6-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<p>本章 219 题，<strong>导数定义</strong>（含抽象函数、函数方程）17 道为最高频，其次是隐函数求导、高阶导数与参数方程求导。本章几乎没有「难」题，扣分几乎都来自<strong>定义式写错</strong>与<strong>求导后忘记乘链式因子</strong>。</p>
+<p class="kb-src">题量统计：站内题库共 2730 题（单元小测、教材习题、吉米多维奇精解、真题改编），按知识点打标计数；一道题可能命中多个考点，故各行之和可大于本章题数。</p>
+
+<h3 id="2-6-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="2-6-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>考点</th><th>题量</th><th>常见题型</th><th>拿分关键</th></tr></thead>
+<tbody>
+<tr><td>导数定义与抽象函数</td><td class="num">34</td><td>用定义求 f'(x₀)、已知极限式反求导数</td><td>凑成 lim[f(x₀+Δx)−f(x₀)]/Δx，Δx 的符号与系数要一致</td></tr>
+<tr><td>高阶导数与 n 阶导数</td><td class="num">26</td><td>求 f⁽ⁿ⁾(0)、莱布尼茨公式</td><td>先拆成部分分式或找周期规律，再用莱布尼茨公式</td></tr>
+<tr><td>隐函数求导</td><td class="num">20</td><td>F(x,y)=0 求 y'、y''</td><td>两边对 x 求导（y 视为 y(x)），二阶导要把 y' 再代回</td></tr>
+<tr><td>切线与法线</td><td class="num">19</td><td>求切线/法线方程、切点参数</td><td>先求斜率 k=f'(x₀)；法线斜率 −1/k（k=0 时法线为 x=x₀）</td></tr>
+<tr><td>微分与近似计算</td><td class="num">18</td><td>求 dy、用微分估计误差</td><td>dy=f'(x)dx；近似式 f(x₀+Δx)≈f(x₀)+f'(x₀)Δx</td></tr>
+<tr><td>可导性与连续性</td><td class="num">16</td><td>判断分段点/绝对值点是否可导</td><td>可导必连续；分界点用左右导数相等判断</td></tr>
+<tr><td>参数方程求导</td><td class="num">14</td><td>dy/dx、d²y/dx²</td><td>d²y/dx²=(dy'/dt)/(dx/dt)，不能直接对 dy/dx 再除以 dx/dt 之外的量</td></tr>
+<tr><td>复合函数求导（链式）</td><td class="num">9</td><td>多层复合、抽象 f(φ(x))</td><td>由外向内逐层乘，抽象函数写成 f'(φ(x))·φ'(x)</td></tr>
+</tbody></table></div>
+
+<h3 id="2-6-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="2-6-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<ul>
+<li><strong>题目出现 f'(x₀) 的定义式变形</strong> → 把分子配成 f(x₀+kΔx)−f(x₀)，提出系数 k，答案 = k·f'(x₀)</li>
+<li><strong>给的是极限式而非函数式</strong> → 先判断能否凑定义；不能则用洛必达或泰勒（第 3 章）</li>
+<li><strong>幂指函数 y=u^v</strong> → 对数求导 y'/y=v'ln u+v u'/u，或写成 e^{v ln u}</li>
+<li><strong>多个因子相乘除、含根号</strong> → 对数求导，把乘除变成加减，避免用商法则出错</li>
+<li><strong>分段函数在分界点求导</strong> → 先算左右导数（用定义），再看是否相等；不要直接套求导公式</li>
+<li><strong>相关变化率问题</strong> → 先写几何/物理关系式，再对 t 求导（各量都是 t 的函数）</li>
+</ul>
+
+<h3 id="2-6-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="2-6-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>易错点</th><th>典型错误做法</th><th>正确做法</th></tr></thead>
+<tbody>
+<tr><td>导数定义式配错</td><td>把 lim[f(x₀+2h)−f(x₀)]/h 直接写成 f'(x₀)</td><td>提出系数：原式 = 2f'(x₀)</td></tr>
+<tr><td>把「可导」与「连续」混用</td><td>由 f 连续推出 f 可导</td><td>连续不一定可导（|x| 在 0 点）；可导一定连续</td></tr>
+<tr><td>参数方程二阶导算错</td><td>d²y/dx² 直接对 dy/dx 再对 t 求导</td><td>必须再除以 dx/dt：d²y/dx²=(d/dt)(dy/dx) ÷ (dx/dt)</td></tr>
+<tr><td>隐函数二阶导代错</td><td>求出 y' 后直接对 y' 求导得 y''</td><td>要对 y' 再求导并把其中的 y' 替换成已求出的表达式</td></tr>
+<tr><td>忘记乘内层导数</td><td>d/dx f(x²)=f'(x²)</td><td>应为 2x f'(x²)</td></tr>
+<tr><td>绝对值点直接求导</td><td>对 |x|、|x−a| 直接写导数</td><td>分侧讨论或用定义；|x| 在 0 点不可导</td></tr>
+<tr><td>切线方程漏点</td><td>只写 y=f'(x₀)(x−x₀)</td><td>切线为 y−f(x₀)=f'(x₀)(x−x₀)，法线斜率取负倒数</td></tr>
+</tbody></table></div>
+<!-- KB-STATS:END -->

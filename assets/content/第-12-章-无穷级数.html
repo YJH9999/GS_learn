@@ -274,3 +274,47 @@
   <p><strong>② 一般区间的对称化</strong>：\(f\) 定义在 \([0,l]\) 时，正弦 / 余弦级数公式把 \(\pi\) 全换成 \(l\)，\(\sin nx\to\sin\frac{n\pi x}{l}\)；周期 \(2l\) 的间断点收敛值同样取左右极限平均。</p>
   <p><strong>③ 与幂级数互补的题眼</strong>："在 \(x=\pi\) 处取值求 \(\sum\frac{(-1)^{n-1}}{n^2}\)"用傅里叶级数；"求 \(\sum\frac{n}{2^n}\)"用幂级数和函数（\(S(x)=\sum nx^n=\frac{x}{(1-x)^2}\) 代 \(x=\frac12\) 得 \(2\)）——两类级数各管一摊，先识别题型再选工具。</p>
 </div></details>
+
+<!-- KB-STATS:BEGIN -->
+<h2 id="12-7-题库视角-高频考点与易错清单">12.7 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="12-7-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<p>本章 245 题，<strong>绝对/条件收敛 16 道、级数性质与必要条件 14 道、比较与比值审敛 11 道</strong>、幂级数收敛半径与和函数 10+ 道。判断敛散是地基，幂级数是主战场，傅里叶只考固定套路。</p>
+<p class="kb-src">题量统计：站内题库共 2730 题（单元小测、教材习题、吉米多维奇精解、真题改编），按知识点打标计数；一道题可能命中多个考点，故各行之和可大于本章题数。</p>
+
+<h3 id="12-7-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="12-7-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>考点</th><th>题量</th><th>常见题型</th><th>拿分关键</th></tr></thead>
+<tbody>
+<tr><td>幂级数展开</td><td class="num">37</td><td>间接展开 e^x、ln(1+x)、1/(1−x)</td><td>用已知展开式 + 逐项求导/积分 + 变量代换，注意成立区间</td></tr>
+<tr><td>和函数与数项级数求和</td><td class="num">33</td><td>求幂级数和函数、求数项级数的和</td><td>先求收敛域，再逐项求导/积分构造已知和函数；数项级数可借幂级数赋值</td></tr>
+<tr><td>正项级数审敛法</td><td class="num">22</td><td>判敛散、含 n!、nⁿ、aⁿ</td><td>先看通项量级：与 1/n^p、qⁿ 比较；含阶乘/幂用比值法</td></tr>
+<tr><td>幂级数的收敛半径与收敛域</td><td class="num">22</td><td>求 R、收敛区间、端点讨论</td><td>R=1/ρ（ρ=lim|a_{n+1}/a_n|）；端点必须单独代入判断</td></tr>
+<tr><td>级数的性质与收敛必要条件</td><td class="num">21</td><td>判断命题真假、利用必要条件否定收敛</td><td>通项不趋于 0 必发散（最常用的否定工具）；收敛级数的线性组合仍收敛</td></tr>
+<tr><td>绝对收敛与条件收敛</td><td class="num">21</td><td>判断收敛类型、含参数 p</td><td>先判 |uₙ| 收敛；绝对收敛必收敛，反之不然</td></tr>
+<tr><td>傅里叶级数</td><td class="num">9</td><td>展开成傅里叶级数、正弦/余弦级数</td><td>周期 2π 用 a₀/2+∑(aₙcos nx+bₙsin nx)；奇延拓得正弦级数</td></tr>
+<tr><td>交错级数与莱布尼茨判别</td><td class="num">6</td><td>∑(−1)ⁿuₙ</td><td>uₙ 单调递减且趋于 0 才收敛；余项 |rₙ|≤u_{n+1}</td></tr>
+</tbody></table></div>
+
+<h3 id="12-7-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="12-7-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<ul>
+<li><strong>拿到级数先看通项</strong> → 通项不趋于 0 → 直接判发散（最快的一步）</li>
+<li><strong>通项含 n!、nⁿ、aⁿ</strong> → 比值法或根值法；含 n 的多项式用比较法</li>
+<li><strong>含 (−1)ⁿ</strong> → 先看绝对收敛；不行再用莱布尼茨（验证单调递减）</li>
+<li><strong>含参数 p、x</strong> → 先在参数范围内判敛散，再讨论端点</li>
+<li><strong>求幂级数和函数</strong> → 求收敛域 → 逐项求导或积分凑成 ∑xⁿ 类 → 求和 → 再还原</li>
+<li><strong>数项级数求和</strong> → 把它看成某个幂级数在 x=x₀ 处的值（如 ∑n/2ⁿ 令 x=1/2）</li>
+</ul>
+
+<h3 id="12-7-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="12-7-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="tscroll"><table>
+<thead><tr><th>易错点</th><th>典型错误做法</th><th>正确做法</th></tr></thead>
+<tbody>
+<tr><td>必要条件当成充分条件</td><td>由 uₙ→0 断言级数收敛</td><td>uₙ→0 只是必要条件；反例：调和级数</td></tr>
+<tr><td>比值法极限为 1 就下结论</td><td>ρ=1 时判收敛</td><td>ρ=1 失效，需改用比较法/积分判别法</td></tr>
+<tr><td>比较法的方向错</td><td>用比已知发散级数还大的级数判收敛</td><td>要收敛需 uₙ≤vₙ 且 ∑vₙ 收敛；要发散需 uₙ≥vₙ 且 ∑vₙ 发散</td></tr>
+<tr><td>莱布尼茨不验证单调</td><td>只看 uₙ→0 就说交错级数收敛</td><td>必须 uₙ 单调递减；可用 u_{n+1}−u_n 或求导判断</td></tr>
+<tr><td>收敛半径与收敛域混淆</td><td>求出 R 就写收敛域 [−R,R]</td><td>端点 x=±R 必须分别代入原级数判敛散</td></tr>
+<tr><td>幂级数逐项求导忘记改收敛域</td><td>求导后仍用原收敛域</td><td>求导/积分后收敛半径不变，但端点敛散可能改变，要重判</td></tr>
+<tr><td>傅里叶系数公式错</td><td>aₙ=(1/π)∫f sin nx dx</td><td>aₙ=(1/π)∫f cos nx dx，bₙ=(1/π)∫f sin nx dx；a₀ 用 (1/π)∫f dx 后再除以 2</td></tr>
+<tr><td>忽略狄利克雷收敛性</td><td>认为傅里叶级数处处等于 f(x)</td><td>间断点处收敛到左右极限的平均值 (f(x⁻)+f(x⁺))/2</td></tr>
+</tbody></table></div>
+<!-- KB-STATS:END -->
