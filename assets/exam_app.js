@@ -70,9 +70,13 @@ function renderMath(el){
   if (window.renderMathInElement) renderMathInElement(el, {
     delimiters:[
       {left:'$$', right:'$$', display:true},
+      {left:'\\[', right:'\\]', display:true},
       {left:'\\(', right:'\\)', display:false}
     ],
-    throwOnError:false
+    throwOnError:false,
+    strict:false,
+    macros:{"\\bm":"\\boldsymbol","\\R":"\\mathbb{R}","\\E":"\\mathbb{E}",
+            "\\arccot":"\\operatorname{arccot}","\\arcsec":"\\operatorname{arcsec}","\\arccsc":"\\operatorname{arccsc}","\\cdotp":"\\cdot"}
   });
 }
 
