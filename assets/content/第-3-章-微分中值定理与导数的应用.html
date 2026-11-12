@@ -5,22 +5,19 @@
 <li>计算与证明双线：计算题（极限、极值、渐近线）按"公式 + 步骤"；证明题按"构造函数 + 套定理 + 验条件"。</li>
 </ul>
 
-<h2 id="3-1-三个中值定理">3.1 三个中值定理<button class="fav" type="button" data-fav="3-1-三个中值定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="3-1-微分中值定理">3.1 微分中值定理<button class="fav" type="button" data-fav="3-1-微分中值定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="3-1-1-罗尔定理">罗尔定理<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-1-1-罗尔定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="3-1-微分中值定理-1-罗尔定理">罗尔定理<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-1-微分中值定理-1-罗尔定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>若 \(f\) 满足：① 在 \([a,b]\) 上连续；② 在 \((a,b)\) 内可导；③ \(f(a)=f(b)\)，则至少存在一点 \(\xi\in(a,b)\)，使 \(f'(\xi)=0\)。</p>
 <div class="fml">$$f\in C[a,b],\ f\ \text{在}\ (a,b)\ \text{内可导},\ f(a)=f(b)\ \Longrightarrow\ \exists\,\xi\in(a,b),\ f'(\xi)=0$$</div>
 <p>几何意义：两端等高的连续光滑曲线，内部必有水平切线。三个条件缺一不可：缺连续（反例 \(y=\mathrm{sgn}\) 型）、缺可导（反例 \(y=|x|\) 在 \([-1,1]\)）、缺 \(f(a)=f(b)\)（反例 \(y=x\)）都可能无水平切线。</p>
-
-<h3 id="3-1-2-拉格朗日中值定理">拉格朗日中值定理<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-1-2-拉格朗日中值定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="3-1-微分中值定理-2-拉格朗日中值定理">拉格朗日中值定理<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-1-微分中值定理-2-拉格朗日中值定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$f(b)-f(a)=f'(\xi)\,(b-a),\qquad \xi\ \text{介于}\ a\ \text{与}\ b\ \text{之间}\quad\text{（也可写作}\ f'(\xi)=\frac{f(b)-f(a)}{b-a}\ \text{）}$$</div>
 <p>几何意义：曲线上必有一点，其切线平行于连接两端点的弦。两个推论常用于证明恒等式：① 若在区间内 \(f'\equiv 0\)，则 \(f\) 为常数；② 若 \(f'\equiv g'\)，则 \(f=g+C\)。</p>
-
-<h3 id="3-1-3-柯西中值定理">柯西中值定理<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-1-3-柯西中值定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="3-1-微分中值定理-3-柯西中值定理">柯西中值定理<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-1-微分中值定理-3-柯西中值定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$F,\ G\ \text{在}\ [a,b]\ \text{连续、在}\ (a,b)\ \text{内可导且}\ G'(t)\ne 0\ \Longrightarrow\ \exists\,\xi\in(a,b):\ \frac{F(b)-F(a)}{G(b)-G(a)}=\frac{F'(\xi)}{G'(\xi)}$$</div>
 <p>注意：对 \(\dfrac{F(b)-F(a)}{G(b)-G(a)}\) 分别用两次拉格朗日得到的 \(\xi\) <strong>不是同一个点</strong>，所以柯西定理不能由两次拉格朗日推出——这正是证明洛必达法则时必须用柯西定理的原因。</p>
-
-<h3 id="3-1-4-证明题套路-构造辅助函数">证明题套路：构造辅助函数<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-1-4-证明题套路-构造辅助函数" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="3-1-微分中值定理-4-证明题套路-构造辅助函数">证明题套路：构造辅助函数<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-1-微分中值定理-4-证明题套路-构造辅助函数" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>中值定理证明题的核心动作是把"要证的结论 \(\varphi(\xi)=0\)"改写为"某个辅助函数 \(F(x)\) 满足 \(F'(\xi)=0\)"。常用对照表：</p>
 <div class="tscroll"><table>
 <thead><tr><th>要证的结论含</th><th>构造的辅助函数</th><th>用的定理</th></tr></thead>
@@ -65,12 +62,11 @@
 
 <h2 id="3-2-洛必达法则">3.2 洛必达法则<button class="fav" type="button" data-fav="3-2-洛必达法则" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="3-2-1-法则的内容与使用条件">法则的内容与使用条件<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-2-1-法则的内容与使用条件" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="3-2-洛必达法则-1-法则的内容与使用条件">法则的内容与使用条件<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-2-洛必达法则-1-法则的内容与使用条件" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>对 \(\dfrac00\) 或 \(\dfrac{\infty}{\infty}\) 型极限，若满足：① 分子分母在 \(x_0\) 的去心邻域（或 \(|x|\) 充分大处）可导且分母导数不为零；② \(\lim\dfrac{f'(x)}{g'(x)}\) 存在（或为 \(\infty\)），则</p>
 <div class="fml">$$\lim\frac{f(x)}{g(x)}=\lim\frac{f'(x)}{g'(x)}\qquad\text{（仅当右边存在或为}\ \infty\ \text{时可用）}$$</div>
 <p>证明思路：对分子分母同加"端点重置"项构造柯西型辅助函数 \(F(t)=f(t)-f(x_0)\)、\(G(t)=g(t)-g(x_0)\)（令 \(x=x_0+\Delta t\to x_0\)），用柯西中值定理即得。洛必达可以连续使用，但<strong>每用一次都要先验证当前是未定式</strong>。</p>
-
-<h3 id="3-2-2-七种未定式的转换">七种未定式的转换<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-2-2-七种未定式的转换" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="3-2-洛必达法则-2-七种未定式的转换">七种未定式的转换<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-2-洛必达法则-2-七种未定式的转换" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>类型</th><th>转换方法</th><th>示例</th></tr></thead>
 <tbody>
@@ -127,11 +123,10 @@
 
 <h2 id="3-3-泰勒公式">3.3 泰勒公式<button class="fav" type="button" data-fav="3-3-泰勒公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="3-3-1-泰勒公式与余项">泰勒公式与余项<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-3-1-泰勒公式与余项" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="3-3-泰勒公式-1-泰勒公式与余项">泰勒公式与余项<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-3-泰勒公式-1-泰勒公式与余项" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$f(x)=\sum_{k=0}^{n}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^{k}+R_n(x)$$</div>
 <p>两种余项：① <strong>拉格朗日余项</strong> \(R_n(x)=\dfrac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}\)（\(\xi\) 介于 \(x_0\) 与 \(x\) 之间），用于误差估计与证明题，要求 \(f\) 有 \(n+1\) 阶导数；② <strong>佩亚诺余项</strong> \(R_n(x)=o\bigl((x-x_0)^{n}\bigr)\)，用于求极限。\(x_0=0\) 时称<strong>麦克劳林公式</strong>。泰勒公式是"等价无穷小的升级版"：展开到更高阶，能处理等价替换失效的加减结构。</p>
-
-<h3 id="3-3-2-常用麦克劳林公式表">常用麦克劳林公式表<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-3-2-常用麦克劳林公式表" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="3-3-泰勒公式-2-常用麦克劳林公式表">常用麦克劳林公式表<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-3-泰勒公式-2-常用麦克劳林公式表" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>函数</th><th>展开式（含佩亚诺余项）</th><th>备注</th></tr></thead>
 <tbody>
@@ -160,13 +155,21 @@
   </div>
 </div>
 
-<h2 id="3-4-函数的单调性与极值">3.4 函数的单调性与极值<button class="fav" type="button" data-fav="3-4-函数的单调性与极值" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="3-4-函数的单调性与曲线的凹凸性">3.4 函数的单调性与曲线的凹凸性<button class="fav" type="button" data-fav="3-4-函数的单调性与曲线的凹凸性" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="3-4-1-单调性的判定">单调性的判定<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-4-1-单调性的判定" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="3-4-函数的单调性与曲线的凹凸性-1-单调性的判定">单调性的判定<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-4-函数的单调性与曲线的凹凸性-1-单调性的判定" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$f'(x)\gt 0\ \text{（在某区间内）}\ \Longrightarrow\ f\ \text{在该区间单调增};\qquad f'(x)\lt 0\ \Longrightarrow\ \text{单调减}$$</div>
 <p>判定步骤：① 确定 \(f\) 的定义域（连续性）；② 解 \(f'(x)=0\) 得<strong>驻点</strong>，并找出不可导点；③ 以这些点分割定义域，列表观察各小区间上 \(f'\) 的符号，得单调区间。个别点处 \(f'=0\) 或不存在不影响整体单调性（如 \(y=x^{3}\) 在 \(0\) 处 \(f'=0\) 但单调增）。</p>
+<h3 id="3-4-函数的单调性与曲线的凹凸性-2-凹凸性与拐点">凹凸性与拐点<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-4-函数的单调性与曲线的凹凸性-2-凹凸性与拐点" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$f''(x)\gt 0\ \text{的区间上曲线是凹的（下凸，如}\ y=x^{2}\ \text{）；}\quad f''(x)\lt 0\ \text{的区间上曲线是凸的（如}\ y=x^{3}\ \text{前段）}$$</div>
+<ul>
+<li><strong>凹（下凸）</strong>：弦在弧上方 / 切线在曲线下方，\(f'\) 单调增；<strong>凸</strong>：相反，\(f'\) 单调减。同济教材的"凹"即"下凸"（碗形）。</li>
+<li><strong>拐点</strong>：凹凸性发生改变的点 \((x_0,f(x_0))\)。必要条件：\(f''(x_0)=0\) 或 \(f''\) 不存在；充分条件：\(f''\) 在 \(x_0\) 两侧<strong>变号</strong>。注意拐点是曲线上的点 \((x_0,y_0)\)，不是横坐标。</li>
+</ul>
 
-<h3 id="3-4-2-极值的必要条件与充分条件">极值的必要条件与充分条件<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-4-2-极值的必要条件与充分条件" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h2 id="3-5-函数的极值与最大值最小值">3.5 函数的极值与最大值最小值<button class="fav" type="button" data-fav="3-5-函数的极值与最大值最小值" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="3-5-函数的极值与最大值最小值-1-极值的必要条件与充分条件">极值的必要条件与充分条件<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-5-函数的极值与最大值最小值-1-极值的必要条件与充分条件" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <ul>
 <li><strong>必要条件（费马定理）</strong>：可导点取极值 \(\Rightarrow f'(x_0)=0\)（驻点）。但驻点未必是极值点（\(y=x^{3}\) 在 \(0\)），且<strong>极值点也可能是不可导点</strong>（\(y=|x|\) 在 \(0\)）。</li>
 <li><strong>第一充分条件</strong>：\(f'\) 在 \(x_0\) 两侧变号即取极值（左正右负取极大，左负右正取极小）。</li>
@@ -192,17 +195,20 @@
     </div></details>
   </div>
 </div>
+<h3 id="3-5-函数的极值与最大值最小值-2-最大值最小值问题">最大值最小值问题<span class="rkchip rk-def">方法</span><button class="fav" type="button" data-fav="3-5-函数的极值与最大值最小值-2-最大值最小值问题" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>闭区间 \([a,b]\) 上的连续函数必有最大值与最小值，候选点只有三类：<strong>驻点（\(f'=0\)）、不可导点、区间端点</strong>。逐年比较函数值即可。</p>
+<div class="tscroll"><table>
+<thead><tr><th>题型</th><th>做法</th></tr></thead>
+<tbody>
+<tr><td>闭区间求最值</td><td>列出全部候选点，比较 \(f\) 值，最大的即最大值</td></tr>
+<tr><td>开区间 / 无穷区间</td><td>先看单调性与两端趋势，唯一极值点即为最值点</td></tr>
+<tr><td>实际应用题</td><td>建模写目标函数 → 求驻点 → 用实际意义判断（往往唯一驻点即最优）</td></tr>
+</tbody></table></div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>极值 ≠ 最值</strong>：极值是局部概念，可能有多个；最值是整体概念，唯一。只求驻点不看端点，是最常见的失分点。</p></blockquote>
 
-<h2 id="3-5-曲线的凹凸拐点与渐近线">3.5 曲线的凹凸、拐点与渐近线<button class="fav" type="button" data-fav="3-5-曲线的凹凸拐点与渐近线" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="3-6-函数图形的描绘">3.6 函数图形的描绘<button class="fav" type="button" data-fav="3-6-函数图形的描绘" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="3-5-1-凹凸性与拐点">凹凸性与拐点<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-5-1-凹凸性与拐点" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
-<div class="fml">$$f''(x)\gt 0\ \text{的区间上曲线是凹的（下凸，如}\ y=x^{2}\ \text{）；}\quad f''(x)\lt 0\ \text{的区间上曲线是凸的（如}\ y=x^{3}\ \text{前段）}$$</div>
-<ul>
-<li><strong>凹（下凸）</strong>：弦在弧上方 / 切线在曲线下方，\(f'\) 单调增；<strong>凸</strong>：相反，\(f'\) 单调减。同济教材的"凹"即"下凸"（碗形）。</li>
-<li><strong>拐点</strong>：凹凸性发生改变的点 \((x_0,f(x_0))\)。必要条件：\(f''(x_0)=0\) 或 \(f''\) 不存在；充分条件：\(f''\) 在 \(x_0\) 两侧<strong>变号</strong>。注意拐点是曲线上的点 \((x_0,y_0)\)，不是横坐标。</li>
-</ul>
-
-<h3 id="3-5-2-渐近线">渐近线<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-5-2-渐近线" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="3-6-函数图形的描绘-1-渐近线">渐近线<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-6-函数图形的描绘-1-渐近线" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>类型</th><th>判定</th><th>求法</th></tr></thead>
 <tbody>
@@ -225,14 +231,23 @@
     </div></details>
   </div>
 </div>
+<h3 id="3-6-函数图形的描绘-2-作图步骤">作图步骤<span class="rkchip rk-def">方法</span><button class="fav" type="button" data-fav="3-6-函数图形的描绘-2-作图步骤" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>描点作图靠不住，标准流程是"先分析、后作图"：</p>
+<ol>
+<li><strong>定义域与基本性质</strong>：定义域、奇偶性、周期性、与坐标轴的交点。</li>
+<li><strong>一阶导</strong>：定出单调区间与极值点，列表标 ↗ / ↘。</li>
+<li><strong>二阶导</strong>：定出凹凸区间与拐点，列表标 ⌣ / ⌢。</li>
+<li><strong>渐近线</strong>：水平（\(x\to\pm\infty\)）、铅直（\(f\to\infty\) 处）、斜渐近线 \(y=kx+b\)，其中 \(k=\lim\dfrac{f(x)}{x},\ b=\lim[f(x)-kx]\)。</li>
+<li><strong>描点连线</strong>：把极值点、拐点、截距、渐近线画上，按单调与凹凸趋势连接。</li>
+</ol>
+<blockquote class="callout c-note"><p><span class="badge b-hot">高频考点</span> 斜渐近线要<strong>先算 \(k\) 再算 \(b\)</strong>，且 \(x\to+\infty\) 与 \(x\to-\infty\) 要分别讨论——两侧的 \(k\) 可能不同（如 \(y=x+\arctan x\) 只有水平方向不同、无斜渐近线）。</p></blockquote>
 
-<h2 id="3-6-曲率">3.6 曲率<button class="fav" type="button" data-fav="3-6-曲率" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="3-7-曲率">3.7 曲率<button class="fav" type="button" data-fav="3-7-曲率" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="3-6-1-弧微分">弧微分<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-6-1-弧微分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="3-7-曲率-1-弧微分">弧微分<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="3-7-曲率-1-弧微分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>曲线弧长函数 \(s(x)\) 的微分为<strong>弧微分</strong>，由"以直代曲"（微小弧段用弦近似，勾股定理）得：</p>
 <div class="fml">$$\mathrm ds=\sqrt{1+(y')^{2}}\,\mathrm dx\qquad\text{参数式：}\ \mathrm ds=\sqrt{\bigl(\varphi'(t)\bigr)^{2}+\bigl(\psi'(t)\bigr)^{2}}\,\mathrm dt$$</div>
-
-<h3 id="3-6-2-曲率及其计算公式">曲率及其计算公式<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-6-2-曲率及其计算公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="3-7-曲率-2-曲率及其计算公式">曲率及其计算公式<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-7-曲率-2-曲率及其计算公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>曲率 \(K\) 刻画曲线的弯曲程度：单位弧长上切线转过的角度的极限。由 \(\mathrm d\alpha=\dfrac{y''}{1+y'^{2}}\mathrm dx\)（\(\alpha=\arctan y'\) 求微分）与 \(\mathrm ds=\sqrt{1+y'^{2}}\,\mathrm dx\) 相除：</p>
 <div class="fml">$$K=\left|\frac{\mathrm d\alpha}{\mathrm ds}\right|=\frac{|y''|}{\left(1+(y')^{2}\right)^{3/2}}\qquad\text{参数式：}\ K=\frac{\left|\varphi'\psi''-\varphi''\psi'\right|}{\left((\varphi')^{2}+(\psi')^{2}\right)^{3/2}}$$</div>
 <ul>
@@ -261,12 +276,49 @@
   <p><strong>③ 渐近线条数速查</strong>：\(y=\dfrac{x^{2}}{x-1}\) 有 2 条（垂直 + 斜）；\(y=\mathrm e^{1/x}\) 有 2 条水平（\(x\to\pm\infty\) 各一条：\(y=1\)）加上 \(x=0\) 一条垂直；求渐近线必先列定义域再看各方向极限，缺一方向就少答。</p>
 </div></details>
 
+<h2 id="3-8-方程的近似解">3.8 方程的近似解<button class="fav" type="button" data-fav="3-8-方程的近似解" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<p>大多数方程没有求根公式，只能用数值方法逼近。考点集中在三种方法的<strong>条件、迭代式与误差估计</strong>，计算量不大但要写清依据。</p>
+<h3 id="3-8-方程的近似解-1-二分法">二分法<span class="rkchip rk-def">方法</span><button class="fav" type="button" data-fav="3-8-方程的近似解-1-二分法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>若 \(f\in C[a,b]\) 且 \(f(a)f(b)\lt 0\)，则 \((a,b)\) 内至少有一个根。反复取中点并保留异号的一半：</p>
+<div class="fml">$$c_n=\frac{a_n+b_n}{2},\qquad |x^{*}-c_n|\le\frac{b-a}{2^{n}}$$</div>
+<p>优点：只要端点异号必定收敛；缺点：收敛慢（每步误差减半，约 3.3 步得一位十进制）。</p>
+<div class="ex">
+  <div class="ex-h"><span class="no">例</span>二分法求根到 0.01</div>
+  <div class="ex-b">
+    <p>求 \(x^{3}-x-1=0\) 在 \([1,\,1.5]\) 内的近似根，精确到 \(0.01\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(f(1)=-1\lt 0,\ f(1.5)=0.875\gt 0\)，端点异号。依次取中点：\(1.25\to-0.297\)；\(1.375\to0.225\)；\(1.3125\to-0.052\)；\(1.34375\to0.083\)；\(1.328\to0.015\)；\(1.320\to-0.019\)；\(1.324\to-0.002\)。</p>
+      <p>区间长度已小于 \(0.01\)，取 \(x\approx 1.32\)（真值 \(1.3247\)）。</p>
+    </div></details>
+  </div>
+</div>
+<h3 id="3-8-方程的近似解-2-切线法-牛顿法">切线法（牛顿法）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-8-方程的近似解-2-切线法-牛顿法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>用过点 \((x_n,f(x_n))\) 的切线与 \(x\) 轴的交点作为下一次近似：</p>
+<div class="fml">$$x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}$$</div>
+<p>收敛条件：\(f'\)、\(f''\) 在区间上不变号，且初值取使 \(f(x_0)f''(x_0)\gt 0\) 的那个端点。满足时二阶收敛（误差约平方递减），比二分法快得多。</p>
+<div class="ex">
+  <div class="ex-h"><span class="no">例</span>牛顿法解 \(x^{3}-x-1=0\)</div>
+  <div class="ex-b">
+    <p>取 \(x_0=1.5\)，迭代 \(x_{n+1}=x_n-\dfrac{x_n^{3}-x_n-1}{3x_n^{2}-1}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(x_1=1.3478,\ x_2=1.3252,\ x_3=1.32472\)。三步就到六位有效数字，对比二分法七步才两位。</p>
+      <p>此处 \(f'(x)=3x^{2}-1\gt 0\)、\(f''(x)=6x\gt 0\)（\(x\gt 1/\sqrt3\)），\(f(1.5)\gt 0\)，初值符合 \(f f''\gt 0\)。</p>
+    </div></details>
+  </div>
+</div>
+<h3 id="3-8-方程的近似解-3-割线法-弦截法">割线法（弦截法）<span class="rkchip rk-def">方法</span><button class="fav" type="button" data-fav="3-8-方程的近似解-3-割线法-弦截法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>用两点连线（割线）代替切线，免去求导：</p>
+<div class="fml">$$x_{n+1}=x_n-\frac{f(x_n)\,(x_n-x_{n-1})}{f(x_n)-f(x_{n-1})}$$</div>
+<p>需要两个初值 \(x_0,x_1\)，收敛阶约 1.618（超线性），介于二分法与牛顿法之间。函数复杂、导数难算时优先用它。</p>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① 二分法之前必须验证 \(f(a)f(b)\lt 0\)，否则可能根本没有根。② 牛顿法的初值不能随便取，取错会发散或跳到别的根。③ 终止判据要写清楚：\(|x_n-x_{n-1}|\lt\varepsilon\) 只说明"走得慢"，必要时同时用 \(|f(x_n)|\lt\varepsilon\)。</p></blockquote>
+
 <!-- KB-STATS:BEGIN -->
-<h2 id="3-7-题库视角-高频考点与易错清单">3.7 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="3-7-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="3-9-题库视角-高频考点与易错清单">3.9 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="3-9-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 <p>本章 290 题，是<strong>全书题量最多</strong>的章节，其中证明题 86 道。洛必达（各型合计 20+）、泰勒、单调性证不等式、拐点与图形描绘构成四大主力；考研式「构造辅助函数」题几乎都在这里。</p>
 <p class="kb-src">题量统计：站内题库共 2730 题（单元小测、教材习题、吉米多维奇精解、真题改编），按知识点打标计数；一道题可能命中多个考点，故各行之和可大于本章题数。</p>
 
-<h3 id="3-7-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-7-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="3-9-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="3-9-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>考点</th><th>题量</th><th>常见题型</th><th>拿分关键</th></tr></thead>
 <tbody>
@@ -280,7 +332,7 @@
 <tr><td>拉格朗日与柯西中值定理</td><td class="num">16</td><td>双中值、比值型结论</td><td>出现两个函数或两个 ξ 用柯西；结论含 (b−a) 用拉格朗日</td></tr>
 </tbody></table></div>
 
-<h3 id="3-7-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="3-7-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="3-9-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="3-9-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <ul>
 <li><strong>要证存在 ξ 使含 f、f' 的等式成立</strong> → 把 ξ 换成 x，移项成「某函数导数为 0」，反推辅助函数后用罗尔</li>
 <li><strong>要证不等式且两边都是函数</strong> → 移项作差 → 求导判单调 → 用端点值定号；一阶不够就二阶</li>
@@ -290,7 +342,7 @@
 <li><strong>求最值的应用题</strong> → 写出目标函数 → 定义域 → 求驻点 → 比较端点/不可导点 → 回答实际问题</li>
 </ul>
 
-<h3 id="3-7-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="3-7-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="3-9-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="3-9-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>易错点</th><th>典型错误做法</th><th>正确做法</th></tr></thead>
 <tbody>

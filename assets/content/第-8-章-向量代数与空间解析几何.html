@@ -3,14 +3,13 @@
 
 <h2 id="8-1-向量及其线性运算">8.1 向量及其线性运算<button class="fav" type="button" data-fav="8-1-向量及其线性运算" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="8-1-1-向量概念与坐标表示">向量概念与坐标表示<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="8-1-1-向量概念与坐标表示" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="8-1-向量及其线性运算-1-向量概念与坐标表示">向量概念与坐标表示<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="8-1-向量及其线性运算-1-向量概念与坐标表示" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>既有大小又有方向的量称为<strong>向量</strong>，记作 \(\vec{a}\) 或 \(\overrightarrow{AB}\)；大小（长度）称为<strong>模</strong>，记 \(|\vec{a}|\)。模等于 1 的向量叫<strong>单位向量</strong>；模为 0 叫零向量（方向任意）。向量相等只看<strong>大小和方向</strong>，与起点无关（自由向量）。</p>
 <div class="fml">$$\vec{a}=(a_x,a_y,a_z)=a_x\vec{i}+a_y\vec{j}+a_z\vec{k},\qquad |\vec{a}|=\sqrt{a_x^2+a_y^2+a_z^2}$$
 $$\text{方向余弦：}\ \cos\alpha=\frac{a_x}{|\vec{a}|},\ \cos\beta=\frac{a_y}{|\vec{a}|},\ \cos\gamma=\frac{a_z}{|\vec{a}|},\qquad \cos^2\alpha+\cos^2\beta+\cos^2\gamma=1$$
 $$\text{与 }\vec{a}\text{ 同向的单位向量：}\ \vec{e}_{\vec a}=\frac{\vec{a}}{|\vec{a}|}=(\cos\alpha,\cos\beta,\cos\gamma)$$</div>
 <p>两点间向量：起点 \(M_1(x_1,y_1,z_1)\)、终点 \(M_2(x_2,y_2,z_2)\)，则 \(\overrightarrow{M_1M_2}=(x_2-x_1,\,y_2-y_1,\,z_2-z_1)\)。<strong>投影</strong>：\(\mathrm{Prj}_{\vec b}\vec a=|\vec a|\cos\theta\)（\(\theta\) 为夹角），且 \(\mathrm{Prj}_{\vec b}\vec a=(\vec a\cdot\vec e_{\vec b})\)。</p>
-
-<h3 id="8-1-2-线性运算的坐标化">线性运算的坐标化<span class="rkchip rk-def">规则</span><button class="fav" type="button" data-fav="8-1-2-线性运算的坐标化" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="8-1-向量及其线性运算-2-线性运算的坐标化">线性运算的坐标化<span class="rkchip rk-def">规则</span><button class="fav" type="button" data-fav="8-1-向量及其线性运算-2-线性运算的坐标化" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>运算</th><th>坐标公式</th><th>几何意义</th></tr></thead>
 <tbody>
@@ -33,19 +32,17 @@ $$\text{与 }\vec{a}\text{ 同向的单位向量：}\ \vec{e}_{\vec a}=\frac{\ve
   </div>
 </div>
 
-<h2 id="8-2-数量积向量积与混合积">8.2 数量积、向量积与混合积<button class="fav" type="button" data-fav="8-2-数量积向量积与混合积" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="8-2-数量积-向量积-混合积">8.2 数量积 向量积 混合积<button class="fav" type="button" data-fav="8-2-数量积-向量积-混合积" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="8-2-1-数量积">数量积（点积）<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="8-2-1-数量积" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="8-2-数量积-向量积-混合积-1-数量积-点积">数量积（点积）<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="8-2-数量积-向量积-混合积-1-数量积-点积" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$\vec a\cdot\vec b=|\vec a||\vec b|\cos\theta=a_xb_x+a_yb_y+a_zb_z\qquad(\theta\text{ 为夹角，}0\le\theta\le\pi)$$
 $$\cos\theta=\frac{\vec a\cdot\vec b}{|\vec a||\vec b|},\qquad \vec a\cdot\vec a=|\vec a|^2,\qquad \vec a\perp\vec b\iff\vec a\cdot\vec b=0$$</div>
 <p>几何意义：\(\vec a\cdot\vec b\) 等于 \(\vec a\) 在 \(\vec b\) 方向上的投影与 \(|\vec b|\) 的乘积，本质是"功"的抽象。满足交换律与分配律，但<strong>结果是数</strong>，不是向量。</p>
-
-<h3 id="8-2-2-向量积">向量积（叉积）<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="8-2-2-向量积" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="8-2-数量积-向量积-混合积-2-向量积-叉积">向量积（叉积）<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="8-2-数量积-向量积-混合积-2-向量积-叉积" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$\vec a\times\vec b=\begin{vmatrix}\vec i&\vec j&\vec k\\a_x&a_y&a_z\\b_x&b_y&b_z\end{vmatrix}=\bigl(a_yb_z-a_zb_y,\ a_zb_x-a_xb_z,\ a_xb_y-a_yb_x\bigr)$$
 $$|\vec a\times\vec b|=|\vec a||\vec b|\sin\theta\ \ (\text{= 以 }\vec a,\vec b\text{ 为邻边的平行四边形面积})$$</div>
 <p>方向：<strong>右手系</strong>——右手四指从 \(\vec a\) 转向 \(\vec b\)，拇指指向 \(\vec a\times\vec b\)。性质：\(\vec a\times\vec b\perp\vec a,\ \vec a\times\vec b\perp\vec b\)；\(\vec a\times\vec b=-\vec b\times\vec a\)（<strong>反交换</strong>，故不满足结合律的习惯）；\(\vec a\parallel\vec b\iff\vec a\times\vec b=\vec 0\)。</p>
-
-<h3 id="8-2-3-混合积">混合积<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="8-2-3-混合积" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="8-2-数量积-向量积-混合积-3-混合积">混合积<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="8-2-数量积-向量积-混合积-3-混合积" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$[\vec a\ \vec b\ \vec c]=(\vec a\times\vec b)\cdot\vec c=\begin{vmatrix}a_x&a_y&a_z\\b_x&b_y&b_z\\c_x&c_y&c_z\end{vmatrix}$$</div>
 <p>几何意义：\(\left|[\vec a\ \vec b\ \vec c]\right|\) 等于以三向量为棱的<strong>平行六面体体积</strong>；因此</p>
 <div class="fml">$$\vec a,\vec b,\vec c\ \text{共面}\iff[\vec a\ \vec b\ \vec c]=0,\qquad [\vec a\ \vec b\ \vec c]&gt;0\ \text{时} (\vec a,\vec b,\vec c)\text{ 构成右手系}$$</div>
@@ -89,7 +86,7 @@ $$|\vec a\times\vec b|=|\vec a||\vec b|\sin\theta\ \ (\text{= 以 }\vec a,\vec b
 
 <h2 id="8-3-平面及其方程">8.3 平面及其方程<button class="fav" type="button" data-fav="8-3-平面及其方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="8-3-1-平面的三种方程">平面的三种方程<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="8-3-1-平面的三种方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="8-3-平面及其方程-1-平面的三种方程">平面的三种方程<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="8-3-平面及其方程-1-平面的三种方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p><strong>法向量</strong>：与平面垂直的任何非零向量 \(\vec n=(A,B,C)\)。确定一个平面只需"<strong>一点 + 一法向量</strong>"。</p>
 <div class="fml">$$\text{点法式：}\ A(x-x_0)+B(y-y_0)+C(z-z_0)=0$$
 $$\text{一般式：}\ Ax+By+Cz+D=0\ \ (\vec n=(A,B,C)\ \text{即 }x\text{ 的系数})$$
@@ -102,8 +99,7 @@ $$\text{截距式：}\ \frac{x}{a}+\frac{y}{b}+\frac{z}{c}=1\ \ (a,b,c\ \text{�
 <tr><td>缺 \(A\) 且缺 \(D\)</td><td>过 \(x\) 轴</td></tr>
 <tr><td>缺 \(A,B\)</td><td>平行于 \(xOy\) 面（即 \(z=\) 常数）</td></tr>
 </tbody></table></div>
-
-<h3 id="8-3-2-两平面的夹角与点到平面的距离">两平面的夹角与点到平面的距离<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="8-3-2-两平面的夹角与点到平面的距离" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="8-3-平面及其方程-2-两平面的夹角与点到平面的距离">两平面的夹角与点到平面的距离<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="8-3-平面及其方程-2-两平面的夹角与点到平面的距离" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$\cos\theta=\frac{|A_1A_2+B_1B_2+C_1C_2|}{\sqrt{A_1^2+B_1^2+C_1^2}\sqrt{A_2^2+B_2^2+C_2^2}}\quad(\theta\in[0,\pi/2]\ \text{为两平面夹角})$$
 $$\pi_1\parallel\pi_2\iff\frac{A_1}{A_2}=\frac{B_1}{B_2}=\frac{C_1}{C_2}(\ne\frac{D_1}{D_2}),\qquad \pi_1\perp\pi_2\iff A_1A_2+B_1B_2+C_1C_2=0$$
 $$\text{点到平面距离：}\ d=\frac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$$</div>
@@ -125,14 +121,13 @@ $$\text{点到平面距离：}\ d=\frac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}$
 
 <h2 id="8-4-空间直线及其方程">8.4 空间直线及其方程<button class="fav" type="button" data-fav="8-4-空间直线及其方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="8-4-1-直线的三种方程">直线的三种方程<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="8-4-1-直线的三种方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="8-4-空间直线及其方程-1-直线的三种方程">直线的三种方程<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="8-4-空间直线及其方程-1-直线的三种方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p><strong>方向向量</strong>：与直线平行的非零向量 \(\vec s=(m,n,p)\)。确定一条直线只需"<strong>一点 + 一方向向量</strong>"。</p>
 <div class="fml">$$\text{对称式（点向式）：}\ \frac{x-x_0}{m}=\frac{y-y_0}{n}=\frac{z-z_0}{p}$$
 $$\text{参数式：}\ x=x_0+mt,\ y=y_0+nt,\ z=z_0+pt\quad(t\in\R)$$
 $$\text{一般式（两平面交线）：}\ \begin{cases}A_1x+B_1y+C_1z+D_1=0\\ A_2x+B_2y+C_2z+D_2=0\end{cases},\qquad \vec s=\vec n_1\times\vec n_2$$</div>
 <p>对称式中分母可为 0：约定 \(m=0\) 表示 \(x-x_0=0\)（分子也为 0），不是除以零。</p>
-
-<h3 id="8-4-2-线线、线面的位置关系">线线、线面的位置关系<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="8-4-2-线线、线面的位置关系" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="8-4-空间直线及其方程-2-线线-线面的位置关系">线线、线面的位置关系<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="8-4-空间直线及其方程-2-线线-线面的位置关系" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>关系</th><th>判别条件</th><th>夹角公式</th></tr></thead>
 <tbody>
@@ -176,14 +171,13 @@ $$\text{一般式（两平面交线）：}\ \begin{cases}A_1x+B_1y+C_1z+D_1=0\\ 
 <p><strong>③ 两直线共面条件</strong>：三向量 \(\vec s_1,\vec s_2,\overrightarrow{M_1M_2}\) 的混合积为零则两直线共面（可能相交或平行），否则为异面直线。</p>
 </div></details>
 
-<h2 id="8-5-曲面与空间曲线">8.5 曲面与空间曲线<button class="fav" type="button" data-fav="8-5-曲面与空间曲线" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="8-5-曲面及其方程">8.5 曲面及其方程<button class="fav" type="button" data-fav="8-5-曲面及其方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="8-5-1-球面、柱面与旋转曲面">球面、柱面与旋转曲面<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="8-5-1-球面、柱面与旋转曲面" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="8-5-曲面及其方程-1-球面-柱面与旋转曲面">球面、柱面与旋转曲面<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="8-5-曲面及其方程-1-球面-柱面与旋转曲面" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$\text{球面：}\ (x-a)^2+(y-b)^2+(z-c)^2=R^2\ \Longleftrightarrow\ x^2+y^2+z^2-2ax-2by-2cz+(a^2+b^2+c^2-R^2)=0$$
 $$\text{旋转曲面：}\ yOz\ \text{面曲线 } f(y,z)=0\ \begin{cases}\text{绕 }z\ \text{轴旋转：} f\bigl(\pm\sqrt{x^2+y^2},\ z\bigr)=0\\[2pt] \text{绕 }y\ \text{轴旋转：} f\bigl(y,\ \pm\sqrt{x^2+z^2}\bigr)=0\end{cases}$$</div>
 <p>旋转法则："绕谁转谁不变，另一个变量换成 \(\pm\sqrt{\text{另两变量平方和}}\)"。<strong>柱面</strong>：方程缺哪个变量，母线就平行于哪条坐标轴，如 \(x^2+y^2=R^2\) 是母线平行于 \(z\) 轴的圆柱面，\(z=y^2\) 是母线平行于 \(x\) 轴的抛物柱面。</p>
-
-<h3 id="8-5-2-常见二次曲面">常见二次曲面<span class="rkchip rk-def">标准方程</span><button class="fav" type="button" data-fav="8-5-2-常见二次曲面" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="8-5-曲面及其方程-2-常见二次曲面">常见二次曲面<span class="rkchip rk-def">标准方程</span><button class="fav" type="button" data-fav="8-5-曲面及其方程-2-常见二次曲面" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>曲面</th><th>标准方程</th><th>识别要点</th></tr></thead>
 <tbody>
@@ -194,7 +188,9 @@ $$\text{旋转曲面：}\ yOz\ \text{面曲线 } f(y,z)=0\ \begin{cases}\text{�
 <tr><td>二次锥面</td><td>\(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=\dfrac{z^2}{c^2}\)</td><td>右端为 0，齐次二次</td></tr>
 </tbody></table></div>
 
-<h3 id="8-5-3-空间曲线与投影曲线">空间曲线与投影曲线<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="8-5-3-空间曲线与投影曲线" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h2 id="8-6-空间曲线及其方程">8.6 空间曲线及其方程<button class="fav" type="button" data-fav="8-6-空间曲线及其方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="8-6-空间曲线及其方程-1-空间曲线与投影曲线">空间曲线与投影曲线<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="8-6-空间曲线及其方程-1-空间曲线与投影曲线" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>空间曲线可用两曲面方程联立 \(\begin{cases}F(x,y,z)=0\\ G(x,y,z)=0\end{cases}\) 或参数式表示。<strong>投影曲线求法（两步）</strong>：① 从联立方程中<strong>消去 \(z\)</strong>，得 \(\varphi(x,y)=0\)——过曲线、母线平行 \(z\) 轴的<strong>投影柱面</strong>；② 与 \(z=0\) 联立得 \(\begin{cases}\varphi(x,y)=0\\ z=0\end{cases}\)，即曲线在 \(xOy\) 面上的投影。消去其他变量的投影同理。</p>
 <blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> <strong>投影柱面 vs 投影曲线</strong>：\(\varphi(x,y)=0\) 本身在空间中是柱面，必须配 \(z=0\) 才是投影曲线；答题漏写 \(z=0\) 是最常见的扣分点。消元时注意平方项要用<strong>恒等变形</strong>（配平方差）而非开方，保持方程准确。多元积分的积分区域确定也靠"先投影"思想，本章是后继内容的工具。</p></blockquote>
 
@@ -233,11 +229,11 @@ $$\text{旋转曲面：}\ yOz\ \text{面曲线 } f(y,z)=0\ \begin{cases}\text{�
 </div></details>
 
 <!-- KB-STATS:BEGIN -->
-<h2 id="8-6-题库视角-高频考点与易错清单">8.6 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="8-6-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="8-7-题库视角-高频考点与易错清单">8.7 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="8-7-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 <p>本章 196 题，<strong>计算量大、思路固定</strong>：平面方程 5 道、点到平面/直线距离各 4 道、向量夹角与投影各 4 道、旋转曲面 4 道。绝大多数题只需「找点 + 找法向量/方向向量」两步。</p>
 <p class="kb-src">题量统计：站内题库共 2730 题（单元小测、教材习题、吉米多维奇精解、真题改编），按知识点打标计数；一道题可能命中多个考点，故各行之和可大于本章题数。</p>
 
-<h3 id="8-6-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="8-6-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="8-7-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="8-7-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>考点</th><th>题量</th><th>常见题型</th><th>拿分关键</th></tr></thead>
 <tbody>
@@ -251,7 +247,7 @@ $$\text{旋转曲面：}\ yOz\ \text{面曲线 } f(y,z)=0\ \begin{cases}\text{�
 <tr><td>距离与夹角计算</td><td class="num">14</td><td>点到平面/点到直线/异面直线距离</td><td>点到面 d=|Ax₀+By₀+Cz₀+D|/√(A²+B²+C²)；异面直线用混合积除以 |s₁×s₂|</td></tr>
 </tbody></table></div>
 
-<h3 id="8-6-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="8-6-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="8-7-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="8-7-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <ul>
 <li><strong>求平面</strong> → 找一个点 + 一个法向量；法向量常由平面内两个向量叉积得到</li>
 <li><strong>求直线</strong> → 找一个点 + 方向向量；两平面交线的方向向量 = n₁×n₂</li>
@@ -261,7 +257,7 @@ $$\text{旋转曲面：}\ yOz\ \text{面曲线 } f(y,z)=0\ \begin{cases}\text{�
 <li><strong>曲线在坐标面的投影</strong> → 消去对应变量得投影柱面，再令该坐标为 0</li>
 </ul>
 
-<h3 id="8-6-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="8-6-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="8-7-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="8-7-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>易错点</th><th>典型错误做法</th><th>正确做法</th></tr></thead>
 <tbody>

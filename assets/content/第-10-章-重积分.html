@@ -11,12 +11,11 @@
 
 <h2 id="10-1-二重积分的概念与性质">10.1 二重积分的概念与性质<button class="fav" type="button" data-fav="10-1-二重积分的概念与性质" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="10-1-1-二重积分的定义">二重积分的定义<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="10-1-1-二重积分的定义" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="10-1-二重积分的概念与性质-1-二重积分的定义">二重积分的定义<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="10-1-二重积分的概念与性质-1-二重积分的定义" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>设 \(f(x,y)\) 是有界闭区域 \(D\) 上的有界函数。将 \(D\) 任意分成 \(n\) 个小闭区域 \(\Delta\sigma_i\)（其面积也记作 \(\Delta\sigma_i\)），在每个 \(\Delta\sigma_i\) 上任取一点 \((\xi_i,\eta_i)\)，作乘积 \(f(\xi_i,\eta_i)\Delta\sigma_i\) 并求和。若当各小区域直径的最大值 \(\lambda\to 0\) 时该和式的极限存在，且极限值与分法、取点方式无关，则称 \(f\) 在 \(D\) 上<strong>可积</strong>，极限值称为<strong>二重积分</strong>：</p>
 <div class="fml">$$\iint_D f(x,y)\,\mathrm{d}\sigma=\lim_{\lambda\to 0}\sum_{i=1}^{n}f(\xi_i,\eta_i)\,\Delta\sigma_i$$</div>
 <p>其中 \(\mathrm{d}\sigma\) 称为面积元素。在直角坐标系中 \(\mathrm{d}\sigma=\mathrm{d}x\,\mathrm{d}y\)，故 \(\iint_D f\,\mathrm{d}x\,\mathrm{d}y\) 与 \(\iint_D f\,\mathrm{d}\sigma\) 是同一积分的两种记法。<strong>可积性充分条件</strong>：\(f\) 在有界闭区域 \(D\) 上连续，则必可积。</p>
-
-<h3 id="10-1-2-几何意义与基本性质">几何意义与基本性质<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-1-2-几何意义与基本性质" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="10-1-二重积分的概念与性质-2-几何意义与基本性质">几何意义与基本性质<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-1-二重积分的概念与性质-2-几何意义与基本性质" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <ul>
 <li><strong>几何意义</strong>：当 \(f\ge 0\) 时，\(\iint_D f\,\mathrm{d}\sigma\) 等于以 \(D\) 为底、以曲面 \(z=f(x,y)\) 为顶的<strong>曲顶柱体体积</strong>；当 \(f\lt 0\) 时体积带负号；\(f\equiv 1\) 时积分值就是 \(D\) 的面积 \(\sigma(D)\)。</li>
 <li><strong>基本性质</strong>（与定积分性质平行）：线性性；对区域的可加性（\(D=D_1\cup D_2\)，内部不重叠）；若在 \(D\) 上 \(f\le g\)，则 \(\iint_D f\,\mathrm{d}\sigma\le\iint_D g\,\mathrm{d}\sigma\)（保序性）；\(\left|\iint_D f\,\mathrm{d}\sigma\right|\le\iint_D|f|\,\mathrm{d}\sigma\)。</li>
@@ -39,7 +38,7 @@
 
 <h2 id="10-2-二重积分的计算法">10.2 二重积分的计算法<button class="fav" type="button" data-fav="10-2-二重积分的计算法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="10-2-1-直角坐标法与交换积分次序">直角坐标法与交换积分次序<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-2-1-直角坐标法与交换积分次序" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="10-2-二重积分的计算法-1-直角坐标法与交换积分次序">直角坐标法与交换积分次序<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-2-二重积分的计算法-1-直角坐标法与交换积分次序" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p><strong>X 型区域</strong> \(D:\ a\le x\le b,\ \varphi_1(x)\le y\le\varphi_2(x)\)（穿线法：平行于 \(y\) 轴的直线穿 \(D\)，下边界为下限、上边界为上限）：</p>
 <div class="fml">$$\iint_D f(x,y)\,\mathrm{d}x\mathrm{d}y=\int_a^b\mathrm{d}x\int_{\varphi_1(x)}^{\varphi_2(x)}f(x,y)\,\mathrm{d}y$$</div>
 <p><strong>Y 型区域</strong> \(D:\ c\le y\le \mathrm{d},\ \psi_1(y)\le x\le\psi_2(y)\) 同理，先对 \(x\) 积分。定限口诀：<strong>"后积先定限，限内画条线；先交写下限，后交写上限"</strong>——即先对哪后一个变量定常区间，再对先积的变量用边界函数定限。</p>
@@ -55,8 +54,7 @@
   </div>
 </div>
 <blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>交换次序 ≠ 交换上下限</strong>。必须先由原累次积分写出不等式组、画出区域 \(D\)，再按另一方向重新定限；直接把 \(\int_0^1\mathrm{d}x\int_x^1 f\,\mathrm{d}y\) 改成 \(\int_0^1\mathrm{d}y\int_1^x f\,\mathrm{d}x\) 是完全错误的。另外若某方向边界是分段曲线（如 \(x^2\le y\le 1\) 与 \(1\le y\le 2\)），需要<strong>分块</strong>分别积分再相加。</p></blockquote>
-
-<h3 id="10-2-2-极坐标法">极坐标法<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-2-2-极坐标法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="10-2-二重积分的计算法-2-极坐标法">极坐标法<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-2-二重积分的计算法-2-极坐标法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>令 \(x=r\cos\theta,\ y=r\sin\theta\)，边界曲线换成 \(r=r(\theta)\)，且面积元素要<strong>多乘一个 \(r\)</strong>：</p>
 <div class="fml">$$\iint_D f(x,y)\,\mathrm{d}\sigma=\int_{\alpha}^{\beta}\mathrm{d}\theta\int_{r_1(\theta)}^{r_2(\theta)}f(r\cos\theta,\ r\sin\theta)\,r\,\mathrm{d}r$$</div>
 <p><strong>何时用极坐标</strong>：① 区域是圆、环、扇形或由圆弧、射线围成；② 被积函数含 \(x^2+y^2\)、\(\dfrac{y}{x}\) 等。典型如 \(\displaystyle\iint_D f(x^2+y^2)\,\mathrm{d}\sigma=\int_{\alpha}^{\beta}\mathrm{d}\theta\int_{r_1}^{r_2} f(r^2)\,r\,\mathrm{d}r\)。</p>
@@ -75,8 +73,7 @@
     </div></details>
   </div>
 </div>
-
-<h3 id="10-2-3-利用对称性与奇偶性简化">利用对称性与奇偶性简化<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="10-2-3-利用对称性与奇偶性简化" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="10-2-二重积分的计算法-3-利用对称性与奇偶性简化">利用对称性与奇偶性简化<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="10-2-二重积分的计算法-3-利用对称性与奇偶性简化" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>区域的对称性</th><th>被积函数的特点</th><th>结论</th></tr></thead>
 <tbody>
@@ -103,7 +100,7 @@
 
 <h2 id="10-3-三重积分">10.3 三重积分<button class="fav" type="button" data-fav="10-3-三重积分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="10-3-1-投影法与截面法">投影法与截面法<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-3-1-投影法与截面法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="10-3-三重积分-1-投影法与截面法">投影法与截面法<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-3-三重积分-1-投影法与截面法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p><strong>投影法（先一后二）</strong>：将 \(\Omega\) 投影到 \(xOy\) 面得 \(D_{xy}\)，过 \(D_{xy}\) 内一点作平行 \(z\) 轴的线，下、上穿出点 \(z_1(x,y),\ z_2(x,y)\)：</p>
 <div class="fml">$$\iiint_\Omega f(x,y,z)\,\mathrm{d}v=\iint_{D_{xy}}\mathrm{d}x\mathrm{d}y\int_{z_1(x,y)}^{z_2(x,y)}f(x,y,z)\,\mathrm{d}z$$</div>
 <p><strong>截面法（先二后一）</strong>：垂直于 \(z\) 轴的平面截 \(\Omega\) 得 \(D_z\)，被积函数只含 \(z\) 且 \(D_z\) 面积易求时优先：</p>
@@ -121,8 +118,7 @@
     </div></details>
   </div>
 </div>
-
-<h3 id="10-3-2-柱面坐标与球面坐标">柱面坐标与球面坐标<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-3-2-柱面坐标与球面坐标" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="10-3-三重积分-2-柱面坐标与球面坐标">柱面坐标与球面坐标<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-3-三重积分-2-柱面坐标与球面坐标" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>坐标系</th><th>变换与范围</th><th>体积元</th><th>适用场景</th></tr></thead>
 <tbody>
@@ -144,12 +140,11 @@
 
 <h2 id="10-4-重积分的应用">10.4 重积分的应用<button class="fav" type="button" data-fav="10-4-重积分的应用" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="10-4-1-几何量公式">几何量公式<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="10-4-1-几何量公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="10-4-重积分的应用-1-几何量公式">几何量公式<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="10-4-重积分的应用-1-几何量公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$V=\iint_D\bigl[f_2(x,y)-f_1(x,y)\bigr]\,\mathrm{d}\sigma=\iiint_\Omega\mathrm{d}v \qquad\text{（立体体积，上下曲面之差或直接三重积分）}$$</div>
 <div class="fml">$$S=\iint_D\sqrt{1+z_x^2+z_y^2}\,\mathrm{d}x\mathrm{d}y\qquad\text{（曲面 }z=z(x,y)\text{ 的面积，d}S=\sqrt{1+z_x^2+z_y^2}\,\mathrm{d}x\mathrm{d}y\text{）}$$</div>
 <p>记忆：曲面面积元素是"切平面斜率修正"——平面时退化为 \(\mathrm{d}x\mathrm{d}y\)。球面 \(x^2+y^2+z^2=R^2\) 上半球有 \(\sqrt{1+z_x^2+z_y^2}=\dfrac{R}{\sqrt{R^2-x^2-y^2}}\)，代入即得球面积 \(4\pi R^2\)。</p>
-
-<h3 id="10-4-2-质心与转动惯量">质心与转动惯量<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-4-2-质心与转动惯量" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="10-4-重积分的应用-2-质心与转动惯量">质心与转动惯量<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-4-重积分的应用-2-质心与转动惯量" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$\bar{x}=\frac{\displaystyle\iint_D x\rho(x,y)\,\mathrm{d}\sigma}{\displaystyle\iint_D\rho(x,y)\,\mathrm{d}\sigma},\qquad M=\iint_D\rho\,\mathrm{d}\sigma\ \text{（薄片）；立体 } \bar{x}=\frac{\iiint_\Omega x\rho\,\mathrm{d}v}{M},\ M=\iiint_\Omega\rho\,\mathrm{d}v$$</div>
 <div class="fml">$$I_x=\iint_D y^2\rho(x,y)\,\mathrm{d}\sigma,\qquad I_y=\iint_D x^2\rho\,\mathrm{d}\sigma,\qquad I_O=I_x+I_y\ \text{（薄片对原点/坐标轴的转动惯量）}$$</div>
 <blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> ① 均匀物体（\(\rho\) 为常数）的质心又称<strong>形心</strong>，此时 \(\rho\) 在分子分母中约去，只依赖几何形状。② 先用<strong>对称性</strong>判断质心坐标：均匀半球体、均匀球体关于对称面对称的坐标分量为 \(0\)，往往只需算一个坐标。③ 半径 \(R\) 的均匀半球的质心在 \(z=\dfrac{3R}{8}\) 处，可直接记住用于验证。</p></blockquote>
@@ -173,12 +168,36 @@
   <p><strong>③ 引力公式框架</strong>：物体对质点 \(P\) 的引力 \(\boldsymbol{F}=(F_x,F_y,F_z)\)，\(F_x=\iiint_\Omega\dfrac{G\rho(x_0-x)}{r^3}\,\mathrm{d}v\) 型（\(r\) 为微元到 \(P\) 的距离），考试通常只考对称性简化后的单分量计算。</p>
 </div></details>
 
+<h2 id="10-5-含参变量的积分">10.5 含参变量的积分<button class="fav" type="button" data-fav="10-5-含参变量的积分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<p>含参变量的积分 \(I(y)=\displaystyle\int_a^bf(x,y)\,\mathrm dx\) 把积分值看成参数 \(y\) 的函数。核心结论只有两条：<strong>连续性与可导性如何从被积函数"继承"</strong>，以及上下限也含参时的求导公式。</p>
+<h3 id="10-5-含参变量的积分-1-含参积分的连续性">含参积分的连续性<span class="rkchip rk-thm">定理</span><button class="fav" type="button" data-fav="10-5-含参变量的积分-1-含参积分的连续性" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>若 \(f(x,y)\) 在矩形 \(R=[a,b]\times[c,d]\) 上连续，则 \(I(y)=\displaystyle\int_a^bf(x,y)\,\mathrm dx\) 在 \([c,d]\) 上连续，且</p>
+<div class="fml">$$\lim_{y\to y_0}\int_a^bf(x,y)\,\mathrm dx=\int_a^b\lim_{y\to y_0}f(x,y)\,\mathrm dx=\int_a^bf(x,y_0)\,\mathrm dx$$</div>
+<p>即<strong>极限与积分可以交换</strong>。这是后续"积分号下求导"的基础。</p>
+<h3 id="10-5-含参变量的积分-2-积分号下求导-莱布尼茨公式">积分号下求导（莱布尼茨公式）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-5-含参变量的积分-2-积分号下求导-莱布尼茨公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>若 \(f\) 与 \(f_y\) 在矩形上连续，\(a(y),b(y)\) 可导，则</p>
+<div class="fml">$$\frac{\mathrm d}{\mathrm dy}\int_{a(y)}^{b(y)}f(x,y)\,\mathrm dx=\int_{a(y)}^{b(y)}f_y(x,y)\,\mathrm dx+f\bigl(b(y),y\bigr)b'(y)-f\bigl(a(y),y\bigr)a'(y)$$</div>
+<p>上下限为常数时后两项消失，公式退化为简单的"积分号下求导"。</p>
+<div class="ex">
+  <div class="ex-h"><span class="no">例</span>用求导法算一个"算不出原函数"的积分</div>
+  <div class="ex-b">
+    <p>设 \(F(y)=\displaystyle\int_0^1\frac{x^{y}-1}{\ln x}\,\mathrm dx\ (y\gt -1)\)，求 \(F(y)\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>被积函数对 \(y\) 求导得 \(x^{y}\)，在矩形上连续，故可积分号下求导：</p>
+      <div class="fml">$$F'(y)=\int_0^1x^{y}\,\mathrm dx=\frac{1}{y+1}\ \Longrightarrow\ F(y)=\ln(1+y)+C$$</div>
+      <p>由 \(F(0)=0\) 得 \(C=0\)，故 \(F(y)=\ln(1+y)\)。</p>
+    </div></details>
+  </div>
+</div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① 交换次序（积分号下求导/求极限）需要 \(f_y\)（或 \(f\)）在<strong>闭矩形</strong>上连续，不能想当然。② 上下限含参时别漏后两项边界项，它们常是主要贡献。③ 积分区域随 \(y\) 变形时公式要修正，不能直接套。</p></blockquote>
+
 <!-- KB-STATS:BEGIN -->
-<h2 id="10-5-题库视角-高频考点与易错清单">10.5 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="10-5-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="10-6-题库视角-高频考点与易错清单">10.6 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="10-6-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 <p>本章 210 题，<strong>交换积分次序 18 道（含同义标注）、极坐标 16 道、对称性 20+ 道</strong>，三重积分三种坐标系合计 20 道。这是「技巧决定速度」的一章：对称性与换序用得好，计算量能砍掉一半。</p>
 <p class="kb-src">题量统计：站内题库共 2730 题（单元小测、教材习题、吉米多维奇精解、真题改编），按知识点打标计数；一道题可能命中多个考点，故各行之和可大于本章题数。</p>
 
-<h3 id="10-5-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-5-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="10-6-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="10-6-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>考点</th><th>题量</th><th>常见题型</th><th>拿分关键</th></tr></thead>
 <tbody>
@@ -192,7 +211,7 @@
 <tr><td>积分中值与其他</td><td class="num">7</td><td>中值定理、含重积分的方程与极限</td><td>二重积分中值：∬f=f(ξ,η)·面积</td></tr>
 </tbody></table></div>
 
-<h3 id="10-5-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="10-5-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="10-6-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="10-6-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <ul>
 <li><strong>区域是圆/扇形/圆环</strong> → 立刻换极坐标；先画射线定 r 的上下限</li>
 <li><strong>被积函数含 x²+y²</strong> → 极坐标或柱坐标，往往一步化简</li>
@@ -202,7 +221,7 @@
 <li><strong>求质心/转动惯量</strong> → 先写密度与微元，能用对称性直接判断某坐标为 0</li>
 </ul>
 
-<h3 id="10-5-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="10-5-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="10-6-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="10-6-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>易错点</th><th>典型错误做法</th><th>正确做法</th></tr></thead>
 <tbody>

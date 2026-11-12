@@ -5,21 +5,19 @@
 <li>核心思想：一切导数问题最终都可回到定义式 \(\lim\limits_{\Delta x\to 0}\dfrac{\Delta y}{\Delta x}\)。</li>
 </ul>
 
-<h2 id="2-1-导数的概念">2.1 导数的概念<button class="fav" type="button" data-fav="2-1-导数的概念" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="2-1-导数概念">2.1 导数概念<button class="fav" type="button" data-fav="2-1-导数概念" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="2-1-1-导数的定义">导数的定义<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-1-1-导数的定义" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="2-1-导数概念-1-导数的定义">导数的定义<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-1-导数概念-1-导数的定义" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>设函数 \(y=f(x)\) 在 \(x_0\) 的某邻域内有定义。若极限 \(\lim\limits_{\Delta x\to 0}\dfrac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\) 存在，则称 \(f\) 在 \(x_0\) 处<strong>可导</strong>，该极限值称<strong>导数</strong>，记作 \(f'(x_0)\) 或 \(\left.y'\right|_{x=x_0}\)。常用等价形式：</p>
 <div class="fml">$$f'(x_0)=\lim_{\Delta x\to 0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}=\lim_{h\to 0}\frac{f(x_0+h)-f(x_0)}{h}=\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}$$</div>
 <ul>
 <li><strong>几何意义</strong>：\(f'(x_0)\) 是曲线在点 \((x_0,f(x_0))\) 处切线的斜率；切线方程 \(y-f(x_0)=f'(x_0)(x-x_0)\)，法线方程斜率为 \(-\dfrac{1}{f'(x_0)}\)（\(f'(x_0)\ne 0\)）。</li>
 <li><strong>物理意义</strong>：瞬时速度、边际成本等一切"变化率"。</li>
 </ul>
-
-<h3 id="2-1-2-单侧导数">单侧导数<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-1-2-单侧导数" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="2-1-导数概念-2-单侧导数">单侧导数<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-1-导数概念-2-单侧导数" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$f_-'(x_0)=\lim_{\Delta x\to 0^-}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x},\qquad f_+'(x_0)=\lim_{\Delta x\to 0^+}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}$$</div>
 <p>\(f\) 在 \(x_0\) 可导 \(\iff\) 左、右导数都存在且相等。分段函数在分界点处的可导性，<strong>必须用定义（或左右导数）</strong>判断，不能直接用公式求导。</p>
-
-<h3 id="2-1-3-可导与连续的关系">可导与连续的关系<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="2-1-3-可导与连续的关系" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="2-1-导数概念-3-可导与连续的关系">可导与连续的关系<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="2-1-导数概念-3-可导与连续的关系" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$\text{可导}\ \Longrightarrow\ \text{连续};\qquad \text{连续}\ \not\Rightarrow\ \text{可导}\ (\text{如 } y=|x|\ \text{在}\ 0\ \text{处});\qquad \text{不连续}\ \Longrightarrow\ \text{不可导}$$</div>
 <p>原因：若 \(f'(x_0)=\lim\dfrac{f(x)-f(x_0)}{x-x_0}\) 存在，则 \(\lim\bigl[f(x)-f(x_0)\bigr]=\lim\dfrac{f(x)-f(x_0)}{x-x_0}\cdot(x-x_0)=0\cdot f'(x_0)=0\)，即连续。反例：\(y=|x|\) 在 \(0\) 连续，但左导数 \(-1\)、右导数 \(1\) 不等，不可导（"尖点"）。</p>
 <blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>① 用定义验算时，分子必须写成 \(f(x_0+\Delta x)-f(x_0)\)</strong>，用定义求 \(f'(x_0)\) 时 \(x_0\) 是常数，不要把 \(x_0\) 与 \(\Delta x\) 混写。<strong>② "连续但不可导"还有平点型</strong>：\(y=x^{1/3}\) 在 \(0\) 处连续且左右导数同为 \(+\infty\)（竖直切线），也不可导；\(y=x^2\) 在 \(0\) 才是可导的。<strong>③ \(f_-'(x_0)=f_+'(x_0)\) 与 "对 \(x\) 直接求导再取左右值"不是一回事</strong>：\(f(x)=|x|\) 若直接写 \(f'(x)=\pm1\) 再比较，必须先把 \(|x|\) 按 \(x\gt0\)、\(x\lt 0\) 分段改写为 \(\pm x\) 再求导。</p></blockquote>
@@ -58,16 +56,15 @@
   <p><strong>记忆技巧</strong>：判断 \(x=0\) 处可导性统一回到差商 \(\dfrac{f(x)-f(0)}{x}\) 的极限；幂函数 \(y=x^{\alpha}\) 在 \(0\) 处：\(\alpha\gt1\) 可导、\(\alpha=1\) 尖点、\(\alpha\lt 1\) 竖直切线或振荡。</p>
 </div></details>
 
-<h2 id="2-2-求导法则">2.2 求导法则<button class="fav" type="button" data-fav="2-2-求导法则" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="2-2-函数的求导法则">2.2 函数的求导法则<button class="fav" type="button" data-fav="2-2-函数的求导法则" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="2-2-1-四则运算求导法则">四则运算求导法则<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-2-1-四则运算求导法则" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="2-2-函数的求导法则-1-四则运算求导法则">四则运算求导法则<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-2-函数的求导法则-1-四则运算求导法则" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$(u\pm v)'=u'\pm v'\qquad (uv)'=u'v+uv'\qquad \left(\frac{u}{v}\right)'=\frac{u'v-uv'}{v^{2}}\ (v\ne 0)$$</div>
 <ul>
 <li>乘除法则"不分家"：\((uv)'=u'v+uv'\) 可推广到任意有限个因子，如 \((uvw)'=u'vw+uv'w+uvw'\)。</li>
 <li>\((u/v)'\) 记成"<strong>上导下不导减上不导下导，除以下方平方</strong>"；分子减法的顺序不能颠倒。</li>
 </ul>
-
-<h3 id="2-2-2-复合函数与反函数求导">复合函数与反函数求导<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="2-2-2-复合函数与反函数求导" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="2-2-函数的求导法则-2-复合函数与反函数求导">复合函数与反函数求导<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="2-2-函数的求导法则-2-复合函数与反函数求导" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$\text{链式法则：}\ y=f(u),\ u=g(x)\ \Longrightarrow\ \frac{\mathrm dy}{\mathrm dx}=\frac{\mathrm dy}{\mathrm du}\cdot\frac{\mathrm du}{\mathrm dx}=f'(g(x))\,g'(x)$$</div>
 <div class="fml">$$\text{反函数求导：}\ x=f^{-1}(y)\ \Longrightarrow\ \left[f^{-1}(y)\right]'=\frac{1}{f'(x)}\qquad\text{即}\ \frac{\mathrm dx}{\mathrm dy}=\frac{1}{\frac{\mathrm dy}{\mathrm dx}}$$</div>
 <ul>
@@ -79,8 +76,7 @@
   <p>设 \(x=f^{-1}(y)\) 是 \(y=f(x)\) 的反函数，给 \(y\) 增量 \(\Delta y\)，相应 \(x\) 有增量 \(\Delta x\ne 0\)（单调性保证）。于是差商 \(\dfrac{\Delta x}{\Delta y}=\dfrac{1}{\frac{\Delta y}{\Delta x}}\)，令 \(\Delta y\to 0\)（由连续性 \(\Delta x\to 0\)），得 \(\dfrac{\mathrm dx}{\mathrm dy}=\dfrac{1}{f'(x)}\)。</p>
   <p>应用：对 \(\sin y=x\)（\(y\in(-\frac{\pi}{2},\frac{\pi}{2})\)）两边关于 \(x\) 求导（左边按复合：\(\cos y\cdot y'=1\)），得 \(y'=\dfrac{1}{\cos y}=\dfrac{1}{\sqrt{1-x^{2}}}\)（该区间内 \(\cos y\gt0\)），即 \((\arcsin x)'=\dfrac{1}{\sqrt{1-x^{2}}}\)。同法得 \((\arctan x)'=\dfrac{1}{1+x^{2}}\)。</p>
 </div></details>
-
-<h3 id="2-2-3-基本初等函数导数公式表">基本初等函数导数公式表<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-2-3-基本初等函数导数公式表" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="2-2-函数的求导法则-3-基本初等函数导数公式表">基本初等函数导数公式表<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-2-函数的求导法则-3-基本初等函数导数公式表" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>\(f(x)\)</th><th>\(f'(x)\)</th><th>\(f(x)\)</th><th>\(f'(x)\)</th></tr></thead>
 <tbody>
@@ -121,10 +117,9 @@
 
 <h2 id="2-3-高阶导数">2.3 高阶导数<button class="fav" type="button" data-fav="2-3-高阶导数" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="2-3-1-高阶导数的定义与记法">高阶导数的定义与记法<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-3-1-高阶导数的定义与记法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="2-3-高阶导数-1-高阶导数的定义与记法">高阶导数的定义与记法<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-3-高阶导数-1-高阶导数的定义与记法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>\(f'(x)\) 的导数称<strong>二阶导数</strong> \(f''(x)\)，一般地 \(\dfrac{\mathrm d^{n}y}{\mathrm dx^{n}}=\dfrac{\mathrm d}{\mathrm dx}\left(\dfrac{\mathrm d^{n-1}y}{\mathrm dx^{n-1}}\right)\) 称 \(n\) 阶导数，记作 \(y^{(n)}\) 或 \(f^{(n)}(x)\)。求高阶导数的两条路线：① 逐次求导后<strong>归纳出通项</strong>；② 用莱布尼茨公式或下表直接套公式。</p>
-
-<h3 id="2-3-2-常用-n-阶导数公式表">常用 \(n\) 阶导数公式表<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="2-3-2-常用-n-阶导数公式表" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="2-3-高阶导数-2-常用-n-阶导数公式表">常用 \(n\) 阶导数公式表<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="2-3-高阶导数-2-常用-n-阶导数公式表" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>函数</th><th>\(n\) 阶导数</th><th>备注</th></tr></thead>
 <tbody>
@@ -135,8 +130,7 @@
 <tr><td>\(\dfrac{1}{x+a}\)</td><td>\((-1)^{n}\dfrac{n!}{(x+a)^{n+1}}\)</td><td>分母幂次比阶数多 1</td></tr>
 <tr><td>\(\dfrac{1}{x^{2}-a^{2}}\)</td><td>先裂项 \(\frac{1}{2a}\left(\frac{1}{x-a}-\frac{1}{x+a}\right)\) 再套上行</td><td>有理函数先<strong>裂项</strong>再求 \(n\) 阶导</td></tr>
 </tbody></table></div>
-
-<h3 id="2-3-3-莱布尼茨公式">莱布尼茨公式<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="2-3-3-莱布尼茨公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="2-3-高阶导数-3-莱布尼茨公式">莱布尼茨公式<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="2-3-高阶导数-3-莱布尼茨公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$(uv)^{(n)}=\sum_{k=0}^{n}C_{n}^{k}\,u^{(k)}v^{(n-k)}=uv^{(n)}+n\,u'v^{(n-1)}+\frac{n(n-1)}{2}\,u''v^{(n-2)}+\cdots+u^{(n)}v$$</div>
 <p>用法：<strong>多项式 × 指数（三角）</strong>型必用。多项式 \(u\) 只有前几阶导数非零，求和自动截断为有限几项。</p>
 <details class="prf"><summary><span class="prf-tag">推导</span>莱布尼茨公式与二项式定理同构</summary><div class="prf-b">
@@ -156,13 +150,12 @@
   </div>
 </div>
 
-<h2 id="2-4-隐函数参数方程与对数求导">2.4 隐函数、参数方程与对数求导<button class="fav" type="button" data-fav="2-4-隐函数参数方程与对数求导" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="2-4-隐函数及由参数方程所确定的函数的导数-相关变化率">2.4 隐函数及由参数方程所确定的函数的导数 相关变化率<button class="fav" type="button" data-fav="2-4-隐函数及由参数方程所确定的函数的导数-相关变化率" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="2-4-1-隐函数求导">隐函数求导<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-4-1-隐函数求导" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="2-4-隐函数及由参数方程所确定的函数的导数-相关变化率-1-隐函数求导">隐函数求导<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-4-隐函数及由参数方程所确定的函数的导数-相关变化率-1-隐函数求导" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>方程 \(F(x,y)=0\) 确定的隐函数 \(y=y(x)\) 求导时，把 \(y\) 看作 \(x\) 的函数，方程两边<strong>同时对 \(x\) 求导</strong>（遇到 \(y\) 一律视为中间变量，按复合函数处理），解出 \(y'\)。二阶导数把 \(y'\) 表达式再对 \(x\) 求导，结果中可代入 \(y'\)。</p>
 <div class="fml">$$\text{例：}\ F(x,y)=0\ \xrightarrow{\ \partial/\partial x\ }\ F_x+F_y\cdot y'=0\ \Longrightarrow\ y'=-\frac{F_x}{F_y}\ \left(F_y\ne 0\right)$$</div>
-
-<h3 id="2-4-2-参数方程求导">参数方程求导<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="2-4-2-参数方程求导" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="2-4-隐函数及由参数方程所确定的函数的导数-相关变化率-2-参数方程求导">参数方程求导<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="2-4-隐函数及由参数方程所确定的函数的导数-相关变化率-2-参数方程求导" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$x=\varphi(t),\ y=\psi(t)\ \Longrightarrow\ \frac{\mathrm dy}{\mathrm dx}=\frac{\psi'(t)}{\varphi'(t)},\qquad \frac{\mathrm d^{2}y}{\mathrm dx^{2}}=\frac{\dfrac{\mathrm d}{\mathrm dt}\!\left(\dfrac{\psi'(t)}{\varphi'(t)}\right)}{\varphi'(t)}$$</div>
 <p>二阶导的实质是"对 \(t\) 求导后再<strong>除以 \(\varphi'(t)\)</strong>"——因为 \(\dfrac{d^{2}y}{dx^{2}}=\dfrac{d}{dx}\left(\dfrac{dy}{dx}\right)\)，而对 \(\dfrac{dy}{dx}\)（它是 \(t\) 的函数）关于 \(x\) 求导必须走链式：先对 \(t\) 导、再乘 \(\dfrac{\mathrm dt}{\mathrm dx}=\dfrac{1}{\varphi'(t)}\)。</p>
 <details class="prf"><summary><span class="prf-tag">推导</span>参数方程二阶导公式的来源</summary><div class="prf-b">
@@ -170,8 +163,7 @@
   <div class="fml">$$\frac{\mathrm d^{2}y}{\mathrm dx^{2}}=\frac{\mathrm dY}{\mathrm dx}=\frac{\mathrm dY}{\mathrm dt}\cdot\frac{\mathrm dt}{\mathrm dx}=\frac{\mathrm dY}{\mathrm dt}\cdot\frac{1}{\varphi'(t)}$$</div>
   <p>所以二阶导 = "对 \(t\) 求导一次" + "除以 \(\varphi'(t)\) 一次"。若还想求三阶导，继续对 \(t\) 导一次、再除以 \(\varphi'(t)\)——每次都要补除，永远不能写成 \(\psi''/\varphi''\)。用微分记号记忆更稳：\(\dfrac{d^{2}y}{dx^{2}}=\dfrac{d\left(\dfrac{dy}{dx}\right)}{dx}\)，分母的 \(\mathrm dx\) 永远通过 \(\mathrm dx=\varphi'(t)\,\mathrm dt\) 换成 \(\mathrm dt\)。</p>
 </div></details>
-
-<h3 id="2-4-3-对数求导法">对数求导法<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-4-3-对数求导法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="2-4-隐函数及由参数方程所确定的函数的导数-相关变化率-3-对数求导法">对数求导法<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-4-隐函数及由参数方程所确定的函数的导数-相关变化率-3-对数求导法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>适用两类函数：① <strong>幂指函数</strong> \(u(x)^{v(x)}\)（底数、指数都含 \(x\)）；② 由多因子乘除、乘方开方构成的函数。做法：两边取对数 \(\ln y=v\ln u\)，再对 \(x\) 求导得 \(\dfrac{y'}{y}=v'\ln u+v\dfrac{u'}u\)，最后 \(y'=y\cdot(\cdots)\)。幂指函数也可写成 \(\mathrm e^{v\ln u}\) 直接用链式法则。</p>
 <blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>① 参数方程二阶导最经典的错法</strong>：把 \(\dfrac{d^{2}y}{dx^{2}}\) 直接写成 \(\dfrac{\psi''(t)}{\varphi''(t)}\) 或忘记除以 \(\varphi'(t)\)。正确动作永远是"对 \(t\) 求导一次、除以 \(\varphi'(t)\) 一次"。<strong>② 隐函数求导后结果里允许含 \(y\)</strong>：\(y'\) 用 \(x,\ y\) 表示是对的，不要试图"解出 \(y\)"再代。<strong>③ 对数求导后别丢 \(y\)</strong>：得到 \(\frac{y'}{y}=\cdots\) 后要乘回 \(y\) 本身（\(y\) 保持原幂指形式），漏乘等于只算了 \(\frac{y'}{y}\)。</p></blockquote>
 
@@ -215,12 +207,11 @@
 
 <h2 id="2-5-函数的微分">2.5 函数的微分<button class="fav" type="button" data-fav="2-5-函数的微分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="2-5-1-微分的定义">微分的定义<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-5-1-微分的定义" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="2-5-函数的微分-1-微分的定义">微分的定义<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-5-函数的微分-1-微分的定义" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>若函数增量 \(\Delta y=f(x_0+\Delta x)-f(x_0)\) 可表示为 \(\Delta y=A\Delta x+o(\Delta x)\)（\(A\) 与 \(\Delta x\) 无关），称 \(f\) 在 \(x_0\) <strong>可微</strong>，线性主部 \(A\Delta x\) 称<strong>微分</strong>，记 \(\mathrm dy\)。可微与可导等价，且 \(A=f'(x_0)\)，自变量微分约定 \(\mathrm dx=\Delta x\)：</p>
 <div class="fml">$$\mathrm dy=f'(x)\,\mathrm dx\qquad\qquad \Delta y=\mathrm dy+o(\Delta x)\qquad\qquad \text{可微}\iff\text{可导}\implies\text{连续}$$</div>
 <p>几何意义：用切线的增量（\(\mathrm dy\)）近似曲线的增量（\(\Delta y\)），即"以直代曲"，误差是 \(o(\Delta x)\)。</p>
-
-<h3 id="2-5-2-微分公式与一阶微分形式不变性">微分公式与一阶微分形式不变性<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-5-2-微分公式与一阶微分形式不变性" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="2-5-函数的微分-2-微分公式与一阶微分形式不变性">微分公式与一阶微分形式不变性<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="2-5-函数的微分-2-微分公式与一阶微分形式不变性" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>运算</th><th>微分</th><th>要点</th></tr></thead>
 <tbody>
@@ -228,8 +219,7 @@
 <tr><td>复合</td><td>\(y=f(u),\ u=g(x)\Rightarrow \mathrm dy=f'(u)\,\mathrm du\)（无论 \(u\) 是自变量还是中间变量）</td><td><strong>一阶微分形式不变性</strong>：式子形式总是 \(f'(u)\mathrm du\)，\(\mathrm du\) 自动接续为 \(g'(x)\mathrm dx\)</td></tr>
 <tr><td>常用公式</td><td>\(\mathrm d(x^{\mu})=\mu x^{\mu-1}\mathrm dx\)，\(\mathrm d(\sin x)=\cos x\,\mathrm dx\)，\(\mathrm d(\ln x)=\frac{\mathrm dx}{x}\)，\(\mathrm d(\mathrm e^{x})=\mathrm e^{x}\mathrm dx\)</td><td>把导数公式表逐条乘上 \(\mathrm dx\) 即得</td></tr>
 </tbody></table></div>
-
-<h3 id="2-5-3-微分在近似计算中的应用">微分在近似计算中的应用<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="2-5-3-微分在近似计算中的应用" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="2-5-函数的微分-3-微分在近似计算中的应用">微分在近似计算中的应用<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="2-5-函数的微分-3-微分在近似计算中的应用" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$f(x_0+\Delta x)\approx f(x_0)+f'(x_0)\,\Delta x\qquad\text{特例：}\ \sqrt{1+\Delta x}\approx 1+\frac{\Delta x}{2},\quad \ln(1+\Delta x)\approx \Delta x,\quad \mathrm e^{\Delta x}\approx 1+\Delta x$$</div>
 <p>选点原则：取 \(x_0\) 使 \(f(x_0)\) 与 \(f'(x_0)\) <strong>都好算</strong>（常用 \(x_0=0,\ 1,\ 100\) 等），\(\Delta x\) 是实际增量。误差估计：\(|\Delta y-\mathrm dy|=|o(\Delta x)|\)，\(\Delta x\) 越小近似越好。</p>
 <blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>① 微分与导数的记号区分</strong>：\(\mathrm dy\) 是 \(\Delta x\) 的线性函数、依赖于 \(x_0\) 与 \(\Delta x\) 两个量；\(\dfrac{\mathrm dy}{\mathrm dx}\) 才是导数。<strong>② 近似计算中 \(x_0\) 的选择</strong>：求 \(\sqrt{25.01}\) 应取 \(x_0=25\)（不是 \(0\) 或 \(1\)），\(\Delta x=0.01\)，代错 \(x_0\) 会导致完全错误的答案。<strong>③ \(\mathrm dy\) 与 \(\Delta y\) 不相等</strong>：判断题 "\(\Delta y\approx \mathrm dy\)" 成立，但 "\(\Delta y=\mathrm dy\)" 一般错误，相差高阶无穷小 \(o(\Delta x)\)。</p></blockquote>

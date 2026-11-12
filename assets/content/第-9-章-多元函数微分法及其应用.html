@@ -3,10 +3,9 @@
 
 <h2 id="9-1-多元函数的基本概念">9.1 多元函数的基本概念<button class="fav" type="button" data-fav="9-1-多元函数的基本概念" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="9-1-1-二元函数与平面点集">二元函数与平面点集<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="9-1-1-二元函数与平面点集" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="9-1-多元函数的基本概念-1-二元函数与平面点集">二元函数与平面点集<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="9-1-多元函数的基本概念-1-二元函数与平面点集" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>\(z=f(x,y)\)：每个有序数组 \((x,y)\in D\) 依照对应规则有唯一的 \(z\) 值与之对应；\(D\) 为定义域，值域 \(f(D)\subset\R\)。几何意义是空间一张曲面。平面点集常用语言：<strong>邻域</strong> \(U(P_0,\delta)=\{(x,y)\mid (x-x_0)^2+(y-y_0)^2&lt;\delta^2\}\)；<strong>内点、开区域、闭区域、有界区域</strong>。一元的大部分概念（定义域、复合、初等函数）都按此平移。</p>
-
-<h3 id="9-1-2-二重极限与连续">二重极限与连续<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="9-1-2-二重极限与连续" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="9-1-多元函数的基本概念-2-二重极限与连续">二重极限与连续<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="9-1-多元函数的基本概念-2-二重极限与连续" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>\(\lim\limits_{(x,y)\to(x_0,y_0)}f(x,y)=A\)：当 \((x,y)\) 以<strong>任何方式</strong>趋于 \((x_0,y_0)\) 时 \(f(x,y)\) 都无限接近 \(A\)。二元函数的极限存在比一元苛刻得多——不是"左右两个方向"，而是<strong>整个平面上的所有路径</strong>。若 \(f\) 在 \(P_0\) 处的极限值等于函数值，即 \(\lim\limits_{P\to P_0}f(P)=f(P_0)\)，则 \(f\) 在 \(P_0\) <strong>连续</strong>；否则 \(P_0\) 是<strong>间断点</strong>（二元初等函数在其定义区域内连续）。</p>
 <blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> <strong>① 沿特殊路径极限相等只能"证不存在"，不能"证存在"</strong>：沿 \(y=kx\) 极限与 \(k\) 有关 ⟹ 极限不存在；但沿所有直线极限相同也不能下结论（路径还可以是抛物线）。<strong>② 求二重极限的合法手段</strong>：代入（连续点）、夹逼准则、有理化、极坐标变换（注意 \(\rho\to0\) 须对 \(\theta\) 一致）；不能直接"洛必达"地逐变量求。<strong>③ 沿不同路径取值不同的函数</strong>如 \(\dfrac{xy}{x^2+y^2}\) 是"极限不存在"的标准反例。</p></blockquote>
 
@@ -26,12 +25,11 @@
 
 <h2 id="9-2-偏导数">9.2 偏导数<button class="fav" type="button" data-fav="9-2-偏导数" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="9-2-1-偏导数的定义与计算">偏导数的定义与计算<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="9-2-1-偏导数的定义与计算" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="9-2-偏导数-1-偏导数的定义与计算">偏导数的定义与计算<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="9-2-偏导数-1-偏导数的定义与计算" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$f_x(x_0,y_0)=\lim_{\Delta x\to0}\frac{f(x_0+\Delta x,\,y_0)-f(x_0,\,y_0)}{\Delta x},\qquad f_y(x_0,y_0)=\lim_{\Delta y\to0}\frac{f(x_0,\,y_0+\Delta y)-f(x_0,\,y_0)}{\Delta y}$$</div>
 <p>求法：对 \(x\) 求偏导时把 \(y\)（及其他变量）<strong>当常数</strong>。几何意义：\(f_x(x_0,y_0)\) 是曲面 \(z=f(x,y)\) 被平面 \(y=y_0\) 所截曲线在该点的切线对 \(x\) 轴的斜率。</p>
 <blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> <strong>分段函数在分界点处必须用定义求偏导</strong>：先把 \(y=y_0\) 代入得一元函数再求极限，往往是 \(\lim_{\Delta x\to0}\dfrac{f(\Delta x,y_0)-f(0,y_0)}{\Delta x}\)；很多函数（如 \(xy/\sqrt{x^2+y^2}\)）在原点偏导存在但后面将看到它不可微。另外注意：偏导存在是"沿坐标轴方向"的性质，与函数在该点是否连续<strong>互不包含</strong>——这和一元"可导必连续"完全不同。</p></blockquote>
-
-<h3 id="9-2-2-高阶偏导数">高阶偏导数<span class="rkchip rk-def">定理</span><button class="fav" type="button" data-fav="9-2-2-高阶偏导数" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="9-2-偏导数-2-高阶偏导数">高阶偏导数<span class="rkchip rk-def">定理</span><button class="fav" type="button" data-fav="9-2-偏导数-2-高阶偏导数" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$\text{四个二阶偏导：}\ \frac{\partial^2z}{\partial x^2},\ \frac{\partial^2z}{\partial y^2},\ \frac{\partial^2z}{\partial x\partial y},\ \frac{\partial^2z}{\partial y\partial x}\qquad \text{记号：} z_{xx},\ z_{xy}\ \text{等}$$</div>
 <p><strong>定理</strong>：若 \(z_{xy}\) 与 \(z_{yx}\) 都在区域 \(D\) 内<strong>连续</strong>，则二者相等（求导次序可交换）。考试默认在此条件下运算。</p>
 
@@ -50,7 +48,7 @@
 
 <h2 id="9-3-全微分">9.3 全微分<button class="fav" type="button" data-fav="9-3-全微分" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="9-3-1-全微分的定义与可微的条件链">全微分的定义与可微的条件链<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="9-3-1-全微分的定义与可微的条件链" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="9-3-全微分-1-全微分的定义与可微的条件链">全微分的定义与可微的条件链<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="9-3-全微分-1-全微分的定义与可微的条件链" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>若全增量 \(\Delta z=f(x+\Delta x,y+\Delta y)-f(x,y)\) 能写成 \(A\Delta x+B\Delta y+o(\rho)\)（\(\rho=\sqrt{\Delta x^2+\Delta y^2}\to0\)，\(A,B\) 与 \(\Delta x,\Delta y\) 无关），则称 \(z=f(x,y)\) 在该点<strong>可微</strong>，全微分 \(dz=A\,dx+B\,dy\)。</p>
 <div class="fml">$$\textbf{可微}\Rightarrow dz=f_x\,dx+f_y\,dy\ \ (\text{必要条件：} A=f_x,\ B=f_y);\qquad \textbf{判定可微：}\ \lim_{\rho\to0}\frac{\Delta z-(f_x\Delta x+f_y\Delta y)}{\rho}=0$$</div>
 <div class="fml">$$\textbf{关系链（只单向下推）：}\quad \substack{\text{偏导数}\\ \text{连 续}}\ \Longrightarrow\ \text{可微}\ \Longrightarrow\ \begin{cases}\text{函数连续}\\[2pt] \text{偏导数存在}\end{cases}\ \Longrightarrow\ \text{极限存在}$$</div>
@@ -82,15 +80,17 @@
   </div>
 </div>
 
-<h2 id="9-4-多元复合函数与隐函数的求导法则">9.4 多元复合函数与隐函数的求导法则<button class="fav" type="button" data-fav="9-4-多元复合函数与隐函数的求导法则" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="9-4-多元复合函数的求导法则">9.4 多元复合函数的求导法则<button class="fav" type="button" data-fav="9-4-多元复合函数的求导法则" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="9-4-1-链式法则与树形图">链式法则与树形图<span class="rkchip rk-def">定理</span><button class="fav" type="button" data-fav="9-4-1-链式法则与树形图" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="9-4-多元复合函数的求导法则-1-链式法则与树形图">链式法则与树形图<span class="rkchip rk-def">定理</span><button class="fav" type="button" data-fav="9-4-多元复合函数的求导法则-1-链式法则与树形图" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>设 \(z=f(u,v)\)，\(u=u(x,y)\)，\(v=v(x,y)\) 都可微，则复合函数 \(z=f(u(x,y),v(x,y))\) 满足：</p>
 <div class="fml">$$\frac{\partial z}{\partial x}=\frac{\partial z}{\partial u}\frac{\partial u}{\partial x}+\frac{\partial z}{\partial v}\frac{\partial v}{\partial x},\qquad \frac{\partial z}{\partial y}=\frac{\partial z}{\partial u}\frac{\partial u}{\partial y}+\frac{\partial z}{\partial v}\frac{\partial v}{\partial y}$$</div>
 <p>口诀：<strong>"沿线相乘、分线相加"</strong>——先画树形图（自变量 → 中间变量 → 因变量），从 \(z\) 到某自变量的每条路径把各段导数相乘，不同路径的结果相加。若 \(z=f(u(x),v(x))\)，结果是<strong>全导数</strong>：</p>
 <div class="fml">$$\frac{dz}{dx}=\frac{\partial f}{\partial u}\frac{du}{dx}+\frac{\partial f}{\partial v}\frac{dv}{dx}$$</div>
 
-<h3 id="9-4-2-隐函数求导公式">隐函数求导公式<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="9-4-2-隐函数求导公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h2 id="9-5-隐函数的求导公式">9.5 隐函数的求导公式<button class="fav" type="button" data-fav="9-5-隐函数的求导公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="9-5-隐函数的求导公式-1-隐函数求导公式">隐函数求导公式<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="9-5-隐函数的求导公式-1-隐函数求导公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$F(x,y)=0\ \text{确定}\ y=y(x):\quad \frac{dy}{dx}=-\frac{F_x}{F_y}\ \ \Bigl(F_y\ne0\Bigr)$$
 $$F(x,y,z)=0\ \text{确定}\ z=z(x,y):\quad \frac{\partial z}{\partial x}=-\frac{F_x}{F_z},\qquad \frac{\partial z}{\partial y}=-\frac{F_y}{F_z}\ \ \Bigl(F_z\ne0\Bigr)$$</div>
 <p>记忆要点：<strong>分子取"对保留变量"的偏导，分母取"对因变量"的偏导，整体变号</strong>。方程组确定的隐函数（如 \(u=u(x,y),v=v(x,y)\)）对每个方程分别用上述思想并联立求解，本质是解线性方程组。</p>
@@ -138,14 +138,39 @@ $$F(x,y,z)=0\ \text{确定}\ z=z(x,y):\quad \frac{\partial z}{\partial x}=-\frac
 <p><strong>③ 对数求导法在隐函数中的应用</strong>：幂指函数 \(u=v^w\) 型隐函数（如 \(x^y=y^x\)）先取对数再求导，可显著减少出错。</p>
 </div></details>
 
-<h2 id="9-5-方向导数与梯度">9.5 方向导数与梯度<button class="fav" type="button" data-fav="9-5-方向导数与梯度" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="9-6-多元函数微分学的几何应用">9.6 多元函数微分学的几何应用<button class="fav" type="button" data-fav="9-6-多元函数微分学的几何应用" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="9-5-1-方向导数">方向导数<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="9-5-1-方向导数" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>一元微分的几何应用是"切线、法线"，推广到空间就是"曲线的切线 + 法平面"和"曲面的切平面 + 法线"。四套公式结构完全对称，记住<strong>谁是法向量、谁是切向量</strong>就不会乱。</p>
+<h3 id="9-6-多元函数微分学的几何应用-1-空间曲线的切线与法平面">空间曲线的切线与法平面<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="9-6-多元函数微分学的几何应用-1-空间曲线的切线与法平面" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p><strong>参数式</strong> \(x=x(t),y=y(t),z=z(t)\) 在 \(t=t_0\) 对应点 \(P_0\)：切向量 \(\vec T=(x'(t_0),y'(t_0),z'(t_0))\)。</p>
+<div class="fml">$$\text{切线：}\ \frac{X-x_0}{x'(t_0)}=\frac{Y-y_0}{y'(t_0)}=\frac{Z-z_0}{z'(t_0)}$$</div>
+<div class="fml">$$\text{法平面：}\ x'(t_0)(X-x_0)+y'(t_0)(Y-y_0)+z'(t_0)(Z-z_0)=0$$</div>
+<p><strong>交线式</strong> \(\begin{cases}F(x,y,z)=0\\G(x,y,z)=0\end{cases}\)：曲线是两张曲面的交线，切向量垂直于两个法向量，故取叉积</p>
+<div class="fml">$$\vec T=\nabla F\times\nabla G=\begin{vmatrix}\vec i&\vec j&\vec k\\F_x&F_y&F_z\\G_x&G_y&G_z\end{vmatrix}$$</div>
+<h3 id="9-6-多元函数微分学的几何应用-2-曲面的切平面与法线">曲面的切平面与法线<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="9-6-多元函数微分学的几何应用-2-曲面的切平面与法线" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p><strong>隐式</strong> \(F(x,y,z)=0\) 在 \(P_0\)：法向量 \(\vec n=(F_x,F_y,F_z)\big|_{P_0}\)。</p>
+<div class="fml">$$\text{切平面：}\ F_x(X-x_0)+F_y(Y-y_0)+F_z(Z-z_0)=0$$</div>
+<p><strong>显式</strong> \(z=f(x,y)\)：令 \(F=f(x,y)-z\)，得 \(\vec n=(f_x,f_y,-1)\)，也可写成 \((-f_x,-f_y,1)\)（方向相反，方程同一个）。</p>
+<div class="ex">
+  <div class="ex-h"><span class="no">例</span>旋转抛物面的切平面</div>
+  <div class="ex-b">
+    <p>求 \(z=x^{2}+y^{2}\) 在点 \((1,1,2)\) 处的切平面与法线。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(f_x=2x=2,\ f_y=2y=2\)，法向量取 \((2,2,-1)\)。切平面：</p>
+      <div class="fml">$$2(X-1)+2(Y-1)-(Z-2)=0\ \Longrightarrow\ 2X+2Y-Z-2=0$$</div>
+      <p>法线：\(\dfrac{X-1}{2}=\dfrac{Y-1}{2}=\dfrac{Z-2}{-1}\)。</p>
+    </div></details>
+  </div>
+</div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① 交线式曲线：两个梯度是<strong>法向量</strong>，切向量要叉乘，不能直接拿一个梯度当切向量。② 直线方程分母为 0 时按「分子 = 0」理解，不要写成分母为 0 的分式。③ \(z=f(x,y)\) 的法向量第三个分量是 \(-1\)，漏掉符号切平面就整体算错。</p></blockquote>
+
+<h2 id="9-7-方向导数与梯度">9.7 方向导数与梯度<button class="fav" type="button" data-fav="9-7-方向导数与梯度" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="9-7-方向导数与梯度-1-方向导数">方向导数<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="9-7-方向导数与梯度-1-方向导数" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$\frac{\partial f}{\partial l}\bigg|_{(x_0,y_0)}=\lim_{\rho\to0^+}\frac{f(x_0+\Delta x,\,y_0+\Delta y)-f(x_0,y_0)}{\rho}\qquad\Bigl(\rho=\sqrt{\Delta x^2+\Delta y^2},\ \text{沿方向 } \vec l\Bigr)$$</div>
 <p>方向导数描述函数沿<strong>任意指定方向</strong> \(\vec l=(\cos\alpha,\sin\alpha)\) 的变化率；偏导数是它沿坐标轴方向的特例（注意：偏导存在不保证其他方向导数存在，方向导数存在也不保证偏导存在，因为这里 \(\rho\to0^+\) 是单侧的）。</p>
 <div class="fml">$$\textbf{定理（可微时）：}\quad \frac{\partial f}{\partial l}=\frac{\partial f}{\partial x}\cos\alpha+\frac{\partial f}{\partial y}\sin\alpha=\operatorname{grad}f\cdot\vec e_{\vec l}$$</div>
-
-<h3 id="9-5-2-梯度">梯度<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="9-5-2-梯度" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="9-7-方向导数与梯度-2-梯度">梯度<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="9-7-方向导数与梯度-2-梯度" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$\operatorname{grad}f=\nabla f=\left(\frac{\partial f}{\partial x},\ \frac{\partial f}{\partial y},\ \frac{\partial f}{\partial z}\right)$$</div>
 <p>三条核心性质：① \(\dfrac{\partial f}{\partial l}=\operatorname{grad}f\cdot\vec e_{\vec l}=|\operatorname{grad}f|\cos\theta\)，故<strong>梯度方向是函数增长最快的方向</strong>，最大方向导数 \(=|\operatorname{grad}f|\)，最小值 \(=-|\operatorname{grad}f|\)（最快下降）；② \(\theta=\dfrac\pi2\) 时方向导数为零，梯度垂直于<strong>等值线（等值面）</strong>；③ 梯度为零向量处各方向导数均为 0。</p>
 <blockquote class="callout c-hot"><p><span class="badge b-hot">高频考点</span> <strong>"求最大方向导数"= 求梯度的模</strong>：题面问"沿什么方向、最大变化率是多少"，答案永远是 \(\operatorname{grad}f\) 方向与 \(|\operatorname{grad}f|\)；若问"变化率为零的方向"，答案是与梯度垂直的方向。反向考法：已知沿 \(\vec l_1,\vec l_2\) 两个方向的方向导数，联立解出 \(f_x,f_y\)。</p></blockquote>
@@ -164,9 +189,9 @@ $$F(x,y,z)=0\ \text{确定}\ z=z(x,y):\quad \frac{\partial z}{\partial x}=-\frac
   </div>
 </div>
 
-<h2 id="9-6-多元函数的极值与最值">9.6 多元函数的极值与最值<button class="fav" type="button" data-fav="9-6-多元函数的极值与最值" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="9-8-多元函数的极值及其求法">9.8 多元函数的极值及其求法<button class="fav" type="button" data-fav="9-8-多元函数的极值及其求法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="9-6-1-无条件极值：必要条件与 AC-B² 判别法">无条件极值：必要条件与 \(AC-B^2\) 判别法<span class="rkchip rk-def">定理</span><button class="fav" type="button" data-fav="9-6-1-无条件极值：必要条件与 AC-B² 判别法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="9-8-多元函数的极值及其求法-1-无条件极值-必要条件与-AC-B-2-判别法">无条件极值：必要条件与 \(AC-B^2\) 判别法<span class="rkchip rk-def">定理</span><button class="fav" type="button" data-fav="9-8-多元函数的极值及其求法-1-无条件极值-必要条件与-AC-B-2-判别法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p><strong>必要条件</strong>：\(f\) 在 \((x_0,y_0)\) 有偏导且取极值 \(\Rightarrow f_x(x_0,y_0)=0,\ f_y(x_0,y_0)=0\)（驻点）。驻点不一定是极值点（如 \(z=xy\) 在原点）。<strong>充分条件</strong>：记 \(A=f_{xx}\)，\(B=f_{xy}\)，\(C=f_{yy}\) 在驻点处的值，</p>
 <div class="tscroll"><table>
 <thead><tr><th>\(AC-B^2\)</th><th>\(A\) 的符号</th><th>结论</th></tr></thead>
@@ -176,8 +201,7 @@ $$F(x,y,z)=0\ \text{确定}\ z=z(x,y):\quad \frac{\partial z}{\partial x}=-\frac
 <tr><td>\(AC-B^2&lt;0\)</td><td>—</td><td>不是极值（鞍点）</td></tr>
 <tr><td>\(AC-B^2=0\)</td><td>—</td><td>失效，需用定义另行讨论</td></tr>
 </tbody></table></div>
-
-<h3 id="9-6-2-条件极值与拉格朗日乘数法">条件极值与拉格朗日乘数法<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="9-6-2-条件极值与拉格朗日乘数法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="9-8-多元函数的极值及其求法-2-条件极值与拉格朗日乘数法">条件极值与拉格朗日乘数法<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="9-8-多元函数的极值及其求法-2-条件极值与拉格朗日乘数法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>求 \(f(x,y,z)\) 在约束 \(\varphi(x,y,z)=0\) 下的极值：构造拉格朗日函数</p>
 <div class="fml">$$L(x,y,z,\lambda)=f(x,y,z)+\lambda\,\varphi(x,y,z)\ \Longrightarrow\ \begin{cases}L_x=f_x+\lambda\varphi_x=0\\ L_y=f_y+\lambda\varphi_y=0\\ L_z=f_z+\lambda\varphi_z=0\\ L_\lambda=\varphi(x,y,z)=0\end{cases}$$</div>
 <p>四个方程联立解出候选点，再由问题实际意义（或比较各点函数值）确定最大/最小。<strong>实际背景的最值题</strong>（几何、物理应用）若已知最值存在且候选点唯一，可直接下结论，无需验证充分条件。</p>
@@ -217,12 +241,59 @@ $$F(x,y,z)=0\ \text{确定}\ z=z(x,y):\quad \frac{\partial z}{\partial x}=-\frac
 <p><strong>③ 最小二乘与实际应用</strong>：拟合直线、容积/用料最优化等应用题，先"设变量 → 写目标函数 → 写约束 → 选无条件还是条件极值"四步走，建模分比计算分更值钱。</p>
 </div></details>
 
+<h2 id="9-9-二元函数的泰勒公式">9.9 二元函数的泰勒公式<button class="fav" type="button" data-fav="9-9-二元函数的泰勒公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<p>二元函数的泰勒公式是一元泰勒公式的直接推广：把 \(\dfrac{\mathrm d}{\mathrm dx}\) 换成 \(h\dfrac{\partial}{\partial x}+k\dfrac{\partial}{\partial y}\)。它最实用的场合是<strong>解释极值充分条件为什么长那样</strong>。</p>
+<h3 id="9-9-二元函数的泰勒公式-1-二阶泰勒公式">二阶泰勒公式<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="9-9-二元函数的泰勒公式-1-二阶泰勒公式" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>设 \(f\) 在 \(P_0(x_0,y_0)\) 的某邻域内有三阶连续偏导，记 \(h=\Delta x,\ k=\Delta y,\ \rho=\sqrt{h^{2}+k^{2}}\)，则</p>
+<div class="fml">$$f(x_0+h,y_0+k)=f+f_xh+f_yk+\frac{1}{2!}\bigl(f_{xx}h^{2}+2f_{xy}hk+f_{yy}k^{2}\bigr)+o(\rho^{2})$$</div>
+<p>其中各偏导数均在 \(P_0\) 取值。若把余项写成三阶项的形式（拉格朗日余项），可用于误差估计。</p>
+<p>一阶项 \(f_xh+f_yk\) 就是全微分；二阶项是 \(h,k\) 的二次型，正负由 \(A=f_{xx},B=f_{xy},C=f_{yy}\) 决定。</p>
+<h3 id="9-9-二元函数的泰勒公式-2-极值充分条件的推导思路">极值充分条件的推导思路<span class="rkchip rk-thm">定理</span><button class="fav" type="button" data-fav="9-9-二元函数的泰勒公式-2-极值充分条件的推导思路" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>在驻点处 \(f_x=f_y=0\)，一阶项消失，于是</p>
+<div class="fml">$$\Delta f=\frac12\bigl(Ah^{2}+2Bhk+Ck^{2}\bigr)+o(\rho^{2})$$</div>
+<p>当 \(\rho\) 足够小时，\(\Delta f\) 的符号由二次型主导：</p>
+<div class="tscroll"><table>
+<thead><tr><th>判别式</th><th>二次型</th><th>结论</th></tr></thead>
+<tbody>
+<tr><td>\(AC-B^{2}\gt 0,\ A\gt 0\)</td><td>正定</td><td>极小值</td></tr>
+<tr><td>\(AC-B^{2}\gt 0,\ A\lt 0\)</td><td>负定</td><td>极大值</td></tr>
+<tr><td>\(AC-B^{2}\lt 0\)</td><td>不定</td><td>非极值（鞍点）</td></tr>
+<tr><td>\(AC-B^{2}=0\)</td><td>退化</td><td>判别法失效，需另作讨论</td></tr>
+</tbody></table></div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① 只展开到一阶就下结论（一阶项在驻点恰好为 0，看不出极值）。② \(f_{xy}=f_{yx}\) 要依赖二阶偏导连续，答题时可注明。③ 余项是 \(o(\rho^{2})\) 而不是 \(o(\rho)\)。</p></blockquote>
+
+<h2 id="9-10-最小二乘法">9.10 最小二乘法<button class="fav" type="button" data-fav="9-10-最小二乘法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<p>最小二乘法解决"数据比方程多"的问题：一组观测数据 \((x_i,y_i)\) 找不到精确的直线，就找一条让<strong>误差平方和最小</strong>的直线。考点是正规方程的列法与系数的计算。</p>
+<h3 id="9-10-最小二乘法-1-拟合直线的正规方程">拟合直线的正规方程<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="9-10-最小二乘法-1-拟合直线的正规方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>设拟合直线 \(y=a+bx\)，令误差平方和</p>
+<div class="fml">$$Q(a,b)=\sum_{i=1}^{n}\bigl(y_i-a-bx_i\bigr)^{2}$$</div>
+<p>由 \(\dfrac{\partial Q}{\partial a}=\dfrac{\partial Q}{\partial b}=0\) 得正规方程</p>
+<div class="fml">$$\begin{cases}na+b\sum x_i=\sum y_i\\[1mm] a\sum x_i+b\sum x_i^{2}=\sum x_iy_i\end{cases}\ \Longrightarrow\ b=\frac{n\sum x_iy_i-\sum x_i\sum y_i}{n\sum x_i^{2}-\bigl(\sum x_i\bigr)^{2}},\quad a=\bar y-b\bar x$$</div>
+<div class="ex">
+  <div class="ex-h"><span class="no">例</span>四组数据拟合直线</div>
+  <div class="ex-b">
+    <p>数据 \((1,2),(2,3),(3,5),(4,6)\)，求拟合直线。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(n=4,\ \sum x=10,\ \sum y=16,\ \sum x^{2}=30,\ \sum xy=2+6+15+24=47\)。</p>
+      <p>\(b=\dfrac{4\times47-10\times16}{4\times30-100}=\dfrac{188-160}{20}=1.4\)，\(a=\bar y-b\bar x=4-1.4\times2.5=0.5\)。</p>
+      <div class="fml">$$y=0.5+1.4x$$</div>
+    </div></details>
+  </div>
+</div>
+<h3 id="9-10-最小二乘法-2-一般线性最小二乘">一般线性最小二乘<span class="rkchip rk-def">方法</span><button class="fav" type="button" data-fav="9-10-最小二乘法-2-一般线性最小二乘" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>模型写成矩阵形式 \(A\theta\approx\beta\)（\(\theta\) 为待定参数向量），正规方程为</p>
+<div class="fml">$$A^{\top}A\,\theta=A^{\top}\beta$$</div>
+<p>直线拟合是 \(A\) 取 \((1,x_i)\) 两列的特例；多项式拟合 \(y=a_0+a_1x+\cdots+a_mx^{m}\) 则取 \((1,x_i,\dots,x_i^{m})\)，参数 \(m+1\) 个、数据点至少 \(m+1\) 个。</p>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① 正规方程的系数位置记反（\(b\sum x\) 与 \(a\sum x\) 别写错行列）。② 最小化的是<strong>竖直方向</strong>的偏差平方和，不是点到直线的垂直距离（那是"总体最小二乘"，另一回事）。③ 数据绝对值大时先平移 \(x'=x-\bar x\)，可显著减少计算误差。</p></blockquote>
+
 <!-- KB-STATS:BEGIN -->
-<h2 id="9-7-题库视角-高频考点与易错清单">9.7 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="9-7-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="9-11-题库视角-高频考点与易错清单">9.11 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="9-11-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 <p>本章 286 题，<strong>条件极值 10 道、方向导数 9 道、空间曲线切线 6 道</strong>领跑，偏导/全微分/隐函数三块合计 40+ 道。多元的难点不在公式，而在<strong>「谁是自变量、谁是谁的函数」</strong>——链式法则画错树，后面全错。</p>
 <p class="kb-src">题量统计：站内题库共 2730 题（单元小测、教材习题、吉米多维奇精解、真题改编），按知识点打标计数；一道题可能命中多个考点，故各行之和可大于本章题数。</p>
 
-<h3 id="9-7-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="9-7-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="9-11-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="9-11-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>考点</th><th>题量</th><th>常见题型</th><th>拿分关键</th></tr></thead>
 <tbody>
@@ -236,7 +307,7 @@ $$F(x,y,z)=0\ \text{确定}\ z=z(x,y):\quad \frac{\partial z}{\partial x}=-\frac
 <tr><td>几何应用与近似计算</td><td class="num">5</td><td>用全微分近似、误差估计</td><td>f(x₀+Δx,y₀+Δy)≈f+fxΔx+fyΔy</td></tr>
 </tbody></table></div>
 
-<h3 id="9-7-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="9-7-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="9-11-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="9-11-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <ul>
 <li><strong>给出复合结构 z=f(u,v)</strong> → 先画变量树（z→u,v→x,y），再沿路径写链式求和</li>
 <li><strong>抽象函数 f(xy, x/y)</strong> → 用 f'₁、f'₂ 表示，注意对 x 求导时两个中间变量都要求导</li>
@@ -246,7 +317,7 @@ $$F(x,y,z)=0\ \text{确定}\ z=z(x,y):\quad \frac{\partial z}{\partial x}=-\frac
 <li><strong>判断二重极限不存在</strong> → 取 y=kx、y=kx² 得到与 k 有关的结果即不存在</li>
 </ul>
 
-<h3 id="9-7-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="9-7-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="9-11-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="9-11-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>易错点</th><th>典型错误做法</th><th>正确做法</th></tr></thead>
 <tbody>

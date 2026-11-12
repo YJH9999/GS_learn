@@ -4,7 +4,7 @@
 
 <h2 id="7-1-微分方程的基本概念">7.1 微分方程的基本概念<button class="fav" type="button" data-fav="7-1-微分方程的基本概念" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="7-1-1-微分方程的定义">微分方程的定义<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="7-1-1-微分方程的定义" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="7-1-微分方程的基本概念-1-微分方程的定义">微分方程的定义<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="7-1-微分方程的基本概念-1-微分方程的定义" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>表示未知函数、未知函数的导数与自变量之间关系的方程称为<strong>微分方程</strong>。未知函数是一元函数的叫<strong>常微分方程</strong>（本章对象）；未知函数是多元函数、出现偏导数的叫偏微分方程。方程中出现的<strong>最高阶导数的阶数</strong>称为方程的<strong>阶</strong>。</p>
 <div class="fml">$$n\ \text{阶微分方程的一般形式：}\quad F(x,\,y,\,y',\,\cdots,\,y^{(n)})=0 \quad\text{或}\quad y^{(n)}=f(x,\,y,\,y',\,\cdots,\,y^{(n-1)})$$</div>
 <ul>
@@ -30,14 +30,16 @@
   </div>
 </div>
 
-<h2 id="7-2-可分离变量与齐次方程">7.2 可分离变量与齐次方程<button class="fav" type="button" data-fav="7-2-可分离变量与齐次方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="7-2-可分离变量的微分方程">7.2 可分离变量的微分方程<button class="fav" type="button" data-fav="7-2-可分离变量的微分方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="7-2-1-可分离变量方程">可分离变量方程<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="7-2-1-可分离变量方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="7-2-可分离变量的微分方程-1-可分离变量方程">可分离变量方程<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="7-2-可分离变量的微分方程-1-可分离变量方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>形如 \(\dfrac{dy}{dx}=f(x)g(y)\) 的方程称为<strong>可分离变量方程</strong>：把两个变量"各归各边"后分别积分。</p>
 <div class="fml">$$g(y)\,dy=f(x)\,dx\ \Longrightarrow\ \int \frac{dy}{g(y)}=\int f(x)\,dx\quad(\text{左端积分结果为 } G(y)+C_1,\ \text{右端为 } F(x)+C_2)$$</div>
 <p>步骤：① 识别是否可分离；② 分离变量；③ 两边积分得隐式通解；④ 有初始条件时定常数。若 \(g(y_0)=0\)，常数解 \(y=y_0\) 也是解，分离时除以 \(g(y)\) 会丢失它，需要补上。</p>
 
-<h3 id="7-2-2-齐次方程">齐次方程<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-2-2-齐次方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h2 id="7-3-齐次方程">7.3 齐次方程<button class="fav" type="button" data-fav="7-3-齐次方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="7-3-齐次方程-1-齐次方程">齐次方程<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-3-齐次方程-1-齐次方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>能写成 \(\dfrac{dy}{dx}=F\!\left(\dfrac{y}{x}\right)\) 的一阶方程称为<strong>齐次方程</strong>（右端是 \(\frac yx\) 的函数）。判断技巧：把方程写成 \(P(x,y)\,dx=Q(x,y)\,dy\) 后，若 \(P,Q\) 各项<strong>关于 \(x,y\) 同次</strong>，即为齐次方程。解法是<strong>变量替换</strong>化为可分离变量：</p>
 <div class="fml">$$\text{令 } u=\frac yx\ (y=ux,\ y'=u+xu')\ \Longrightarrow\ u+x\frac{du}{dx}=F(u)\ \Longrightarrow\ \int\frac{du}{F(u)-u}=\int\frac{dx}{x}+C$$</div>
 <p>积分后代回 \(u=\dfrac yx\) 即得通解。</p>
@@ -71,14 +73,13 @@
   </div>
 </div>
 
-<h2 id="7-3-一阶线性微分方程">7.3 一阶线性微分方程<button class="fav" type="button" data-fav="7-3-一阶线性微分方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="7-4-一阶线性微分方程">7.4 一阶线性微分方程<button class="fav" type="button" data-fav="7-4-一阶线性微分方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="7-3-1-一阶线性方程与常数变易法">一阶线性方程与常数变易法<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="7-3-1-一阶线性方程与常数变易法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="7-4-一阶线性微分方程-1-一阶线性方程与常数变易法">一阶线性方程与常数变易法<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="7-4-一阶线性微分方程-1-一阶线性方程与常数变易法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>关于 \(y\) 及 \(y'\) 都是<strong>一次</strong>的方程 \(\dfrac{dy}{dx}+P(x)y=Q(x)\) 称为<strong>一阶线性微分方程</strong>；\(Q(x)\equiv 0\) 时称为齐次线性方程（可分离变量），否则为非齐次。解法核心是<strong>常数变易法</strong>：先解对应齐次方程得 \(y=Ce^{-\int P dx}\)，把常数 \(C\) 换成待定函数 \(C(x)\) 代入原方程确定之，最终得到通解公式：</p>
 <div class="fml">$$\boxed{\ y=e^{-\int P(x)dx}\left(\int Q(x)\,e^{\int P(x)dx}\,dx+C\right)\ }$$
 <p style="margin:8px 0 0">记忆：\(e^{\int P dx}\) 是<strong>积分因子</strong>，乘上去后左端恰为 \(\left(y\,e^{\int P dx}\right)'=Qe^{\int P dx}\)，两边积分即得。</p></div>
-
-<h3 id="7-3-2-伯努利方程">伯努利方程<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-3-2-伯努利方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="7-4-一阶线性微分方程-2-伯努利方程">伯努利方程<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-4-一阶线性微分方程-2-伯努利方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>形如 \(\dfrac{dy}{dx}+P(x)y=Q(x)y^{n}\)（\(n\ne 0,1\)）的方程称为<strong>伯努利方程</strong>：非齐次项带 \(y^n\)，对 \(y\) 不是线性的。解法：两边除以 \(y^n\)，作代换 \(z=y^{1-n}\) 化为一阶线性方程：</p>
 <div class="fml">$$z=y^{1-n}\ \Longrightarrow\ \frac{dz}{dx}+(1-n)P(x)\,z=(1-n)\,Q(x)$$</div>
 <p>解出 \(z\) 后代回 \(z=y^{1-n}\) 即得通解。</p>
@@ -110,12 +111,11 @@
   </div>
 </div>
 
-<h2 id="7-4-可降阶的高阶微分方程">7.4 可降阶的高阶微分方程<button class="fav" type="button" data-fav="7-4-可降阶的高阶微分方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="7-5-可降阶的高阶微分方程">7.5 可降阶的高阶微分方程<button class="fav" type="button" data-fav="7-5-可降阶的高阶微分方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="7-4-1-y-n-f-x-型">\(y^{(n)}=f(x)\) 型<span class="rkchip rk-def">方法</span><button class="fav" type="button" data-fav="7-4-1-y-n-f-x-型" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="7-5-可降阶的高阶微分方程-1-y-n-f-x-型">\(y^{(n)}=f(x)\) 型<span class="rkchip rk-def">方法</span><button class="fav" type="button" data-fav="7-5-可降阶的高阶微分方程-1-y-n-f-x-型" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>右端只含 \(x\)：<strong>连续积分 \(n\) 次</strong>即可，每积一次出现一个任意常数，共得 \(n\) 个独立常数。例如 \(y''=e^{2x}\) 积两次：\(y'=\frac12 e^{2x}+C_1\)，\(y=\frac14 e^{2x}+C_1x+C_2\)。</p>
-
-<h3 id="7-4-2-y-f-x-y-型与-y-f-y-y-型">\(y''=f(x,y')\) 型与 \(y''=f(y,y')\) 型<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-4-2-y-f-x-y-型与-y-f-y-y-型" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="7-5-可降阶的高阶微分方程-2-y-f-x-y-型与-y-f-y-y-型">\(y''=f(x,y')\) 型与 \(y''=f(y,y')\) 型<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-5-可降阶的高阶微分方程-2-y-f-x-y-型与-y-f-y-y-型" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>两类方程共同特征是<strong>不显含 \(y\) 或不显含 \(x\)</strong>，统一令 \(p=y'\) 降阶，但代换后的关系不同：</p>
 <div class="tscroll"><table>
 <thead><tr><th>类型</th><th>特征</th><th>代换</th><th>降阶后方程</th></tr></thead>
@@ -153,12 +153,11 @@
   </div>
 </div>
 
-<h2 id="7-5-二阶线性微分方程解的结构">7.5 二阶线性微分方程解的结构<button class="fav" type="button" data-fav="7-5-二阶线性微分方程解的结构" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="7-6-高阶线性微分方程">7.6 高阶线性微分方程<button class="fav" type="button" data-fav="7-6-高阶线性微分方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="7-5-1-齐次方程解的定理">齐次方程解的定理<span class="rkchip rk-def">定理</span><button class="fav" type="button" data-fav="7-5-1-齐次方程解的定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="7-6-高阶线性微分方程-1-齐次方程解的定理">齐次方程解的定理<span class="rkchip rk-def">定理</span><button class="fav" type="button" data-fav="7-6-高阶线性微分方程-1-齐次方程解的定理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>考虑二阶线性方程 \(y''+p(x)y'+q(x)y=f(x)\)。\(f(x)\equiv 0\) 时称<strong>齐次</strong>方程。<strong>定理 1</strong>：若 \(y_1,y_2\) 是齐次方程的两个解，则 \(y=C_1y_1+C_2y_2\) 仍是解；若 \(\dfrac{y_1}{y_2}\ne\) 常数（线性无关），则 \(C_1y_1+C_2y_2\) 就是齐次方程的<strong>通解</strong>。</p>
-
-<h3 id="7-5-2-非齐次方程解的结构与叠加原理">非齐次方程解的结构与叠加原理<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-5-2-非齐次方程解的结构与叠加原理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="7-6-高阶线性微分方程-2-非齐次方程解的结构与叠加原理">非齐次方程解的结构与叠加原理<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-6-高阶线性微分方程-2-非齐次方程解的结构与叠加原理" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="fml">$$\textbf{定理 2：}\quad y=C_1y_1+C_2y_2+y^{*}\ \ \text{（非齐次通解 = 对应齐次通解 + 非齐次一个特解）}$$
 $$\textbf{定理 3（叠加原理）：}\quad f=f_1+f_2\ \text{时，}\ y^{*}=y_1^{*}+y_2^{*}\ \text{（}y_i^{*}\text{ 是 } f_i\text{ 对应的特解）}$$
 $$\textbf{定理 4：}\quad y_1^{*},y_2^{*}\text{ 是非齐次方程的两个特解}\ \Longrightarrow\ y_1^{*}-y_2^{*}\ \text{是对应齐次方程的解}$$</div>
@@ -182,9 +181,9 @@ $$\textbf{定理 4：}\quad y_1^{*},y_2^{*}\text{ 是非齐次方程的两个特
 <p><strong>推广</strong>：\(n\) 阶线性齐次方程的解集构成 \(n\) 维线性空间；非齐次通解 = 齐次通解 + 特解的结构对任意阶都成立。</p>
 </div></details>
 
-<h2 id="7-6-二阶常系数线性微分方程">7.6 二阶常系数线性微分方程<button class="fav" type="button" data-fav="7-6-二阶常系数线性微分方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="7-7-常系数齐次线性微分方程">7.7 常系数齐次线性微分方程<button class="fav" type="button" data-fav="7-7-常系数齐次线性微分方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 
-<h3 id="7-6-1-特征方程与齐次通解">特征方程与齐次通解<span class="rkchip rk-def">方法</span><button class="fav" type="button" data-fav="7-6-1-特征方程与齐次通解" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="7-7-常系数齐次线性微分方程-1-特征方程与齐次通解">特征方程与齐次通解<span class="rkchip rk-def">方法</span><button class="fav" type="button" data-fav="7-7-常系数齐次线性微分方程-1-特征方程与齐次通解" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>对 \(y''+py'+qy=0\)，用 \(y=e^{rx}\) 试解，得<strong>特征方程</strong> \(r^2+pr+q=0\)。按根的三种情形写通解：</p>
 <div class="tscroll"><table>
 <thead><tr><th>特征根情形</th><th>特征方程判别</th><th>齐次通解 \(Y\)</th></tr></thead>
@@ -195,7 +194,9 @@ $$\textbf{定理 4：}\quad y_1^{*},y_2^{*}\text{ 是非齐次方程的两个特
 </tbody></table></div>
 <p>记忆要点：重根补一个 \(x\)；复根实部出指数、虚部出正余弦，频率 = \(\beta\)。</p>
 
-<h3 id="7-6-2-非齐次特解的设法">非齐次特解的设法<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-6-2-非齐次特解的设法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h2 id="7-8-常系数非齐次线性微分方程">7.8 常系数非齐次线性微分方程<button class="fav" type="button" data-fav="7-8-常系数非齐次线性微分方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<h3 id="7-8-常系数非齐次线性微分方程-1-非齐次特解的设法">非齐次特解的设法<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-8-常系数非齐次线性微分方程-1-非齐次特解的设法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <p>对 \(y''+py'+qy=f(x)\)，用<strong>待定系数法</strong>设特解 \(y^{*}\)，关键是数 \(k\)（补 \(x^k\)）的确定：</p>
 <div class="tscroll"><table>
 <thead><tr><th>\(f(x)\) 的形式</th><th>\(k\) 的取值</th><th>特解设法 \(y^{*}\)</th></tr></thead>
@@ -254,12 +255,68 @@ $$\textbf{定理 4：}\quad y_1^{*},y_2^{*}\text{ 是非齐次方程的两个特
 <p><strong>③ 高阶推广</strong>：\(n\) 阶常系数齐次方程有 \(n\) 个特征根，单实根出 \(e^{rx}\)、\(k\) 重根出 \(e^{rx},xe^{rx},\cdots,x^{k-1}e^{rx}\)、复根 \(\alpha\pm\mathrm{i}\beta\) 出 \(e^{\alpha x}\cos\beta x,\ e^{\alpha x}\sin\beta x\)，规则与二阶完全平行。</p>
 </div></details>
 
+<h2 id="7-9-欧拉方程">7.9 欧拉方程<button class="fav" type="button" data-fav="7-9-欧拉方程" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<p>欧拉方程是"变系数但可化为常系数"的典型：未知函数对 \(x\) 求导的系数恰好是 \(x\) 的幂，用 \(x=e^{t}\) 换元后系数全部变成常数。</p>
+<h3 id="7-9-欧拉方程-1-欧拉方程的形式与换元">欧拉方程的形式与换元<span class="rkchip rk-def">定义</span><button class="fav" type="button" data-fav="7-9-欧拉方程-1-欧拉方程的形式与换元" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="fml">$$x^{n}y^{(n)}+p_1x^{n-1}y^{(n-1)}+\cdots+p_{n-1}xy'+p_ny=f(x)\qquad (p_i\ \text{为常数})$$</div>
+<p>令 \(x=e^{t}\)（先设 \(x\gt 0\)），记算子 \(D=\dfrac{\mathrm d}{\mathrm dt}\)，则</p>
+<div class="fml">$$xy'=Dy,\qquad x^{2}y''=D(D-1)y,\qquad x^{3}y'''=D(D-1)(D-2)y$$</div>
+<p>代入后得到以 \(t\) 为自变量的<strong>常系数线性方程</strong>，解出后再用 \(t=\ln x\) 回代。若 \(x\lt 0\)，令 \(x=-e^{t}\)，最终用 \(\ln|x|\) 统一表示。</p>
+<h3 id="7-9-欧拉方程-2-求解流程与例题">求解流程与例题<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-9-欧拉方程-2-求解流程与例题" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<div class="ex">
+  <div class="ex-h"><span class="no">例</span>二阶欧拉方程</div>
+  <div class="ex-b">
+    <p>求 \(x^{2}y''-xy'+y=x\ (x\gt 0)\) 的通解。</p>
+    <details><summary></summary><div class="sol">
+      <p>令 \(x=e^{t}\)，则 \(x^{2}y''=D(D-1)y\)、\(xy'=Dy\)，方程化为</p>
+      <div class="fml">$$\bigl[D(D-1)-D+1\bigr]y=e^{t}\ \Longrightarrow\ (D-1)^{2}y=e^{t}$$</div>
+      <p>齐次通解 \(y=(C_1+C_2t)e^{t}\)。右端 \(e^{t}\) 与特征根 \(r=1\) 二重共振，故设特解 \(y^{*}=\dfrac{t^{2}}{2}e^{t}\)。</p>
+      <p>于是 \(y=\left(C_1+C_2t+\dfrac{t^{2}}{2}\right)e^{t}\)，回代 \(t=\ln x\)：</p>
+      <div class="fml">$$y=x\left(C_1+C_2\ln x+\frac{(\ln x)^{2}}{2}\right)$$</div>
+    </div></details>
+  </div>
+</div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① 算子展开写错：\(x^{2}y''=D(D-1)y\)，<strong>不是</strong> \(D^{2}y\)。② 右端化为 \(t\) 的函数后若与特征根共振，特解要乘 \(t\)（二重根乘 \(t^{2}\)）。③ 回代用 \(t=\ln|x|\)，别丢绝对值。</p></blockquote>
+
+<h2 id="7-10-常系数线性微分方程组解法举例">7.10 常系数线性微分方程组解法举例<button class="fav" type="button" data-fav="7-10-常系数线性微分方程组解法举例" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+
+<p>微分方程组在考试里多为两个未知函数的一阶组，解法固定：<strong>消元</strong>化为高阶方程，或写成矩阵形式用特征值。会解一个二阶方程，就会解这种组。</p>
+<h3 id="7-10-常系数线性微分方程组解法举例-1-消元法">消元法<span class="rkchip rk-def">方法</span><button class="fav" type="button" data-fav="7-10-常系数线性微分方程组解法举例-1-消元法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>从组中消去一个未知函数，得到另一个函数的二阶（或高阶）方程；解出后再回代求被消去的函数。</p>
+<div class="ex">
+  <div class="ex-h"><span class="no">例</span>两个未知函数的一阶组</div>
+  <div class="ex-b">
+    <p>解方程组 \(\begin{cases}\dfrac{\mathrm dx}{\mathrm dt}=y\\[1mm]\dfrac{\mathrm dy}{\mathrm dt}=x\end{cases}\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>第一式求导得 \(x''=y'\)，代入第二式：\(x''-x=0\)，故 \(x=C_1e^{t}+C_2e^{-t}\)。</p>
+      <p>回代 \(y=x'\)：\(y=C_1e^{t}-C_2e^{-t}\)。两步都要写，只给 \(x\) 不得分。</p>
+    </div></details>
+  </div>
+</div>
+<h3 id="7-10-常系数线性微分方程组解法举例-2-矩阵形式与特征值法">矩阵形式与特征值法<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-10-常系数线性微分方程组解法举例-2-矩阵形式与特征值法" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<p>一阶常系数线性组写成 \(X'=AX\)（\(X=(x_1,\dots,x_n)^{\top}\)）。若 \(A\) 可对角化，\(A=P\,\mathrm{diag}(\lambda_1,\dots,\lambda_n)P^{-1}\)，则</p>
+<div class="fml">$$X=P\,\mathrm{diag}\bigl(e^{\lambda_1t},\dots,e^{\lambda_nt}\bigr)C$$</div>
+<p>即每个特征值配一个 \(e^{\lambda t}\)，特征向量给出解的方向；有重根时补 \(te^{\lambda t}\)（或广义特征向量）。</p>
+<div class="ex">
+  <div class="ex-h"><span class="no">例</span>特征值法</div>
+  <div class="ex-b">
+    <p>解 \(X'=\begin{pmatrix}1&1\\4&1\end{pmatrix}X\)。</p>
+    <details><summary></summary><div class="sol">
+      <p>\(|\lambda E-A|=\begin{vmatrix}\lambda-1&-1\\-4&\lambda-1\end{vmatrix}=(\lambda-1)^{2}-4\)，特征值 \(\lambda_1=3,\ \lambda_2=-1\)。</p>
+      <p>对应特征向量 \((1,2)^{\top}\)、\((1,-2)^{\top}\)，故</p>
+      <div class="fml">$$X=C_1\begin{pmatrix}1\\2\end{pmatrix}e^{3t}+C_2\begin{pmatrix}1\\-2\end{pmatrix}e^{-t}$$</div>
+    </div></details>
+  </div>
+</div>
+<blockquote class="callout c-error"><p><span class="badge b-error">易错点</span> ① 消元后必须回代求另一个函数，否则少掉一半任意常数，答案不完整。② 回代求常数时要<strong>同时满足原方程组的两条式子</strong>，不能只代一条。③ 重特征值直接用 \(e^{\lambda t}\) 乘常数会漏解。</p></blockquote>
+
 <!-- KB-STATS:BEGIN -->
-<h2 id="7-7-题库视角-高频考点与易错清单">7.7 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="7-7-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
+<h2 id="7-11-题库视角-高频考点与易错清单">7.11 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="7-11-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
 <p>本章 275 题，是<strong>全书题量第三</strong>，题型最「标准化」：一阶线性 8 道、可分离变量 7 道、二阶常系数与待定特解合计 20+ 道、欧拉方程 11 道。它的特点是<strong>认型即得分</strong>——认错型必错。</p>
 <p class="kb-src">题量统计：站内题库共 2730 题（单元小测、教材习题、吉米多维奇精解、真题改编），按知识点打标计数；一道题可能命中多个考点，故各行之和可大于本章题数。</p>
 
-<h3 id="7-7-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-7-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="7-11-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="7-11-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>考点</th><th>题量</th><th>常见题型</th><th>拿分关键</th></tr></thead>
 <tbody>
@@ -273,7 +330,7 @@ $$\textbf{定理 4：}\quad y_1^{*},y_2^{*}\text{ 是非齐次方程的两个特
 <tr><td>欧拉方程</td><td class="num">12</td><td>x²y''+axy'+by=f(x)</td><td>令 x=e^t（x>0）化为常系数；x<0 时用 |x|</td></tr>
 </tbody></table></div>
 
-<h3 id="7-7-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="7-7-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="7-11-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="7-11-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <ul>
 <li><strong>先判型</strong> → 看能否分离变量 → 是否齐次/线性/伯努利 → 是否全微分 → 再看阶数</li>
 <li><strong>出现 y''、y'、y 但缺 x</strong> → 令 p=y'，y''=p dp/dy，把二阶降为一阶</li>
@@ -283,7 +340,7 @@ $$\textbf{定理 4：}\quad y_1^{*},y_2^{*}\text{ 是非齐次方程的两个特
 <li><strong>题中含 ∫_0^x 或 ∫_a^b</strong> → 两边求导化为微分方程，别忘了由原式取特殊点定初始条件</li>
 </ul>
 
-<h3 id="7-7-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="7-7-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
+<h3 id="7-11-题库视角-高频考点与易错清单-3">易错清单<span class="rkchip rk-error">易错点</span><button class="fav" type="button" data-fav="7-11-题库视角-高频考点与易错清单-3" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>易错点</th><th>典型错误做法</th><th>正确做法</th></tr></thead>
 <tbody>

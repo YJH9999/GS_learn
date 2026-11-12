@@ -1,0 +1,5 @@
+# 本地工具脚本与备份，不入库
+.workbuddy/
+*.bak
+*.tmp
+.DS_Store
