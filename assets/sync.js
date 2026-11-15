@@ -16,7 +16,7 @@
   var CONF = {
     gs: { keys:['gs_wrong','gs-kb-favs'], prefix:'gs_', skip:['gs_dark'] },
     xd: { keys:['xd_wrong','xd-kb-favs'], prefix:'xd_', skip:['xd_dark'] },
-    c : { keys:['c_wrong','c-kb-favs'],   prefix:'c_',  skip:['c_dark'] }
+    c : { keys:['ex-th-wrong','c-kb-favs'], prefix:'c_',  skip:['c_dark','ex-th-last'] }
   }[SITE] || { keys:[], prefix:SITE+'_', skip:[] };
 
   var TK='kb-sync-token', GK='kb-sync-gist', UK='kb-sync-user';
@@ -231,7 +231,7 @@
     style.textContent=
       '.kb-sync{position:relative}\n'+
       '.kb-sync .tb{gap:6px}\n'+
-      '.kb-dot{width:6px;height:6px;border-radius:50%;background:var(--ink3,#aeaeb2);display:inline-block;flex:none}\n'+
+      '.kb-dot{width:6px;height:6px;border-radius:50%;background:var(--ink3,var(--fg-3,#aeaeb2));display:inline-block;flex:none}\n'+
       '.kb-dot.on{background:#34c759}\n'+
       '.kb-dot.busy{background:#ff9f0a;animation:kbp 1s infinite}\n'+
       '@keyframes kbp{50%{opacity:.35}}\n'+
@@ -239,31 +239,41 @@
       '#kb-sync-mask{position:fixed;inset:0;background:rgba(0,0,0,.34);z-index:120;display:none}\n'+
       '#kb-sync-mask.on{display:block}\n'+
       '#kb-sync-card{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:420px;max-width:92vw;\n'+
-      '  background:var(--panel-solid,#fff);color:var(--hi,#1c1c1e);border-radius:16px;z-index:121;\n'+
+      '  background:var(--panel-solid,var(--panel,#fff));color:var(--hi,var(--ink,#1c1c1e));border-radius:16px;z-index:121;\n'+
       '  box-shadow:0 24px 70px rgba(0,0,0,.28);padding:20px 20px 16px;display:none;\n'+
       '  font:13px/1.6 "PingFang SC","Microsoft YaHei",-apple-system,sans-serif}\n'+
       '#kb-sync-card.on{display:block}\n'+
       '#kb-sync-card h3{margin:0 0 4px;font-size:15px}\n'+
-      '.kb-sub{font-size:11.5px;color:var(--ink2,#6e6e73);margin-bottom:12px}\n'+
-      '.kb-row{display:flex;align-items:center;gap:8px;margin-bottom:10px;font-size:12px;color:var(--ink2,#6e6e73)}\n'+
-      '.kb-row b{color:var(--hi,#1c1c1e)}\n'+
-      '#kb-sync-tok{width:100%;box-sizing:border-box;border:1px solid var(--line2,#dddde2);border-radius:10px;\n'+
-      '  padding:9px 11px;font:12px/1.5 ui-monospace,Consolas,monospace;background:var(--panel2,#f6f6f8);color:inherit;margin-bottom:8px}\n'+
+      '.kb-sub{font-size:11.5px;color:var(--ink2,var(--fg-2,#6e6e73));margin-bottom:12px}\n'+
+      '.kb-row{display:flex;align-items:center;gap:8px;margin-bottom:10px;font-size:12px;color:var(--ink2,var(--fg-2,#6e6e73))}\n'+
+      '.kb-row b{color:var(--hi,var(--ink,#1c1c1e))}\n'+
+      '#kb-sync-tok{width:100%;box-sizing:border-box;border:1px solid var(--line2,var(--line-2,#dddde2));border-radius:10px;\n'+
+      '  padding:9px 11px;font:12px/1.5 ui-monospace,Consolas,monospace;background:var(--panel2,var(--panel-2,#f6f6f8));color:inherit;margin-bottom:8px}\n'+
       '.kb-btns{display:flex;gap:8px;margin:10px 0 4px}\n'+
-      '.kb-btn{flex:1;border:1px solid var(--line2,#dddde2);border-radius:10px;background:var(--panel2,#f6f6f8);\n'+
-      '  padding:9px 0;font:600 12.5px inherit;font-family:inherit;cursor:pointer;color:var(--hi,#1c1c1e)}\n'+
-      '.kb-btn:hover{border-color:var(--acc,#3478f6);color:var(--acc,#3478f6)}\n'+
-      '.kb-btn.pri{background:var(--acc,#3478f6);border-color:var(--acc,#3478f6);color:#fff}\n'+
+      '.kb-btn{flex:1;border:1px solid var(--line2,var(--line-2,#dddde2));border-radius:10px;background:var(--panel2,var(--panel-2,#f6f6f8));\n'+
+      '  padding:9px 0;font:600 12.5px inherit;font-family:inherit;cursor:pointer;color:var(--hi,var(--ink,#1c1c1e))}\n'+
+      '.kb-btn:hover{border-color:var(--acc,var(--ac,#3478f6));color:var(--acc,var(--ac,#3478f6))}\n'+
+      '.kb-btn.pri{background:var(--acc,var(--ac,#3478f6));border-color:var(--acc,var(--ac,#3478f6));color:#fff}\n'+
       '.kb-btn.pri:hover{opacity:.9;color:#fff}\n'+
-      '.kb-msg{font-size:11.5px;color:var(--ink2,#6e6e73);min-height:18px;margin-top:6px;word-break:break-word}\n'+
+      '.kb-msg{font-size:11.5px;color:var(--ink2,var(--fg-2,#6e6e73));min-height:18px;margin-top:6px;word-break:break-word}\n'+
       '.kb-msg.err{color:#eb4d3d}\n'+
-      '.kb-tip{font-size:11px;color:var(--ink3,#aeaeb2);border-top:1px dashed var(--line,#e8e8ec);\n'+
+      '.kb-tip{font-size:11px;color:var(--ink3,var(--fg-3,#aeaeb2));border-top:1px dashed var(--line,#e8e8ec);\n'+
       '  padding-top:9px;margin-top:8px;line-height:1.65}\n'+
-      '.kb-tip a{color:var(--acc,#3478f6)}\n'+
+      '.kb-tip a{color:var(--acc,var(--ac,#3478f6))}\n'+
       '#kb-sync-toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,12px);background:rgba(28,28,30,.94);\n'+
       '  color:#fff;font-size:12.5px;padding:9px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:.22s;z-index:130}\n'+
       '#kb-sync-toast.on{opacity:1;transform:translate(-50%,0)}\n'+
-      '#kb-sync-toast.click{pointer-events:auto;cursor:pointer;background:var(--acc,#3478f6)}\n';
+      '#kb-sync-toast.click{pointer-events:auto;cursor:pointer;background:var(--acc,var(--ac,#3478f6))}\n'+
+      '.kb-guide{margin-top:10px;border-top:1px dashed var(--line,#e8e8ec);padding-top:9px}\n'+
+      '.kb-guide summary{cursor:pointer;font-size:11.5px;color:var(--acc,var(--ac,#3478f6));list-style:none;outline:none;user-select:none}\n'+
+      '.kb-guide summary::-webkit-details-marker{display:none}\n'+
+      '.kb-guide summary:before{content:"\\25B8";display:inline-block;margin-right:4px;transition:transform .15s}\n'+
+      '.kb-guide[open] summary:before{transform:rotate(90deg)}\n'+
+      '.kb-guide ol{margin:8px 0 6px;padding-left:19px;font-size:11.5px;color:var(--ink2,var(--fg-2,#6e6e73));line-height:1.85}\n'+
+      '.kb-guide li{margin-bottom:3px}\n'+
+      '.kb-guide code{font:11px ui-monospace,Consolas,monospace;background:var(--panel2,var(--panel-2,#f6f6f8));padding:1px 4px;border-radius:4px}\n'+
+      '.kb-guide p{font-size:11px;color:var(--ink3,var(--fg-3,#aeaeb2));margin:6px 0 0;line-height:1.65}\n'+
+      '.kb-guide a{color:var(--acc,var(--ac,#3478f6))}\n';
     document.head.appendChild(style);
 
     var wrap=document.createElement('div');
@@ -290,9 +300,17 @@
       +'<button class="kb-btn" id="kb-sync-out" type="button">退出登录</button>'
       +'</div>'
       +'<div class="kb-msg" id="kb-sync-msg"></div>'
-      +'<div class="kb-tip">还没有令牌？<a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">创建细粒度令牌</a>'
-      +'（Account permissions → Gists → Read and write），或用 <a href="https://github.com/settings/tokens/new?scopes=gist" target="_blank" rel="noopener">经典令牌</a>（只勾 gist）。'
-      +'令牌只存在本机浏览器，不经过任何服务器。</div>';
+      +'<details class="kb-guide" id="kb-sync-guide"><summary>第一次用？3 步拿到令牌（约 40 秒）</summary>'
+      +'<ol>'
+      +'<li>点 <a href="https://github.com/settings/tokens/new?scopes=gist&description=kb-sync" target="_blank" rel="noopener">创建令牌</a>'
+      +'（会帮你自动勾好 <code>gist</code>；没登录 GitHub 就先登录或注册）</li>'
+      +'<li>拉到页面最下面点绿色 <b>Generate token</b>，复制 <code>ghp_…</code> 开头那一串</li>'
+      +'<li>回到这里粘贴，点 <b>保存并登录</b>；看到绿点就是同步已开启</li>'
+      +'</ol>'
+      +'<p>每个账号各建自己的令牌，互不影响。令牌只存这台设备的浏览器，数据写进你账号下的私有 Gist；换设备粘贴同一个令牌即可恢复。'
+      +'想用细粒度令牌：Account permissions → Gists → Read and write。</p>'
+      +'</details>'
+      +'<div class="kb-tip">把页面链接后加 <code>?sync=1</code> 发给别人，打开就直达这个登录面板并展开引导。</div>';
     document.body.appendChild(m);
     document.body.appendChild(card);
 
@@ -334,6 +352,9 @@
     st.token = ls(TK) || '';
     st.user = ls(UK) || '';
     setState();
+    var gd=document.getElementById('kb-sync-guide');
+    if(gd && !st.token) gd.open=true;
+    if(/[?&]sync=1(&|$)/.test(location.search)) setTimeout(openModal, 300);
     if(st.token){
       setState();
       pull(true);
