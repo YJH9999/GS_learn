@@ -290,21 +290,21 @@ $$F(x,y,z)=0\ \text{确定}\ z=z(x,y):\quad \frac{\partial z}{\partial x}=-\frac
 
 <!-- KB-STATS:BEGIN -->
 <h2 id="9-11-题库视角-高频考点与易错清单">9.11 题库视角：高频考点 · 常见思路 · 易错清单<button class="fav" type="button" data-fav="9-11-题库视角-高频考点与易错清单" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h2>
-<p>本章 286 题，<strong>条件极值 10 道、方向导数 9 道、空间曲线切线 6 道</strong>领跑，偏导/全微分/隐函数三块合计 40+ 道。多元的难点不在公式，而在<strong>「谁是自变量、谁是谁的函数」</strong>——链式法则画错树，后面全错。</p>
-<p class="kb-src">题量统计：站内题库共 2730 题（单元小测、教材习题、吉米多维奇精解、真题改编），按知识点打标计数；一道题可能命中多个考点，故各行之和可大于本章题数。</p>
+<p>本章 408 题，<strong>极值与条件极值 50 道</strong>领跑，可微性/连续性 38 道、空间曲线切线与曲面切平面 38 道、方向导数与梯度 35 道紧随其后。多元的难点不在公式，而在<strong>「谁是自变量、谁是谁的函数」</strong>——链式法则画错树，后面全错。</p>
+<p class="kb-src">题量统计：本章 <strong>408</strong> 题（判断 30 · 选择 82 · 填空 77 · 计算 184 · 证明 35）；站内题库共 <strong>4285</strong> 题，本章来源构成：吉米多维奇 126、教材习题 124、自编拓展 122、教材经典 18、单元小测 10、真题改编 8。按知识点打标计数，一道题可能命中多个考点，故各行之和可大于本章题数；数字只用于<strong>比较轻重</strong>，不代表考试概率。</p>
 
 <h3 id="9-11-题库视角-高频考点与易错清单-1">高频考点 TOP 8（按题量排序）<span class="rkchip rk-hot">高频考点</span><button class="fav" type="button" data-fav="9-11-题库视角-高频考点与易错清单-1" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>
 <div class="tscroll"><table>
 <thead><tr><th>考点</th><th>题量</th><th>常见题型</th><th>拿分关键</th></tr></thead>
 <tbody>
-<tr><td>极值与条件极值</td><td class="num">35</td><td>无条件极值、拉格朗日乘数法、闭区域最值</td><td>先求驻点再用 AC−B² 判别；条件极值构造 L=f+λg；闭区域还要比边界</td></tr>
-<tr><td>空间曲线切线、曲面切平面</td><td class="num">27</td><td>求切线/法平面/切平面</td><td>曲线用参数式求导得切向量；曲面 F=0 的法向量为梯度</td></tr>
-<tr><td>隐函数求导（含二阶）</td><td class="num">26</td><td>F(x,y,z)=0 求 z_x、z_y、z_xy</td><td>z_x=−F_x/F_z；二阶要把已求出的 z_x 再代入</td></tr>
-<tr><td>偏导数与全微分计算</td><td class="num">25</td><td>求 z_x、z_y、dz</td><td>偏导时把另一个变量当常数；dz=z_x dx+z_y dy</td></tr>
-<tr><td>可微性、连续性与极限</td><td class="num">24</td><td>判断可微、极限是否存在</td><td>二重极限用 y=kx 找反例；可微需验证 Δz−dz=o(ρ)</td></tr>
-<tr><td>方向导数与梯度</td><td class="num">24</td><td>求沿某方向的方向导数、最陡方向</td><td>∂f/∂l=grad f·(cosα,cosβ,cosγ)；梯度方向是增长最快的方向</td></tr>
-<tr><td>复合函数链式法则与全导数</td><td class="num">18</td><td>z=f(u,v)、u=u(x,y)</td><td>画变量关系树，每条路径相加；抽象函数写 f'₁、f'₂</td></tr>
-<tr><td>几何应用与近似计算</td><td class="num">5</td><td>用全微分近似、误差估计</td><td>f(x₀+Δx,y₀+Δy)≈f+fxΔx+fyΔy</td></tr>
+<tr><td>极值与条件极值</td><td class="num">50</td><td>无条件极值、拉格朗日乘数法、闭区域最值</td><td>先求驻点再用 AC−B² 判别；条件极值构造 L=f+λg；闭区域还要比边界</td></tr>
+<tr><td>可微性、连续性与极限</td><td class="num">38</td><td>判断可微、极限是否存在</td><td>二重极限用 y=kx 找反例；可微需验证 Δz−dz=o(ρ)</td></tr>
+<tr><td>空间曲线切线、曲面切平面</td><td class="num">38</td><td>求切线/法平面/切平面</td><td>曲线用参数式求导得切向量；曲面 F=0 的法向量为梯度</td></tr>
+<tr><td>方向导数与梯度</td><td class="num">35</td><td>求沿某方向的方向导数、最陡方向</td><td>∂f/∂l=grad f·(cosα,cosβ,cosγ)；梯度方向是增长最快的方向</td></tr>
+<tr><td>隐函数求导（含二阶）</td><td class="num">33</td><td>F(x,y,z)=0 求 z_x、z_y、z_xy</td><td>z_x=−F_x/F_z；二阶要把已求出的 z_x 再代入</td></tr>
+<tr><td>偏导数与全微分计算</td><td class="num">32</td><td>求 z_x、z_y、dz</td><td>偏导时把另一个变量当常数；dz=z_x dx+z_y dy</td></tr>
+<tr><td>复合函数链式法则与全导数</td><td class="num">24</td><td>z=f(u,v)、u=u(x,y)</td><td>画变量关系树，每条路径相加；抽象函数写 f'₁、f'₂</td></tr>
+<tr><td>几何应用与近似计算</td><td class="num">9</td><td>用全微分近似、误差估计</td><td>f(x₀+Δx,y₀+Δy)≈f+fxΔx+fyΔy</td></tr>
 </tbody></table></div>
 
 <h3 id="9-11-题库视角-高频考点与易错清单-2">看到题先想什么：常见思路<button class="fav" type="button" data-fav="9-11-题库视角-高频考点与易错清单-2" title="收藏"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3-5.7-3.1-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg></button></h3>

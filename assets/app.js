@@ -152,7 +152,7 @@
         之前的分片不下载、不注入；向上/向下越过边界时才补载相邻分片；
         离视口过远的已渲染分片会被卸载（原文仍在内存缓存，回滚无需联网）
      ================================================================ */
-  var VER='20261111b';
+  var VER='20261117e';
   var WIN=3;                 /* DOM 中最多保留的分片数 */
   var lo=0, hi=-1;           /* 当前已挂载的分片区间 */
   var loadingPrev=false, lastY=0;
@@ -554,7 +554,7 @@
     if(pendQ){ pendQ.push(cb); return; }
     pendQ=[cb];
     var s=document.createElement('script');
-    s.src='assets/search-index.js?v=20261111b';
+    s.src='assets/search-index.js?v=20261117e';
     s.onload=function(){ sReady=true; var qs=pendQ; pendQ=null; qs.forEach(function(f){f()}); };
     s.onerror=function(){ pendQ=null;
       sres.innerHTML='<div class="none">搜索索引加载失败</div>'; sres.classList.add('on'); };
