@@ -6,8 +6,9 @@
 - **答案与详解默认收起**，点题干任意位置或「查看答案与详解」按钮展开，再点收起；只有被点的那一题会展开，翻页 / 改筛选回来仍是展开状态
 - **公式按需渲染**：答案解析里的 KaTeX 等到真正展开时才渲染，首屏 30 题只渲染题干，列表更轻
 - **勾选不误触**：点左侧方框只加入自选组卷，不会顺手展开答案（勾选逻辑改为跟随浏览器原生勾选态，修正原先 preventDefault 导致勾选状态回滚的问题）
-- 实现：`exam_app.js` 的 `renderBank` 由 `<details>` 改为「头部信息行 + 题干 + 可展开答案块」，新增 `setBankAns / setPick`；`exam.css` 新增 `.bk-head / .bk-body / .bk-reveal / .bk-ans-b`
-- 验证：`verify_bank_ans.js` 19/19（初始隐藏、点题干展开、再点收起、按钮文案与 aria、勾选不误触、翻页保持），`smoke_bank.js` 五题型筛选 + 关键词搜索 0 报错
+- **错题本同步改版**：「待巩固」与折叠的「已攻克」两区都不再是只露一行元信息的折叠卡，改成 题干 + 元信息（知识点 · 来源 · 已攻克 · 做过 N 次）+「查看答案与详解」；展开只影响被点的那一题，面板级事件委托，重渲染后照样可用
+- 实现：`exam_app.js` 的 `renderBank` 由 `<details>` 改为「头部信息行 + 题干 + 可展开答案块」，新增 `setAnsOpen / ansBlockHTML / setBankAns / setPick`；`renderWrong` 复用同一套骨架；`exam.css` 新增 `.bk-head / .bk-body / .bk-reveal / .bk-ans-b / .wb-item`
+- 验证：`verify_bank_ans.js` 19/19（初始隐藏、点题干展开、再点收起、按钮文案与 aria、勾选不误触、翻页保持），`verify_wrong.js` 13/13（错题本两区、展开/收起、只动被点的题），`smoke_bank.js` 五题型筛选 + 关键词搜索 0 报错
 
 ## 2026-11-12 · v1.8 题库大扩充：每章客观题 ≥30/60/60、证明题 ≥20
 

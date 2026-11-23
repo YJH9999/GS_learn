@@ -599,6 +599,7 @@ function markFixed(q){
 function wrongPool(includeFixed){
   return wrongBook.filter(w=> w.status==='open' || (!!includeFixed && w.status==='fixed'));
 }
+const openWrong = new Set();     // 错题本里展开过的题（放在 renderWrong 之前，初次渲染就要用）
 function renderWrong(){
   const open = wrongBook.filter(w=>w.status!=='fixed');
   const fixed = wrongBook.filter(w=>w.status==='fixed');
@@ -608,24 +609,58 @@ function renderWrong(){
   if (fc) fc.textContent = fixed.length ? `${fixed.length} 题` : '';
   const fw = $('#wrong-fixed-wrap');
   if (fw) fw.hidden = !fixed.length;
+  /* v1.9：错题卡同样「题干默认展开、答案与详解收起」 */
   const card = w=>{
     const ty = TY[w.ty] || {name:''};
-    return `<details class="rv-card"><summary>
-      <span class="tychip t-${w.ty}">${ty.name}</span>
-      <span class="bk-meta">${w.kp||''} · ${w.src||''}${w.status==='fixed'?' · 已攻克':''}</span></summary>
-      <div class="rv-b"><div>${w.q}</div>
-        ${w.opts?`<p class="cmp">选项：${w.opts.map((o,j)=>'ABCD'[j]+'．'+o).join('　')}</p>`:''}
-        ${w.ans?`<p class="cmp">参考答案：<b>${fmtAns(w.ty==='choice'?'ABCD'[w.ans]:w.ans)}</b></p>`:''}
-        ${w.sol?`<div class="sol-box">${w.sol}</div>`:''}</div>
-    </details>`;
+    const id = String(w.id);
+    const opened = openWrong.has(id);
+    let ans = '';
+    if (w.ans!=null && w.ans!==''){
+      ans += `<p class="cmp">参考答案：<b>${fmtAns(w.ty==='choice'?'ABCD'[w.ans]:w.ans)}</b></p>`;
+    }
+    if (w.sol) ans += `<div class="sol-box">${w.sol}</div>`;
+    const opts = w.opts
+      ? `<p class="cmp bk-opts">选项：${w.opts.map((o,j)=>'ABCD'[j]+'．'+o).join('　')}</p>` : '';
+    return `<div class="rv-card bk-item wb-item" data-id="${w.id}">
+      <div class="bk-head">
+        <span class="tychip t-${w.ty}">${ty.name}</span>
+        <span class="bk-meta">${w.kp||''}${w.kp&&w.src?' · ':''}${w.src||''}${w.status==='fixed'?' · 已攻克':''}${w.tries>1?` · 做过 ${w.tries} 次`:''}</span>
+      </div>
+      <div class="bk-body">
+        <div class="q-stem">${w.q}</div>
+        ${opts}
+        ${ans ? ansBlockHTML(ans, opened) : ''}
+      </div>
+    </div>`;
   };
   const host = $('#wrong-open');
   if (host) host.innerHTML = open.length ? open.map(card).join('')
     : '<p class="muted">暂无待巩固错题——组卷开刷吧！</p>';
   const fhost = $('#wrong-fixed');
   if (fhost) fhost.innerHTML = fixed.map(card).join('');
+  bindWrongToggle();
   const wb = $('#wrongbook-panel');
   if (wb) renderMath(wb);
+}
+/* 面板级事件委托：卡片会被反复重建，绑在面板上一次即可 */
+function bindWrongToggle(){
+  const panel = $('#wrongbook-panel');
+  if (!panel || panel.dataset.ansBound) return;
+  panel.dataset.ansBound = '1';
+  panel.addEventListener('click', (e)=>{
+    const item = e.target.closest('.wb-item');
+    if (!item) return;
+    const box = item.querySelector('.bk-ans');
+    if (!box) return;
+    if (!e.target.closest('.bk-reveal')){
+      const sel = window.getSelection();
+      if (sel && String(sel).trim()) return;      // 正在选文字，不切换
+    }
+    const on = box.dataset.open !== '1';
+    setAnsOpen(box, on);
+    if (on) openWrong.add(String(item.dataset.id));
+    else openWrong.delete(String(item.dataset.id));
+  });
 }
 renderWrong();
 renderHistory();
@@ -842,6 +877,30 @@ function bkFiltered(){
 /* v1.9 题库卡片：题干默认展开、答案与详解默认收起（点题干或按钮再展开） */
 const BY_ID = new Map(ALL.map(q=>[String(q.id), q]));
 const openAns = new Set();       // 展开过的题，翻页 / 改筛选后仍保持展开
+
+/* 通用：只切换答案块的显示状态（内容由调用方准备好） */
+function setAnsOpen(box, on){
+  const body = box.querySelector('.bk-ans-b');
+  const btn = box.querySelector('.bk-reveal');
+  if (!body) return;
+  body.hidden = !on;
+  box.dataset.open = on ? '1' : '0';
+  if (btn){
+    btn.setAttribute('aria-expanded', on ? 'true' : 'false');
+    const t = btn.querySelector('.bk-reveal-t');
+    if (t) t.textContent = on ? '收起答案与详解' : '查看答案与详解';
+  }
+}
+/* 通用：答案块骨架（inner 为空时由调用方稍后填） */
+function ansBlockHTML(inner, opened){
+  return `<div class="bk-ans" data-open="${opened?'1':'0'}">
+    <button class="bk-reveal" type="button" aria-expanded="${opened?'true':'false'}">
+      <span class="bk-reveal-t">${opened?'收起答案与详解':'查看答案与详解'}</span>
+      <span class="bk-ar"></span>
+    </button>
+    <div class="bk-ans-b"${opened?` data-filled="1"`:' hidden'}>${inner||''}</div>
+  </div>`;
+}
 function bkAnswer(q){
   let ans = '';
   if (q.ty==='judge') ans = q.ans;
@@ -857,33 +916,19 @@ function setBankAns(box, on){
   const item = box.closest('.bk-item');
   if (!item) return;
   const id = String(item.dataset.id);
-  const body = box.querySelector('.bk-ans-b');
-  const btn = box.querySelector('.bk-reveal');
   if (on){
-    if (!body.dataset.filled){
+    const body = box.querySelector('.bk-ans-b');
+    if (body && !body.dataset.filled){
       const q = BY_ID.get(id);
       body.innerHTML = q ? bkAnswer(q) : '';
       body.dataset.filled = '1';
       renderMath(body);            // 答案里的公式等到真正展开时才渲染，首屏更轻
     }
-    body.hidden = false;
-    box.dataset.open = '1';
     openAns.add(id);
-    if (btn){
-      btn.setAttribute('aria-expanded','true');
-      const t = btn.querySelector('.bk-reveal-t');
-      if (t) t.textContent = '收起答案与详解';
-    }
   }else{
-    body.hidden = true;
-    box.dataset.open = '0';
     openAns.delete(id);
-    if (btn){
-      btn.setAttribute('aria-expanded','false');
-      const t = btn.querySelector('.bk-reveal-t');
-      if (t) t.textContent = '查看答案与详解';
-    }
   }
+  setAnsOpen(box, on);
 }
 function renderBank(){
   const arr = bkFiltered();
@@ -905,13 +950,7 @@ function renderBank(){
       </div>
       <div class="bk-body">
         <div class="q-stem"><b class="bk-no">${no}.</b>${q.q}</div>
-        ${ansHTML ? `<div class="bk-ans" data-open="${opened?'1':'0'}">
-          <button class="bk-reveal" type="button" aria-expanded="${opened?'true':'false'}">
-            <span class="bk-reveal-t">${opened?'收起答案与详解':'查看答案与详解'}</span>
-            <span class="bk-ar">▾</span>
-          </button>
-          <div class="bk-ans-b"${opened?` data-filled="1"`:' hidden'}>${opened?ansHTML:''}</div>
-        </div>` : ''}
+        ${ansHTML ? ansBlockHTML(opened ? ansHTML : '', opened) : ''}
       </div>
     </div>`;
   }).join('') : '<p class="muted">没有符合条件的题目——放宽筛选或换个关键词试试</p>';

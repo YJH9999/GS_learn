@@ -320,6 +320,11 @@ summary,.tab,.btn,.chip,.stepper button,.ans-btn,.opt,.rcard h3{
 .wrong-fixed[open]>summary::before{content:'▾'}
 #wrong-fixed-count{color:var(--ink3);font-weight:400}
 .wrong-fixed .wrong-list{opacity:.78;margin-top:6px}
+/* v1.9：错题卡（题干展开 + 答案解析收起），与题库卡同一套 .bk-* 骨架 */
+.wb-item{margin:10px 0}
+.wb-item .q-stem{font-size:14.5px;margin-bottom:0}
+.bk-opts{margin:6px 0 0;line-height:1.9}
+.wrong-fixed .wrong-list{opacity:.9}
 
 /* 题库自选 */
 .bank-hint{margin:2px 0 0;font-size:12px}
