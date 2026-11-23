@@ -839,6 +839,52 @@ function bkFiltered(){
     (!bkKw || bkPlain(q.q).includes(bkKw))
   );
 }
+/* v1.9 题库卡片：题干默认展开、答案与详解默认收起（点题干或按钮再展开） */
+const BY_ID = new Map(ALL.map(q=>[String(q.id), q]));
+const openAns = new Set();       // 展开过的题，翻页 / 改筛选后仍保持展开
+function bkAnswer(q){
+  let ans = '';
+  if (q.ty==='judge') ans = q.ans;
+  else if (q.ty==='choice') ans = 'ABCD'[q.ans];
+  else if (q.ty==='blank') ans = String(q.ans||'');
+  return (ans?`<p class="cmp">答案：<b>${fmtAns(ans)}</b></p>`:'')
+    + (q.sol?`<div class="sol-box">${q.sol}</div>`:'');
+}
+function hasAnswer(q){
+  return !!(q.sol || q.ans!=null && q.ans!=='');
+}
+function setBankAns(box, on){
+  const item = box.closest('.bk-item');
+  if (!item) return;
+  const id = String(item.dataset.id);
+  const body = box.querySelector('.bk-ans-b');
+  const btn = box.querySelector('.bk-reveal');
+  if (on){
+    if (!body.dataset.filled){
+      const q = BY_ID.get(id);
+      body.innerHTML = q ? bkAnswer(q) : '';
+      body.dataset.filled = '1';
+      renderMath(body);            // 答案里的公式等到真正展开时才渲染，首屏更轻
+    }
+    body.hidden = false;
+    box.dataset.open = '1';
+    openAns.add(id);
+    if (btn){
+      btn.setAttribute('aria-expanded','true');
+      const t = btn.querySelector('.bk-reveal-t');
+      if (t) t.textContent = '收起答案与详解';
+    }
+  }else{
+    body.hidden = true;
+    box.dataset.open = '0';
+    openAns.delete(id);
+    if (btn){
+      btn.setAttribute('aria-expanded','false');
+      const t = btn.querySelector('.bk-reveal-t');
+      if (t) t.textContent = '查看答案与详解';
+    }
+  }
+}
 function renderBank(){
   const arr = bkFiltered();
   const pages = Math.max(1, Math.ceil(arr.length/BSZ));
@@ -848,27 +894,50 @@ function renderBank(){
   const host = $('#bank-list');
   host.innerHTML = slice.length ? slice.map((q,i)=>{
     const no = (bkPage-1)*BSZ + i + 1;
-    let ans = '';
-    if (q.ty==='judge') ans = q.ans;
-    else if (q.ty==='choice') ans = 'ABCD'[q.ans];
-    else if (q.ty==='blank') ans = String(q.ans||'');
     const on = picks.indexOf(q.id)>=0;
-    return `<details class="rv-card bk-item${on?' picked':''}" data-id="${q.id}"><summary>
-      <label class="bk-ck" title="选中加入自组卷"><input type="checkbox" class="bk-pick" data-id="${q.id}"${on?' checked':''}></label>
-      <span class="tychip t-${q.ty}">${TY[q.ty].name}</span>
-      <span class="bk-meta">第${q.ch}章 · ${q.kp} · ${q.src}</span></summary>
-      <div class="rv-b"><div class="q-stem"><b class="bk-no">${no}.</b>${q.q}</div>
-        ${ans?`<p class="cmp">答案：<b>${fmtAns(ans)}</b></p>`:''}
-        ${q.sol?`<div class="sol-box">${q.sol}</div>`:''}</div>
-    </details>`;
+    const opened = openAns.has(String(q.id));
+    const ansHTML = bkAnswer(q);
+    return `<div class="rv-card bk-item${on?' picked':''}" data-id="${q.id}">
+      <div class="bk-head">
+        <label class="bk-ck" title="选中加入自组卷"><input type="checkbox" class="bk-pick" data-id="${q.id}"${on?' checked':''}></label>
+        <span class="tychip t-${q.ty}">${TY[q.ty].name}</span>
+        <span class="bk-meta">第${q.ch}章 · ${q.kp} · ${q.src}</span>
+      </div>
+      <div class="bk-body">
+        <div class="q-stem"><b class="bk-no">${no}.</b>${q.q}</div>
+        ${ansHTML ? `<div class="bk-ans" data-open="${opened?'1':'0'}">
+          <button class="bk-reveal" type="button" aria-expanded="${opened?'true':'false'}">
+            <span class="bk-reveal-t">${opened?'收起答案与详解':'查看答案与详解'}</span>
+            <span class="bk-ar">▾</span>
+          </button>
+          <div class="bk-ans-b"${opened?` data-filled="1"`:' hidden'}>${opened?ansHTML:''}</div>
+        </div>` : ''}
+      </div>
+    </div>`;
   }).join('') : '<p class="muted">没有符合条件的题目——放宽筛选或换个关键词试试</p>';
   renderMath(host);
   $$('#bank-list .bk-ck').forEach(lb=>{
-    lb.addEventListener('click', e=>{ e.preventDefault(); e.stopPropagation(); });
+    lb.addEventListener('click', e=>{ e.stopPropagation(); });   // 勾选框自己处理，别触发卡片切换
   });
   $$('#bank-list .bk-pick').forEach(cb=>{
-    cb.onclick = e=>{ e.preventDefault(); e.stopPropagation(); togglePick(cb.dataset.id); };
+    // 不再 preventDefault：勾选状态交给浏览器切换（preventDefault 会在事件后被回滚），
+    // 再把结果同步进 picks
+    cb.onclick = e=>{ e.stopPropagation(); setPick(cb.dataset.id, cb.checked); };
   });
+  // 点题干或「查看答案与详解」展开/收起；勾选、选词复制时不误触发
+  host.onclick = (e)=>{
+    if (e.target.closest('.bk-ck') || e.target.closest('.bk-pick')) return;
+    const item = e.target.closest('.bk-item');
+    if (!item) return;
+    const box = item.querySelector('.bk-ans');
+    if (!box) return;
+    if (!e.target.closest('.bk-reveal')){
+      if (!e.target.closest('.bk-body')) return;      // 点元信息行 / 卡片边缘不切换
+      const sel = window.getSelection();
+      if (sel && String(sel).trim()) return;          // 正在选文字，不切换
+    }
+    setBankAns(box, box.dataset.open!=='1');
+  };
   const pager = $('#bank-pager');
   pager.innerHTML = pages>1 ? `
     <button class="chip" id="bk-prev"${bkPage<=1?' disabled':''}>‹ 上一页</button>
@@ -885,16 +954,20 @@ function renderBank(){
   if (next) next.onclick = ()=>{ bkPage++; renderBank(); goListTop(); };
   syncPickBar();
 }
-function togglePick(id){
+function setPick(id, on){
   const i = picks.indexOf(id);
-  if (i>=0) picks.splice(i,1); else picks.push(id);
+  if (on && i<0) picks.push(id);
+  else if (!on && i>=0) picks.splice(i,1);
   const card = document.querySelector('.bk-item[data-id="'+id+'"]');
-  if (card) card.classList.toggle('picked', picks.indexOf(id)>=0);
+  if (card) card.classList.toggle('picked', on);
   const cb = document.querySelector('.bk-pick[data-id="'+id+'"]');
-  if (cb) cb.checked = picks.indexOf(id)>=0;
+  if (cb) cb.checked = on;
   syncPickBar();
   const st = $('#bank-stat');
   if (st) st.textContent = `题库共 ${ALL.length} 题 · 当前筛选 ${bkFiltered().length} 题 · 已选 ${picks.length} 题`;
+}
+function togglePick(id){
+  setPick(id, picks.indexOf(id)<0);
 }
 function pickedPts(){
   let t = 0;

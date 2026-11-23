@@ -221,9 +221,25 @@ summary,.tab,.btn,.chip,.stepper button,.ans-btn,.opt,.rcard h3{
 .rv-b{padding:4px 18px 16px;border-top:var(--hair);font-size:14px;line-height:1.8}
 
 /* ---------- 题库总览 ---------- */
-.bk-item summary{gap:8px}
+/* v1.9：题干默认展开，答案与详解默认收起（点题干或「查看答案与详解」再展开） */
+.bk-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:11px 16px 4px}
 .bk-meta{font-weight:400;font-size:12px;color:var(--ink3)}
 .bk-no{font-family:var(--mono);color:var(--ink3);margin-right:6px}
+.bk-body{padding:0 16px 14px}
+.bk-item .q-stem{margin-bottom:0;padding-top:2px;cursor:pointer}
+.bk-ans{margin-top:10px}
+.bk-reveal{display:inline-flex;align-items:center;gap:6px;cursor:pointer;
+  border:var(--hair);border-radius:9px;background:var(--panel2);color:var(--ink2);
+  font:600 12.5px var(--sans);padding:6px 12px;transition:.15s;
+  user-select:none;-webkit-user-select:none}
+.bk-reveal:hover{border-color:var(--acc);color:var(--acc)}
+.bk-ar{width:7px;height:7px;margin:-3px 1px 0 2px;flex:0 0 auto;
+  border-right:1.7px solid currentColor;border-bottom:1.7px solid currentColor;
+  transform:rotate(45deg);transition:transform .18s ease}
+.bk-ans[data-open="1"] .bk-reveal{border-color:var(--acc);color:var(--acc)}
+.bk-ans[data-open="1"] .bk-ar{transform:rotate(225deg);margin-top:3px}
+.bk-ans-b{margin-top:10px}
+.bk-ans-b .cmp{margin:0 0 2px}
 .bank-kw{width:100%;border:var(--hair);border-radius:12px;background:var(--panel2);
   color:var(--ink);font:400 14px var(--sans);padding:10px 16px;margin-top:12px;outline:none}
 .bank-kw:focus{border-color:var(--acc)}
@@ -310,7 +326,6 @@ summary,.tab,.btn,.chip,.stepper button,.ans-btn,.opt,.rcard h3{
 .bk-ck{display:inline-flex;align-items:center;margin-right:2px;cursor:pointer}
 .bk-ck input{width:15px;height:15px;accent-color:var(--acc);cursor:pointer;margin:0}
 .bk-item.picked{background:var(--acc-soft);border-color:var(--acc)}
-.bk-item>summary{gap:8px}
 .pickbar{position:sticky;bottom:14px;z-index:40;display:flex;align-items:center;gap:10px;
   margin:16px 0 0;padding:11px 16px;border-radius:14px;
   background:color-mix(in srgb,var(--panel) 90%,transparent);
